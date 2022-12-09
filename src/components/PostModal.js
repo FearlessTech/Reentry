@@ -53,7 +53,7 @@ const PostModal = (props) => {
         setVideoLink('');
         setAssetArea('');
         props.handleClick(e);
-    };
+    }
 
     return (
         <>
@@ -122,7 +122,7 @@ const PostModal = (props) => {
                                         </>
                                         )
                                     )}
-
+                                
                             </Editor>
                         </SharedContent>
 
@@ -194,11 +194,13 @@ const Header = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
+
     button {
         height: 48px;
         width: 40px;
         min-width: auto;
         color: rgba(0,0,0,0.15);
+
         img {
             pointer-events: none;
         }
@@ -219,6 +221,7 @@ const UserInfo = styled.div`
     display: flex;
     align-items: center;
     padding: 12px 24px;
+
     svg,img {
         width: 48px;
         height: 48px;
@@ -227,6 +230,7 @@ const UserInfo = styled.div`
         border-radius: 50%;
         margin-right: 5px;
     }
+
     span {
         font-weight: 600;
         font-size: 16px;
@@ -252,6 +256,7 @@ const AttachAssets = styled.div`
     align-items: center;
     display: flex;
     padding-right: 8px;
+
     ${AssetButton} {
         width: 40px;
     }
@@ -261,6 +266,7 @@ const ShareComment = styled.div`
     padding-left: 8px;
     margin-right: auto;
     border-left: 1px solid rgba(0,0,0,0.15);
+
     ${AssetButton} {
         img {
             margin-right: 5px;
@@ -275,6 +281,7 @@ const PostButton = styled.button`
     padding-right: 16px;
     background: ${props => props.disabled ? 'rgba(0,0,0,0.5)' : '#0a66c2'};
     color: ${props => props.disabled ? 'rgba(1,1,1,0.2)' : '#fff'};
+
     &:hover {
         background: ${props => props.disabled ? 'rgba(0,0,0,0.08)' : '#004182'};
         cursor: ${props => props.disabled ? 'none' : 'pointer'};
@@ -284,11 +291,13 @@ const PostButton = styled.button`
 
 const Editor = styled.div`
     padding: 12px 24px;
+
     textarea {
         width: 100%;
         min-height: 100px;
         resize: none;
     }
+
     input {
         width: 100%;
         height: 35px;
@@ -299,6 +308,7 @@ const Editor = styled.div`
 
 const UploadImage = styled.div`
     text-align: center;
+
     img {
         width: 100%;
     }
