@@ -15,7 +15,7 @@ const Rightside = (props) => {
               <Avatar />
             </a>
             <div>
-              <span>#Linkedin</span>
+              <span>#Reentry</span>
               <button>Follow</button>
             </div>
           </li>
@@ -35,11 +35,9 @@ const Rightside = (props) => {
           <img src="/images/right-icon.svg" alt="" />
         </Recommendation>
       </FollowCard>
+
       <BannerCard>
-        <img
-          src="/images/MPRN-logo.png"
-          alt=""
-        />
+        <img src="/images/MPRN-logo.png" alt="" />
       </BannerCard>
     </Container>
   );
@@ -50,15 +48,15 @@ const Container = styled.div`
 `;
 
 const FollowCard = styled.div`
-  text-align: center;
-  overflow: hidden;
-  margin-bottom: 8px;
-  background-color: #fff;
-  border-radius: 5px;
-  position: relative;
-  border: none;
-  box-shadow: 0 0 0 1px rgb(0 0 0 / 15%), 0 0 0 rgb(0 0 0 / 20%);
-  padding: 12px;
+    text-align: center;
+    overflow: hidden;
+    margin-bottom: 8px;
+    background-color: #fff;
+    border-radius: 5px;
+    position: relative;
+    border: none;
+    box-shadow: 2px 3px 2px -2px rgba(110,104,104,0.75);
+    padding: 12px;
 `;
 
 const Title = styled.div`
@@ -72,12 +70,14 @@ const Title = styled.div`
 
 const FeedList = styled.ul`
   margin-top: 16px;
+
   li {
     display: flex;
     align-items: center;
-    margin: 12px 0;
+    margin: 12px;
     position: relative;
     font-size: 14px;
+
     & > div {
       display: flex;
       flex-direction: column;
@@ -86,7 +86,7 @@ const FeedList = styled.ul`
     button {
       background-color: transparent;
       color: rgba(0, 0, 0, 0.6);
-      box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.6);
+      box-shadow: 2px 3px 0px -2px rgba(110,104,104,0.75) inset;
       padding: 16px;
       align-items: center;
       border-radius: 15px;
@@ -98,6 +98,11 @@ const FeedList = styled.ul`
       max-width: 480px;
       text-align: center;
       outline: none;
+
+      &:hover {
+          background-color: rgba(0,0,0,0.08);
+          cursor: pointer;
+      }
     }
   }
 `;

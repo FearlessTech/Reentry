@@ -1,54 +1,59 @@
-import styled from "styled-components";
+import styled from 'styled-components';
+import { connect } from 'react-redux';
 
 const Leftside = (props) => {
   return (
-    <Container>
-      <ArtCard>
-        <UserInfo>
-          <CardBackground />
-          <a>
-            <Photo />
-            <Link>Welcome, there!</Link>
-          </a>
-          <a>
-            <AddPhotoText>Add a photo</AddPhotoText>
-          </a>
-        </UserInfo>
-        <Widget>
-          <a>
-            <div>
-              <span>Connections</span>
-              <span>Grow your network</span>
-            </div>
-            <img src="/images/widget-icon.svg" alt="" />
-          </a>
-        </Widget>
-        <Item>
-          <span>
-            <img src="/images/item-icon.svg" alt="" />
-            My Items
-          </span>
-        </Item>
-      </ArtCard>
+      <Container>
+          <ArtCard>
+              <UserInfo>
+                  <CardBackground />
+                  <a>
+                      <Photo />
+                      <Link>
+                          Welcome, {props.user ? props.user.displayName : "there"}!
+                      </Link>
+                  </a>
+                  <a>
+                      <AddPhotoText></AddPhotoText>
+                  </a>
+              </UserInfo>
 
-      <CommunityCard>
-        <a>
-          <span>Groups</span>
-        </a>
-        <a>
-          <span>
-            Events
-            <img src="/images/plus-icon.svg" alt="" />
-          </span>
-        </a>
-        <a>
-          <span>Follow Hashtags</span>
-        </a>
-        <a>
-          <span>Discover more</span>
-        </a>
-      </CommunityCard>
-    </Container>
+              <Widget>
+                  <a>
+                      <div>
+                          <span>Connections</span>
+                          <span>Grow your network</span>
+                      </div>
+                      <img src="/images/widget-icon.svg" alt="" />
+                  </a>
+              </Widget>
+
+              <Item>
+                  <span>
+                      <img src="/images/item-icon.svg" alt="" />
+                      My Items
+                  </span>
+              </Item>
+          </ArtCard>
+
+          <CommunityCard>
+              <a>
+                  <span>Groups</span>
+              </a>
+              <a>
+                  <span>
+                      Events
+                      <img src="/images/plus-icon.svg" alt="" />
+                  </span>
+              </a>
+              <a>
+                  <span>Follow Hashtags</span>
+              </a>
+              <a>
+                  <span>Discover more</span>
+              </a>
+          </CommunityCard>
+      </Container>
   );
 };
 
@@ -60,7 +65,7 @@ const ArtCard = styled.div`
   text-align: center;
   overflow: hidden;
   margin-bottom: 8px;
-  background-color: #fff;
+  background-color: #ffffff;
   border-radius: 5px;
   transition: box-shadow 83ms;
   position: relative;
@@ -69,18 +74,18 @@ const ArtCard = styled.div`
 `;
 
 const UserInfo = styled.div`
-  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
-  padding: 12px 12px 16px;
-  word-wrap: break-word;
-  word-break: break-word;
+    border-bottom: 1px solid rgba(0,0,0,0.15);
+    padding: 12px 12px 16px;
+    word-wrap: break-word;
+    word-break: break-word;
 `;
 
 const CardBackground = styled.div`
-  background: url("/images/card-bg.svg");
-  background-position: center;
-  background-size: 462px;
-  height: 54px;
-  margin: -12px -12px 0;
+    background: url('/images/card-bg.svg');
+    background-position: center;
+    background-size: 462px;
+    height: 54px;
+    margin: -12px -12px 0;
 `;
 
 const Photo = styled.div`
@@ -90,20 +95,20 @@ const Photo = styled.div`
   height: 72px;
   box-sizing: border-box;
   background-clip: content-box;
-  background-color: white;
+  background-color: #ffffff;
   background-position: center;
   background-size: 60%;
   background-repeat: no-repeat;
-  border: 2px solid white;
+  border: 2px solid #ffffff;
   margin: -38px auto 12px;
   border-radius: 50%;
 `;
 
 const Link = styled.div`
-  font-size: 16px;
-  line-height: 1.5;
-  color: rgba(0, 0, 0, 0.9);
-  font-weight: 600;
+    font-size: 16px;
+    line-height: 16px;
+    color: rgba(0,0,0,0.9);
+    font-weight: 600;
 `;
 
 const AddPhotoText = styled.div`
@@ -115,41 +120,44 @@ const AddPhotoText = styled.div`
 `;
 
 const Widget = styled.div`
-  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
-  padding-top: 12px;
-  padding-bottom: 12px;
+    border-bottom: 1px solid rgba(0,0,0,0.15);
+    padding-top: 12px;
+    padding-bottom: 12px;
 
-  & > a {
-    text-decoration: none;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 4px 12px;
+    & > a {
+        text-decoration: none;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 4px 12px;
 
-    &:hover {
-      background-color: rgba(0, 0, 0, 0.08);
-    }
-
-    div {
-      display: flex;
-      flex-direction: column;
-      text-align: left;
-      span {
-        font-size: 12px;
-        line-height: 1.333;
-        &:first-child {
-          color: rgba(0, 0, 0, 0.6);
+        &:hover {
+            background-color: rgba(0,0,0,0.08);
         }
-        &:nth-child(2) {
-          color: rgba(0, 0, 0, 1);
+
+        div {
+            display: flex;
+            flex-direction: column;
+            text-align: left;
+
+            span {
+              font-size: 12px;
+              line-height: 1.333;
+
+              &:first-child {
+                color: rgba(0, 0, 0, 0.6);
+            }
+
+            &:nth-child(2) {
+                color: rgba(0, 0, 0, 1);
+            }
+          }
         }
       }
-    }
-  }
 
-  svg {
-    color: rgba(0, 0, 0, 1);
-  }
+      svg {
+        color: rgba(0, 0, 0, 1);
+    }
 `;
 
 const Item = styled.a`
@@ -158,10 +166,12 @@ const Item = styled.a`
   padding: 12px;
   font-size: 12px;
   display: block;
+  
   span {
     display: flex;
     align-items: center;
     color: rgba(0, 0, 0, 1);
+
     svg {
       color: rgba(0, 0, 0, 0.6);
     }
@@ -173,14 +183,15 @@ const Item = styled.a`
 `;
 
 const CommunityCard = styled(ArtCard)`
-  padding: 8px 0 0;
-  text-align: left;
-  display: flex;
-  flex-direction: column;
-  a {
-    color: black;
-    padding: 4px 12px 4px 12px;
-    font-size: 12px;
+    padding: 8px 0 0;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+
+    a {
+      color: #000000;
+      padding: 4px 12px;
+      font-size: 12px;
 
     &:hover {
       color: #0a66c2;
@@ -205,4 +216,10 @@ const CommunityCard = styled(ArtCard)`
   }
 `;
 
-export default Leftside;
+const mapStateToProps = (state) => {
+  return {
+      user: state.userState.user,
+  };
+};
+
+export default connect(mapStateToProps)(Leftside);

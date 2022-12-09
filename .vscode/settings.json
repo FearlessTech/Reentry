@@ -1,5 +1,14 @@
 {
     "githubPullRequests.ignoredPullRequestBranches": [
         "main"
-    ]
+    ],
+    "search.exclude": {
+        "**/gen/cache/**": true
+    },
+    "files.watcherExclude": {
+        "**/.vs-debug/**": true,
+        "**/.git/**": true,
+        "**/.DS_Store": true
+    },
+    "search.useIgnoreFiles": false
 }
