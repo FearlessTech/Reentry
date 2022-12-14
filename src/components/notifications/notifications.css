@@ -1,0 +1,132 @@
+.notification {
+    display: flex;
+    height: 100vh;
+  }
+  .left {
+    width: 18%;
+    height: 180px;
+    border-radius: 10px;
+    background-color: white;
+    /* border: 1px solid red; */
+    margin: 3% 0 0 5%;
+    text-align: center;
+  }
+  
+  .leftDiv > p {
+    font-size: 100%;
+    color: gray;
+  }
+  .leftDiv > h1 {
+    font-size: 95%;
+  }
+  .blue {
+    color: rgb(3, 98, 223);
+  }
+  .gray {
+    color: gray;
+  }
+  .middle {
+    width: 44%;
+    background-color: white;
+    margin: 3% 0 0 2%;
+    border-radius: 10px;
+    /* border: 1px solid red; */
+  }
+  .middleBoxes {
+    display: flex;
+    /* height: 90px; */
+  }
+  .middleBoxes > img {
+    /* border: 1px solid red; */
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin: 3% 4%;
+  }
+  .Bbutton {
+    border: 1.4px solid rgb(3, 98, 223);
+    text-align: center;
+    padding: 2% 4%;
+    border-radius: 50px;
+    /* width: 50%; */
+  }
+  .Bbutton:hover {
+    cursor: pointer;
+    background-color: rgb(215, 233, 248);
+  }
+  .Mcontent {
+    width: 70%;
+    /* border: 1px solid red; */
+  }
+  .dots {
+    /* border: 1px solid red; */
+    width: 10%;
+  }
+  .dots > img:hover {
+    cursor: pointer;
+    border-radius: 50px;
+    background-color: rgb(211, 211, 211);
+  }
+  .dots > p {
+    color: gray;
+    font-size: 80%;
+    margin-left: 25%;
+  }
+  .dots > img {
+    width: 60%;
+  }
+  .right {
+    width: 25%;
+    /* border: 1px solid red; */
+    margin: 3% 2%;
+  }
+  .RtopDiv {
+    background-color: white;
+    /* margin-top: -5%; */
+    border-radius: 10px;
+    padding: 2% 5%;
+    text-align: center;
+  }
+  .right_img > img {
+    width: 30%;
+    padding: 3%;
+  }
+  .circle {
+    border-radius: 50%;
+  }
+  .ads {
+    display: flex;
+    margin-left: 85%;
+  }
+  #trdot {
+    margin-left: 10px;
+  }
+  .ads > p {
+    font-size: 90%;
+    margin-top: 1%;
+    font-size: 80%;
+    color: gray;
+    /* border: 1px solid red; */
+  }
+  
+  @media (max-width: 623px) {
+    .notification {
+      display: block;
+    }
+    .left {
+      display: none;
+    }
+    .middle {
+      width: 95%;
+      margin: auto;
+    }
+    .right {
+      width: 95%;
+      margin: auto;
+    }
+    .right_img > img {
+      width: 14%;
+      /* border: 1px solid red; */
+    }
+  }
+  

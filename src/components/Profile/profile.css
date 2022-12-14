@@ -1,0 +1,373 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap");
+
+.main_profile {
+  width: 95%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+}
+.profile_bar {
+  width: 95%;
+  display: flex;
+  flex-direction: column;
+  margin-left: 10rem;
+  margin-right: -3rem;
+  flex: 0.25;
+}
+
+.profile_up {
+  border: 1px solid #ccc;
+  text-align: left;
+  background-color: #ffffff;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  width: 800px;
+  margin: 0rem 5rem;
+  margin-top: 4rem;
+}
+
+.coverimg {
+  height: 200px;
+}
+.profile_up .MuiAvatar-circular {
+  width: 150px;
+  height: 150px;
+  margin-left: 20px;
+  object-fit: contain;
+  border: 4px solid white;
+  margin-top: -80px;
+}
+
+.profile_up h2 {
+  font-size: 1.5rem;
+  margin-left: 20px;
+}
+
+.profile_up p {
+  font-size: 1rem;
+  margin-left: 20px;
+  margin-top: -25px;
+}
+
+.followers {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.followers p {
+  color: #0a66c2;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.follow_button {
+  display: flex;
+  justify-content: left;
+  margin-top: -10px;
+  margin-left: 20px;
+  padding: 10px;
+}
+
+.button {
+  background-color: #0a66c2;
+  color: white;
+  width: 13%;
+  height: 40px;
+  border-radius: 30px;
+  font-size: 1rem;
+  font-weight: 600;
+  text-align: center;
+  margin-right: 10px;
+  border: none;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: rgba(14, 29, 99, 0.973);
+  color: white;
+}
+
+.Add_profile_btn {
+  width: 25%;
+  color: #0a66c2;
+  border-radius: 30px;
+  background-color: #ffffff;
+  margin-top: 0px;
+  font-size: 1rem;
+  font-weight: 600;
+  text-align: center;
+  margin-right: 15px;
+  border: 1px solid #0a66c2;
+  cursor: pointer;
+}
+
+.button1:hover {
+  background-color: #0a66c234;
+  color: #0a66c2;
+}
+
+.button2 {
+  color: rgb(109, 105, 105);
+  border-radius: 30px;
+  height: 40px;
+  text-align: center;
+  width: 10%;
+  background-color: #ffffff;
+  font-size: 1rem;
+  font-weight: 600;
+  border: 1px solid rgb(105, 102, 102);
+  cursor: pointer;
+}
+
+.button2:hover {
+  background-color: #595a5c34;
+}
+
+.profile_down {
+  text-align: left;
+  background-color: #ffffff;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  width: 800px;
+  margin: 0rem 5rem;
+  margin-top: 1.5rem;
+  border: 1px solid #ccc;
+}
+
+.profile_down_content_left {
+  display: flex;
+  flex-direction: column;
+  margin-left: 20px;
+  max-width: 140px;
+}
+
+.profile_down_content_left > p {
+  font-size: 1rem;
+  padding-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.profile_down_content_left > h3 {
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.profile_down_views {
+  display: flex;
+  margin-top: -5px;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-left: 20px;
+}
+
+.profile_down_views h4 {
+  display: flex;
+}
+
+.profile_down_views p {
+  display: flex;
+  margin-left: 10px;
+  margin-top: -10px;
+  font-size: 0.9rem;
+}
+
+.see_all {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  margin-top: 10px;
+  color: rgb(59, 59, 59);
+  padding: 10px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  background-color: white;
+  border: none;
+}
+
+.see_all:hover {
+  background-color: #cecece;
+  transition: 1s;
+}
+
+.popup_view {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+}
+
+.popup_view > #input {
+  display: flex;
+  flex: 0.25;
+  justify-content: right;
+  margin-left: 20px;
+  max-width: auto;
+  margin-left: 46rem;
+  margin-right: 10px;
+  margin-top: -40px;
+  padding: 10px;
+}
+
+.popup_view > h3 {
+  display: flex;
+  margin-left: 10px;
+}
+
+.popup_view p {
+  display: flex;
+  margin-left: 10px;
+  font-size: 1rem;
+}
+
+.profile_add {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 15px;
+}
+
+.profile_add > button {
+  padding: 0;
+  height: 50px;
+  width: 50px;
+  background-color: #ffffff;
+  border: 0em;
+  cursor: pointer;
+}
+
+.profile_down_views2 {
+  display: flex;
+  width: 100%;
+  margin-left: 20px;
+  align-items: center;
+}
+
+.profile_down_views2 > div {
+  display: flex;
+  margin-left: 10px;
+  margin-top: 10px;
+  flex-direction: column;
+}
+
+.profile_down_views2 > div > h3 {
+  font-size: 1rem;
+}
+
+.profile_down_views2 > div > p {
+  font-size: 0.9rem;
+  margin-top: -10px;
+}
+
+.profile_down_views2 > img {
+  width: 50px;
+  height: 50px;
+  margin-left: 10px;
+  margin-top: -10px;
+}
+
+.profile_down_views2 > div > p {
+  font-size: 0.9rem;
+  color: grey;
+  font-weight: 500;
+}
+
+.footer_bar {
+  margin-left: 50px;
+  display: flex;
+  margin-top: 50px;
+  width: auto;
+  height: 400px;
+  border-radius: 0.5rem;
+}
+
+.footer_bar_left {
+  display: flex;
+  flex-direction: column;
+  margin-left: 70px;
+  max-width: 130px;
+  margin-top: -10px;
+}
+
+.footer_bar_left > img {
+  width: 80px;
+  height: 60px;
+  margin-top: 30px;
+}
+
+.footer_bar_left > p {
+  font-size: 0.8rem;
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.one {
+  display: flex;
+  flex-direction: column;
+  margin-top: 5rem;
+}
+
+.two {
+  display: flex;
+  flex-direction: column;
+  margin-top: 5rem;
+}
+
+.two > span {
+  font-size: 0.7rem;
+  margin-top: -10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer_bar_left > p:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.two > label {
+  font-size: 0.7rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+#lang_select {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+  margin-left: 10px;
+}
+
+@media screen and (max-width: 600px) {
+  .main_profile {
+    flex-direction: column;
+    width: 90%;
+  }
+
+  .profile_bar {
+    display: flex;
+    flex-direction: column;
+  }
+  .profile_up {
+    margin-left: -10rem;
+  }
+  .profile_down {
+    margin-left: -10rem;
+  }
+
+  .profile_down_views2 > img {
+    width: 100px;
+    height: 100px;
+    margin-left: 10px;
+    margin-top: 10px;
+  }
+  .profile_down_views2 > div > h3 {
+    font-size: 1.5rem;
+    max-width: 500px;
+  }
+  .profile_down_views2 > div > p {
+    font-size: 1.2rem;
+    max-width: 500px;
+  }
+}
