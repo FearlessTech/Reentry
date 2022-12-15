@@ -5,31 +5,31 @@ import MoreHorizOutlinedIcon from "@material-ui/icons/MoreHorizOutlined";
 import ThumbUpAltOutlinedIcon from "@material-ui/icons/ThumbUpAltOutlined";
 import ThumbUpAltIcon from "@material-ui/icons/ThumbUpAlt";
 import ReplyOutlinedIcon from "@material-ui/icons/ReplyOutlined";
-import FiberManualRecordRoundedIcon from "@material-ui/icons/FiberManualRecordRounded";
 import SendIcon from "@material-ui/icons/Send";
 import CommentOutlinedIcon from "@material-ui/icons/CommentOutlined";
 import Style from "./Style";
 import ReactTimeago from "react-timeago";
 import { db } from "../../../firebase";
 import ReactPlayer from "react-player";
+import { FiThumbsUp } from "react-icons/fi";
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+
 
 export function EnterPost() {
   const classes = Style();
   const [active, setactive] = useState("");
   const [liked, setLiked] = useState(false);
+
   const [enterposts, setenterPosts] = useState([]);
   const [likesCount, setLikesCount] = useState(1);
   const [commentsCount, setCommentsCount] = useState(1);
-  const [heartIcontOrder, setHeartIcontOrder] = useState(1);
-  const [smileIconOrder, setSmileIconOrder] = useState(1);
-  const [thumsUpIconOrder, setThumsUpIconOrder] = useState(1);
+  // const [thumsUpIconOrder, setThumsUpIconOrder] = useState(1);
 
   useEffect(() => {
     setLikesCount(Math.floor(Math.random() * 1000) + 1);
     setCommentsCount(Math.floor(Math.random() * 10) + 1);
-    setHeartIcontOrder(Math.floor(Math.random() * (3 - 1 + 1)) + 1);
-    setSmileIconOrder(Math.floor(Math.random() * (3 - 1 + 1)) + 1);
-    setThumsUpIconOrder(Math.floor(Math.random() * (3 - 1 + 1)) + 1);
+    // setThumsUpIconOrder(Math.floor(Math.random() * (3 - 1 + 1)) + 1);
     db.collection("enterpost")
       .orderBy("timestamp", "desc")
       .onSnapshot((snapshot) => {
@@ -40,28 +40,17 @@ export function EnterPost() {
   const Reactions = ({ i }) => {
     return (
       <div className={classes.footer__stats}>
-        <div>
-          <img
-            src="https://static-exp1.licdn.com/sc/h/d310t2g24pvdy4pt1jkedo4yb"
-            alt="linked-in-reaction-1"
-            style={{ order: `${heartIcontOrder} ` }}
-          />
-          <img
-            src="https://static-exp1.licdn.com/sc/h/7fx9nkd7mx8avdpqm5hqcbi97"
-            alt="linked-in-reaction-2"
-            style={{ order: `${smileIconOrder} ` }}
-          />
-          <img
-            src="https://static-exp1.licdn.com/sc/h/5thsbmikm6a8uov24ygwd914f"
-            alt="linked-in-reaction-3"
-            style={{ order: `${thumsUpIconOrder} ` }}
-          />
-        </div>
-        <h4>{likesCount + Math.floor(Math.random() * 10) * i}</h4>
-        <FiberManualRecordRoundedIcon
-          style={{ fontSize: 8, color: "grey", paddingLeft: "3px" }}
-        />
-        <h4>{commentsCount + Math.floor(Math.random() * 100) + i} comments</h4>
+          <Row >
+            <Col>
+            {/* style={{ order: `${thumsUpIconOrder} ` }} */}
+              <FiThumbsUp/>
+              <p>{likesCount + Math.floor(Math.random() * 10) * i}</p>
+            </Col>
+            <Col>
+              <p>{commentsCount + Math.floor(Math.random() * 100) + i} comments</p>
+            </Col>
+          </Row>
+        
       </div>
     );
   };
@@ -95,7 +84,7 @@ export function EnterPost() {
                       style={{ height: "auto !important" }}
                     />
                   ) : (
-                    <img src={user.message} style={{ width: "100%" }} />
+                    <img src={user.message} style={{ width: "100%" }} alt=""/>
                   )
                 ) : (
                   <p style={{ margin: 0 }}>{user.message}</p>

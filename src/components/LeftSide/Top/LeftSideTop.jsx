@@ -35,9 +35,9 @@ export const LeftSideTop = () => {
         }}
       ></div>
       <Avatar src={user.photoURL} onClick={direct} />
-      <h4 onClick={direct} className={classes.direct}>
+      <h6 onClick={direct} className={classes.direct}>
         {user.displayName}
-      </h4>
+      </h6>
       <div className={classes.stats}>
         <Divider />
         <div className={classes.stat}>
@@ -55,7 +55,7 @@ export const LeftSideTop = () => {
           style={{ transform: groups ? "rotate(-90deg)" : "" }}
           onClick={() => setGroups(!groups)}
         />
-        <h4>My Items</h4>
+        <h6>My Items</h6>
       </div>
     </Paper>
   );

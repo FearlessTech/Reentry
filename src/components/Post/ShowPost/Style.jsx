@@ -90,20 +90,19 @@ export default makeStyles((theme) => ({
     width: "100%",
     display: "flex",
     flexDirection: "column",
-    justifyContent: "center",
     padding: 10,
     paddingBottom: 0,
   },
   footer__stats: {
     display: "flex",
-    alignItems: "center",
-    paddingBottom: 10,
+    justifyContent: 'flex-end',
     borderBottom: `1px solid ${
       theme.palette.type === "dark" ? "#5c5c5c" : "lightgrey"
     }`,
 
-    "& > div": {
+    "& > Col": {
       display: "flex",
+      width: 'fit-content',
 
       "& > .MuiSvgIcon-root": {
         fontSize: 16,
