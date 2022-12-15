@@ -49,6 +49,8 @@ I am a Tech student / Jr Full Stack Developer. I'm hoping to find some willing d
 * Make a pull request from the changes on your new branch. 
 
 
-
+#### Styling and layout
+Trying to convert layouts with React-Bootstrap   
+Trying to convery Icons to React Icon Library
 
 

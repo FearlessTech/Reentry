@@ -6,7 +6,7 @@ import Home from "./components/Home/Home";
 import { Resource } from "./components/Resource/Resource";
 import { Login } from "./components/Login/Login";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Navbar } from "./components/Navbar/Navbar";
+import { Navbarr } from "./components/Navbar/Nav";
 import { Network } from "./components/Network/Network";
 import { Notifications } from "./components/notifications/notifications";
 import { Profile } from "./components/Profile/Profile";
@@ -54,7 +54,7 @@ function App() {
       ) : (
         <div className="App">
           {(document.title = `${user.displayName}  | MaineRR`)}
-          <Navbar />
+          <Navbarr />
           <br />
           <Routes>
             <Route   path="/" element={<Home />}></Route>
