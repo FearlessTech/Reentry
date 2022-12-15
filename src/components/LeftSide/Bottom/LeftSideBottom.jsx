@@ -89,18 +89,6 @@ export const LeftSideBottom = () => {
   );
 };
 
-const sectionRecent = ["markets", "india", "socialmedia", "mern-stack"];
-const sectionGroups = [
-  "React Training",
-  "Full Stack Developer",
-  "JavaScript Developer Community",
-  "MongoDB ExpressJS",
-];
-const sectionHashTags = [
-  "greentech",
-  "careers",
-  "entrepreneurship",
-  "jobinterviews",
-  "technology",
-  "innovation",
-];
+const sectionRecent = [];
+const sectionGroups = [];
+const sectionHashTags = [];

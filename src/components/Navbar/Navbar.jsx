@@ -39,7 +39,7 @@ export const Navbar = () => {
             <div>
               <Link to="/">
                 <a id="one" onClick={changeStyle}>
-                  <img src="../images/nav-home.svg" />
+                  <img src="/images/nav-home.svg" alt=""/>
                   <span>Home</span>
                 </a>
               </Link>
@@ -48,42 +48,37 @@ export const Navbar = () => {
             <div>
               <Link to="/network">
                 <a id="two">
-                  <img src="/images/nav-network.svg" />
+                  <img src="/images/nav-network.svg" alt=""/>
                   <span>My Network</span>
                 </a>
               </Link>
             </div>
 
             <div>
-              <Link to="/jobs">
+              <Link to="/resource">
                 <a id="three">
-                  <img src="/images/nav-jobs.svg" />
-                  <span>Jobs</span>
+                  <img src="/images/nav-jobs.svg" alt=""/>
+                  <span>Resources</span>
                 </a>
               </Link>
             </div>
             <div>
               <a id="four">
-                <img src="/images/nav-messaging.svg" />
+                <img src="/images/nav-messaging.svg" alt="" />
                 <span>Messaging</span>
               </a>
             </div>
             <div>
               <Link to="/notifications">
                 <a id="five">
-                  <img src="/images/nav-notifications.svg" />
+                  <img src="/images/nav-notifications.svg" alt=""/>
                   <span>Notifications</span>
                 </a>
               </Link>
             </div>
             <div>
-              <a
-                id="six"
-                onClick={(e) => {
-                  firebase.auth().signOut();
-                }}
-              >
-                <img src={user.photoURL} />
+              <a id="six" onClick={(e) => { firebase.auth().signOut();}}>
+                <img src={user.photoURL} alt=""/>
                 <span>
                   Me
                   <FaCaretDown size="17px" />{" "}
@@ -103,7 +98,7 @@ export const Navbar = () => {
               <FaEllipsisH size="17px" color="grey" />
             </a>
             <div id="nine">
-              <a>Network Smarter,Try Premium Free</a>
+              <a>Network Smarter, Send a Message.</a>
             </div>
           </div>
         </div>

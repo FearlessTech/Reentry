@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import { useState } from "react";
 import "./RightNetwork.css";
 import { VscLink } from "react-icons/vsc";
@@ -7,15 +8,13 @@ export const RightNetwork = () => {
   return (
     <div className="righton">
       <div id="invitations">
-        <div> Invitations</div>
-
-        <div id="seeall"> See all 4</div>
+        <h5> Invitations</h5>
       </div>
 
       <div className="followreq">
         <div className="followpics">
           <img
-            src="https://media-exp1.licdn.com/dms/image/C5603AQEiYYX-9JkHGQ/profile-displayphoto-shrink_400_400/0/1623167655526?e=1651104000&v=beta&t=jAjHYhHRBnWet6NAfzFDk5rORahZ-fC62Aq_c91oUtY"
+            src="/images/user.svg"
             alt=""
           />
 
@@ -28,17 +27,15 @@ export const RightNetwork = () => {
             </a>
           </div>
 
-          <div className="ignore">
-            <button>Ignore</button>
-          </div>
-          <div className="acceptbtn">
-            <button>Accept</button>
+          <div className="">
+            <button className="ignore">Ignore</button>
+            <button className="accept">Accept</button>
           </div>
         </div>
 
         <div className="followpics">
           <img
-            src="https://media-exp1.licdn.com/dms/image/C4E03AQHQfjr-etiYlQ/profile-displayphoto-shrink_100_100/0/1628232322363?e=1651104000&v=beta&t=uDnmCp4F4lNo-EC0BLQmg4BbxrYTk4-jN6rBk96ivAg"
+            src="/images/user.svg"
             alt=""
           />
 
@@ -61,7 +58,7 @@ export const RightNetwork = () => {
 
         <div className="followpics">
           <img
-            src="https://media-exp1.licdn.com/dms/image/C5103AQGBIueSWAkHkw/profile-displayphoto-shrink_400_400/0/1564266187183?e=1651104000&v=beta&t=igM9N-8sqZnF9UWDRo6nTrERZ4i4kwQZ9zIGhVpB7GY"
+            src="/images/user.svg"
             alt=""
           />
 
@@ -86,7 +83,7 @@ export const RightNetwork = () => {
           <>
             <div className="followpics">
               <img
-                src="https://media-exp1.licdn.com/dms/image/D4D35AQERUorcmMYgyA/profile-framedphoto-shrink_100_100/0/1645642280009?e=1645952400&v=beta&t=pHIIKTC918A8wtytVjx5a1iaXGnbedpKSoRMvhfIpFI"
+                src="/images/user.svg"
                 alt=""
               />
 

@@ -1,9 +1,5 @@
 .LeftBox {
-    width: 19.4%;
-    position: fixed;
-    background-color: white;
-    left: 13.4%;
-  
+    background-color: #cdcdcd;
     border-radius: 8px;
   }
   

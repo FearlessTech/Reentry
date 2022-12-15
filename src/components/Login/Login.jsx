@@ -125,7 +125,7 @@ export const Login = (props) => {
     <>
       <div className="loginScreen">
         <img
-          src="https://1000logos.net/wp-content/uploads/2017/03/Linkedin-Logo.png"
+          src="/images/MaineRRLogo.png"
           alt="true"
         />
 
@@ -157,12 +157,12 @@ export const Login = (props) => {
             />
             <p className="policy">
               By clicking Agree & Join, you agree to the{" "}
-              <span>LinkedIn User Agreement, Privacy Policy,</span> and
+              <span>User Agreement, Privacy Policy,</span> and
               <span> Cookie Policy.</span>
             </p>
             <button className="submitButton">Agree & Join </button>
             <h4>
-              Already on Linkedin ?{" "}
+              Already on Maine Reentry ?{" "}
               <span onClick={(e) => setSignup(false)}>Sign in</span>
             </h4>
           </form>
@@ -170,7 +170,7 @@ export const Login = (props) => {
           <>
             <form className="loginForm" onSubmit={signIn}>
               <h1>Sign in</h1>
-              <p>Stay updated on your professional world</p>
+              <p>Stay updated on your resources</p>
 
               <input
                 type="email"
@@ -187,7 +187,7 @@ export const Login = (props) => {
 
               <button className="submitButton">Sign in</button>
               <h4>
-                New to Linkedin ?{" "}
+                New to Maine Reentry ?{" "}
                 <span onClick={(e) => setSignup(true)}>Join Now</span>
               </h4>
             </form>

@@ -34,10 +34,7 @@ export const Profile = () => {
       <div className="main_profile">
         <div className="profile_bar">
           <div className="profile_up">
-            <img
-              className="coverimg"
-              src="https://media-exp1.licdn.com/dms/image/C4D16AQGRDWRtMa4Jhw/profile-displaybackgroundimage-shrink_350_1400/0/1632888002264?e=1651104000&v=beta&t=DSe4CUIPTyaKzJGqqayEnY0fy-N-Tcwc5FAyNxrNWF4"
-            />
+            <img className="coverimg" src="" alt=""/>
             <Avatar src={user.photoURL} />
             <h2>{user.displayName}</h2>
             <p>Software Engineer</p>

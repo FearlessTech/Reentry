@@ -1,6 +1,6 @@
 import React from "react";
 import "./notifications.css";
-import "../jobs/job.css";
+import "../Resource/resource.css";
 import MoreHorizIcon from "@material-ui/icons/MoreHoriz";
 export const Notifications = () => {
   return (

@@ -3,9 +3,9 @@ import { useDispatch, useSelector } from "react-redux";
 import { Route, Routes } from "react-router-dom";
 import styled from "styled-components";
 import Home from "./components/Home/Home";
-import { Job } from "./components/jobs/Job";
+import { Resource } from "./components/Resource/Resource";
 import { Login } from "./components/Login/Login";
-
+import 'bootstrap/dist/css/bootstrap.min.css';
 import { Navbar } from "./components/Navbar/Navbar";
 import { Network } from "./components/Network/Network";
 import { Notifications } from "./components/notifications/notifications";
@@ -16,6 +16,9 @@ import {
   logoutUser,
 } from "./components/Redux/userSlice";
 import { auth } from "./firebase";
+
+
+
 function App() {
   const user = useSelector(selectUser);
 
@@ -35,19 +38,14 @@ function App() {
         );
       } else {
         //not logged in
-        {
-          document.title = `LinkedIn`;
-        }
+        { document.title = `MaineRR`; }
         dispatch(logoutUser());
       }
     });
   }, []);
   return (
     
-    
     <>
-    
-    
     
       {!user ? (
         <>
@@ -55,12 +53,12 @@ function App() {
         </>
       ) : (
         <div className="App">
-          {(document.title = `${user.displayName}  | LinkedIn`)}
+          {(document.title = `${user.displayName}  | MaineRR`)}
           <Navbar />
           <br />
           <Routes>
             <Route   path="/" element={<Home />}></Route>
-            <Route   path="/jobs" element={<Job />}></Route>
+            <Route   path="/resource" element={<Resource />}></Route>
             <Route   path="/notifications" element={<Notifications />}></Route>
             <Route path="/network" element={<Network />}></Route>
             <Route path="/profile" element={<Profile />}></Route>

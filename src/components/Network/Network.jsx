@@ -1,17 +1,22 @@
 import { LeftNetwork } from "./LeftNetwork";
-import "./Network.css";
 import { RightNetwork } from "./RightNetwork";
 import { RightBottom } from "./RightBottom";
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 
 export const Network = () => {
   return (
-    <div className="network" style={{ marginTop: "40px" }}>
-      <div className="networkone">
-        <LeftNetwork />
-        <RightNetwork />
-      </div>
-
-      <RightBottom />
-    </div>
+      <Container style={{ marginTop : '100px' }} >
+        <Row>
+          <Col sm={3}>
+            <LeftNetwork />
+          </Col>
+          <Col sm={9}>
+            <RightNetwork />
+            <RightBottom />
+          </Col>
+        </Row>
+      </Container>
   );
 };

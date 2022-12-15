@@ -1,212 +1,208 @@
-#linkedinlogoimg {
-    margin-right: 10px;
-    margin-top: 7px;
-    width: 35px;
-  }
-  .logoimg {
-    width: 100px;
-  }
-  .container {
-    background-color: white;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
-    margin-bottom: 20px;
-    width: 100vw;
-    top: 0;
-    left: 0;
-    position: fixed;
-    z-index: 100;
-    height: 50px;
-  }
+.logoimg {
+  margin-right: 10px;
+  margin-top: 7px;
+  width: 150px;
+}
+.container {
+  background-color: white;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  margin-bottom: 20px;
+  width: 100vw;
+  top: 0;
+  left: 0;
+  position: fixed;
+  z-index: 100;
+  height: 50px;
+}
+.content {
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+  min-height: 100%;
+  max-width: 1128px;
+}
+
+.search {
+  flex-grow: 1;
+  position: relative;
+}
+
+.search > div {
+  max-width: 280px;
+}
+.search input {
+  border: none;
+  box-shadow: none;
+  background-color: #eef3f8;
+
+  color: rgba(0, 0, 0, 0.9);
+  width: 218px;
+  padding: 0 8px 0 40px;
+  line-height: 1.75;
+  font-weight: 400;
+  font-size: 14px;
+  height: 34px;
+  border-color: #dce6f1;
+  vertical-align: text-top;
+  border-radius: 5px;
+}
+
+#searchicon {
+  width: 40px;
+  position: absolute;
+  z-index: 1;
+  top: 10px;
+  left: 2px;
+  border-radius: 0 2px 2px 0;
+  margin: 0;
+  pointer-events: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.list {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  margin-left: auto;
+}
+
+.list a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+a > img {
+  width: 25px;
+}
+
+a > span {
+  font-size: 12px;
+  color: grey;
+}
+a > span:hover {
+  color: black;
+}
+#one {
+  position: fixed;
+  left: 560px;
+  bottom: 93.5%;
+}
+#two {
+  position: fixed;
+  left: 620px;
+  bottom: 93.5%;
+}
+#three {
+  position: fixed;
+  left: 710px;
+  bottom: 93.5%;
+}
+#four {
+  position: fixed;
+  left: 770px;
+  bottom: 93.5%;
+}
+#five {
+  position: fixed;
+  left: 860px;
+  bottom: 93.5%;
+}
+
+#six {
+  position: fixed;
+  left: 960px;
+  bottom: 93.5%;
+}
+#six > img {
+  border-radius: 50%;
+  width: 20px;
+}
+
+.list a:active {
+  border-bottom: 2px solid black;
+}
+
+#seven {
+  position: fixed;
+  left: 1050px;
+  bottom: 93.5%;
+}
+#nine {
+  width: 150px;
+
+  position: fixed;
+  left: 1120px;
+  bottom: 93.5%;
+}
+#nine > a {
+  font-size: 12px;
+  color: #966119;
+}
+
+@media (max-width: 768px) {
   .content {
-    display: flex;
-    align-items: center;
-    margin: 0 auto;
-    min-height: 100%;
-    max-width: 1128px;
-  }
-  
-  .search {
-    flex-grow: 1;
-    position: relative;
-  }
-  
-  .search > div {
-    max-width: 280px;
+    margin-left: 20px;
   }
   .search input {
-    border: none;
-    box-shadow: none;
-    background-color: #eef3f8;
-  
-    color: rgba(0, 0, 0, 0.9);
-    width: 218px;
-    padding: 0 8px 0 40px;
-    line-height: 1.75;
-    font-weight: 400;
-    font-size: 14px;
-    height: 34px;
-    border-color: #dce6f1;
-    vertical-align: text-top;
-    border-radius: 5px;
+    display: none;
   }
-  
   #searchicon {
+    position: fixed;
+    left: 60px;
+    top: 17px;
     width: 40px;
-    position: absolute;
-    z-index: 1;
-    top: 10px;
-    left: 2px;
-    border-radius: 0 2px 2px 0;
-    margin: 0;
-    pointer-events: none;
-    display: flex;
-    justify-content: center;
-    align-items: center;
   }
-  
   .list {
-    display: flex;
-    flex-wrap: nowrap;
-    flex-direction: row;
-    margin-left: auto;
-  }
-  
-  .list a {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  a > img {
-    width: 25px;
-  }
-  
-  a > span {
-    font-size: 12px;
-    color: grey;
-  }
-  a > span:hover {
-    color: black;
+    position: fixed;
+
+    top: 5px;
+    background: white;
+    width: 100%;
   }
   #one {
     position: fixed;
-    left: 560px;
-    bottom: 93.5%;
+    left: 120px;
+    bottom: 94.5%;
+  }
+  a > span {
+    display: none;
   }
   #two {
     position: fixed;
-    left: 620px;
-    bottom: 93.5%;
+    left: 170px;
+    bottom: 94.5%;
   }
   #three {
     position: fixed;
-    left: 710px;
-    bottom: 93.5%;
+    left: 220px;
+    bottom: 94.5%;
   }
   #four {
     position: fixed;
-    left: 770px;
-    bottom: 93.5%;
+    left: 275px;
+    bottom: 94.5%;
   }
   #five {
     position: fixed;
-    left: 860px;
-    bottom: 93.5%;
+    left: 330px;
+    bottom: 94.5%;
   }
-  
-  #six {
+
+  /* #six,#seven{
+        display: none;
+      } */
+
+  #eight {
     position: fixed;
-    left: 960px;
-    bottom: 93.5%;
+    left: 420px;
+    bottom: 94.5%;
   }
-  #six > img {
-    border-radius: 50%;
-    width: 20px;
+}
+@media (min-width: 769px) {
+  #eight {
+    display: none;
   }
-  
-  .list a:active {
-    border-bottom: 2px solid black;
-  }
-  
-  #seven {
-    position: fixed;
-    left: 1050px;
-    bottom: 93.5%;
-  }
-  #nine {
-    width: 150px;
-  
-    position: fixed;
-    left: 1120px;
-    bottom: 93.5%;
-  }
-  #nine > a {
-    font-size: 12px;
-    color: #966119;
-  }
-  
-  @media (max-width: 768px) {
-    .content {
-      margin-left: 20px;
-    }
-    .search input {
-      display: none;
-    }
-    #searchicon {
-      position: fixed;
-      left: 60px;
-      top: 17px;
-      width: 40px;
-    }
-    .list {
-      position: fixed;
-  
-      top: 5px;
-      background: white;
-      width: 100%;
-    }
-    #one {
-      position: fixed;
-      left: 120px;
-      bottom: 94.5%;
-    }
-    a > span {
-      display: none;
-    }
-    #two {
-      position: fixed;
-      left: 170px;
-      bottom: 94.5%;
-    }
-    #three {
-      position: fixed;
-      left: 220px;
-      bottom: 94.5%;
-    }
-    #four {
-      position: fixed;
-      left: 275px;
-      bottom: 94.5%;
-    }
-    #five {
-      position: fixed;
-      left: 330px;
-      bottom: 94.5%;
-    }
-  
-    /* #six,#seven{
-          display: none;
-        } */
-  
-    #eight {
-      position: fixed;
-      left: 420px;
-      bottom: 94.5%;
-    }
-  }
-  @media (min-width: 769px) {
-    #eight {
-      display: none;
-    }
-  }
-  
+}
