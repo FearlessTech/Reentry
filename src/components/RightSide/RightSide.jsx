@@ -20,7 +20,7 @@ export const RightSide = () => {
     <div className={classes.widgets}>
       <Paper className={classes.widgets__top}>
         <div className={classes.heading}>
-          <h4>LinkedIn News</h4>
+          <h4>Reentry News</h4>
           <ErrorOutlineSharpIcon />
         </div>
         {top_1.map((title, i) => (
@@ -69,7 +69,7 @@ export const RightSide = () => {
       </Paper>
       <div className={classes.widgets__bottom}>
         <Paper className={classes.addBanner}>
-          <img src="https://firebasestorage.googleapis.com/v0/b/linkedin-clone-3e412.appspot.com/o/job.png?alt=media&token=98fcfa8d-6795-4f57-8f36-13dcfd5cf1a2" />
+          <img src="/images/Reentry.jpg" alt=""/>
         </Paper>
       </div>
     </div>
@@ -77,17 +77,16 @@ export const RightSide = () => {
 };
 
 const top_1 = [
-  "Should we return to office?",
-  "Where Indian millionaires live",
-  "Startups set to give massive hikes",
-  "What it means to be an ‘alpha male’",
-  "How startups are retaining talent",
-  "Boom period over for tech IPOs?",
+  "Difficulties in finding and securing housing?",
+  "4 Elements of Successful Reentry Programs for Inmates",
+  "Formerly incarcerated face barriers to successfully re-entering society",
+  "Factors that have the most significant impact on reentry success",
+  "Reentry programs are designed to assist incarcerated individuals with a successful transition to their community after they are released",
 ];
 
 const top_2 = [
-  "What Gen Z wants",
-  "Don't wear this to work",
-  "Desi social apps take on biggies",
-  "Consulting firms up C-level hiring",
+  "The problem of prisoner (re) entry ",
+  "Is criminal justice education ready for reentry?",
+  "Research about Recidivism and Reentry",
+  "A scheme to invest in released prisoners—literally",
 ];
