@@ -37,21 +37,7 @@ I am a Tech student / Jr Full Stack Developer. I'm hoping to find some willing d
    * Click on sign in with google and enjoys exploring!
 
 # To Contribute to this Site Build:
-[Please see Contribution Guideline]()
-* In the upper right corner:
-   * click the Star button.
-   * Click the Fork button and save the fork to your repos.
-* Open the repo in your editor of choice (This site will work on CodeSpaces and GitPod.io).
-* Before you make any changes, please create and switch to a new branch off of main.
-* Click on terminal, then new terminal
-   * In the terminal type `<npm install>` to install dependences
-   * Once that has finished, type `<npm start>`
-* After you've finished making changes, commit your changes to Github.
-* Make a pull request from the changes on your new branch. 
+[Please see Contribution Guideline](https://github.com/4-Leafs-Code/Reentry/blob/main/contributing.md) 
 
-
-#### Styling and layout
-Trying to convert layouts with React-Bootstrap   
-Trying to convery Icons to React Icon Library
 
 
