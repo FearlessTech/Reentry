@@ -1,72 +1,46 @@
-import { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { Route, Routes } from "react-router-dom";
-import styled from "styled-components";
-import Home from "./components/Home/Home";
+import { connect } from 'react-redux';
+import { useEffect } from 'react';
+import { BrowserRouter as Router, Switch, Route} from 'react-router-dom';
+import './App.css';import Login from './components/Login';
+import Home from './components/Home';
+import Navbar from './components/Navbar';
+import { getUserAuth } from './actions';
+
 import { Resource } from "./components/Resource/Resource";
-import { Login } from "./components/Login/Login";
-import 'bootstrap/dist/css/bootstrap.min.css';
-import { Navbarr } from "./components/Navbar/Nav";
 import { Network } from "./components/Network/Network";
 import { Notifications } from "./components/notifications/notifications";
 import { Profile } from "./components/Profile/Profile";
-import {
-  selectUser,
-  loginUser,
-  logoutUser,
-} from "./components/Redux/userSlice";
-import { auth } from "./firebase";
 
 
 
-function App() {
-  const user = useSelector(selectUser);
 
-  const dispatch = useDispatch();
-
+function App(props) {
   useEffect(() => {
-    auth.onAuthStateChanged((userAuth) => {
-      if (userAuth) {
-        //already logged in
-        dispatch(
-          loginUser({
-            email: userAuth.email,
-            uid: userAuth.uid,
-            displayName: userAuth.displayName,
-            photoURL: userAuth.photoURL,
-          })
-        );
-      } else {
-        //not logged in
-        { document.title = `MaineRR`; }
-        dispatch(logoutUser());
-      }
-    });
+    props.getUserAuth();
   }, []);
-  return (
-    
-    <>
-    
-      {!user ? (
-        <>
-          <Login />
-        </>
-      ) : (
-        <div className="App">
-          {(document.title = `${user.displayName}  | MaineRR`)}
-          <Navbarr />
-          <br />
-          <Routes>
-            <Route   path="/" element={<Home />}></Route>
-            <Route   path="/resource" element={<Resource />}></Route>
-            <Route   path="/notifications" element={<Notifications />}></Route>
-            <Route path="/network" element={<Network />}></Route>
-            <Route path="/profile" element={<Profile />}></Route>
-          </Routes>
-        </div>
-      )}
-    </>
-  );
-}
-
-export default App;
+  
+    return (
+      <div className="App">
+        <Router>
+          <Switch>
+            <Route exact path="/"><Login /></Route>
+            <Route path="/home"><Navbar /><Home /></Route>
+            <Route path="/resource"><Resource /></Route>
+            <Route path="/notifications"><Notifications /></Route>
+            <Route path="/network"><Network /></Route>
+            <Route path="/profile"><Profile /></Route>
+          </Switch>
+        </Router>
+      </div>
+    );
+  }
+  
+  const mapStateToProps = (state) => {
+    return {};
+  };
+  
+  const mapDispatchToProps = (dispatch) => ({
+    getUserAuth: () => dispatch(getUserAuth()),
+  });
+  
+  export default connect(mapStateToProps, mapDispatchToProps)(App);
