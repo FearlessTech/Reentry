@@ -11,9 +11,9 @@ const Home = (props) => {
             {!props.user && <Redirect to = '/' />}
             <Section>
                 <h5>
-                    <a> Hiring in a hurry? - </a>
+                    <a> Looking for resources? - </a>
                 </h5>
-                <p> Find talents in record time with LinkedIn Premium and unlock special benefits!</p>
+                <p> Find resources in record time with Maine's Reentry Resources!</p>
             </Section>
 
             <Layout>

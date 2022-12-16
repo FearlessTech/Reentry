@@ -25,10 +25,10 @@ function App(props) {
           <Switch>
             <Route exact path="/"><Login /></Route>
             <Route path="/home"><Navbar /><Home /></Route>
-            <Route path="/resource"><Resource /></Route>
-            <Route path="/notifications"><Notifications /></Route>
-            <Route path="/network"><Network /></Route>
-            <Route path="/profile"><Profile /></Route>
+            <Route path="/resource"><Navbar /><Resource /></Route>
+            <Route path="/notifications"><Navbar /><Notifications /></Route>
+            <Route path="/network"><Navbar /><Network /></Route>
+            <Route path="/profile"><Navbar /><Profile /></Route>
           </Switch>
         </Router>
       </div>

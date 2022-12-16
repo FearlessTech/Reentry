@@ -1,6 +1,10 @@
 import styled from 'styled-components';
 import { connect } from 'react-redux';
 import { signOutAPI } from '../actions';
+import { SiGooglemessages } from "react-icons/si";
+import { BsFillBriefcaseFill } from "react-icons/bs";
+
+import { IoMdNotifications, IoIosHome, IoMdPeople, IoMdSettings } from "react-icons/io";
 
 const Navbar = (props) => {
     return (
@@ -8,7 +12,7 @@ const Navbar = (props) => {
             <Content>
                 <Logo>
                     <a href="/home">
-                        <img src="/images/home-logo.svg" alt="" />
+                        <img src="/images/MaineRRLogo.png" alt="" width="100%"/>
                     </a>
                 </Logo>
 
@@ -24,32 +28,32 @@ const Navbar = (props) => {
                 <Nav>
                     <NavListWrap>
                         <NavList className="active">
-                            <a>
-                                <img src="/images/nav-home.svg" alt="" />
+                            <a href="/home">
+                                <IoIosHome />
                                 <span>Home</span>
                             </a>
                         </NavList>
                         <NavList>
-                            <a>
-                                <img src="/images/nav-network.svg" alt="" />
+                            <a href="/network">
+                                <IoMdPeople/>
                                 <span>My Network</span>
                             </a>
                         </NavList>
                         <NavList>
-                            <a>
-                                <img src="/images/nav-jobs.svg" alt="" />
-                                <span>Jobs</span>
+                            <a href="/resource">
+                                <BsFillBriefcaseFill />
+                                <span>Resources</span>
                             </a>
                         </NavList>
                         <NavList>
-                            <a>
-                                <img src="/images/nav-messaging.svg" alt="" />
+                            <a href="/#">
+                                <SiGooglemessages/>
                                 <span>Messaging</span>
                             </a>
                         </NavList>
                         <NavList>
-                            <a>
-                                <img src="/images/nav-notifications.svg" alt="" />
+                            <a href="/notifications">
+                                <IoMdNotifications />
                                 <span>Notifications</span>
                             </a>
                         </NavList>
@@ -77,10 +81,9 @@ const Navbar = (props) => {
 
                         <Work>
                             <a>
-                                <img src="/images/nav-work.svg" alt="" />
+                                <IoMdSettings/>
                                 <span>
                                     Work
-                                    <img src="/images/down-icon.svg" alt="" />
                                 </span>
                             </a>
                         </Work>

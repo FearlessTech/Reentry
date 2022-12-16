@@ -7,8 +7,14 @@ const Leftside = (props) => {
             <ArtCard>
                 <UserInfo>
                     <CardBackground />
-                    <a>
-                        <Photo />
+                    <a href="/profile">
+                        <Photo>
+                            {props.user && props.user.photoURL ? (
+                                <img src={props.user.photoURL} alt="" />
+                            ) : (
+                                    <img src="/images/user.svg" alt=""/>
+                                )}
+                        </Photo>
                         <Link>
                             Welcome, {props.user ? props.user.displayName : "there"}!
                         </Link>
@@ -89,20 +95,23 @@ const CardBackground = styled.div`
 `;
 
 const Photo = styled.div`
-    box-shadow: none;
-    background-image: url('/images/photo.svg');
-    width: 72px;
-    height: 72px;
-    box-sizing: border-box;
-    background-clip: content-box;
-    background-color: #ffffff;
-    background-position: center;
-    background-size: 60%;
-    background-repeat: no-repeat;
-    border: 2px solid #ffffff;
-    margin : -38px auto 12px;
-    border-radius: 50%;
+    img {
+        box-shadow: none;
+        width: 72px;
+        height: 72px;
+        box-sizing: border-box;
+        background-clip: content-box;
+        background-color: #ffffff;
+        background-position: center;
+        background-size: 60%;
+        background-repeat: no-repeat;
+        border: 2px solid #ffffff;
+        margin : -38px auto 12px;
+        border-radius: 50%;
+    }
 `;
+
+
 
 const Link = styled.div`
     font-size: 16px;
