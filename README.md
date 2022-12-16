@@ -37,6 +37,7 @@ I am a Tech student / Jr Full Stack Developer. I'm hoping to find some willing d
    * Click on sign in with google and enjoys exploring!
 
 # To Contribute to this Site Build:
+[Please see Contribution Guideline]()
 * In the upper right corner:
    * click the Star button.
    * Click the Fork button and save the fork to your repos.
