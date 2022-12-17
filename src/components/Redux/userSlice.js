@@ -1,3 +1,5 @@
+// This is just for reference
+
 import { createSlice } from "@reduxjs/toolkit";
 
 export const userSlice = createSlice({

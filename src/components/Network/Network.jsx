@@ -7,12 +7,12 @@ import Col from 'react-bootstrap/Col';
 
 export const Network = () => {
   return (
-      <Container style={{ marginTop : '100px' }} >
-        <Row>
-          <Col sm={3}>
+      <Container style={{ marginTop:'100px'}} >
+        <Row style={{ display:"flex"}}>
+          <Col style={{ margin:'10px'}} >
             <LeftNetwork />
           </Col>
-          <Col sm={9}>
+          <Col style={{ margin:'10px'}} >
             <RightNetwork />
             <RightBottom />
           </Col>

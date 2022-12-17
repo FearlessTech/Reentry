@@ -1,6 +1,7 @@
 .righton {
     background-color: #cdcdcd;
     border-radius: 8px;
+    width: 100%;
   }
   #invitations {
     display: flex;

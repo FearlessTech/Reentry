@@ -3,6 +3,8 @@ import "./sidebar.css";
 import { Avatar } from "@mui/material";
 import QuestionMarkIcon from "@mui/icons-material/QuestionMark";
 import { db } from "../../firebase";
+
+
 export const SideBar = () => {
   const [enterposts, setenterPosts] = useState([]);
 

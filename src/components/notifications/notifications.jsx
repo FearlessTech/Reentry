@@ -108,7 +108,7 @@ export const Notifications = () => {
           <p>
             {" "}
             About | Accessibility | Help Center | Privarcy & Terms ⮟ | Ad
-            Choices | Advertising | Business Services ⮟ | Get the Linkdin app |
+            Choices | Advertising | Business Services ⮟ | Get the MaineRR app |
             More
           </p>
 
@@ -117,7 +117,7 @@ export const Notifications = () => {
               src="https://www.adweek.com/wp-content/uploads/2019/06/linkedin-branding-CONTENT-2019-652x367.jpg"
               alt=""
             />
-            <p> LinkedIn Corporation © 2022</p>
+            <p> MaineRR Corporation © 2022</p>
           </div>
         </div>
       </div>

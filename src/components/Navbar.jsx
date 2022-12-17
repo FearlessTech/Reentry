@@ -69,9 +69,8 @@ const Navbar = (props) => {
                 <span>Me <IoMdArrowDropdown /></span>
               </a>
               
-              <SignOut >
-                <a href="/profile">Profile</a>
-                <a onClick = {() => props.signOut()}>Sign Out</a>
+              <SignOut onClick = {() => props.signOut()} >
+                <a >Sign Out</a>
               </SignOut>
             </User>
 
@@ -236,9 +235,6 @@ const SignOut = styled.div`
     transition-duration: 167ms;
     text-align: center;
     display: none;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
 `;
 
 const User = styled(NavList)`
