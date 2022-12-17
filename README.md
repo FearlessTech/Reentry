@@ -22,6 +22,7 @@ I am a Tech student / Jr Full Stack Developer. I'm hoping to find some willing d
  
    
 # **To run this site:**
+   * Don't forget to click the star button if you like this repo
    * Click on the code button (upper right corner of repo).
    * Switch tab to codespaces
    * If there is a codespace already set up click on it.
