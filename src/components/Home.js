@@ -12,8 +12,8 @@ const Home = (props) => {
             <Section>
                 <h5>
                     <a> Looking for resources? - </a>
+                    <p> Find resources in record time with Maine's Reentry Resources!</p>
                 </h5>
-                <p> Find resources in record time with Maine's Reentry Resources!</p>
             </Section>
 
             <Layout>

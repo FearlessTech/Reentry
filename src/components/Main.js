@@ -4,6 +4,8 @@ import PostModal from './PostModal';
 import ReactPlayer from 'react-player';
 import { connect } from 'react-redux';
 import { getArticlesAPI } from '../actions';
+import { IoMdPhotos } from "react-icons/io";
+import { FaPhotoVideo, FaCalendarCheck, FaNewspaper, FaEllipsisH, FaThumbsUp } from "react-icons/fa";
 
 const Main = (props) => {
     const [showModal, setShowModal] = useState("close");
@@ -41,7 +43,7 @@ const Main = (props) => {
                 <ShareBox>
                     <div>
                         { props.user && props.user.photoURL ?
-                            (<img src={ props.user.photoURL} />)
+                            (<img src={ props.user.photoURL} alt="" />)
                             :
                             (<img src="/images/user.svg" alt="" />)                          
                         }
@@ -55,22 +57,22 @@ const Main = (props) => {
 
                     <div>
                         <button>
-                            <img src="/images/photo-icon.png" className="post-icon" alt="" />
+                            <IoMdPhotos className="post-icon"/>
                             <span>Photo</span>
                         </button>
 
                         <button>
-                            <img src="/images/video-icon.png" className="post-icon" alt="" />
+                            <FaPhotoVideo className="post-icon" />
                             <span>Video</span>
                         </button>
 
                         <button>
-                            <img src="/images/event-icon.png" className="post-icon" alt="" />
+                            <FaCalendarCheck className="post-icon" />
                             <span>Event</span>
                         </button>
 
                         <button>
-                            <img src="/images/article-icon.png" className="post-icon" alt="" />
+                            <FaNewspaper className="post-icon" />
                             <span>Write article</span>
                         </button>
                     </div>
@@ -78,7 +80,7 @@ const Main = (props) => {
 
                 <Content>
                     {
-                        props.loading && <img src="./images/spin-loading.gif" />
+                        props.loading && <img src="./images/spin-loading.gif" alt=""/>
                     }
                     {
                         props.articles.length != 0 &&
@@ -96,7 +98,7 @@ const Main = (props) => {
                                     </a>
 
                                     <button>
-                                        <img src="images/ellipsis.png" alt="" />
+                                        <FaEllipsisH />
                                     </button>
                                 </SharedActor>
 
@@ -109,7 +111,7 @@ const Main = (props) => {
                                                 (<ReactPlayer width = {'100%'} url={article.video} />)
                                             :
                                             (
-                                                article.sharedImg && <img src={article.sharedImg} />
+                                                article.sharedImg && <img src={article.sharedImg} alt=""/>
                                             )
                                         }
                                     </a>
@@ -118,7 +120,7 @@ const Main = (props) => {
                                 <SocialCounts>
                                     <li>
                                         <button>
-                                            <img src="images/like-icon.png" alt="" />
+                                            <FaThumbsUp/>
                                             <img src="images/clap-icon.png" alt="" />
                                             <span>62</span>
                                         </button>
@@ -168,7 +170,7 @@ const CommonCard = styled.div`
     text-align: center;
     overflow: hidden;
     margin-bottom: 8px;
-    background-color: #fff;
+    background-color: #e9e9e9;
     border-radius: 5px;
     position: relative;
     border: none;
@@ -178,7 +180,7 @@ const CommonCard = styled.div`
 const ShareBox = styled(CommonCard)`
     display: flex;
     flex-direction: column;
-    color: #958b7b;
+    color: #cdcdcd;
     margin: 0 0 8px 0;
     background: #fff;
 
@@ -206,7 +208,8 @@ const ShareBox = styled(CommonCard)`
         }
 
         .post-icon {
-            width: 27px;
+            width: 47px;
+            color: #99d3df
         }
 
         &:first-child {
