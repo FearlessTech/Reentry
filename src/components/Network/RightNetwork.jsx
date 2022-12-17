@@ -19,11 +19,11 @@ export const RightNetwork = () => {
           />
 
           <div className="followd">
-            <a href="">Chandan kumar</a>
+            <a href="">Chad Kurts</a>
             <a href=""> Aspiring Developer</a>
             <a className="linkchain">
               <VscLink />
-              <span>vivek and 63 others</span>
+              <span>Baxter and 63 others</span>
             </a>
           </div>
 
@@ -40,11 +40,11 @@ export const RightNetwork = () => {
           />
 
           <div className="followd">
-            <a href="">Arjun Thakur</a>
+            <a href="">Art Thomas</a>
             <a href=""> Developer</a>
             <a className="linkchain">
               <VscLink />
-              <span>keshav and 13 others</span>
+              <span>Stanley and 13 others</span>
             </a>
           </div>
 
@@ -63,11 +63,11 @@ export const RightNetwork = () => {
           />
 
           <div className="followd">
-            <a href="">Nrupul Dev</a>
-            <a href=""> CTO at Masai </a>
+            <a href="">4-Leafs-Code</a>
+            <a href=""> Jr Full Stack Developer </a>
             <a className="linkchain">
               <VscLink />
-              <span>Ankur and 36 others</span>
+              <span>Albert and 36 others</span>
             </a>
           </div>
 
@@ -88,11 +88,11 @@ export const RightNetwork = () => {
               />
 
               <div className="followd">
-                <a href="">Sutin kumar</a>
+                <a href="">Boston Lee</a>
                 <a href=""> Aspiring Developer</a>
                 <a className="linkchain">
                   <VscLink />
-                  <span>vivek and 63 others</span>
+                  <span>Clover and 63 others</span>
                 </a>
               </div>
 

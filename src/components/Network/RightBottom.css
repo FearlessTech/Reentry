@@ -2,6 +2,7 @@
     background-color: #cdcdcd;
     margin-top: 20px;
     border-radius: 8px;
+    width: 100%;
   }
   .bottomsup {
     display: grid;
@@ -31,17 +32,17 @@
     height: 70px;
     margin-top: 20px;
   }
-  #immmg {
+  #picbg {
     background-image: url("https://firebasestorage.googleapis.com/v0/b/linkedin-clone-3e412.appspot.com/o/navbar%2FScreenshot%20(69).png?alt=media&token=863026c0-6125-4d1a-a3e7-27af12cb56f7");
     height: 70px;
     width: 99%;
     border-radius: 8px;
   }
-  .hhhh {
+  .name {
     margin-top: 20px;
     font-size: 18px;
   }
-  .hhhh:hover {
+  .name:hover {
     text-decoration: underline;
   }
   h5 {
@@ -64,12 +65,12 @@
   .button1:hover {
     background-color: #b3d4ff;
   }
-  .heeei {
+  .hi {
     font-size: 12px;
     color: gray;
     margin-top: 5px;
   }
-  #sgg {
+  #tagline {
     padding: 15px;
   }
   

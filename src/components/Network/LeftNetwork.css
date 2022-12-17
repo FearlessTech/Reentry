@@ -1,6 +1,7 @@
 .LeftBox {
     background-color: #cdcdcd;
     border-radius: 8px;
+    width: 100%;
   }
   
   .LeftBox > h4 {

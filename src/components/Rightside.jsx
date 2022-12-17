@@ -1,4 +1,25 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
+
+// I want this to show links to news articles relivant to 
+// reentry in maine. Under the link I want to see the date 
+// it was posted to this site and how many people ahve clicked on it.
+
+
+// const top_1 = [
+//     "Difficulties in finding and securing housing?",
+//     "4 Elements of Successful Reentry Programs for Inmates",
+//     "Formerly incarcerated face barriers to successfully re-entering society",
+//     "Factors that have the most significant impact on reentry success",
+//     "Reentry programs are designed to assist incarcerated individuals with a successful transition to their community after they are released",
+//   ];
+  
+//   const top_2 = [
+//     "The problem of prisoner (re) entry ",
+//     "Is criminal justice education ready for reentry?",
+//     "Research about Recidivism and Reentry",
+//     "A scheme to invest in released prisoners—literally",
+//   ];
+  
 import styled from 'styled-components';
 
 const Rightside = (props) => {
@@ -16,7 +37,7 @@ const Rightside = (props) => {
                             <Avatar />
                         </a>
                         <div>
-                            <span>#LinkedIn</span>
+                            <span>#Reentry</span>
                             <button>Follow</button>
                         </div>
                     </li>
@@ -38,7 +59,7 @@ const Rightside = (props) => {
             </FollowCard>
 
             <BannerCard>
-                <img src="https://static-exp1.licdn.com/scds/common/u/images/promo/ads/li_evergreen_jobs_ad_300x250_v1.jpg" alt="" />
+                <img src="/images/Reentry.jpg" alt="" />
             </BannerCard>
         </Container>
     );
