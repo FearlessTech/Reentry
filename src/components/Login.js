@@ -12,18 +12,18 @@ const Login = (props) => {
             }
             <Nav>
                 <a href="/">
-                    <img src="/images/login-logo.svg" alt="" />
+                    <img src="/images/MaineRRLogo.png"  alt="" />
                 </a>
                 <div>
                     <Join>Join Now</Join>
-                    <SignIn onClick = {<Redirect to = '/home' />} >Guest</SignIn>
+                    <Guest onClick = {<Redirect to = '/home' />} >Guest</Guest>
                 </div>
             </Nav>
 
             <Section>
                 <Hero>
                     <h1>Welcome to the Maine Community Resources Network</h1>
-                    <img src="/images/login-hero.svg" alt="" />
+                    <img src="/images/Freedom.jpg" alt="" />
                 </Hero>
 
                 <Form>
@@ -38,6 +38,7 @@ const Login = (props) => {
 
 const Container = styled.div`
     padding: 0px;
+
 `;
 
 const Nav = styled.nav`
@@ -56,6 +57,16 @@ const Nav = styled.nav`
 
         @media (max-width: 768px) {
             padding: 0 5px;
+        }
+
+        img {
+            border-radius: 5px;
+            width:300px;
+
+            @media (max-width: 768px) {
+                border-radius: 2px;
+                width:200px;
+        }
         }
     }
 `;
@@ -77,24 +88,19 @@ const Join = styled.button`
     }
 `;
 
-const SignIn = styled.button`
-        display: flex;
-        justify-content: center;
-        background-color: #fff;
-        align-items: center;
-        height: 56px;
-        width: 100%;
-        border-radius: 28px;
-        box-shadow: inset 0 0 0 1px rgba(0 0 0 / 60%), inset 0 0 0 2px rgb(0 0 0 / 0%) inset 0 0 0 1px rgb(0 0 0 / 0%);
-        vertical-align: middle;
-        z-index: 0;
-        transition-duration: 167ms;
-        font-size: 20px;
-        color: rgba(0, 0 , 0, 0.6);
+const Guest = styled.button`
+        font-size: 16px;
+        padding: 10px 12px;
+        text-decoration: none;
+        color: rgba(0, 0, 0, 0.6);
+        margin-right: 12px;
+        font-weight: 600;
+        border-radius: 4px;
 
         &:hover {
-            background-color: rgba(207, 207, 207, 0.25);
-            color: rgba(0, 0, 0, 0.75);
+            background-color: rgba(0, 0, 0, 0.08);
+            color: rgba(0, 0, 0, 0.9);
+            text-decoration: none;
             cursor: pointer;
     }
 `;
@@ -139,15 +145,19 @@ const Hero = styled.div`
 
     img {
         /*z-index: -1;*/
-        width: 700px;
-        height: 670px;
+        width: 500px;
+        border-radius: 50px;
         position: absolute;
-        bottom: -2px;
-        right: -150px;
+        right: -1px;
 
         @media (max-width: 768px) {
             top: 230px;
-            width: initial;
+            width: 400px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 50%;
+            border-radius: 15px;
             position: initial;
             height: initial;
         }

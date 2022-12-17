@@ -4,93 +4,87 @@ import { signOutAPI } from '../actions';
 import { SiGooglemessages } from "react-icons/si";
 import { BsFillBriefcaseFill } from "react-icons/bs";
 
-import { IoMdNotifications, IoIosHome, IoMdPeople, IoMdSettings } from "react-icons/io";
+import { IoMdNotifications, IoIosHome, IoMdPeople, IoMdSettings, IoMdArrowDropdown } from "react-icons/io";
 
 const Navbar = (props) => {
-    return (
-        <Container>
-            <Content>
-                <Logo>
-                    <a href="/home">
-                        <img src="/images/MaineRRLogo.png" alt="" width="100%"/>
-                    </a>
-                </Logo>
+  return (
+    <Container>
+      <Content>
+        <Logo>
+          <a href="/home">
+              <img src="/images/MaineRRLogo.png" alt="" width="100%"/>
+          </a>
+        </Logo>
+        <Search>
+          <div>
+            <input type="text" placeholder="Search" />
+          </div>
+          <SearchIcon>
+            <img src="/images/search-icon.svg" alt="" />
+          </SearchIcon>
+        </Search>
 
-                <Search>
-                    <div>
-                        <input type="text" placeholder="Search" />
-                    </div>
-                    <SearchIcon>
-                        <img src="/images/search-icon.svg" alt="" />
-                    </SearchIcon>
-                </Search>
+        <Nav>
+          <NavListWrap>
+            <NavList className="active">
+              <a href="/home">
+                <IoIosHome size={18} style={{ fill:'#88bbd6' }} />
+                <span>Home</span>
+              </a>
+            </NavList>
+            <NavList>
+              <a href="/network">
+                <IoMdPeople size={18} style={{ fill:'#88bbd6' }} />
+                <span>My Network</span>
+              </a>
+            </NavList>
+            <NavList>
+              <a href="/resource">
+                <BsFillBriefcaseFill size={18} style={{ fill:'#88bbd6' }} />
+                <span>Resources</span>
+              </a>
+            </NavList>
+            <NavList>
+              <a href="/#">
+                <SiGooglemessages size={18} style={{ fill:'#88bbd6' }} />
+                <span>Messaging</span>
+              </a>
+            </NavList>
+            <NavList>
+              <a href="/notifications">
+              <IoMdNotifications size={18} style={{ fill:'#88bbd6' }} />
+                <span>Notifications</span>
+              </a>
+            </NavList>
 
-                <Nav>
-                    <NavListWrap>
-                        <NavList className="active">
-                            <a href="/home">
-                                <IoIosHome />
-                                <span>Home</span>
-                            </a>
-                        </NavList>
-                        <NavList>
-                            <a href="/network">
-                                <IoMdPeople/>
-                                <span>My Network</span>
-                            </a>
-                        </NavList>
-                        <NavList>
-                            <a href="/resource">
-                                <BsFillBriefcaseFill />
-                                <span>Resources</span>
-                            </a>
-                        </NavList>
-                        <NavList>
-                            <a href="/#">
-                                <SiGooglemessages/>
-                                <span>Messaging</span>
-                            </a>
-                        </NavList>
-                        <NavList>
-                            <a href="/notifications">
-                                <IoMdNotifications />
-                                <span>Notifications</span>
-                            </a>
-                        </NavList>
-        
-                        <User>
-                            <a>
-                                {
-                                    props.user && props.user.photoURL ? (
-                                        <img src={props.user.photoURL} alt="" />
-                                    ) : (
-                                            <img src="/images/user.svg" />
-                                        )
-                                }
-                                <span>
-                                    Me <img src="/images/down-icon.svg" alt="" />
-                                </span>
-                            </a>
+            <User>
+              <a>
+                {
+                  props.user && props.user.photoURL ? (
+                    <img src={props.user.photoURL} alt="" />
+                  ) : (
+                    <img src="/images/user.svg" alt="" />
+                      )
+                }
+                <span>Me <IoMdArrowDropdown /></span>
+              </a>
+              
+              <SignOut >
+                <a href="/profile">Profile</a>
+                <a onClick = {() => props.signOut()}>Sign Out</a>
+              </SignOut>
+            </User>
 
-                            <SignOut onClick = {() => props.signOut()}>
-                                <a>
-                                    Sign Out
-                                </a>
-                            </SignOut>
-                        </User>
-
-                        <Work>
-                            <a>
-                                <IoMdSettings/>
-                                <span>
-                                    Work
-                                </span>
-                            </a>
-                        </Work>
-                    </NavListWrap>
-                </Nav>
-            </Content>
-        </Container>
+            <Work>
+              <a>
+                <IoMdSettings size={18} style={{ fill:'#88bbd6' }}/>
+                <span>Work</span>
+              </a>
+            </Work>
+          </NavListWrap>
+        </Nav>
+      </Content>
+    </Container>
     );
 }
 
@@ -233,15 +227,18 @@ const SignOut = styled.div`
     cursor: pointer;
     position: absolute;
     top: 45px;
-    background: #ffffff;
+    background: #e9e9e9;
     border-radius: 0 0 5px 5px;
     width: 100px;
     box-shadow: 2px 3px 5px -2px rgba(110,104,104,0.75); 
-    height: 40px;
+    height: 100px;
     font-size: 16px;
     transition-duration: 167ms;
     text-align: center;
     display: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 `;
 
 const User = styled(NavList)`
