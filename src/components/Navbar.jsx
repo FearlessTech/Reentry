@@ -28,31 +28,31 @@ const Navbar = (props) => {
           <NavListWrap>
             <NavList className="active">
               <a href="/home">
-                <IoIosHome size={18} style={{ fill:'#88bbd6' }} />
+                <IoIosHome size={18} style={{ fill:'#cdcdcd' }} />
                 <span>Home</span>
               </a>
             </NavList>
             <NavList>
               <a href="/network">
-                <IoMdPeople size={18} style={{ fill:'#88bbd6' }} />
+                <IoMdPeople size={18} style={{ fill:'#cdcdcd' }} />
                 <span>My Network</span>
               </a>
             </NavList>
             <NavList>
               <a href="/resource">
-                <BsFillBriefcaseFill size={18} style={{ fill:'#88bbd6' }} />
+                <BsFillBriefcaseFill size={18} style={{ fill:'#cdcdcd' }} />
                 <span>Resources</span>
               </a>
             </NavList>
             <NavList>
               <a href="/#">
-                <SiGooglemessages size={18} style={{ fill:'#88bbd6' }} />
+                <SiGooglemessages size={18} style={{ fill:'#cdcdcd' }} />
                 <span>Messaging</span>
               </a>
             </NavList>
             <NavList>
               <a href="/notifications">
-              <IoMdNotifications size={18} style={{ fill:'#88bbd6' }} />
+              <IoMdNotifications size={18} style={{ fill:'#cdcdcd' }} />
                 <span>Notifications</span>
               </a>
             </NavList>
@@ -76,7 +76,7 @@ const Navbar = (props) => {
 
             <Work>
               <a>
-                <IoMdSettings size={18} style={{ fill:'#88bbd6' }}/>
+                <IoMdSettings size={18} style={{ fill:'#cdcdcd' }}/>
                 <span>Work</span>
               </a>
             </Work>
@@ -88,7 +88,7 @@ const Navbar = (props) => {
 }
 
 const Container = styled.div`
-    background-color: #ffffff;
+    background-color: #88bbd6;
     border-bottom: 1px solid rgba(0,0,0,0.08);
     left: 0;
     padding: 0 24px;
@@ -159,7 +159,7 @@ const Nav = styled.nav`
         position: fixed;
         left: 0;
         bottom: 0;
-        background: #ffffff;
+        background: #88bbd6;
         width: 100%;
     }
 `;
@@ -225,12 +225,12 @@ const NavList = styled.li`
 const SignOut = styled.div`
     cursor: pointer;
     position: absolute;
-    top: 45px;
+    top: 48px;
     background: #e9e9e9;
     border-radius: 0 0 5px 5px;
     width: 100px;
     box-shadow: 2px 3px 5px -2px rgba(110,104,104,0.75); 
-    height: 100px;
+    height: 100%;
     font-size: 16px;
     transition-duration: 167ms;
     text-align: center;
