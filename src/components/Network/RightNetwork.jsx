@@ -28,8 +28,8 @@ export const RightNetwork = () => {
           </div>
 
           <div className="">
-            <button className="ignore">Ignore</button>
-            <button className="accept">Accept</button>
+            <button >Ignore</button>
+            <button >Accept</button>
           </div>
         </div>
 
