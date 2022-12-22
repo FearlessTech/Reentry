@@ -55,7 +55,7 @@ export function postArticleAPI(payload) {
     return (dispatch) => {
         dispatch(setLoading(true));
 
-        if(payload.image != '') {
+        if(payload.image) {
             const upload = storage
                 .ref(`images/${payload.image.name}`)
                 .put(payload.image);
@@ -94,6 +94,22 @@ export function postArticleAPI(payload) {
                 image: payload.user.photoURL,
             },
             video: payload.video,
+            sharedImg: '',
+            comments: 0,
+            description: payload.description,
+        });
+        dispatch(setLoading(false));
+    }
+    
+    else  {
+        db.collection('articles').add({
+            actor: {
+                description: payload.user.email,
+                title: payload.user.displayName,
+                date: payload.timestamp,
+                image: payload.user.photoURL,
+            },
+            video: '',
             sharedImg: '',
             comments: 0,
             description: payload.description,
