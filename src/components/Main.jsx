@@ -71,14 +71,14 @@ const Main = (props) => {
                 </a>
               </SharedImage>
               <SocialCounts>
-                <li><button><FaThumbsUp/><img src="images/clap-icon.png" alt="" /></button></li>
+                <li><button><FaThumbsUp/></button></li>
                 <li><a>{article.comments} comments</a></li>
               </SocialCounts>
               <SocialActions>
-                <button><i class="far fa-thumbs-up"></i><span>Like</span></button>
-                <button><i class="far fa-comment"></i><span>Comment</span></button>
-                <button><i class="fas fa-share"></i><span>Share</span></button>
-                <button><i class="fab fa-telegram-plane"></i><span>Send</span></button>
+                <button><span>Like</span></button>
+                <button><span>Comment</span></button>
+                <button><span>Share</span></button>
+                <button><span>Send</span></button>
               </SocialActions>
             </Article>        
             ))        
@@ -102,83 +102,6 @@ const CommonCard = styled.div`
     position: relative;
     border: none;
     border-radius: 0 0 0 1px rgb(0 0 0 / 15%), 0 0 0 rgb(0 0 0 / 20%);
-`;
-
-const ShareBox = styled(CommonCard)`
-    display: flex;
-    flex-direction: column;
-    color: #cdcdcd;
-    margin: 0 0 8px 0;
-    background: #fff;
-
-    div {
-        button {
-            outline: none;
-            color: rgba(0,0,0,0.6);
-            font-size: 14px;
-            line-height: 1.5;
-            min-height: 48px;
-            background: transparent;
-            border: none;
-            display: flex;
-            align-items: center;
-            font-weight: 600;
-
-            &:hover {
-                background-color: rgba(0,0,0,0.07);
-                border-radius: 6px;
-            }
-        }
-
-        .post-space {
-            box-shadow: 1px 1px 2px 1px rgba(159,156,156,0.75);
-        }
-
-        .post-icon {
-            width: 47px;
-            color: #99d3df
-        }
-
-        &:first-child {
-            display: flex;
-            align-items: center;
-            padding: 8px 16px;
-
-            img {
-                width: 48px;
-                margin-right: 8px;
-                border-radius: 50%;
-            }
-
-            button {
-                margin: 4px 0;
-                flex-grow: 1;
-                border-radius: 35px;
-                padding-left: 16px;
-                border: 1px solid rgba(0,0,0,0,15);
-                border-radius: 35px;
-                background-color: #fff;
-                text-align: left;
-            }
-        }
-
-        &:nth-child(2) {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
-            padding-bottom: 4px;
-
-            button {
-                img {
-                    margin: 0 4px 0 -2px;
-                }
-
-                span {
-                    color: #70b5f9;
-                }
-            }
-        }
-    }
 `;
 
 const Article = styled(CommonCard)`
