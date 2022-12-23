@@ -4,8 +4,8 @@ import PostModal from './PostModal';
 import ReactPlayer from 'react-player';
 import { connect } from 'react-redux';
 import { getArticlesAPI } from '../actions';
-import { IoMdPhotos } from "react-icons/io";
-import { FaPhotoVideo, FaCalendarCheck, FaNewspaper, FaEllipsisH, FaThumbsUp } from "react-icons/fa";
+import { FaEllipsisH, FaThumbsUp } from "react-icons/fa";
+import { IoMdSettings, } from "react-icons/io";
 
 const Main = (props) => {
     const [showModal, setShowModal] = useState("close");
@@ -34,131 +34,58 @@ const Main = (props) => {
     }
 
     return (
-        // <>
-        // { props.articles.length === 0 ? (
-        //     <p>No articles to show.</p>
-        // ) : 
-        // (
-            <Container>
-                <ShareBox>
-                    <div>
-                        { props.user && props.user.photoURL ?
-                            (<img src={ props.user.photoURL} alt="" />)
-                            :
-                            (<img src="/images/user.svg" alt="" />)                          
-                        }
-                        <button 
-                            onClick = {handleClick}
-                            disabled = { props.loading ? true : false }
-                            className="post-space">
-                            Start a Post    
-                        </button> 
-                    </div>
-
-                    <div>
-                        <button>
-                            <IoMdPhotos className="post-icon"/>
-                            <span>Photo</span>
-                        </button>
-
-                        <button>
-                            <FaPhotoVideo className="post-icon" />
-                            <span>Video</span>
-                        </button>
-
-                        <button>
-                            <FaCalendarCheck className="post-icon" />
-                            <span>Event</span>
-                        </button>
-
-                        <button>
-                            <FaNewspaper className="post-icon" />
-                            <span>Write article</span>
-                        </button>
-                    </div>
-                </ShareBox>
-
-                <Content>
-                    {
-                        props.loading && <img src="./images/spin-loading.gif" alt=""/>
-                    }
-                    {
-                        props.articles.length != 0 &&
-                        props.articles.map((article, key) => (
-                
-                            <Article key = {key} >
-                                <SharedActor>
-                                    <a>
-                                        <img src={article.actor.image} alt="" />
-                                        <div>
-                                            <span>{article.actor.title}</span>
-                                            <span>{article.actor.description}</span>
-                                            <span>{article.actor.date.toDate().toLocaleDateString()}</span>
-                                        </div>
-                                    </a>
-
-                                    <button>
-                                        <FaEllipsisH />
-                                    </button>
-                                </SharedActor>
-
-                                <Description>{article.description}</Description>
-
-                                <SharedImage>
-                                    <a>
-                                        {
-                                            !article.sharedImg && article.video ? 
-                                                (<ReactPlayer width = {'100%'} url={article.video} />)
-                                            :
-                                            (
-                                                article.sharedImg && <img src={article.sharedImg} alt=""/>
-                                            )
-                                        }
-                                    </a>
-                                </SharedImage>
-
-                                <SocialCounts>
-                                    <li>
-                                        <button>
-                                            <FaThumbsUp/>
-                                            <img src="images/clap-icon.png" alt="" />
-                                            <span>62</span>
-                                        </button>
-                                    </li>
-                                    <li>
-                                        <a>{article.comments} comments</a>
-                                    </li>
-                                </SocialCounts>
-
-                                <SocialActions>
-                                    <button>
-                                        <i class="far fa-thumbs-up"></i>
-                                        <span>Like</span>
-                                    </button>
-                                    <button>
-                                        <i class="far fa-comment"></i>
-                                        <span>Comment</span>
-                                    </button>
-                                    <button>
-                                        <i class="fas fa-share"></i>
-                                        <span>Share</span>
-                                    </button>
-                                    <button>
-                                        <i class="fab fa-telegram-plane"></i>
-                                        <span>Send</span>
-                                    </button>
-                                </SocialActions>
-                        
-                            </Article>        
-                        ))        
-            }
-                </Content>
-
-                <PostModal showModal={showModal} handleClick = {handleClick} />
-            </Container>
-        // )
-      // }
-        // </>
+      <Container>
+        <div>
+          <button 
+            onClick = {handleClick}
+            disabled = { props.loading ? true : false }
+            className="post-space">
+            Start a Post    
+          </button> 
+          <IoMdSettings></IoMdSettings>
+        </div>
+        <Content>
+          {props.loading && <img src="./images/spin-loading.gif" alt=""/>}
+          {props.articles.length != 0 &&
+            props.articles.map((article, key) => (
+            <Article key = {key} >
+              <SharedActor>
+                <a>
+                  <img src={article.actor.image} alt="" />
+                  <div>
+                    <span>{article.actor.title}</span>
+                    <span>{article.actor.description}</span>
+                    <span>{article.actor.date.toDate().toLocaleDateString()}</span>
+                  </div>
+                </a>
+                <button><FaEllipsisH /></button>
+              </SharedActor>
+              <Description>{article.description}</Description>
+              <SharedImage>
+                <a>
+                  {!article.sharedImg && article.video ? 
+                    (<ReactPlayer width = {'100%'} url={article.video} />)
+                    :
+                    (article.sharedImg && <img src={article.sharedImg} alt=""/>)
+                  }
+                </a>
+              </SharedImage>
+              <SocialCounts>
+                <li><button><FaThumbsUp/></button></li>
+                <li><a>{article.comments} comments</a></li>
+              </SocialCounts>
+              <SocialActions>
+                <button><span>Like</span></button>
+                <button><span>Comment</span></button>
+                <button><span>Share</span></button>
+                <button><span>Send</span></button>
+              </SocialActions>
+            </Article>        
+            ))        
+          }
+        </Content>
+        <PostModal showModal={showModal} handleClick = {handleClick} />
+      </Container>
     );
 };
 
@@ -177,87 +104,11 @@ const CommonCard = styled.div`
     border-radius: 0 0 0 1px rgb(0 0 0 / 15%), 0 0 0 rgb(0 0 0 / 20%);
 `;
 
-const ShareBox = styled(CommonCard)`
-    display: flex;
-    flex-direction: column;
-    color: #cdcdcd;
-    margin: 0 0 8px 0;
-    background: #fff;
-
-    div {
-        button {
-            outline: none;
-            color: rgba(0,0,0,0.6);
-            font-size: 14px;
-            line-height: 1.5;
-            min-height: 48px;
-            background: transparent;
-            border: none;
-            display: flex;
-            align-items: center;
-            font-weight: 600;
-
-            &:hover {
-                background-color: rgba(0,0,0,0.07);
-                border-radius: 6px;
-            }
-        }
-
-        .post-space {
-            box-shadow: 1px 1px 2px 1px rgba(159,156,156,0.75);
-        }
-
-        .post-icon {
-            width: 47px;
-            color: #99d3df
-        }
-
-        &:first-child {
-            display: flex;
-            align-items: center;
-            padding: 8px 16px;
-
-            img {
-                width: 48px;
-                margin-right: 8px;
-                border-radius: 50%;
-            }
-
-            button {
-                margin: 4px 0;
-                flex-grow: 1;
-                border-radius: 35px;
-                padding-left: 16px;
-                border: 1px solid rgba(0,0,0,0,15);
-                border-radius: 35px;
-                background-color: #fff;
-                text-align: left;
-            }
-        }
-
-        &:nth-child(2) {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
-            padding-bottom: 4px;
-
-            button {
-                img {
-                    margin: 0 4px 0 -2px;
-                }
-
-                span {
-                    color: #70b5f9;
-                }
-            }
-        }
-    }
-`;
-
 const Article = styled(CommonCard)`
     padding: 0;
     margin: 0 0 8px;
     overflow: visible;
+    
 `;
 
 const SharedActor = styled.div`
@@ -267,6 +118,7 @@ const SharedActor = styled.div`
     margin-bottom: 8px;
     align-items: center;
     display: flex;
+    background-color: #e9e9e9;
 
     a {
         margin-right: 12px;
