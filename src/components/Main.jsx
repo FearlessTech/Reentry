@@ -35,7 +35,7 @@ const Main = (props) => {
 
     return (
       <Container>
-        <div>
+        <postNav>
           <button 
             onClick = {handleClick}
             disabled = { props.loading ? true : false }
@@ -43,7 +43,7 @@ const Main = (props) => {
             Start a Post    
           </button> 
           <IoMdSettings></IoMdSettings>
-        </div>
+        </postNav>
         <Content>
           {props.loading && <img src="./images/spin-loading.gif" alt=""/>}
           {props.articles.length != 0 &&
@@ -244,6 +244,9 @@ const Content = styled.div`
     & > img {
         width: 30px;
     }
+`;
+const postNav = styled.div`
+
 `;
 
 const mapStateToProps = (state) => {
