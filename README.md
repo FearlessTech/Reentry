@@ -6,6 +6,8 @@ This site is being built for Maine Community of reentry advocates and/or anyone 
 
 I am a Tech student / Jr Full Stack Developer. I'm hoping to find some willing developers to donate some of there time and experiance to help me build this website for a worthy cause. This website will help thousands of Maine's Prisoners have a more successful reentry back into society. 
 
+If you would like to contribute, just comment on an issue and I will assign it to you. If you see something you would like to fix, make an issue. If you have questions or run into a problem, post your questions to the issue or under the discussions. I will help however I can. Also, please the the Contribution Guideline. The link is at the bottom of this page. When you have compleated an issue, submit a pull requst. Thank you to everyone helping to make this site.
+
 **Also, this site can be added to your Web Developer portfolio**
 
 <p align='center'>
