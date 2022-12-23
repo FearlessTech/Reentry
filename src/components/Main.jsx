@@ -4,8 +4,8 @@ import PostModal from './PostModal';
 import ReactPlayer from 'react-player';
 import { connect } from 'react-redux';
 import { getArticlesAPI } from '../actions';
-import { IoMdPhotos } from "react-icons/io";
-import { FaPhotoVideo, FaCalendarCheck, FaNewspaper, FaEllipsisH, FaThumbsUp } from "react-icons/fa";
+import { FaEllipsisH, FaThumbsUp } from "react-icons/fa";
+import { IoMdSettings, } from "react-icons/io";
 
 const Main = (props) => {
     const [showModal, setShowModal] = useState("close");
@@ -35,27 +35,15 @@ const Main = (props) => {
 
     return (
       <Container>
-        <ShareBox>
-          <div>
-              { props.user && props.user.photoURL ?
-                  (<img src={ props.user.photoURL} alt="" />)
-                  :
-                  (<img src="/images/user.svg" alt="" />)                          
-              }
-              <button 
-                  onClick = {handleClick}
-                  disabled = { props.loading ? true : false }
-                  className="post-space">
-                  Start a Post    
-              </button> 
-          </div>
-          <div>
-            <button><IoMdPhotos className="post-icon"/><span>Photo</span></button>
-            <button><FaPhotoVideo className="post-icon" /><span>Video</span></button>
-            <button><FaCalendarCheck className="post-icon" /><span>Event</span></button>
-            <button><FaNewspaper className="post-icon" /><span>Write article</span></button>
-          </div>
-        </ShareBox>
+        <div>
+          <button 
+            onClick = {handleClick}
+            disabled = { props.loading ? true : false }
+            className="post-space">
+            Start a Post    
+          </button> 
+          <IoMdSettings></IoMdSettings>
+        </div>
         <Content>
           {props.loading && <img src="./images/spin-loading.gif" alt=""/>}
           {props.articles.length != 0 &&
@@ -197,7 +185,7 @@ const Article = styled(CommonCard)`
     padding: 0;
     margin: 0 0 8px;
     overflow: visible;
-    background-color: #e9e9e9;
+    
 `;
 
 const SharedActor = styled.div`
@@ -207,6 +195,7 @@ const SharedActor = styled.div`
     margin-bottom: 8px;
     align-items: center;
     display: flex;
+    background-color: #e9e9e9;
 
     a {
         margin-right: 12px;
