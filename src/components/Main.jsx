@@ -34,131 +34,70 @@ const Main = (props) => {
     }
 
     return (
-        // <>
-        // { props.articles.length === 0 ? (
-        //     <p>No articles to show.</p>
-        // ) : 
-        // (
-            <Container>
-                <ShareBox>
-                    <div>
-                        { props.user && props.user.photoURL ?
-                            (<img src={ props.user.photoURL} alt="" />)
-                            :
-                            (<img src="/images/user.svg" alt="" />)                          
-                        }
-                        <button 
-                            onClick = {handleClick}
-                            disabled = { props.loading ? true : false }
-                            className="post-space">
-                            Start a Post    
-                        </button> 
-                    </div>
-
-                    <div>
-                        <button>
-                            <IoMdPhotos className="post-icon"/>
-                            <span>Photo</span>
-                        </button>
-
-                        <button>
-                            <FaPhotoVideo className="post-icon" />
-                            <span>Video</span>
-                        </button>
-
-                        <button>
-                            <FaCalendarCheck className="post-icon" />
-                            <span>Event</span>
-                        </button>
-
-                        <button>
-                            <FaNewspaper className="post-icon" />
-                            <span>Write article</span>
-                        </button>
-                    </div>
-                </ShareBox>
-
-                <Content>
-                    {
-                        props.loading && <img src="./images/spin-loading.gif" alt=""/>
-                    }
-                    {
-                        props.articles.length != 0 &&
-                        props.articles.map((article, key) => (
-                
-                            <Article key = {key} >
-                                <SharedActor>
-                                    <a>
-                                        <img src={article.actor.image} alt="" />
-                                        <div>
-                                            <span>{article.actor.title}</span>
-                                            <span>{article.actor.description}</span>
-                                            <span>{article.actor.date.toDate().toLocaleDateString()}</span>
-                                        </div>
-                                    </a>
-
-                                    <button>
-                                        <FaEllipsisH />
-                                    </button>
-                                </SharedActor>
-
-                                <Description>{article.description}</Description>
-
-                                <SharedImage>
-                                    <a>
-                                        {
-                                            !article.sharedImg && article.video ? 
-                                                (<ReactPlayer width = {'100%'} url={article.video} />)
-                                            :
-                                            (
-                                                article.sharedImg && <img src={article.sharedImg} alt=""/>
-                                            )
-                                        }
-                                    </a>
-                                </SharedImage>
-
-                                <SocialCounts>
-                                    <li>
-                                        <button>
-                                            <FaThumbsUp/>
-                                            <img src="images/clap-icon.png" alt="" />
-                                            <span>62</span>
-                                        </button>
-                                    </li>
-                                    <li>
-                                        <a>{article.comments} comments</a>
-                                    </li>
-                                </SocialCounts>
-
-                                <SocialActions>
-                                    <button>
-                                        <i class="far fa-thumbs-up"></i>
-                                        <span>Like</span>
-                                    </button>
-                                    <button>
-                                        <i class="far fa-comment"></i>
-                                        <span>Comment</span>
-                                    </button>
-                                    <button>
-                                        <i class="fas fa-share"></i>
-                                        <span>Share</span>
-                                    </button>
-                                    <button>
-                                        <i class="fab fa-telegram-plane"></i>
-                                        <span>Send</span>
-                                    </button>
-                                </SocialActions>
-                        
-                            </Article>        
-                        ))        
-            }
-                </Content>
-
-                <PostModal showModal={showModal} handleClick = {handleClick} />
-            </Container>
-        // )
-      // }
-        // </>
+      <Container>
+        <ShareBox>
+          <div>
+              { props.user && props.user.photoURL ?
+                  (<img src={ props.user.photoURL} alt="" />)
+                  :
+                  (<img src="/images/user.svg" alt="" />)                          
+              }
+              <button 
+                  onClick = {handleClick}
+                  disabled = { props.loading ? true : false }
+                  className="post-space">
+                  Start a Post    
+              </button> 
+          </div>
+          <div>
+            <button><IoMdPhotos className="post-icon"/><span>Photo</span></button>
+            <button><FaPhotoVideo className="post-icon" /><span>Video</span></button>
+            <button><FaCalendarCheck className="post-icon" /><span>Event</span></button>
+            <button><FaNewspaper className="post-icon" /><span>Write article</span></button>
+          </div>
+        </ShareBox>
+        <Content>
+          {props.loading && <img src="./images/spin-loading.gif" alt=""/>}
+          {props.articles.length != 0 &&
+            props.articles.map((article, key) => (
+            <Article key = {key} >
+              <SharedActor>
+                <a>
+                  <img src={article.actor.image} alt="" />
+                  <div>
+                    <span>{article.actor.title}</span>
+                    <span>{article.actor.description}</span>
+                    <span>{article.actor.date.toDate().toLocaleDateString()}</span>
+                  </div>
+                </a>
+                <button><FaEllipsisH /></button>
+              </SharedActor>
+              <Description>{article.description}</Description>
+              <SharedImage>
+                <a>
+                  {!article.sharedImg && article.video ? 
+                    (<ReactPlayer width = {'100%'} url={article.video} />)
+                    :
+                    (article.sharedImg && <img src={article.sharedImg} alt=""/>)
+                  }
+                </a>
+              </SharedImage>
+              <SocialCounts>
+                <li><button><FaThumbsUp/><img src="images/clap-icon.png" alt="" /></button></li>
+                <li><a>{article.comments} comments</a></li>
+              </SocialCounts>
+              <SocialActions>
+                <button><i class="far fa-thumbs-up"></i><span>Like</span></button>
+                <button><i class="far fa-comment"></i><span>Comment</span></button>
+                <button><i class="fas fa-share"></i><span>Share</span></button>
+                <button><i class="fab fa-telegram-plane"></i><span>Send</span></button>
+              </SocialActions>
+            </Article>        
+            ))        
+          }
+        </Content>
+        <PostModal showModal={showModal} handleClick = {handleClick} />
+      </Container>
     );
 };
 
@@ -258,6 +197,7 @@ const Article = styled(CommonCard)`
     padding: 0;
     margin: 0 0 8px;
     overflow: visible;
+    background-color: #e9e9e9;
 `;
 
 const SharedActor = styled.div`
