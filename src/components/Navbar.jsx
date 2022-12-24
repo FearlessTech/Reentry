@@ -26,31 +26,31 @@ const Navbar = (props) => {
 
         <Nav>
           <NavListWrap>
-            <NavList className="active">
+            <NavList >
               <a href="/home">
                 <IoIosHome size={18} style={{ fill:'#cdcdcd' }} />
                 <span>Home</span>
               </a>
             </NavList>
-            <NavList>
+            <NavList >
               <a href="/network">
                 <IoMdPeople size={18} style={{ fill:'#cdcdcd' }} />
                 <span>My Network</span>
               </a>
             </NavList>
-            <NavList>
+            <NavList >
               <a href="/resource">
                 <BsFillBriefcaseFill size={18} style={{ fill:'#cdcdcd' }} />
                 <span>Resources</span>
               </a>
             </NavList>
-            <NavList>
+            <NavList >
               <a href="/#">
                 <SiGooglemessages size={18} style={{ fill:'#cdcdcd' }} />
                 <span>Messaging</span>
               </a>
             </NavList>
-            <NavList>
+            <NavList >
               <a href="/notifications">
               <IoMdNotifications size={18} style={{ fill:'#cdcdcd' }} />
                 <span>Notifications</span>
@@ -201,16 +201,30 @@ const NavList = styled.li`
         min-width: 88px;
         position: relative;
         text-decoration: none;
+        padding: 0 10px;
 
         span {
             color: rgba(0,0,0,0.6);
             display: flex;
             align-items: center;
-        }
+         }
 
         @media (max-width: 768px) {
             min-width: 70px;
         }
+    }
+
+    a:after{
+      content: "";
+      position: absolute;
+      background-color: #ff3c78;
+      height: 3px;
+      width: 0;
+      left: 0;
+      bottom: -5px;
+    }
+    a:hover:after{
+      width: 100%;
     }
 
     &:hover,&:active {
