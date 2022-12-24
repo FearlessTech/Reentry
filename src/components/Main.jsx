@@ -35,17 +35,17 @@ const Main = (props) => {
 
     return (
       <Container>
-        <postNav>
+        <PostNav>
           <button 
             onClick = {handleClick}
-            disabled = { props.loading ? true : false }
+            disabled = { !!props.loading }
             className="post-space">
             Start a Post    
           </button> 
-          <IoMdSettings></IoMdSettings>
-        </postNav>
+          <IoMdSettings size={30} style={{margin: '8px', fill:'#cdcdcd'}}></IoMdSettings>
+        </PostNav>
         <Content>
-          {props.loading && <img src="./images/spin-loading.gif" alt=""/>}
+          {props.loading && <img src="public/images/spin-loading.gif" alt=""/>}
           {props.articles.length != 0 &&
             props.articles.map((article, key) => (
             <Article key = {key} >
@@ -112,59 +112,58 @@ const Article = styled(CommonCard)`
 `;
 
 const SharedActor = styled.div`
-    padding-right: 40px;
-    flex-wrap: nowrap;
-    padding: 12px 16px 0;
-    margin-bottom: 8px;
-    align-items: center;
+  flex-wrap: nowrap;
+  padding: 12px 16px 0;
+  margin-bottom: 8px;
+  align-items: center;
+  display: flex;
+  background-color: #e9e9e9;
+
+  a {
+    margin-right: 12px;
+    flex-grow: 1;
+    overflow: hidden;
     display: flex;
-    background-color: #e9e9e9;
+    text-decoration: none;
 
-    a {
-        margin-right: 12px;
-        flex-grow: 1;
-        overflow: hidden;
-        display: flex;
-        text-decoration: none;
-
-        img {
-            width: 48px;
-            height: 48px;
-        }
-
-        & > div {
-            display: flex;
-            flex-direction: column;
-            flex-grow: 1;
-            flex-basis: 0;
-            margin-left: 8px;
-            overflow: hidden;
-
-            span {
-                text-align: left;
-
-                &:first-child {
-                    font-size: 14px;
-                    font-weight: 700;
-                    color: rgba(0, 0, 0, 1);
-                }
-
-                &:nth-child(n+1) {
-                    font-size: 12px;
-                    color: rgba(0,0,0,0.6);
-                }
-            }
-        }
+    img {
+      width: 48px;
+      height: 48px;
     }
 
-    button {
-        position: absolute;
-        right: 12px;
-        outline: none;
-        border: none;
-        top: 0;
-        background: transparent;
+    & > div {
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+      flex-basis: 0;
+      margin-left: 8px;
+      overflow: hidden;
+
+      span {
+        text-align: left;
+
+        &:first-child {
+          font-size: 14px;
+          font-weight: 700;
+          color: rgba(0, 0, 0, 1);
+        }
+
+        &:nth-child(n+1) {
+          font-size: 12px;
+          color: rgba(0, 0, 0, 0.6);
+        }
+      }
     }
+  }
+
+  button {
+    position: absolute;
+    right: 12px;
+    outline: none;
+    border: none;
+    top: 0;
+    background: transparent;
+  }
 `;
 
 const Description = styled.div`
@@ -245,8 +244,32 @@ const Content = styled.div`
         width: 30px;
     }
 `;
-const postNav = styled.div`
+const PostNav = styled.div`
+  background-color: #88bbd6;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  overflow: hidden;
+  margin-bottom: 8px;
+  border-radius: 5px;
+  position: relative;
+  border: none;
+  border-radius: 0 0 0 1px rgb(0 0 0 / 15%), 0 0 0 rgb(0 0 0 / 20%);
+  button {
+    display: inline-flex;
+    align-items: center;
+    padding: 8px;
+    color: #0a66c2;
+    border: none;
+    background-color: #fff;
+    margin: 8px;
 
+    @media (min-width: 768px) {
+      span {
+        margin-left: 8px;
+      }
+    }
+  }
 `;
 
 const mapStateToProps = (state) => {

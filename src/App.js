@@ -11,9 +11,6 @@ import { Network } from "./components/Network/Network";
 import { Notifications } from "./components/notifications/notifications";
 import { Profile } from "./components/Profile/Profile";
 
-
-
-
 function App(props) {
   useEffect(() => {
     props.getUserAuth();
