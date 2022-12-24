@@ -77,8 +77,6 @@ const Main = (props) => {
               <SocialActions>
                 <button><span>Like</span></button>
                 <button><span>Comment</span></button>
-                <button><span>Share</span></button>
-                <button><span>Send</span></button>
               </SocialActions>
             </Article>
           ))
@@ -205,7 +203,8 @@ const SocialCounts = styled.ul`
 const SocialActions = styled.div`
   align-items: center;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
+  flex-direction: row-reverse;
   margin: 0;
   min-height: 40px;
   padding: 4px 8px;
