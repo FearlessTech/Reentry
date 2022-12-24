@@ -2,6 +2,7 @@ import { auth, provider, storage } from '../firebase';
 import db from '../firebase';
 import { SET_USER, SET_LOADING_STATUS, GET_ARTICLES } from './actionType';
 
+
 export const setUser = (payload) => ({
     type: SET_USER,
     user: payload,
@@ -10,11 +11,6 @@ export const setUser = (payload) => ({
 export const setLoading = (status) => ({
     type: SET_LOADING_STATUS,
     status : status,
-})
-
-export const getArticles = (payload) => ({
-    type: GET_ARTICLES,
-    payload: payload,
 })
 
 export function signInAPI() {
@@ -50,6 +46,10 @@ export function signOutAPI() {
         });
     };
 }
+export const getArticles = (payload) => ({
+    type: GET_ARTICLES,
+    payload: payload,
+})
 
 export function postArticleAPI(payload) {
     return (dispatch) => {
