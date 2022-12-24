@@ -245,7 +245,7 @@ const Content = styled.div`
     }
 `;
 const PostNav = styled.div`
-  background-color: #88bbd6;
+  background-color: #FCF4a3;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -261,13 +261,17 @@ const PostNav = styled.div`
     padding: 8px;
     color: #0a66c2;
     border: none;
-    background-color: #fff;
+    background-color: #99d3df;
     margin: 8px;
+    border-radius: 5px;
 
     @media (min-width: 768px) {
       span {
         margin-left: 8px;
       }
+    }
+    &:hover {
+        background-color: #88bbd6;
     }
   }
 `;

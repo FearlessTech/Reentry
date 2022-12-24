@@ -1,5 +1,8 @@
 import styled from 'styled-components';
 import { connect } from 'react-redux';
+import { AiOutlineUserAdd, AiOutlinePlus, } from "react-icons/ai";
+import { BsFillBookmarkFill } from "react-icons/bs";
+
 
 const Leftside = (props) => {
     return (
@@ -30,13 +33,13 @@ const Leftside = (props) => {
                             <span>Connections</span>
                             <span>Grow your network</span>
                         </div>
-                        <img src="/images/widget-icon.svg" alt="" />
+                        <AiOutlineUserAdd/>
                     </a>
                 </Widget>
 
                 <Item>
                     <span>
-                        <img src="/images/item-icon.svg" alt="" />
+                        <BsFillBookmarkFill />
                         My Items
                     </span>
                 </Item>
@@ -49,7 +52,7 @@ const Leftside = (props) => {
                 <a>
                     <span>
                         Events
-                        <img src="/images/plus-icon.svg" alt="" />
+                        <AiOutlinePlus />
                     </span>
                 </a>
                 <a>
