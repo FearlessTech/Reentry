@@ -1,8 +1,8 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 
-// I want this to show links to news articles relivant to 
+// I want this to show links to news articles relevant to
 // reentry in maine. Under the link I want to see the date 
-// it was posted to this site and how many people ahve clicked on it.
+// it was posted to this site and how many people have clicked on it.
 
 
 // const top_1 = [
@@ -21,6 +21,9 @@
 //   ];
   
 import styled from 'styled-components';
+import { AiOutlineArrowRight } from "react-icons/ai";
+import { BsInfoSquareFill } from "react-icons/bs";
+
 
 const Rightside = (props) => {
     return (
@@ -28,7 +31,7 @@ const Rightside = (props) => {
             <FollowCard>
                 <Title>
                     <h2>Add to your feed</h2>
-                    <img src="/images/feed-icon.svg" alt="" />
+                    <BsInfoSquareFill />
                 </Title>
 
                 <FeedList>
@@ -54,7 +57,7 @@ const Rightside = (props) => {
 
                 <Recommendation>
                     View all recommendations
-                    <img src="/images/right-icon.svg" alt="" />
+                    <AiOutlineArrowRight />
                 </Recommendation>                
             </FollowCard>
 

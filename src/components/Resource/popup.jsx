@@ -1,12 +1,13 @@
 import React from 'react'
 import './popup.css'
+import { AiOutlineCloseCircle } from "react-icons/ai";
 
 export const Popup = ()=> {
   return (
     <div className='popup'>
         <div className='top'>
             <p>Resource alerts</p>
-            <img src="/images/closeIcon.png" alt="" /> 
+            <AiOutlineCloseCircle />
         </div>
         <hr />
         <div className='content'>

@@ -4,6 +4,9 @@ import ReactPlayer from 'react-player';
 import { connect } from 'react-redux';
 import firebase from 'firebase';
 import { postArticleAPI } from '../actions';
+import { FaFilm, FaRegImage } from "react-icons/fa";
+import { BsFillChatFill } from "react-icons/bs";
+import { AiOutlineCloseCircle } from "react-icons/ai";
 
 const PostModal = (props) => {
     const [editorText, setEditorText] = useState('');
@@ -63,7 +66,7 @@ const PostModal = (props) => {
                         <Header>
                             <h2>Create a post</h2>
                             <button onClick = {(event) => reset(event)}>
-                                <img src="/images/close-icon.png" alt="" />
+                                <AiOutlineCloseCircle />
                             </button>
                         </Header>
 
@@ -129,16 +132,16 @@ const PostModal = (props) => {
                         <SharedCreation>
                             <AttachAssets>
                                 <AssetButton onClick={() => switchAssetArea('image')}>
-                                    <img src="/images/shared-img.png" alt="" />
+                                    <FaRegImage />
                                 </AssetButton>
                                 <AssetButton onClick = {() => switchAssetArea('media')}>
-                                    <img src="/images/shared-vid.png" alt="" />
+                                    <FaFilm/>
                                 </AssetButton>
                             </AttachAssets>
 
                             <ShareComment>
                                 <AssetButton>
-                                    <img src="/images/shared-comment.png" alt="" />
+                                    <BsFillChatFill />
                                     Anyone
                                 </AssetButton>
                             </ShareComment>

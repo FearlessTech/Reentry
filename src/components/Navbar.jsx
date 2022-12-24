@@ -4,7 +4,7 @@ import { signOutAPI } from '../actions';
 import { SiGooglemessages } from "react-icons/si";
 import { BsFillBriefcaseFill } from "react-icons/bs";
 
-import { IoMdNotifications, IoIosHome, IoMdPeople, IoMdSettings, IoMdArrowDropdown } from "react-icons/io";
+import { IoMdNotifications, IoIosHome, IoMdPeople, IoMdSettings, IoMdArrowDropdown, IoMdSearch } from "react-icons/io";
 
 const Navbar = (props) => {
   return (
@@ -20,7 +20,7 @@ const Navbar = (props) => {
             <input type="text" placeholder="Search" />
           </div>
           <SearchIcon>
-            <img src="/images/search-icon.svg" alt="" />
+            <IoMdSearch />
           </SearchIcon>
         </Search>
 
