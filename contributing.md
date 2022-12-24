@@ -18,7 +18,12 @@ user functionality. The sooner this site is ready for deployment, the sooner adv
 * Make a pull request from the changes on your new branch. 
 
 # Styling and layout
-Converting layouts to [React-Bootstrap](https://react-bootstrap.github.io/) as much as possible
+The color schema is:
+* #fcf4a3
+* #99d3df
+* #88bbd6
+* cdcdcd
+* e9e9e9
 Converting Icons to [React Icon Library](https://react-icons.github.io/react-icons)
 Also using [Chakra UI](https://v0.chakra-ui.com/) for styling
 
