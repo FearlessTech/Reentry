@@ -12,7 +12,7 @@ import { Popups } from "./Popups";
 import { SideBar } from "./Sidebar";
 import AddIcon from "@mui/icons-material/Add";
 import { useSelector } from "react-redux";
-import { selectUser } from "src/reducers/userSlice.jsx";
+import { selectUser } from "./userSlice";
 export const Profile = () => {
   const user = useSelector(selectUser);
 
