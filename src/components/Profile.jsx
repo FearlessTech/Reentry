@@ -1,4 +1,4 @@
-import { connect } from 'react-redux';
+import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 
 import { AiOutlineUserAdd, AiOutlinePlus, } from "react-icons/ai";
@@ -8,22 +8,25 @@ import { BsFillBookmarkFill } from "react-icons/bs";
 import {
   Container,
   ArtCard,
-  UserInfo,
-  CardBackground,
-  Photo,
-  AddPhotoText,
   Widget,
   Item,
-  CommunityCard
-} from '../styles/stylesLeftside.jsx';
+  CommunityCard,
+  CardBackground,
+  UserInfo,
+  Photo,
+  AddPhotoText,
+  ProfileMain,
+  ProfileLeft
+} from '../styles/stylesProfile.jsx';
 
-const Leftside = (props) => {
+const Profile = (props) => {
   return (
     <Container>
+      <ProfileLeft>
       <ArtCard>
         <UserInfo>
           <CardBackground />
-          <Link to='/profile'>
+          <Link to={<Profile/>}>
             <Photo>
               {props.user && props.user.photoURL ? (
                 <img src={props.user.photoURL} alt="" />
@@ -31,10 +34,15 @@ const Leftside = (props) => {
                 <img src="/images/user.svg" alt=""/>
               )}
             </Photo>
-            <h3>Welcome, {props.user ? props.user.displayName : "there"}!</h3>
+            <h3>
+              Welcome, {props.user ? props.user.displayName : "there"}!
+            </h3>
           </Link>
-          <a><AddPhotoText></AddPhotoText></a>
+          <a>
+            <AddPhotoText></AddPhotoText>
+          </a>
         </UserInfo>
+
         <Widget>
           <a>
             <div>
@@ -44,16 +52,32 @@ const Leftside = (props) => {
             <AiOutlineUserAdd/>
           </a>
         </Widget>
-        <Item><span><BsFillBookmarkFill />My Items</span></Item>
+
+        <Item>
+                    <span>
+                        <BsFillBookmarkFill />
+                        My Items
+                    </span>
+        </Item>
       </ArtCard>
 
       <CommunityCard>
-        <a><span>Groups</span></a>
-        <a><span>Events<AiOutlinePlus /></span></a>
-        <a><span>Follow Hashtags</span></a>
-        <a><span>Discover more</span></a>
+        <a>
+          <span>Groups</span>
+        </a>
+        <a>
+                    <span>
+                        Events
+                        <AiOutlinePlus />
+                    </span>
+        </a>
       </CommunityCard>
+      </ProfileLeft>
+      <ProfileMain>
+        <h1>Profile</h1>
+      </ProfileMain>
     </Container>
+
   );
 };
 
@@ -62,4 +86,5 @@ const mapStateToProps = (state) => {
     user: state.userState.user,
   };
 };
-export default connect(mapStateToProps)(Leftside);
+
+export default connect(mapStateToProps)(Profile);
