@@ -42,7 +42,7 @@ const Navbar = (props) => {
               <Link to="/resource"><BsFillBriefcaseFill size={18} style={{ fill:'#cdcdcd' }} /><span>Resources</span></Link>
             </NavList>
             <NavList >
-              <Link to="/#"><SiGooglemessages size={18} style={{ fill:'#cdcdcd' }} /><span>Messaging</span></Link>
+              <Link to="/messaging"><SiGooglemessages size={18} style={{ fill:'#cdcdcd' }} /><span>Messaging</span></Link>
             </NavList>
             <NavList >
               <Link to="/notifications"><IoMdNotifications size={18} style={{ fill:'#cdcdcd' }} /><span>Notifications</span></Link>
