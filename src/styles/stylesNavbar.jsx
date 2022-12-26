@@ -130,7 +130,7 @@ const NavList = styled.li`
   a:after{
     content: "";
     position: absolute;
-    background-color: #ff3c78;
+    background-color: #fcf4a3;
     height: 3px;
     width: 0;
     left: 0;
@@ -194,9 +194,38 @@ const User = styled(NavList)`
   }
 `;
 
-const Work = styled(User)`
-  border-left: 1px solid rgba(0, 0, 0, 0.08);
+const Dropdown = styled.div`
+  cursor: pointer;
+  position: absolute;
+  top: 48px;
+  background: #e9e9e9;
+  border-radius: 0 0 5px 5px;
+  width: auto;
+  box-shadow: 2px 3px 5px -2px rgba(110,104,104,0.75);
+  height: auto;
+  font-size: 16px;
+  transition-duration: 167ms;
+  text-align: center;
+  display: none;
 `;
+const More = styled(NavList)`
+  border-right: 1px solid rgba(0, 0, 0, 0.08);
+  span {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  &:hover {
+    ${Dropdown} {
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+    }
+  }
+`;
+
+
 
 export {
   Container,
@@ -209,5 +238,6 @@ export {
   NavList,
   SignOut,
   User,
-  Work
+  More,
+  Dropdown
 };

@@ -18,7 +18,8 @@ import {
   NavList,
   SignOut,
   User,
-  Work
+  More,
+  Dropdown
 } from '../styles/stylesNavbar';
 
 const Navbar = (props) => {
@@ -47,7 +48,13 @@ const Navbar = (props) => {
             <NavList >
               <Link to="/notifications"><IoMdNotifications size={18} style={{ fill:'#cdcdcd' }} /><span>Notifications</span></Link>
             </NavList>
-
+            <More>
+              <a><IoMdSettings size={18} style={{ fill:'#cdcdcd' }}/><span>More<IoMdArrowDropdown /></span></a>
+              <Dropdown>
+                <Link to="/profile"><span>Profile</span></Link>
+                <Link to="/aboutus"><span>About Us</span></Link>
+              </Dropdown>
+            </More>
             <User>
               <a>
                 { props.user && props.user.photoURL ? (
@@ -55,13 +62,10 @@ const Navbar = (props) => {
                   ) : (
                   <img src="/images/user.svg" alt="" /> )
                 }
-                <span>Me <IoMdArrowDropdown /></span>
+                <span>Sign Out <IoMdArrowDropdown /></span>
               </a>
               <SignOut onClick = {() => props.signOut()} ><a >Sign Out</a></SignOut>
             </User>
-            <Work>
-              <a><IoMdSettings size={18} style={{ fill:'#cdcdcd' }}/><span>Work</span></a>
-            </Work>
           </NavListWrap>
         </Nav>
       </Content>

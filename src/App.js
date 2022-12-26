@@ -12,6 +12,7 @@ import { Network } from "./components/Network/Network";
 import { Notifications } from "./components/notifications/notifications";
 import Profile  from "./components/Profile.jsx";
 import Messaging from './components/Messaging';
+import AboutUs from './components/AboutUs';
 
 function App(props) {
   useEffect(() => {
@@ -29,6 +30,7 @@ function App(props) {
             <Route path="/network"><Navbar /><Network /></Route>
             <Route path="/messaging"><Navbar /><Messaging /></Route>
             <Route path="/profile"><Navbar /><Profile /></Route>
+            <Route path="/aboutus"><Navbar/>><AboutUs /></Route>
           </Switch>
         </Router>
       </div>
