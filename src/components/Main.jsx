@@ -1,20 +1,20 @@
-import { useEffect, useState } from "react";
-import styled from "styled-components";
-import PostModal from "./PostModal";
-import ReactPlayer from "react-player";
-import { connect } from "react-redux";
-import { getArticlesAPI } from "../actions";
-import { IoMdPhotos } from "react-icons/io";
+import { useEffect, useState } from 'react';
+import styled from 'styled-components';
+import PostModal from './PostModal';
+import ReactPlayer from 'react-player';
+import { connect } from 'react-redux';
+import { getArticlesAPI } from '../actions';
+import { IoMdPhotos } from 'react-icons/io';
 import {
   FaPhotoVideo,
   FaCalendarCheck,
   FaNewspaper,
   FaEllipsisH,
   FaThumbsUp,
-} from "react-icons/fa";
+} from 'react-icons/fa';
 
 const Main = (props) => {
-  const [showModal, setShowModal] = useState("close");
+  const [showModal, setShowModal] = useState('close');
 
   useEffect(() => {
     props.getArticles();
@@ -27,14 +27,14 @@ const Main = (props) => {
     }
 
     switch (showModal) {
-      case "open":
-        setShowModal("close");
+      case 'open':
+        setShowModal('close');
         break;
-      case "close":
-        setShowModal("open");
+      case 'close':
+        setShowModal('open');
         break;
       default:
-        setShowModal("close");
+        setShowModal('close');
         break;
     }
   };
@@ -49,14 +49,14 @@ const Main = (props) => {
       <ShareBox>
         <div>
           {props.user && props.user.photoURL ? (
-            <img src={props.user.photoURL} alt="" />
+            <img src={props.user.photoURL} alt='' />
           ) : (
-            <img src="/images/user.svg" alt="" />
+            <img src='/images/user.svg' alt='' />
           )}
           <button
             onClick={handleClick}
             disabled={props.loading ? true : false}
-            className="post-space"
+            className='post-space'
           >
             Start a Post
           </button>
@@ -64,35 +64,35 @@ const Main = (props) => {
 
         <div>
           <button>
-            <IoMdPhotos className="post-icon" />
+            <IoMdPhotos className='post-icon' />
             <span>Photo</span>
           </button>
 
           <button>
-            <FaPhotoVideo className="post-icon" />
+            <FaPhotoVideo className='post-icon' />
             <span>Video</span>
           </button>
 
           <button>
-            <FaCalendarCheck className="post-icon" />
+            <FaCalendarCheck className='post-icon' />
             <span>Event</span>
           </button>
 
           <button>
-            <FaNewspaper className="post-icon" />
+            <FaNewspaper className='post-icon' />
             <span>Write article</span>
           </button>
         </div>
       </ShareBox>
 
       <Content>
-        {props.loading && <img src="./images/spin-loading.gif" alt="" />}
+        {props.loading && <img src='./images/spin-loading.gif' alt='' />}
         {props.articles.length != 0 &&
           props.articles.map((article, key) => (
             <Article key={key}>
               <SharedActor>
                 <a>
-                  <img src={article.actor.image} alt="" />
+                  <img src={article.actor.image} alt='' />
                   <div>
                     <span>{article.actor.title}</span>
                     <span>{article.actor.description}</span>
@@ -112,9 +112,9 @@ const Main = (props) => {
               <SharedImage>
                 <a>
                   {!article.sharedImg && article.video ? (
-                    <ReactPlayer width={"100%"} url={article.video} />
+                    <ReactPlayer width={'100%'} url={article.video} />
                   ) : (
-                    article.sharedImg && <img src={article.sharedImg} alt="" />
+                    article.sharedImg && <img src={article.sharedImg} alt='' />
                   )}
                 </a>
               </SharedImage>
@@ -123,7 +123,7 @@ const Main = (props) => {
                 <li>
                   <button>
                     <FaThumbsUp />
-                    <img src="images/clap-icon.png" alt="" />
+                    <img src='images/clap-icon.png' alt='' />
                     <span>62</span>
                   </button>
                 </li>
@@ -134,19 +134,19 @@ const Main = (props) => {
 
               <SocialActions>
                 <button>
-                  <i className="far fa-thumbs-up"></i>
+                  <i className='far fa-thumbs-up'></i>
                   <span>Like</span>
                 </button>
                 <button>
-                  <i className="far fa-comment"></i>
+                  <i className='far fa-comment'></i>
                   <span>Comment</span>
                 </button>
                 <button>
-                  <i className="fas fa-share"></i>
+                  <i className='fas fa-share'></i>
                   <span>Share</span>
                 </button>
                 <button>
-                  <i className="fab fa-telegram-plane"></i>
+                  <i className='fab fa-telegram-plane'></i>
                   <span>Send</span>
                 </button>
               </SocialActions>
