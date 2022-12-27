@@ -1,20 +1,21 @@
 import { connect } from 'react-redux';
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { signOutAPI } from '../actions';
 
-import { SiGooglemessages } from "react-icons/si";
-import { BsFillBriefcaseFill } from "react-icons/bs";
+import { SiGooglemessages } from 'react-icons/si';
+import { BsFillBriefcaseFill } from 'react-icons/bs';
 import {
   IoMdNotifications,
   IoIosHome,
   IoMdPeople,
   IoMdSettings,
   IoMdArrowDropdown,
-  IoMdSearch
-} from "react-icons/io";
+  IoMdSearch,
+  IoMdPerson,
+  IoMdInformationCircle,
+} from 'react-icons/io';
 import { capitalize } from '@material-ui/core';
-
 
 import {
   Container,
@@ -28,7 +29,7 @@ import {
   SignOut,
   User,
   More,
-  Dropdown
+  Dropdown,
 } from '../styles/stylesNavbar';
 
 const Navbar = (props) => {
@@ -48,17 +49,27 @@ const Navbar = (props) => {
   return (
     <Container>
       <Content>
-        <Logo><Link to="/home"><img src="/images/MaineRRLogo.png" alt="" width="100%"/></Link></Logo>
+        <Logo>
+          <Link to='/home'>
+            <img src='/images/MaineRRLogo.png' alt='' width='100%' />
+          </Link>
+        </Logo>
         <Search>
-          <div><input type="text" placeholder="Search" /></div>
-          <SearchIcon><IoMdSearch /></SearchIcon>
+          <div>
+            <input type='text' placeholder='Search' />
+          </div>
+          <SearchIcon>
+            <IoMdSearch />
+          </SearchIcon>
         </Search>
         <Nav>
           <NavListWrap>
             {topics.map(({ name, Icon }) => {
-              console.log('rendering');
               return (
-                <NavList className={(url ? url.includes(name) : false) ? "active" : ""} >
+                <NavList
+                  key={name}
+                  className={(url ? url.includes(name) : false) ? 'active' : ''}
+                >
                   <a href={`/${name}`}>
                     <Icon size={18} style={{ fill: '#cdcdcd' }} />
                     <span>{capitalize(name)}</span>
@@ -67,38 +78,70 @@ const Navbar = (props) => {
               );
             })}
             <More>
-              <a><IoMdSettings size={18} style={{ fill:'#cdcdcd' }}/><span>More<IoMdArrowDropdown /></span></a>
+              <a>
+                <IoMdSettings size={18} style={{ fill: '#cdcdcd' }} />
+                <span>
+                  More
+                  <IoMdArrowDropdown />
+                </span>
+              </a>
               <Dropdown>
-                <Link to="/profile"><span>Profile</span></Link>
-                <Link to="/aboutus"><span>About Us</span></Link>
+                <Link
+                  to='/profile'
+                  className={`dropdown-item ${
+                    (url ? url.includes('profile') : false) ? 'active' : ''
+                  }`}
+                  onClick={() => {
+                    setUrl('profile');
+                  }}
+                >
+                  <IoMdPerson fill={'#00000099'} />
+                  <span>Profile</span>
+                </Link>
+                <Link
+                  to='/aboutus'
+                  className={`dropdown-item ${
+                    (url ? url.includes('aboutus') : false) ? 'active' : ''
+                  }`}
+                  onClick={() => {
+                    setUrl('aboutus');
+                  }}
+                >
+                  <IoMdInformationCircle fill={'#00000099'} />
+                  <span>About Us</span>
+                </Link>
               </Dropdown>
             </More>
             <User>
               <a>
-                { props.user && props.user.photoURL ? (
-                  <img src={props.user.photoURL} alt="" />
-                  ) : (
-                  <img src="/images/user.svg" alt="" /> )
-                }
-                <span>Sign Out <IoMdArrowDropdown /></span>
+                {props.user && props.user.photoURL ? (
+                  <img src={props.user.photoURL} alt='' />
+                ) : (
+                  <img src='/images/user.svg' alt='' />
+                )}
+                <span>
+                  Sign Out <IoMdArrowDropdown />
+                </span>
               </a>
-              <SignOut onClick = {() => props.signOut()} ><a >Sign Out</a></SignOut>
+              <SignOut onClick={() => props.signOut()}>
+                <a>Sign Out</a>
+              </SignOut>
             </User>
           </NavListWrap>
         </Nav>
       </Content>
     </Container>
   );
-}
+};
 
 const mapStateToProps = (state) => {
-    return {
-        user: state.userState.user,
-    };
+  return {
+    user: state.userState.user,
+  };
 };
 
 const mapDispatchToProps = (dispatch) => ({
-    signOut: () => dispatch(signOutAPI()),
+  signOut: () => dispatch(signOutAPI()),
 });
- 
+
 export default connect(mapStateToProps, mapDispatchToProps)(Navbar);

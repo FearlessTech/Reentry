@@ -1,8 +1,8 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 const Container = styled.div`
   background-color: #88bbd6;
-  border-bottom: 1px solid rgba(0,0,0,0.08);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
   left: 0;
   padding: 0 24px;
   top: 0;
@@ -37,7 +37,7 @@ const Search = styled.div`
       box-shadow: none;
       background-color: #eef3f8;
       border-radius: 2px;
-      color: rgba(0,0,0,0.9);
+      color: rgba(0, 0, 0, 0.9);
       width: 218px;
       padding: 0 8px 0 40px;
       line-height: 1.75;
@@ -83,16 +83,25 @@ const NavListWrap = styled.ul`
   list-style-type: none;
 
   .active {
-    span:after {
+    a:after {
       content: '';
-      transform: scaleX(1);
-      border-bottom: 2px solid var(--white, #ffffff);
-      bottom: 0;
-      left: 0;
       position: absolute;
-      transition: transform 0.2s ease-in-out;
+      background-color: #fcf4a3;
+      height: 3px;
       width: 100%;
-      border-color: rgba(0,0,0,0.9);
+      left: 0;
+      bottom: -5px;
+    }
+  }
+  .dropdown-item.active {
+    &:after {
+      content: '';
+      position: absolute;
+      background-color: #fcf4a3;
+      height: 3px;
+      width: 100%;
+      left: 0;
+      bottom: 0px;
     }
   }
 `;
@@ -117,7 +126,7 @@ const NavList = styled.li`
     padding: 0 10px;
 
     span {
-      color: rgba(0,0,0,0.6);
+      color: rgba(0, 0, 0, 0.6);
       display: flex;
       align-items: center;
     }
@@ -127,20 +136,8 @@ const NavList = styled.li`
     }
   }
 
-  a:after{
-    content: "";
-    position: absolute;
-    background-color: #fcf4a3;
-    height: 3px;
-    width: 0;
-    left: 0;
-    bottom: -5px;
-  }
-  a:hover:after{
-    width: 100%;
-  }
-
-  &:hover,&:active {
+  &:hover,
+  &:active {
     a {
       span {
         color: rgba(0, 0, 0, 0.9);
@@ -156,7 +153,7 @@ const SignOut = styled.div`
   background: #e9e9e9;
   border-radius: 0 0 5px 5px;
   width: 100px;
-  box-shadow: 2px 3px 5px -2px rgba(110,104,104,0.75);
+  box-shadow: 2px 3px 5px -2px rgba(110, 104, 104, 0.75);
   height: 100%;
   font-size: 16px;
   transition-duration: 167ms;
@@ -201,12 +198,18 @@ const Dropdown = styled.div`
   background: #e9e9e9;
   border-radius: 0 0 5px 5px;
   width: auto;
-  box-shadow: 2px 3px 5px -2px rgba(110,104,104,0.75);
+  box-shadow: 2px 3px 5px -2px rgba(110, 104, 104, 0.75);
   height: auto;
   font-size: 16px;
   transition-duration: 167ms;
   text-align: center;
   display: none;
+  a {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    gap: 1rem;
+  }
 `;
 const More = styled(NavList)`
   border-right: 1px solid rgba(0, 0, 0, 0.08);
@@ -225,8 +228,6 @@ const More = styled(NavList)`
   }
 `;
 
-
-
 export {
   Container,
   Content,
@@ -239,5 +240,5 @@ export {
   SignOut,
   User,
   More,
-  Dropdown
+  Dropdown,
 };
