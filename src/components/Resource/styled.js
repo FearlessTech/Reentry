@@ -148,7 +148,6 @@ export const StyledMiddleAside = styled.aside`
     }
   }
   .ocupation-card {
-    border-bottom: 1px solid #00000090;
     display: flex;
     cursor: pointer;
     align-items: stretch;
