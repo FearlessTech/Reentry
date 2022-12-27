@@ -16,6 +16,30 @@ export const Resource = (props) => {
       activelyRecruiting: true, // Actively recruiting
       isPromoted: true, // Promoted
     },
+    {
+      logoUrl: null,
+      title: 'Account Manager',
+      name: 'Digital Room',
+      address: 'Glendal, CA (On-site)',
+      activelyRecruiting: true, // Actively recruiting
+      isPromoted: true, // Promoted
+    },
+    {
+      logoUrl: null,
+      title: 'Account Manager',
+      name: 'Digital Room',
+      address: 'Glendal, CA (On-site)',
+      activelyRecruiting: true, // Actively recruiting
+      isPromoted: true, // Promoted
+    },
+    {
+      logoUrl: null,
+      title: 'Account Manager',
+      name: 'Digital Room',
+      address: 'Glendal, CA (On-site)',
+      activelyRecruiting: true, // Actively recruiting
+      isPromoted: true, // Promoted
+    },
   ];
   return (
     <styleContainer className='resource'>
@@ -70,15 +94,15 @@ export const Resource = (props) => {
               isPromoted,
             }) => {
               return (
-                <div className='person-card' key={name}>
-                  <div className='person-card-logo'>
+                <div className='ocupation-card' key={name}>
+                  <div className='ocupation-card-logo'>
                     <img
                       src={logoUrl ? logoUrl : '/images/user.svg'}
                       alt={name}
                     />
                   </div>
 
-                  <div className='person-card-info'>
+                  <div className='ocupation-card-info'>
                     <h3>{title}</h3>
                     <span>{name}</span>
                     <span>{address}</span>

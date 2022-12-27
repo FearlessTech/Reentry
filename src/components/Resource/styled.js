@@ -147,20 +147,20 @@ export const StyledMiddleAside = styled.aside`
       color: #00000090;
     }
   }
-  .person-card {
-    border-bottom: 1px solid #0362df;
+  .ocupation-card {
+    border-bottom: 1px solid #00000090;
     display: flex;
     cursor: pointer;
     align-items: stretch;
     margin: 2rem 0;
-    .person-card-logo {
+    .ocupation-card-logo {
       width: 200px;
       & > img {
         width: auto;
         margin: 1rem;
       }
     }
-    .person-card-info {
+    .ocupation-card-info {
       width: 70%;
       display: flex;
       flex-direction: column;
