@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { connect } from 'react-redux';
 import { signOutAPI } from '../actions';
@@ -11,8 +12,23 @@ import {
   IoMdSettings,
   IoMdArrowDropdown,
 } from 'react-icons/io';
+import { capitalize } from '@material-ui/core';
 
 const Navbar = (props) => {
+  const topics = [
+    { name: 'home', Icon: IoIosHome },
+    { name: 'network', Icon: IoMdPeople },
+    { name: 'research', Icon: BsFillBriefcaseFill },
+    { name: 'messaging', Icon: SiGooglemessages },
+    { name: 'notifications', Icon: IoMdNotifications },
+  ];
+
+  const [url, setUrl] = useState(null);
+
+  useEffect(() => {
+    if (window?.location.href) setUrl(window.location.href);
+  }, []);
+
   return (
     <Container>
       <Content>
@@ -32,36 +48,17 @@ const Navbar = (props) => {
 
         <Nav>
           <NavListWrap>
-            <NavList className='active'>
-              <a href='/home'>
-                <IoIosHome size={18} style={{ fill: '#cdcdcd' }} />
-                <span>Home</span>
-              </a>
-            </NavList>
-            <NavList>
-              <a href='/network'>
-                <IoMdPeople size={18} style={{ fill: '#cdcdcd' }} />
-                <span>My Network</span>
-              </a>
-            </NavList>
-            <NavList>
-              <a href='/resource'>
-                <BsFillBriefcaseFill size={18} style={{ fill: '#cdcdcd' }} />
-                <span>Resources</span>
-              </a>
-            </NavList>
-            <NavList>
-              <a href='/#'>
-                <SiGooglemessages size={18} style={{ fill: '#cdcdcd' }} />
-                <span>Messaging</span>
-              </a>
-            </NavList>
-            <NavList>
-              <a href='/notifications'>
-                <IoMdNotifications size={18} style={{ fill: '#cdcdcd' }} />
-                <span>Notifications</span>
-              </a>
-            </NavList>
+            {topics.map(({ name, Icon }) => {
+              console.log('rendering');
+              return (
+                <NavList className={(url ? url.includes(name) : false) ? "active" : ""} >
+                  <a href={`/${name}`}>
+                    <Icon size={18} style={{ fill: '#cdcdcd' }} />
+                    <span>{capitalize(name)}</span>
+                  </a>
+                </NavList>
+              );
+            })}
 
             <User>
               <a>
