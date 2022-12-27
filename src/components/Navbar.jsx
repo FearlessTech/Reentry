@@ -1,10 +1,19 @@
 import { connect } from 'react-redux';
 import { Link } from "react-router-dom";
+import { useEffect, useState } from 'react';
 import { signOutAPI } from '../actions';
 
 import { SiGooglemessages } from "react-icons/si";
 import { BsFillBriefcaseFill } from "react-icons/bs";
-import { IoMdNotifications, IoIosHome, IoMdPeople, IoMdSettings, IoMdArrowDropdown, IoMdSearch } from "react-icons/io";
+import {
+  IoMdNotifications,
+  IoIosHome,
+  IoMdPeople,
+  IoMdSettings,
+  IoMdArrowDropdown,
+  IoMdSearch
+} from "react-icons/io";
+import { capitalize } from '@material-ui/core';
 
 
 import {
@@ -23,6 +32,19 @@ import {
 } from '../styles/stylesNavbar';
 
 const Navbar = (props) => {
+  const topics = [
+    { name: 'home', Icon: IoIosHome },
+    { name: 'network', Icon: IoMdPeople },
+    { name: 'resource', Icon: BsFillBriefcaseFill },
+    { name: 'messaging', Icon: SiGooglemessages },
+    { name: 'notifications', Icon: IoMdNotifications },
+  ];
+
+  const [url, setUrl] = useState(null);
+
+  useEffect(() => {
+    if (window?.location.href) setUrl(window.location.href);
+  }, []);
   return (
     <Container>
       <Content>
@@ -33,21 +55,17 @@ const Navbar = (props) => {
         </Search>
         <Nav>
           <NavListWrap>
-            <NavList >
-              <Link to="/home"><IoIosHome size={18} style={{ fill:'#cdcdcd' }} /><span>Home</span></Link>
-            </NavList>
-            <NavList >
-              <Link to="/network"><IoMdPeople size={18} style={{ fill:'#cdcdcd' }} /><span>My Network</span></Link>
-            </NavList>
-            <NavList >
-              <Link to="/resource"><BsFillBriefcaseFill size={18} style={{ fill:'#cdcdcd' }} /><span>Resources</span></Link>
-            </NavList>
-            <NavList >
-              <Link to="/messaging"><SiGooglemessages size={18} style={{ fill:'#cdcdcd' }} /><span>Messaging</span></Link>
-            </NavList>
-            <NavList >
-              <Link to="/notifications"><IoMdNotifications size={18} style={{ fill:'#cdcdcd' }} /><span>Notifications</span></Link>
-            </NavList>
+            {topics.map(({ name, Icon }) => {
+              console.log('rendering');
+              return (
+                <NavList className={(url ? url.includes(name) : false) ? "active" : ""} >
+                  <a href={`/${name}`}>
+                    <Icon size={18} style={{ fill: '#cdcdcd' }} />
+                    <span>{capitalize(name)}</span>
+                  </a>
+                </NavList>
+              );
+            })}
             <More>
               <a><IoMdSettings size={18} style={{ fill:'#cdcdcd' }}/><span>More<IoMdArrowDropdown /></span></a>
               <Dropdown>
