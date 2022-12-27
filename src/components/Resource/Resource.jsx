@@ -1,12 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './resource.css';
+import Popup from './popup';
 import DeleteOutlineIcon from '@material-ui/icons/DeleteOutline';
 import { IoIosBookmark, IoIosEyeOff } from 'react-icons/io';
 import { IoCreateOutline } from 'react-icons/io5';
 import { HiBellAlert } from 'react-icons/hi2';
 import { FiTarget } from 'react-icons/fi';
-import { StyledLeftAside, StyledMiddleAside, StyledRightAside } from './styled';
+import { StyledLeftAside, StyledMiddleAside, StyledRightAside } from './resourceStyled';
 export const Resource = (props) => {
+  const [resourcePopup, setResourcePopup] = useState(true);
+
   const ocupations = [
     {
       logoUrl: null,
@@ -43,7 +46,7 @@ export const Resource = (props) => {
   ];
 
   return (
-    <styleContainer className='resource'>
+    <div className='resource'>
       <StyledLeftAside>
         <div className='leftT_box'>
           <div className='L_box'>
@@ -53,13 +56,15 @@ export const Resource = (props) => {
             <div className='L_name'>My resources</div>
           </div>
 
-          <div className='L_box' onClick='resourcePopup()'>
+          <div className='L_box' onClick={() => setResourcePopup(true)}>
             <div className='L_logo'>
               <HiBellAlert />
             </div>
             <div className='L_name'>resource Alert</div>
           </div>
         </div>
+
+        {resourcePopup ? <Popup /> : ''}
 
         <div className='leftB_box'>
           <div className='LB_logo'>
@@ -86,16 +91,12 @@ export const Resource = (props) => {
           <p>Based on your profile and search history.</p>
 
           {ocupations.map(
-            ({
-              logoUrl,
-              title,
-              name,
-              address,
-              activelyRecruiting,
-              isPromoted,
-            }) => {
+            (
+              { logoUrl, title, name, address, activelyRecruiting, isPromoted },
+              i
+            ) => {
               return (
-                <div className='ocupation-card' key={name}>
+                <div className='ocupation-card' key={`name${i}`}>
                   <div className='ocupation-card-logo'>
                     <img
                       src={logoUrl ? logoUrl : '/images/user.svg'}
@@ -160,6 +161,6 @@ export const Resource = (props) => {
           </div>
         </div>
       </StyledRightAside>
-    </styleContainer>
+    </div>
   );
 };
