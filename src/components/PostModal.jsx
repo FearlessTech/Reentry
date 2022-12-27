@@ -71,6 +71,11 @@ const PostModal = (props) => {
     props.handleClick(e);
   }
 
+  // This function bubble the event between the parent and child of the close modal button
+  const handleClickBubbling = (event) => {
+    reset(event)
+  }
+
   return (
     <>
       { props.showModal === "open" &&
@@ -78,7 +83,7 @@ const PostModal = (props) => {
           <Content>
             <Header>
               <h2>Create a post</h2>
-              <button onClick = {(event) => reset(event)}><AiOutlineCloseCircle /></button>
+              <button onClick={(event) => handleClickBubbling(event)}><AiOutlineCloseCircle onClick={ (event)=>reset(event)} /></button>
             </Header>
             <SharedContent>
               <UserInfo>
