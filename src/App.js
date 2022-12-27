@@ -8,7 +8,7 @@ import Navbar from './components/Navbar';
 import { getUserAuth } from './actions';
 
 import { Resource } from "./components/Resource/Resource";
-import { Network } from "./components/Network/Network";
+import Network from "./components/Network";
 import { Notifications } from "./components/notifications/notifications";
 import Profile  from "./components/Profile.jsx";
 import Messaging from './components/Messaging';

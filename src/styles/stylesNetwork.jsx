@@ -7,7 +7,7 @@ const Container = styled.div`
   display: flex;
 `;
 
-const Messengers = styled.div`
+const QueryBox = styled.div`
   display: flex;
   flex-direction: column;
   width: 25%;
@@ -17,7 +17,7 @@ const Messengers = styled.div`
   border-radius: 10px;
 `;
 
-const MessengersHeader = styled.div`
+const QueryBoxHeader = styled.div`
   display: flex;
   width: 87%;
   height: 10%;
@@ -28,7 +28,7 @@ const MessengersHeader = styled.div`
   border-radius: 10px;
 `;
 
-const ActorsList = styled.div`
+const QueryOptions = styled.div`
   display: flex;
   flex-direction: column;
   margin-bottom: 20px;
@@ -37,12 +37,11 @@ const ActorsList = styled.div`
   width: 87%;
   height: 90%;
   background-color: #cdcdcd;
-  overflow-y: scroll;
-  overflow-x: hidden;
+  overflow: scroll;
   border-radius: 10px;
 `;
 
-const Messages = styled.div`
+const ShowQueryBox = styled.div`
   display: flex;
   flex-direction: column;
   width: 75%;
@@ -53,7 +52,7 @@ const Messages = styled.div`
   
 `;
 
-const MessagesHeader = styled.div`
+const ShowQueryBoxHeader = styled.div`
   display: flex;
   width: 96%;
   height: 10%;
@@ -64,46 +63,41 @@ const MessagesHeader = styled.div`
   background-color: #88bbd6;
 `;
 
-const SelectedAct = styled.div`
+const QueriedItems = styled.div`
   display: flex;
   flex-direction: column;
   margin-left: 20px ;
   margin-right: 20px;
   width: 96%;
-  height: 65%;
+  height: 90%;
   background-color: #cdcdcd;
   overflow-y: scroll;
   overflow-x: hidden;
   border-radius: 10px;
 `;
 
-const Reply = styled.div`
-  margin-bottom: 20px;
-  margin-left: 20px ;
-  margin-right: 20px;
+const QueryResult = styled.div`
+  margin: 20px;
   width: 96%;
-  height: 25%;
+  height: 100px;
   background-color: #88bbd6;
   border-radius: 10px;
   display: flex;
-`;
-
-const ReplyText = styled.textarea`
-  margin: 10px;
-  width: 85%;
-  height: 80%;
-  background-color: #e9e9e9;
-  border-radius: 10px;
+  & > img {
+    height: 70px;
+    margin: 10px;
+    border-radius: 10px;
+    
+  };
 `;
 
 export {
   Container,
-  Messengers,
-  MessengersHeader,
-  ActorsList,
-  Messages,
-  MessagesHeader,
-  SelectedAct,
-  Reply,
-  ReplyText,
+  QueryBox,
+  QueryBoxHeader,
+  QueryOptions,
+  ShowQueryBox,
+  ShowQueryBoxHeader,
+  QueriedItems,
+  QueryResult,
 };
