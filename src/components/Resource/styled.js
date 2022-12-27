@@ -1,89 +1,65 @@
 import styled from 'styled-components';
 
-export const StyledRightAside = styled.aside`
-  width: 25%;
-  margin: 2% 0 0 0.5%;
+export const StyledLeftAside = styled.aside`
+  width: 18%;
+  display: flex;
+  flex-direction: column;
+  max-width: 20rem;
 
-  .RtopBox {
-    border-radius: 10px;
+  .leftT_box {
     background-color: white;
-    padding: 1rem;
+    border-radius: 10px;
+  }
+
+  .L_box {
     display: flex;
-    flex-direction: column;
-    row-gap: 1rem;
+    padding: 5%;
+  }
+  .L_logo > img {
+    width: 20px;
   }
 
-  .RTdiv {
-    & > h1 {
-      font-size: 100%;
-      margin-bottom: 1rem;
-    }
-    & > p {
-      font-size: 100%;
-      color: #00000090;
-    }
-  }
-
-  .RBdiv {
-    margin-top: 2rem;
-    & > p {
-      color: rgb(201, 122, 247);
-      cursor: pointer;
-    }
-  }
-
-  .RbottomBox {
+  .L_name {
     width: 80%;
-    margin: auto;
+    font-size: 90%;
+
+    padding-left: 5%;
+  }
+
+  .L_name:hover {
+    text-decoration: underline;
+  }
+
+  .leftB_box {
+    display: flex;
+    padding: 3% 19%;
+    margin: 5%;
+    border: 2px solid rgb(3, 98, 223);
+    color: rgb(3, 98, 223);
+    border-radius: 50px;
     text-align: center;
-    margin-top: 2rem;
-    padding-bottom: 0.5rem;
-    border-bottom: 1px solid #00000090;
-
-    & > span {
-      width: 90%;
-      cursor: pointer;
-      font-size: 85%;
-      color: #00000090;
-    }
-    .RBlink {
-      display: flex;
-      column-gap: 1rem;
-      align-items: center;
-      margin-top: 1rem;
-    }
-
-    .RBlink > img {
-      width: 25%;
-      height: 20%;
-      border-radius: 10px;
-    }
-
-    .RBlink > p {
-      font-size: 80%;
-      margin-top: 2.5%;
-    }
+    margin: auto;
+    margin-top: 10px;
+  }
+  .leftB_box:hover {
+    cursor: pointer;
+    background-color: rgb(215, 233, 255);
+  }
+  .B_name {
+    padding-left: 5%;
+  }
+  .LB_logo > img {
+    width: 25px;
   }
 
   @media (max-width: 623px) {
-    width: 95%;
-    margin: auto;
-    .RBlink > img {
-      width: 12%;
-      height: 25px;
-      margin: 2% 0 0 25%;
-      /* border: 1px solid red; */
-    }
+    display: none;
   }
 `;
 
 export const StyledMiddleAside = styled.aside`
-  /* ........................Middle..................... */
-
   width: 43%;
-  margin: 2%;
 
-  /* .......................middle_T.................... */
   .middleT_div {
     display: flex;
     border-radius: 10px;
@@ -108,7 +84,6 @@ export const StyledMiddleAside = styled.aside`
   .MTcontent > h5 {
     font-size: 80%;
     margin: 0%;
-    /* border: 1px solid red; */
     color: #00000090;
   }
   .green {
@@ -123,7 +98,6 @@ export const StyledMiddleAside = styled.aside`
     border: none;
     color: #00000090;
     cursor: pointer;
-    /* border: 1px solid red; */
   }
   .clear_button:hover {
     padding: 2%;
@@ -131,7 +105,6 @@ export const StyledMiddleAside = styled.aside`
     border-radius: 50px;
     background-color: gainsboro;
   }
-  /* ................................middle_B.................... */
   .middleM_div {
     background-color: white;
     border-radius: 10px;
@@ -224,7 +197,7 @@ export const StyledMiddleAside = styled.aside`
               fill: #00000090;
             }
             &.delete {
-              fill: #cc0000bb;
+              fill: #00000090;
             }
           }
         }
@@ -243,61 +216,83 @@ export const StyledMiddleAside = styled.aside`
   }
 `;
 
-export const StyledLeftAside = styled.aside`
-  width: 18%;
-  margin: 2rem;
+export const StyledRightAside = styled.aside`
+  width: 25%;
+  display: flex;
+  flex-direction: column;
+  max-width: 20rem;
 
-  .leftT_box {
-    /* border: 1px solid rgb(89, 0, 255); */
-    background-color: white;
+  .RtopBox {
     border-radius: 10px;
-  }
-
-  .L_box {
+    background-color: white;
+    padding: 1rem;
     display: flex;
-    padding: 5%;
-    /* border: 1px solid red; */
-  }
-  .L_logo > img {
-    /* border: 1px solid red; */
-    width: 20px;
+    flex-direction: column;
+    row-gap: 1rem;
   }
 
-  .L_name {
-    /* border: 1px solid red; */
+  .RTdiv {
+    & > h1 {
+      font-size: 100%;
+      margin-bottom: 1rem;
+    }
+    & > p {
+      font-size: 100%;
+      color: #00000090;
+    }
+  }
+
+  .RBdiv {
+    margin-top: 2rem;
+    & > p {
+      color: rgb(201, 122, 247);
+      cursor: pointer;
+    }
+  }
+
+  .RbottomBox {
     width: 80%;
-    font-size: 90%;
-
-    padding-left: 5%;
-    /* margin-left: ; */
-  }
-  .L_name:hover {
-    text-decoration: underline;
-  }
-
-  .leftB_box {
-    display: flex;
-    padding: 3% 19%;
-    margin: 5%;
-    border: 2px solid rgb(3, 98, 223);
-    color: rgb(3, 98, 223);
-    border-radius: 50px;
-    text-align: center;
     margin: auto;
-    margin-top: 10px;
-  }
-  .leftB_box:hover {
-    cursor: pointer;
-    background-color: rgb(215, 233, 255);
-  }
-  .B_name {
-    padding-left: 5%;
-  }
-  .LB_logo > img {
-    width: 25px;
+    text-align: center;
+    margin-top: 2rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #00000090;
+    margin-bottom: 2.5rem;
+
+    & > span {
+      width: 90%;
+      cursor: pointer;
+      font-size: 85%;
+      color: #00000090;
+    }
+    .RBlink {
+      display: flex;
+      column-gap: 1rem;
+      align-items: center;
+      margin-top: 1rem;
+    }
+
+    .RBlink > img {
+      width: 25%;
+      height: 20%;
+      border-radius: 10px;
+    }
+
+    .RBlink > p {
+      font-size: 80%;
+      margin-top: 2.5%;
+    }
   }
 
   @media (max-width: 623px) {
-    display: none;
+    width: 95%;
+    padding-top: 1.5rem;
+    margin: auto;
+    max-width: initial;
+    .RBlink > img {
+      width: 12%;
+      height: 25px;
+      margin: 2% 0 0 25%;
+    }
   }
 `;

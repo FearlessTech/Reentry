@@ -41,6 +41,7 @@ export const Resource = (props) => {
       isPromoted: true, // Promoted
     },
   ];
+
   return (
     <styleContainer className='resource'>
       <StyledLeftAside>
@@ -162,5 +163,3 @@ export const Resource = (props) => {
     </styleContainer>
   );
 };
-
-// export default resource;

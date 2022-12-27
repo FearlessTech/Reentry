@@ -1,6 +1,12 @@
 .resource {
   display: flex;
-  margin-top: 2.5rem;
+  justify-content: space-around;
+  max-width: 90rem;
+  margin: 0 auto;
+}
+
+.resource > * {
+  margin-top: 3rem;
 }
 
 .RMdiv {
