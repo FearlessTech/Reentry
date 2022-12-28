@@ -1,11 +1,38 @@
 import React from 'react';
-import './resource.css';
 import DeleteOutlineIcon from '@material-ui/icons/DeleteOutline';
 import { IoIosBookmark, IoIosEyeOff } from 'react-icons/io';
 import { IoCreateOutline } from 'react-icons/io5';
 import { HiBellAlert } from 'react-icons/hi2';
 import { FiTarget } from 'react-icons/fi';
-import { StyledLeftAside, StyledMiddleAside, StyledRightAside } from './styled';
+import {
+  ResourceDiv,
+  StyledLeftASide,
+  LeftTBox,
+  LeftBox,
+  LeftLogo,
+  LeftName,
+  LeftBBox,
+  LeftBName,
+  LeftBLogo,
+  StyledMiddleAside,
+  MiddleT,
+  MTcontent,
+  MiddleM,
+  OcupationCard,
+  OcupationCardLogo,
+  OcupationCardInfo,
+  ActiveLogo,
+  ContentBottom,
+  ActionsContainer,
+  Actions,
+  IconHolder,
+  StyledRightAside,
+  RTopBox,
+  RT,
+  RB,
+  RBottomBox,
+  RBLink,
+} from '../styles/styledResource';
 export const Resource = (props) => {
   const ocupations = [
     {
@@ -43,45 +70,41 @@ export const Resource = (props) => {
   ];
 
   return (
-    <styleContainer className='resource'>
-      <StyledLeftAside>
-        <div className='leftT_box'>
-          <div className='L_box'>
-            <div className='L_logo'>
-              <IoIosBookmark />
-            </div>
-            <div className='L_name'>My resources</div>
-          </div>
+    <ResourceDiv>
+      <StyledLeftASide>
+        <LeftTBox>
+          <LeftBox>
+            <LeftLogo><IoIosBookmark /></LeftLogo>
+            <LeftName>My resources</LeftName>
+          </LeftBox>
 
-          <div className='L_box' onClick='resourcePopup()'>
-            <div className='L_logo'>
-              <HiBellAlert />
-            </div>
-            <div className='L_name'>resource Alert</div>
-          </div>
-        </div>
+          <LeftBox onClick='PesourcePopup()'>
+            <LeftLogo><HiBellAlert /></LeftLogo>
+            <LeftName>resource Alert</LeftName>
+          </LeftBox>
+        </LeftTBox>
 
-        <div className='leftB_box'>
-          <div className='LB_logo'>
+        <LeftBBox>
+          <LeftBLogo>
             <IoCreateOutline />
-          </div>
-          <div className='B_name'>Post a free resource</div>
-        </div>
-      </StyledLeftAside>
+          </LeftBLogo>
+          <LeftBName>Post a free resource</LeftBName>
+        </LeftBBox>
+      </StyledLeftASide>
 
-      <StyledMiddleAside className='resource_middle'>
-        <div className='middleT_div'>
-          <div className='MTcontent'>
+      <StyledMiddleAside>
+        <MiddleT>
+          <MTcontent>
             <h1>Recent searches</h1>
             <h3>
-              google <span className='green'>(1000 new)</span>
+              google <span>(1000 new)</span>
             </h3>
             <h5>Maine</h5>
-          </div>
-          <button className='clear_button'>Clear</button>
-        </div>
+          </MTcontent>
+          <button>Clear</button>
+        </MiddleT>
         {/* ....................middle heading/........ */}
-        <div className='middleM_div'>
+        <MiddleM>
           <h2>Recommended for you</h2>
           <p>Based on your profile and search history.</p>
 
@@ -95,71 +118,71 @@ export const Resource = (props) => {
               isPromoted,
             }) => {
               return (
-                <div className='ocupation-card' key={name}>
-                  <div className='ocupation-card-logo'>
+                <OcupationCard key={name}>
+                  <OcupationCardLogo>
                     <img
                       src={logoUrl ? logoUrl : '/images/user.svg'}
                       alt={name}
                     />
-                  </div>
+                  </OcupationCardLogo>
 
-                  <div className='ocupation-card-info'>
+                  <OcupationCardInfo>
                     <h3>{title}</h3>
                     <span>{name}</span>
                     <span>{address}</span>
-                    <div className='active_logo'>
+                    <ActiveLogo>
                       <FiTarget color='#990000' />
                       <span>
                         {activelyRecruiting ? 'Actively recruiting' : ''}
                       </span>
-                    </div>
-                    <div className='content_bottom'>
+                    </ActiveLogo>
+                    <ContentBottom>
                       <span>{isPromoted ? 'Promoted' : ''}</span>
-                    </div>
-                  </div>
+                    </ContentBottom>
+                  </OcupationCardInfo>
 
-                  <div className='actions-container'>
-                    <div className='actions'>
-                      <div className='icon-holder'>
+                  <ActionsContainer>
+                    <Actions>
+                      <IconHolder>
                         <IoIosEyeOff className='hide' size={18} />
-                      </div>
-                      <div className='icon-holder'>
+                      </IconHolder>
+                      <IconHolder>
                         <DeleteOutlineIcon className='delete' size={18} />
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                      </IconHolder>
+                    </Actions>
+                  </ActionsContainer>
+                </OcupationCard>
               );
             }
           )}
-        </div>
+        </MiddleM>
       </StyledMiddleAside>
 
       <StyledRightAside>
-        <div className='RtopBox'>
-          <div className='RTdiv'>
+        <RTopBox>
+          <RT>
             <h1>resource seeker guidance</h1>
             <p>Recommended based on your activity</p>
-          </div>
+          </RT>
 
-          <div className='RBdiv'>
+          <RB>
             <p>Show more &#8594; </p>
-          </div>
-        </div>
+          </RB>
+        </RTopBox>
 
-        <div className='RbottomBox'>
+        <RBottomBox>
           <span>
             About | Accessibility | Help Center | Privarcy & Terms ⮟ | Ad
             Choices | Advertising | Business Services ⮟ | Get the MaineRR app |
             More
           </span>
 
-          <div className='RBlink'>
+          <RBLink>
             <img src='/images/RRLogo.png' alt='' />
             <p> Maine Reentry Resources © 2022</p>
-          </div>
-        </div>
+          </RBLink>
+        </RBottomBox>
       </StyledRightAside>
-    </styleContainer>
+    </ResourceDiv>
   );
 };
