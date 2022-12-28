@@ -24,6 +24,7 @@ const Content = styled.div`
     flex-direction: column;
     top: 32px;
     margin: 0 auto;
+    background-color: #e9e9e9;
 `;
 
 const Header = styled.div`
@@ -36,6 +37,7 @@ const Header = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
+    background-color: #fcf4a3 ;
 
     button {
         height: 48px;
@@ -57,6 +59,7 @@ const SharedContent = styled.div`
     vertical-align: baseline;
     background: transparent;
     padding: 8px 12px;
+    
 `;
 
 const UserInfo = styled.div`
@@ -92,6 +95,7 @@ const AssetButton = styled.button`
     height: 40px;
     min-width: auto;
     color: rgba(0,0,0,0.5);
+    background-color: #fcf4a3;
 `;
 
 const AttachAssets = styled.div`
@@ -121,8 +125,8 @@ const PostButton = styled.button`
     border-radius: 20px;
     padding-left: 16px;
     padding-right: 16px;
-    background: ${props => props.disabled ? 'rgba(0,0,0,0.5)' : '#0a66c2'};
-    color: ${props => props.disabled ? 'rgba(1,1,1,0.2)' : '#fff'};
+    background: ${props => props.disabled ? 'rgba(0,0,0,0.5)' : '#004182'};
+    color: ${props => props.disabled ? 'rgba(1,1,1,0.2)' : '#fcf4a3;'};
 
     &:hover {
         background: ${props => props.disabled ? 'rgba(0,0,0,0.08)' : '#004182'};
@@ -138,6 +142,7 @@ const Editor = styled.div`
         width: 100%;
         min-height: 100px;
         resize: none;
+        background-color: #FFFDD0;
     }
 
     input {
