@@ -132,7 +132,7 @@ export const Notifications = () => {
               alt=""
             />
             <p> MaineRR Corporation © 2022</p>
-          </>
+          </div>
         </div>
       </Right>
     </Container>
