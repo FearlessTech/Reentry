@@ -9,13 +9,37 @@ const ResourceDiv = styled.div`
   & > * {
     margin-top: 3rem;
   }
+  @media (max-width: 768px) {
+    & > * {
+      margin: 5rem auto;
+    }
+  }
+  @media (max-width: 623px) {
+    flex-direction: column;
+    width: 100%;
+    & > * {
+      margin: 3rem auto;
+      width: 100%;
+      max-width: auto;
+    }
+  }
 `;
 
+/* LEFT */
 const StyledLeftASide = styled.div`
-  width: 18%;
+  width: 20%;
   display: flex;
   flex-direction: column;
-  max-width: 20rem;
+  min-width: 200px;
+  margin-left: 0.1rem;
+  margin-right: 0.1rem;
+  /* max-width: 20rem; */
+
+  @media (max-width: 623px) {
+    margin-top: 3rem;
+    width: 100%;
+    max-width: auto;
+  }
 `;
 
 const LeftTBox = styled.div`
@@ -73,8 +97,16 @@ const LeftBLogo = styled.div`
   }
 `;
 
+/* MIDDLE */
 const StyledMiddleAside = styled.div`
   width: 43%;
+  margin-left: 0.1rem;
+  margin-right: 0.1rem;
+  @media (max-width: 623px) {
+    margin-top: 0rem;
+    width: 100%;
+    max-width: auto;
+  }
 `;
 
 const MiddleT = styled.div`
@@ -235,11 +267,20 @@ const IconHolder = styled.div`
   }
 `;
 
+/* RIGHT */
 const StyledRightAside = styled.div`
   width: 25%;
   display: flex;
   flex-direction: column;
-  max-width: 20rem;
+  min-width: 150px;
+  margin-left: 0.1rem;
+  margin-right: 0.1rem;
+  /* max-width: 20rem; */
+  @media (max-width: 623px) {
+    margin-top: 0rem;
+    width: 100%;
+    max-width: auto;
+  }
 `;
 
 const RTopBox = styled.div`

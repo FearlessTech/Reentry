@@ -74,12 +74,16 @@ export const Resource = (props) => {
       <StyledLeftASide>
         <LeftTBox>
           <LeftBox>
-            <LeftLogo><IoIosBookmark /></LeftLogo>
+            <LeftLogo>
+              <IoIosBookmark />
+            </LeftLogo>
             <LeftName>My resources</LeftName>
           </LeftBox>
 
           <LeftBox onClick='PesourcePopup()'>
-            <LeftLogo><HiBellAlert /></LeftLogo>
+            <LeftLogo>
+              <HiBellAlert />
+            </LeftLogo>
             <LeftName>resource Alert</LeftName>
           </LeftBox>
         </LeftTBox>
