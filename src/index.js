@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react';sh: 1: react-scripts: not found
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
