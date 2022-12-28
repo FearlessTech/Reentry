@@ -9,7 +9,7 @@ import { getUserAuth } from './actions';
 
 import { Resource } from "./components/Resource";
 import Network from "./components/Network";
-import { Notifications } from "./components/notifications/notifications";
+import { Notifications } from "./components/Notifications";
 import Profile  from "./components/Profile.jsx";
 import Messaging from './components/Messaging';
 import AboutUs from './components/AboutUs';
