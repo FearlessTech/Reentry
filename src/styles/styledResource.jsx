@@ -6,22 +6,9 @@ const ResourceDiv = styled.div`
   max-width: 90rem;
   margin: 0 auto;
 
-  & > * {
-    margin-top: 3rem;
-  }
-  @media (max-width: 768px) {
-    & > * {
-      margin: 5rem auto;
-    }
-  }
   @media (max-width: 623px) {
     flex-direction: column;
     width: 100%;
-    & > * {
-      margin: 3rem auto;
-      width: 100%;
-      max-width: auto;
-    }
   }
 `;
 
@@ -33,10 +20,16 @@ const StyledLeftASide = styled.div`
   min-width: 200px;
   margin-left: 0.1rem;
   margin-right: 0.1rem;
-  /* max-width: 20rem; */
+  margin-top: 3rem;
+
+  @media (max-width: 768px) {
+    margin: 5rem auto;
+  }
 
   @media (max-width: 623px) {
-    margin-top: 3rem;
+    margin: 3rem auto;
+    width: 100%;
+    max-width: auto;
     width: 100%;
     max-width: auto;
   }
@@ -102,8 +95,16 @@ const StyledMiddleAside = styled.div`
   width: 43%;
   margin-left: 0.1rem;
   margin-right: 0.1rem;
+  margin-top: 3rem;
+
+  @media (max-width: 768px) {
+    margin: 5rem auto;
+  }
+
   @media (max-width: 623px) {
-    margin-top: 0rem;
+    margin: 1rem auto 0rem auto;
+    width: 100%;
+    max-width: auto;
     width: 100%;
     max-width: auto;
   }
@@ -275,9 +276,16 @@ const StyledRightAside = styled.div`
   min-width: 150px;
   margin-left: 0.1rem;
   margin-right: 0.1rem;
-  /* max-width: 20rem; */
+  margin-top: 3rem;
+
+  @media (max-width: 768px) {
+    margin: 5rem auto;
+  }
+
   @media (max-width: 623px) {
-    margin-top: 0rem;
+    margin: 1rem auto 1rem auto;
+    width: 100%;
+    max-width: auto;
     width: 100%;
     max-width: auto;
   }
