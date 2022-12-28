@@ -67,7 +67,6 @@ const Main = (props) => {
                   <img src={article.actor.image} alt="" />
                   <div>
                     <span>{article.actor.title}</span>
-                    <span>{article.actor.description}</span>
                     <span>{article.actor.date.toDate().toLocaleDateString()}</span>
                   </div>
                 </a>
