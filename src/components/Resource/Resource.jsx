@@ -1,12 +1,16 @@
 import React, { useState } from 'react';
-import './resource.css';
 import Popup from './popup';
 import DeleteOutlineIcon from '@material-ui/icons/DeleteOutline';
 import { IoIosBookmark, IoIosEyeOff } from 'react-icons/io';
 import { IoCreateOutline } from 'react-icons/io5';
 import { HiBellAlert } from 'react-icons/hi2';
 import { FiTarget } from 'react-icons/fi';
-import { StyledLeftAside, StyledMiddleAside, StyledRightAside } from './resourceStyled';
+import {
+  Container,
+  LeftAside,
+  MiddleAside,
+  RightAside,
+} from '../../styles/stylesResource';
 export const Resource = (props) => {
   const [resourcePopup, setResourcePopup] = useState(true);
 
@@ -46,8 +50,8 @@ export const Resource = (props) => {
   ];
 
   return (
-    <div className='resource'>
-      <StyledLeftAside>
+    <Container>
+      <LeftAside>
         <div className='leftT_box'>
           <div className='L_box'>
             <div className='L_logo'>
@@ -64,7 +68,14 @@ export const Resource = (props) => {
           </div>
         </div>
 
-        {resourcePopup ? <Popup /> : ''}
+        {resourcePopup ? (
+          <Popup
+            resourcePopup={resourcePopup}
+            setResourcePopup={setResourcePopup}
+          />
+        ) : (
+          ''
+        )}
 
         <div className='leftB_box'>
           <div className='LB_logo'>
@@ -72,9 +83,9 @@ export const Resource = (props) => {
           </div>
           <div className='B_name'>Post a free resource</div>
         </div>
-      </StyledLeftAside>
+      </LeftAside>
 
-      <StyledMiddleAside className='resource_middle'>
+      <MiddleAside className='resource_middle'>
         <div className='middleT_div'>
           <div className='MTcontent'>
             <h1>Recent searches</h1>
@@ -134,9 +145,9 @@ export const Resource = (props) => {
             }
           )}
         </div>
-      </StyledMiddleAside>
+      </MiddleAside>
 
-      <StyledRightAside>
+      <RightAside>
         <div className='RtopBox'>
           <div className='RTdiv'>
             <h1>resource seeker guidance</h1>
@@ -160,7 +171,7 @@ export const Resource = (props) => {
             <p> Maine Reentry Resources © 2022</p>
           </div>
         </div>
-      </StyledRightAside>
-    </div>
+      </RightAside>
+    </Container>
   );
 };

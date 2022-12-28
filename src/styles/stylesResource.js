@@ -1,6 +1,38 @@
 import styled from 'styled-components';
 
-export const StyledLeftAside = styled.aside`
+export const Container = styled.div`
+  display: flex;
+  justify-content: space-around;
+  max-width: 90rem;
+  margin: 0 auto;
+  & > * {
+    margin-top: 3rem;
+  }
+  .RMdiv {
+    display: flex;
+    cursor: pointer;
+  }
+  .RMdiv:hover {
+    background-color: rgb(226, 238, 240);
+  }
+  .RMdiv > img {
+    margin: 2% 0 0 2%;
+    border-radius: 10px;
+    height: 20%;
+  }
+
+  @media (max-width: 623px) {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    justify-content: space-beetween;
+  }
+  @media (max-width: 768px) {
+    margin-top: 4rem;
+  }
+`;
+
+export const LeftAside = styled.aside`
   width: 20%;
   display: flex;
   flex-direction: column;
@@ -57,7 +89,7 @@ export const StyledLeftAside = styled.aside`
   }
 `;
 
-export const StyledMiddleAside = styled.aside`
+export const MiddleAside = styled.main`
   width: 43%;
 
   .middleT_div {
@@ -124,7 +156,7 @@ export const StyledMiddleAside = styled.aside`
     display: flex;
     cursor: pointer;
     align-items: stretch;
-    margin: 2rem 0;
+    margin: 1rem 0 0.2rem;
     .ocupation-card-logo {
       width: 200px;
       & > img {
@@ -216,7 +248,7 @@ export const StyledMiddleAside = styled.aside`
   }
 `;
 
-export const StyledRightAside = styled.aside`
+export const RightAside = styled.aside`
   width: 25%;
   display: flex;
   flex-direction: column;
