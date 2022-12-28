@@ -39,7 +39,6 @@ export const PopupContainer = styled.div`
     & .subContent {
       margin: 1rem 0 1.5rem;
       display: flex;
-      max-width: 100%;
       & .leftCon {
         margin: auto 0.2rem;
         & > h4 {
@@ -62,18 +61,16 @@ export const PopupContainer = styled.div`
             font-weight: 600;
           }
         }
-        
+
         & > span {
           display: block;
         }
-        
+
         .methods {
           display: flex;
           overflow-y: scroll;
-          justify-content: space-between;
           gap: 0.5rem;
           flex-wrap: wrap;
-          /* padding: 0.2rem; */
           ::-webkit-scrollbar {
             height: 0px;
           }
@@ -95,7 +92,6 @@ export const PopupContainer = styled.div`
           display: flex;
           padding-top: 1rem;
           cursor: pointer;
-          width: 100%;
           input {
             width: 1rem;
             height: 1rem;
@@ -223,7 +219,42 @@ export const PopupContainer = styled.div`
   .slider.round:before {
     border-radius: 50%;
   }
-  @media (max-width: 1140px) {
-    
+
+  @media (max-width: 623px) {
+    & > .bottom {
+      font-size: 1rem;
+      max-width: 280px;
+      margin: 0.2rem auto;
+    }
+    .content {
+      & > .subContent {
+        flex-direction: column-reverse;
+        justify-content: space-between;
+        & > .leftCon {
+          & > .methods {
+            margin: 0 auto;
+            width: 100%;
+            justify-content: flex-end;
+          }
+          & > .get-notified {
+            align-items: flex-end;
+            padding: 1rem;
+          }
+        }
+        & div.rightCon {
+          width: 100%;
+          display: flex;
+          justify-content: end;
+          & > img {
+            margin: 0.3rem;
+          }
+        }
+      }
+    }
+  }
+  @media (max-width: 1060px) {
+    .bottom {
+      font-size: 0.9rem;
+    }
   }
 `;

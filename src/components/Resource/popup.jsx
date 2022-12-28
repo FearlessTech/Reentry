@@ -54,7 +54,7 @@ const Popup = ({ resourcePopup, setResourcePopup }) => {
                       name={`${name}${i}`}
                       id={`${name}${i}`}
                     />
-                    <span>Get notified of similar Resources: </span>
+                    <span>Get notified of similar Resources</span>
                   </label>
                 </div>
                 <div className='rightCon'>

@@ -25,10 +25,11 @@ export const Container = styled.div`
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    flex-wrap: wrap;
     justify-content: space-beetween;
   }
   @media (max-width: 768px) {
-    margin-top: 4rem;
+    margin-top: 3rem;
   }
 `;
 
@@ -41,25 +42,24 @@ export const LeftAside = styled.aside`
   .leftT_box {
     background-color: white;
     border-radius: 10px;
-  }
+    .L_box {
+      display: flex;
+      padding: 1.2rem;
+      align-items: center;
+      .L_logo > img {
+        width: 20px;
+      }
 
-  .L_box {
-    display: flex;
-    padding: 5%;
-  }
-  .L_logo > img {
-    width: 20px;
-  }
+      .L_name {
+        width: 80%;
 
-  .L_name {
-    width: 80%;
-    font-size: 90%;
+        padding-left: 5%;
+      }
 
-    padding-left: 5%;
-  }
-
-  .L_name:hover {
-    text-decoration: underline;
+      .L_name:hover {
+        text-decoration: underline;
+      }
+    }
   }
 
   .leftB_box {
@@ -84,8 +84,17 @@ export const LeftAside = styled.aside`
     width: 25px;
   }
 
+  @media (max-width: 1060px) {
+    min-width: 200px;
+    margin: 3rem 0.5rem;
+  }
+
   @media (max-width: 623px) {
-    display: none;
+    max-width: 95%;
+    width: 100%;
+    order: 2;
+    margin: 1rem auto;
+    min-width: auto;
   }
 `;
 
@@ -246,6 +255,10 @@ export const MiddleAside = styled.main`
     width: 95%;
     margin: auto;
   }
+  @media (max-width: 1060px) {
+    min-width: 40%;
+    margin: 3rem auto;
+  }
 `;
 
 export const RightAside = styled.aside`
@@ -321,10 +334,17 @@ export const RightAside = styled.aside`
     padding-top: 1.5rem;
     margin: auto;
     max-width: initial;
+    min-width: auto;
+
+    order: 3;
     .RBlink > img {
       width: 12%;
       height: 25px;
       margin: 2% 0 0 25%;
     }
+  }
+  @media (max-width: 1060px) {
+    min-width: 150px;
+    margin: 3rem 0.5rem;
   }
 `;
