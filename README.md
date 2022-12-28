@@ -4,7 +4,8 @@
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ***Notice*** 
-I'm working on making an orginisation, FearlessTech, that this repo will be transfered to. Hopefully, I will compleate this today. If you are a contributor to this site and would like to become a collaborator, submit some work a few times. After, I see/trust your experiance level, I'll send you a invite from the org.
+12/27/22
+@all of this repos colaborators. I have been trying to figur out a way to tell everyone that the Maine Prisoner Advocacy Coalition(MPAC) has accepted my offer to collaborate with MPRN and Maine's Branch of NAMI in support of this site. This means that I have collected the 3 largest organizations involved with Prisoner Reentry in the state of Maine to keep this website running after we finish it. Also, with everyones help, we have compleated about 2/3's of the work for finishing this project. I realy want to thank everyone helping on this project. I'm getting teary eyed. This platform is desperately needed  in this Maine and our work will improve reentry for every single prisoner in this state from the day this site goes live.
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 This site is being built for Maine Community of reentry advocates and/or anyone who concerns themselves with sucsesfull prisoner reintergration. [NAMI](https://www.namimaine.org/) and [MPRN](https://re-entrymaine.org/) are both non-profit orginizations that fully involved in prisoner reentry. They have agreed to maintain this site after it is launched.  
