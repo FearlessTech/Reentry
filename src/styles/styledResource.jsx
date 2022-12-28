@@ -5,6 +5,10 @@ const ResourceDiv = styled.div`
   justify-content: space-around;
   max-width: 90rem;
   margin: 0 auto;
+
+  & > * {
+    margin-top: 3rem;
+  }
 `;
 
 const StyledLeftASide = styled.div`
@@ -25,10 +29,11 @@ const LeftBox = styled.div`
 `;
 
 const LeftLogo = styled.div`
-   img {
+  img {
     width: 20px;
   }
 `;
+
 const LeftName = styled.div`
   width: 80%;
   font-size: 90%;
@@ -54,11 +59,11 @@ const LeftBBox = styled.div`
   }
 `;
 
-const LeftBName = styled.div `
-    padding-left: 5%;
+const LeftBName = styled.div`
+  padding-left: 5%;
 `;
 
-const LeftBLogo = styled.div `
+const LeftBLogo = styled.div`
   img {
     width: 25px;
   }
@@ -115,20 +120,21 @@ const MTcontent = styled.div`
     }
   }
 `;
+
 const MiddleM = styled.div`
-    background-color: white;
-    border-radius: 10px;
-    margin-top: 3%;
-    padding: 0.2rem;
-    h2 {
-      padding: 1rem 1rem 0.25rem 1rem;
-      font-size: 100%;
-    }
-    p {
-      padding: 0.5rem 1rem 2rem 1rem;
-      font-size: 80%;
-      color: #00000090;
-    }
+  background-color: white;
+  border-radius: 10px;
+  margin-top: 3%;
+  padding: 0.2rem;
+  h2 {
+    padding: 1rem 1rem 0.25rem 1rem;
+    font-size: 100%;
+  }
+  p {
+    padding: 0.5rem 1rem 2rem 1rem;
+    font-size: 80%;
+    color: #00000090;
+  }
 `;
 
 const OcupationCard = styled.div`
@@ -138,7 +144,6 @@ const OcupationCard = styled.div`
   margin: 2rem 0;
 `;
 
-
 const OcupationCardLogo = styled.div`
   width: 200px;
   img {
@@ -146,6 +151,7 @@ const OcupationCardLogo = styled.div`
     margin: 1rem;
   }
 `;
+
 const OcupationCardInfo = styled.div`
   width: 70%;
   display: flex;
@@ -179,10 +185,11 @@ const ActiveLogo = styled.div`
     height: 40px;
   }
   span {
-    color: #00090;
+    color: #00000090;
     font-weight: 600;
   }
 `;
+
 const ContentBottom = styled.div`
   text-align: end;
   padding: 0 1rem;
@@ -202,6 +209,7 @@ const Actions = styled.div`
   width: 100%;
   margin: 0.3rem;
 `;
+
 const IconHolder = styled.div`
   display: grid;
   place-items: center;
@@ -242,6 +250,7 @@ const RTopBox = styled.div`
   flex-direction: column;
   row-gap: 1rem;
 `;
+
 const RT = styled.div`
   h1 {
     font-size: 100%;
@@ -252,6 +261,7 @@ const RT = styled.div`
     color: #00000090;
   }
 `;
+
 const RB = styled.div`
   margin-top: 2rem;
   p {
@@ -259,6 +269,7 @@ const RB = styled.div`
     cursor: pointer;
   }
 `;
+
 const RBottomBox = styled.div`
   width: 80%;
   margin: auto;
@@ -274,6 +285,7 @@ const RBottomBox = styled.div`
     color: #00000090;
   }
 `;
+
 const RBLink = styled.div`
   display: flex;
   column-gap: 1rem;
