@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
-import Paper from "@mui/material/Paper";
-import { Button, Divider, IconButton } from "@mui/material";
+import { IconButton } from "@mui/material";
 import SendIcon from "@mui/icons-material/Send";
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
@@ -10,15 +9,8 @@ import ListItemAvatar from "@mui/material/ListItemAvatar";
 import Avatar from "@mui/material/Avatar";
 import { useNavigate } from "react-router";
 
-import { db, auth } from "../Firebase";
-import {
-  addDoc,
-  collection,
-  onSnapshot,
-  orderBy,
-  query,
-} from "firebase/firestore";
-
+import { db, auth } from "../firebase";
+import firebase from "firebase";
 
 import {
   Container,
@@ -39,16 +31,11 @@ function UsersComponent(props) {
       username: username,
       userId: userId,
     });
-
-    props.navigate(`/chat-home/${userId}`);
+    props.navigate(`/messaging/${userId}`);
   };
 
   return (
-      <List
-          dense
-          sx={{ width: "100%", maxWidth: 360,
-            bgcolor: "background.paper" }}
-      >
+      <List>
         {props.users?.map((value, index) => {
           const labelId = `checkbox-list-secondary-label-${value}`;
 
@@ -78,14 +65,10 @@ function UsersComponent(props) {
 
 export function Messaging() {
   const [users, setUsers] = useState([]);
-
   const [receiverData, setReceiverData] = useState(null);
   const [chatMessage, setChatMessage] = useState("");
-
   const [allMessages, setAllMessages] = useState([]);
-
   const user = auth.currentUser;
-
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -95,6 +78,20 @@ export function Messaging() {
     return unsub;
   }, []);
   useEffect(() => {
+    if (receiverData?.userId) {
+      db.collection('messages').doc(receiverData?.userId)
+        .onSnapshot(snapshot => (
+          setRoomName(snapshot.data().name)
+        ));
+      db.collection('rooms').doc(roomId).
+      collection("messages").orderBy('timestamp','asc')
+        .onSnapshot((snapshot) => (
+          setMessages(snapshot.docs.map((doc) =>
+            doc.data()))
+        ));
+    }
+  }, [receiverData?.userId])
+
     if (receiverData) {
       const unsub = onSnapshot(
           query(
@@ -121,47 +118,26 @@ export function Messaging() {
     }
   }, [receiverData?.userId]);
   
-  const sendMessage = async () => {
-    try {
+  const sendMessage = (e) => {
       if (user && receiverData) {
-        await addDoc(
-            collection(
-                db,
-                "users",
-                user.uid,
-                "chatUsers",
-                receiverData.userId,
-                "messages"
-            ),
-            {
-              username: user.displayName,
-              messageUserId: user.uid,
-              message: chatMessage,
-              timestamp: new Date(),
-            }
-        );
-        await addDoc(
-            collection(
-                db,
-                "users",
-                receiverData.userId,
-                "chatUsers",
-                user.uid,
-                "messages"
-            ),
-            {
-              username: user.displayName,
-              messageUserId: user.uid,
-              message: chatMessage,
-              timestamp: new Date(),
-            }
-        );
-      }
-    } catch (error) {
-      console.log(error);
-    }
-    setChatMessage("");
-  };
+        e.preventDefault();
+        console.log("you typed input",chatMessage);
+
+        db.collection('messages').doc(user.uid).collection('messages').add({
+          username: user.displayName,
+          messageUserId: user.uid,
+          message: chatMessage,
+          timestamp: new Date(),
+        });
+
+        db.collection('messages').doc(receiverData.userId).collection('messages').add({
+          username: user.displayName,
+          messageUserId: user.uid,
+          message: chatMessage,
+          timestamp: new Date(),
+        });
+        setChatMessage("");
+      };
   
   return (
     <Container>
