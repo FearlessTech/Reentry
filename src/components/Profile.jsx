@@ -26,7 +26,7 @@ const Profile = (props) => {
       <ArtCard>
         <UserInfo>
           <CardBackground />
-          <Link to={<Profile/>}>
+          <Link to={<Profile/>} className="welcome">
             <Photo>
               {props.user && props.user.photoURL ? (
                 <img src={props.user.photoURL} alt="" />

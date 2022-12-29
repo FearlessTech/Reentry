@@ -2,6 +2,7 @@ import { connect } from 'react-redux';
 import { useEffect } from 'react';
 import { BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import './App.css';
+import './utilities.css';
 import Login from './components/Login';
 import Home from './components/Home';
 import Navbar from './components/Navbar';
@@ -30,7 +31,7 @@ function App(props) {
             <Route path="/network"><Navbar /><Network /></Route>
             <Route path="/messaging"><Navbar /><Messaging /></Route>
             <Route path="/profile"><Navbar /><Profile /></Route>
-            <Route path="/aboutus"><Navbar/>><AboutUs /></Route>
+            <Route path="/aboutus"><Navbar/><AboutUs /></Route>
           </Switch>
         </Router>
       </div>

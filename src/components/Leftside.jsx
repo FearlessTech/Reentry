@@ -23,7 +23,7 @@ const Leftside = (props) => {
       <ArtCard>
         <UserInfo>
           <CardBackground />
-          <Link to='/profile'>
+          <Link to='/profile' className='welcome'>
             <Photo>
               {props.user && props.user.photoURL ? (
                 <img src={props.user.photoURL} alt="" />
