@@ -33,7 +33,7 @@ import {
   RBottomBox,
   RBLink,
 } from '../styles/styledResource';
-export const Resource = (props) => {
+const Resource = (props) => {
   const ocupations = [
     {
       logoUrl: null,
@@ -190,3 +190,5 @@ export const Resource = (props) => {
     </ResourceDiv>
   );
 };
+
+export default Resource

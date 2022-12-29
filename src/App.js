@@ -1,49 +1,81 @@
 import { connect } from 'react-redux';
-import { useEffect } from 'react';
-import { BrowserRouter as Router, Switch, Route} from 'react-router-dom';
+import { lazy, useEffect, Suspense } from 'react';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import Loading from './components/Fallbacks/Loading';
+
 import './App.css';
 import './utilities.css';
 import Login from './components/Login';
-import Home from './components/Home';
 import Navbar from './components/Navbar';
 import { getUserAuth } from './actions';
+import NotFound from './components/Fallbacks/NotFound';
 
-import { Resource } from "./components/Resource";
-import Network from "./components/Network";
-import { Notifications } from "./components/Notifications";
-import Profile  from "./components/Profile.jsx";
-import Messaging from './components/Messaging';
-import AboutUs from './components/AboutUs';
+const Home = lazy(() => import('./components/Home'));
+const Resource = lazy(() => import('./components/Resource'));
+const Notifications = lazy(() => import('./components/Notifications'));
+const Network = lazy(() => import('./components/Network'));
+const Messaging = lazy(() => import('./components/Messaging'));
+const Profile = lazy(() => import('./components/Profile'));
+const AboutUs = lazy(() => import('./components/AboutUs'));
 
 function App(props) {
   useEffect(() => {
     props.getUserAuth();
   }, []);
-  
-    return (
-      <div className="App">
+
+  return (
+    <div className='App'>
+      <Suspense fallback={<Loading />}>
         <Router>
           <Switch>
-            <Route exact path="/"><Login /></Route>
-            <Route path="/home"><Navbar /><Home /></Route>
-            <Route path="/resource"><Navbar /><Resource /></Route>
-            <Route path="/notifications"><Navbar /><Notifications /></Route>
-            <Route path="/network"><Navbar /><Network /></Route>
-            <Route path="/messaging"><Navbar /><Messaging /></Route>
-            <Route path="/profile"><Navbar /><Profile /></Route>
-            <Route path="/aboutus"><Navbar/><AboutUs /></Route>
+            <Route exact path='/'>
+              <Login />
+            </Route>
+            <Route path='/home'>
+              <Navbar />
+              <Home />
+            </Route>
+            <Route path='/resource'>
+              <Navbar />
+              <Resource />
+            </Route>
+            <Route path='/notifications'>
+              <Navbar />
+              <Notifications />
+            </Route>
+            <Route path='/network'>
+              <Navbar />
+              <Network />
+            </Route>
+            <Route path='/messaging'>
+              <Navbar />
+              <Messaging />
+            </Route>
+            <Route path='/profile'>
+              <Navbar />
+              <Profile />
+            </Route>
+            <Route path='/aboutus'>
+              <Navbar />
+              <AboutUs />
+            </Route>
+            <Route path='/*'>
+              <Navbar />
+              <NotFound />
+            </Route>
           </Switch>
         </Router>
-      </div>
-    );
-  }
-  
-  const mapStateToProps = (state) => {
-    return {};
-  };
-  
-  const mapDispatchToProps = (dispatch) => ({
-    getUserAuth: () => dispatch(getUserAuth()),
-  });
-  
-  export default connect(mapStateToProps, mapDispatchToProps)(App);
+      </Suspense>
+    </div>
+  );
+}
+
+const mapStateToProps = (state) => {
+  return {};
+};
+
+const mapDispatchToProps = (dispatch) => ({
+  getUserAuth: () => dispatch(getUserAuth()),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);

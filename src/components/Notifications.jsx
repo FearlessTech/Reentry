@@ -16,7 +16,7 @@ import {
   RightImg,
 } from '../styles/stylesNotifications';
 
-export const Notifications = () => {
+const Notifications = () => {
   return (
     <Container>
       <Left>
@@ -138,3 +138,5 @@ export const Notifications = () => {
     </Container>
   );
 };
+
+export default Notifications
