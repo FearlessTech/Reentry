@@ -20,7 +20,7 @@ const StyledLoading = styled.div`
   }
   .dot {
     animation-name: simpleDots;
-    animation-duration: .8s;
+    animation-duration: 0.4s;
     animation-timing-function: ease-in-out;
     animation-iteration-count: infinite;
     transition: ease-in-out;
