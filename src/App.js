@@ -1,8 +1,8 @@
 import { connect } from 'react-redux';
 import { lazy, useEffect, Suspense } from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import Loading from './components/Loading';
-// import
+import Loading from './components/Fallbacks/Loading';
+
 import './App.css';
 import './utilities.css';
 import Login from './components/Login';
