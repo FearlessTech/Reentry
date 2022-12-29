@@ -7,14 +7,6 @@ import Login from './components/Login';
 import Navbar from './components/Navbar';
 import { getUserAuth } from './actions';
 
-// import Home from ;
-// import { Resource } from './components/Resource';
-// import { Notifications } from './components/Notifications';
-// import Network from './components/Network';
-// import Messaging from './components/Messaging';
-// import Profile from './components/Profile.jsx';
-// import AboutUs from './components/AboutUs';
-
 const Home = lazy(() => import('./components/Home'));
 const Resource = lazy(() => import('./components/Resource'));
 const Notifications = lazy(() => import('./components/Notifications'));
