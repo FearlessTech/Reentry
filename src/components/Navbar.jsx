@@ -15,6 +15,7 @@ import {
   IoMdPerson,
   IoMdInformationCircle,
 } from 'react-icons/io';
+
 import { capitalize } from '@material-ui/core';
 
 import {
@@ -46,6 +47,7 @@ const Navbar = (props) => {
   useEffect(() => {
     if (window?.location.href) setUrl(window.location.href);
   }, []);
+  
   return (
     <Container>
       <Content>
