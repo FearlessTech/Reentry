@@ -30,10 +30,6 @@ function App(props) {
             <Route exact path='/'>
               <Login />
             </Route>
-            <Route path='/loading'>
-              <Navbar />
-              <Loading />
-            </Route>
             <Route path='/home'>
               <Navbar />
               <Home />
