@@ -20,31 +20,35 @@ const StyledLoading = styled.div`
   }
   .dot {
     animation-name: simpleDots;
-    animation-duration: 0.8s;
+    animation-duration: .8s;
     animation-timing-function: ease-in-out;
     animation-iteration-count: infinite;
     transition: ease-in-out;
+    animation-timing-function: ease-in-out;
     width: 4.5rem;
     height: 1rem;
-    margin-top: .4rem;
+    margin-top: 0.4rem;
   }
 
   .dot1 {
     border-radius: 100vmax 0 0 100vmax;
-    animation-delay: 0s;
-  }
-  .dot2 {
     animation-delay: 0.1s;
   }
+  .dot2 {
+    animation-delay: 0.25s;
+  }
+  .dot3 {
+    animation-delay: 0.4s;
+  }
   .dot4 {
-    animation-delay: 0.2s;
+    animation-delay: 0.55s;
   }
   .dot5 {
-    animation-delay: 0.3s;
+    animation-delay: 0.7s;
   }
   .dot6 {
     border-radius: 0 100vmax 100vmax 0;
-    animation-delay: 0.4s;
+    animation-delay: 0.85s;
   }
 
   @keyframes simpleDots {
