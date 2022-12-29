@@ -8,6 +8,7 @@ import './utilities.css';
 import Login from './components/Login';
 import Navbar from './components/Navbar';
 import { getUserAuth } from './actions';
+import NotFound from './components/Fallbacks/NotFound';
 
 const Home = lazy(() => import('./components/Home'));
 const Resource = lazy(() => import('./components/Resource'));
@@ -57,6 +58,10 @@ function App(props) {
             <Route path='/aboutus'>
               <Navbar />
               <AboutUs />
+            </Route>
+            <Route path='/*'>
+              <Navbar />
+              <NotFound />
             </Route>
           </Switch>
         </Router>

@@ -2,8 +2,8 @@ import styled from 'styled-components';
 
 const StyledLoading = styled.div`
   width: 99%;
-  overflow: hidden;
   height: 99%;
+  overflow: hidden;
   position: absolute;
   margin: auto;
   display: flex;

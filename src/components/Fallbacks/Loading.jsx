@@ -1,4 +1,4 @@
-import StyledLoading from '../../styles/styledLoading';
+import StyledLoading from './fbStyles/styledLoading';
 
 const Loading = () => {
   return (
