@@ -70,10 +70,15 @@ const Navbar = (props) => {
                   key={name}
                   className={(url ? url.includes(name) : false) ? 'active' : ''}
                 >
-                  <a href={`/${name}`}>
+                  <Link
+                    to={`/${name}`}
+                    onClick={() => {
+                      setUrl(name);
+                    }}
+                  >
                     <Icon size={18} style={{ fill: '#cdcdcd' }} />
                     <span>{capitalize(name)}</span>
-                  </a>
+                  </Link>
                 </NavList>
               );
             })}
