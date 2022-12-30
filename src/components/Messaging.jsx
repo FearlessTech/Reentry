@@ -1,16 +1,14 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { IconButton } from "@mui/material";
 import SendIcon from "@mui/icons-material/Send";
-import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemText from "@mui/material/ListItemText";
 import ListItemAvatar from "@mui/material/ListItemAvatar";
 import Avatar from "@mui/material/Avatar";
 import { useNavigate } from "react-router";
-
-import { db, auth } from "../firebase";
-import firebase from "firebase";
+import { getUserAuth } from '../actions';
+import { db } from "../firebase";
 
 import {
   Container,
@@ -30,7 +28,7 @@ export function Messaging() {
   const [receiverData, setReceiverData] = useState(null);
   const [chatMessage, setChatMessage] = useState("");
   const [allMessages, setAllMessages] = useState([]);
-  const user = auth.currentUser;
+  const user = getUserAuth();
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -61,7 +59,7 @@ export function Messaging() {
             );
           });
     }
-  }, [receiverData]);
+  }, [receiverData, user.uid]);
   
   const sendMessage = (e) => {
     e.preventDefault();
@@ -72,7 +70,7 @@ export function Messaging() {
         .collection("messages")
         .add({
           message: chatMessage,
-          timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+          timestamp: db.firestore.FieldValue.serverTimestamp(),
           username: user.displayName,
         });
 
@@ -83,7 +81,7 @@ export function Messaging() {
         .collection("messages")
         .add({
           message: chatMessage,
-          timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+          timestamp: db.firestore.FieldValue.serverTimestamp(),
           username: user.displayName,
         });
     setChatMessage("");
