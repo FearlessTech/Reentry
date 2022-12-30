@@ -25,44 +25,6 @@ import {
   ReplyText,
 } from "../styles/stylesMessaging";
 
-function UsersComponent(props) {
-  const handleToggle = (username, userId) => {
-    props.setReceiverData({
-      username: username,
-      userId: userId,
-    });
-    props.navigate(`/messaging/${userId}`);
-  };
-
-  return (
-      <List>
-        {props.users?.map((value, index) => {
-          const labelId = `checkbox-list-secondary-label-${value}`;
-
-          if (props.currentUserId !== value.userId)
-            return (
-                <ListItem key={value.userId} disablePadding>
-                  <ListItemButton
-                      onClick={() => {
-                        handleToggle(value.username, value.userId);
-                      }}
-                  >
-                    <ListItemAvatar>
-                      <Avatar
-                          alt={`${value.username}`}
-                          src={`${value.username}.jpg`}
-                      />
-                    </ListItemAvatar>
-                    <ListItemText id={labelId}
-                                  primary={`${value.username}`} />
-                  </ListItemButton>
-                </ListItem>
-            );
-        })}
-      </List>
-  );
-}
-
 export function Messaging() {
   const [users, setUsers] = useState([]);
   const [receiverData, setReceiverData] = useState(null);
@@ -72,141 +34,143 @@ export function Messaging() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    const unsub = onSnapshot(collection(db, "users"), (snapshot) => {
-      setUsers(snapshot.docs.map((doc) => doc.data()));
+    db.collection("users").onSnapshot((snapshot) => {
+      setUsers(
+          snapshot.docs.map((doc) => ({
+            userId: doc.id,
+            username: doc.data().username,
+          }))
+      );
     });
-    return unsub;
   }, []);
-  useEffect(() => {
-    if (receiverData?.userId) {
-      db.collection('messages').doc(receiverData?.userId)
-        .onSnapshot(snapshot => (
-          setRoomName(snapshot.data().name)
-        ));
-      db.collection('rooms').doc(roomId).
-      collection("messages").orderBy('timestamp','asc')
-        .onSnapshot((snapshot) => (
-          setMessages(snapshot.docs.map((doc) =>
-            doc.data()))
-        ));
-    }
-  }, [receiverData?.userId])
 
+  useEffect(() => {
     if (receiverData) {
-      const unsub = onSnapshot(
-          query(
-              collection(
-                  db,
-                  "users",
-                  user?.uid,
-                  "chatUsers",
-                  receiverData?.userId,
-                  "messages"
-              ),
-              orderBy("timestamp")
-          ),
-          (snapshot) => {
+      db.collection("users")
+          .doc(receiverData.userId)
+          .collection("messages")
+          .doc(user.uid)
+          .collection("messages")
+          .orderBy("timestamp", "asc")
+          .onSnapshot((snapshot) => {
             setAllMessages(
                 snapshot.docs.map((doc) => ({
                   id: doc.id,
-                  messages: doc.data(),
+                  data: doc.data(),
                 }))
             );
-          }
-      );
-      return unsub;
+          });
     }
-  }, [receiverData?.userId]);
+  }, [receiverData]);
   
   const sendMessage = (e) => {
-      if (user && receiverData) {
-        e.preventDefault();
-        console.log("you typed input",chatMessage);
-
-        db.collection('messages').doc(user.uid).collection('messages').add({
-          username: user.displayName,
-          messageUserId: user.uid,
+    e.preventDefault();
+    db.collection("users")
+        .doc(receiverData.userId)
+        .collection("messages")
+        .doc(user.uid)
+        .collection("messages")
+        .add({
           message: chatMessage,
-          timestamp: new Date(),
+          timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+          username: user.displayName,
         });
 
-        db.collection('messages').doc(receiverData.userId).collection('messages').add({
-          username: user.displayName,
-          messageUserId: user.uid,
+    db.collection("users")
+        .doc(user.uid)
+        .collection("messages")
+        .doc(receiverData.userId)
+        .collection("messages")
+        .add({
           message: chatMessage,
-          timestamp: new Date(),
+          timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+          username: user.displayName,
         });
-        setChatMessage("");
-      };
+    setChatMessage("");
+  };
+  const UsersComponent = (props) => {
+    const handleToggle = (username, userId) => {
+      props.setReceiverData({
+        username: username,
+        userId: userId,
+      });
+      props.navigate(`/messaging/${userId}`);
+    };
+
+    return (
+      <ActorsList>
+        {props.users.map((user) => {
+          return (
+            <ListItem disablePadding key={user.id}>
+              <ListItemButton
+                onClick={() => handleToggle(user.username, user.id)}
+                selected={props.receiverData.userId === user.id}
+              >
+                <ListItemAvatar>
+                  <Avatar
+                    alt="Remy Sharp"
+                    src="https://material-ui.com/static/images/avatar/1.jpg"
+                  />
+                </ListItemAvatar>
+                <ListItemText primary={user.username} />
+              </ListItemButton>
+            </ListItem>
+          );
+        })}
+      </ActorsList>
+    );
+  }
   
   return (
     <Container>
       <Messengers>
         <MessengersHeader>
-          <h2 style={{ margin: 0 }}>{user?.displayName} </h2>
+          <h1>Messengers</h1>
+          <p>Need a search Bar</p>
         </MessengersHeader>
-        <ActorsList>
-          <UsersComponent
-              users={users}
-              setReceiverData={setReceiverData}
-              navigate={navigate}
-              currentUserId={user?.uid}
-          />
-        </ActorsList>
+        <UsersComponent
+          users={users}
+          receiverData={receiverData}
+          navigate={navigate}
+          setReceiverData={setReceiverData}
+        />
       </Messengers>
       <Messages>
         <MessagesHeader>
-          <h2 style={{ margin: 2, padding: 10 }}>
-            {receiverData ? receiverData.username : user?.displayName}{" "}
-          </h2>
-          <p>Icon click to delete</p>
+          <h1>Messages</h1>
         </MessagesHeader>
         <SelectedAct>
-          {allMessages &&
-              allMessages.map(({ id, messages }) => {
-                return (
-                    <AllActMessages
-                        key={id}
-                        style={{
-                          flexDirection:
-                              user?.uid == messages.messageUserId
-                                  ? "row-reverse"
-                                  : "row",
-                        }}
-                    >
-                  <span
-                      style={{
-                        borderTopLeftRadius:
-                            user?.uid == messages.messageUserId ? 10 : 0,
-                        borderTopRightRadius:
-                            user?.uid == messages.messageUserId ? 0 : 10,
-                        textAlign:
-                            user?.uid == messages.messageUserId ? "right" : "left",
-                      }}
-                  >
-                    {messages.message}
-                  </span>
-                    </AllActMessages>
-                );
-              })}
+          <h3>{receiverData?.username}</h3>
         </SelectedAct>
+        <AllActMessages>
+          {allMessages.map((message) => {
+            return (
+              <div key={message.id}>
+                <p>
+                  <span>{message.data.username}</span> {message.data.message}
+                </p>
+              </div>
+            );
+          })}
+        </AllActMessages>
         <Reply>
           <ReplyText
-              value={chatMessage}
-              onChange={(e) => setChatMessage(e.target.value)}
-              style={ReplyText}
-              type="text"
-              placeholder="Type message..."
+            value={chatMessage}
+            onChange={(e) => setChatMessage(e.target.value)}
           />
-          <IconButton onClick={sendMessage}>
-            <SendIcon style={{ margin: 10 }} />
+          <IconButton
+            color="primary"
+            aria-label="upload picture"
+            component="span"
+            onClick={sendMessage}
+          >
+            <SendIcon />
           </IconButton>
-          />
-          button to send reply
         </Reply>
       </Messages>
     </Container>
   );
-};
+}
+
 
 export default Messaging;

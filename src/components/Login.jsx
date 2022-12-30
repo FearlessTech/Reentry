@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import { signInAPI } from '../actions';
-import { Redirect } from 'react-router';
+import { Redirect } from 'react-router-dom';
 
 import {
   Container,
