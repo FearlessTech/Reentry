@@ -128,8 +128,8 @@ const Hero = styled.div`
 const Section = styled.section`
   display: flex;
   justify-content: end;
-  height: 100%;
-  padding-top: 5rem;
+  height: 90%;
+  padding-top: 2rem;
 `;
 
 const Form = styled.div`
@@ -137,10 +137,10 @@ const Form = styled.div`
   max-width: 100%;
   background-color: #ffffff;
   box-shadow: 0px 0px 2px #1e1e1e66;
-  margin: 3rem;
   border-radius: 2rem;
-  margin-top: 1rem;
+  margin: 1rem 3rem 3rem 3rem;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   padding-bottom: 3rem;
   @media (prefers-color-scheme: dark) {
@@ -168,4 +168,11 @@ const Google = styled.button`
   }
 `;
 
-export { Container, Nav, Join, Guest, Section, Hero, Form, Google };
+const Close = styled.button`
+  display: flex;
+  width: 20px;
+  justify-content: center;
+  margin-left: 80%;
+  margin-top: 1rem;
+`;
+export { Container, Nav, Join, Guest, Section, Hero, Form, Google, Close };
