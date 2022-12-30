@@ -10,12 +10,13 @@ import {
   Container,
   Nav,
   Join,
-  Guest,
+  Guest as LoginBtn,
   Section,
   Hero,
   Form,
   Google,
 } from '../styles/stylesLogin';
+import { Link } from 'react-router-dom';
 
 // /images/google.svg
 
@@ -23,25 +24,29 @@ const Login = (props) => {
   const hero = useRef('hero-image-container');
   function handleMovement(e) {
     const paralax = hero.current;
-    const posX = e.clientX;
-    const posY = e.clientY;
 
-    const middleY = window.innerHeight / 2;
+    // const heroX = hero.current.offsetWidth;
+    // const heroY = hero.current.offsetHeight;
+
     const middleX = window.innerWidth / 2;
+    // const middleY = window.innerHeight / 2;
 
-    if (posY < middleY) {
-      paralax.style.top = '-10px';
-    } else {
-      paralax.style.top = '10px';
-    }
+    const posX = e.clientX;
+    // const posY = e.clientY;
+
+    // if (posY < middleY) {
+    //   paralax.style.top = '-10px';
+    // } else {
+    //   paralax.style.top = '10px';
+    // }
     if (posX < middleX) {
       paralax.style.left = '-10px';
     } else {
-      paralax.style.left = '10px';
+      paralax.style.left = '8px';
     }
   }
 
-  const [option, setOption] = useState(false);
+  const [login, setLogin] = useState(true);
 
   return (
     <Container onMouseMove={handleMovement}>
@@ -51,10 +56,22 @@ const Login = (props) => {
           <img src='/images/MaineRRLogo.png' alt='' />
         </a>
         <div className='button-container'>
-          <Join className='button'>Join Now</Join>
-          <Guest className='button' onClick={<Redirect to='/home' />}>
-            Guest
-          </Guest>
+          <Join
+            className='button'
+            onClick={() => {
+              setLogin(false);
+            }}
+          >
+            Join Now
+          </Join>
+          <LoginBtn
+            className='button'
+            onClick={() => {
+              setLogin(true);
+            }}
+          >
+            Login
+          </LoginBtn>
         </div>
       </Nav>
 
@@ -74,12 +91,30 @@ const Login = (props) => {
           </div>
         </Hero>
         <Form>
-          <Google onClick={() => props.signIn()}>
-            <div className='icon'>
-              <img src='/images/google.svg' alt='' />
-            </div>
-              <span>Login with Google</span>
-          </Google>
+          {login ? (
+            <LoginForm>
+              <Google className='google-btn' onClick={() => props.signIn()}>
+                <div className='icon'>
+                  <img src='/images/google.svg' alt='' />
+                </div>
+                <span>Login with Google</span>
+              </Google>
+
+              <span className='sign-up'>
+                Doesn't have an account?{' '}
+                <Link
+                  onClick={(e) => {
+                    e.preventDefault();
+                    setLogin(false);
+                  }}
+                >
+                  Sign up
+                </Link>
+              </span>
+            </LoginForm>
+          ) : (
+            <SignUpForm />
+          )}
         </Form>
       </Section>
     </Container>

@@ -12,18 +12,21 @@ const Container = styled.div`
 `;
 
 const Nav = styled.nav`
-  box-shadow: 5px 5px 15px #30131e51;
+  box-shadow: 5px 5px 15px #bef4ff36;
   display: flex;
   height: 80px;
   align-items: center;
   justify-content: space-between;
   padding: 0 3rem;
-  background-color: #2a3e3e7b;
-  transition: ease-in-out 0.15s;
+  background-color: #2a3e3e39;
+  transition: ease-in-out 120ms;
+  border-radius: 2rem;
   &:hover {
-    background-color: #2a3e3e39;
+    background-color: #00999947;
+    border-radius: 3rem;
   }
   .logo {
+    transition: ease-in-out 0.15s;
     height: 40px;
     img {
       height: 100%;
@@ -35,6 +38,7 @@ const Nav = styled.nav`
   }
 
   .button-container {
+    transition: ease-in-out 0.15s;
     display: flex;
     column-gap: 1rem;
     .button {
@@ -62,16 +66,26 @@ const Join = styled.button``;
 const Guest = styled.button``;
 // hero
 const Hero = styled.div`
-  margin-top: 10rem;
+  @keyframes freedom {
+    from {
+      top: -7px;
+    }
+    to {
+      top: 7px;
+    }
+  }
+
+  margin-top: 8rem;
   .text {
     font-size: 3.5rem;
     padding: 3rem;
     color: #009999;
   }
+
   .hero-container {
     position: absolute;
     top: 0;
-    right: 0;
+    left: -10px;
     z-index: -1;
     width: 100vw;
     min-height: 100vh;
@@ -80,11 +94,10 @@ const Hero = styled.div`
 
   .hero-image-container {
     position: absolute;
-    top: 0;
-    left: -10px;
+    animation: freedom 990ms ease-in-out infinite alternate;
     max-width: 500px;
     max-height: 500px;
-    transition: ease-in-out 0.6s;
+    transition: cubic-bezier(0.25, 0.46, 0.45, 0.94) 300ms;
     .hero-image {
       width: 100%;
     }
@@ -95,32 +108,35 @@ const Section = styled.section`
   display: flex;
   justify-content: end;
   height: 100%;
+  padding-top: 5rem;
 `;
 
 const Form = styled.div`
   width: 50rem;
   max-width: 100%;
-  background-color: #1f1f1f32;
-  box-shadow: 2px -2px 2px #ff7b0066;
+  background-color: #ffffff;
+  box-shadow: 0px 0px 2px #1e1e1e66;
   margin: 3rem;
   border-radius: 2rem;
+  margin-top: 1rem;
   display: flex;
   justify-content: center;
+  padding-bottom: 3rem;
 `;
 
 const Google = styled.button`
-  background-color: white;
+  background-color: #f1f1f1;
+  border-radius: 100vmax;
   border: none;
-  border-radius: 1rem;
   width: 15rem;
-  height: 3rem;
+  height: 2.5rem;
   display: flex;
   align-items: center;
   column-gap: 2rem;
-  .icon{
+  .icon {
     width: 2rem;
     height: 2rem;
-    img{
+    img {
       width: 100%;
       height: 100%;
     }
