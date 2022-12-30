@@ -1,7 +1,9 @@
 
 :root,body,html {
-  background-color: #cdcdcd;
+  background-color: transparent;
   box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
 
 div,h1,h2,h3,h4,h5,h6,navbar,html,i,img,label,li,nav,p,small,span,ul {
@@ -16,6 +18,7 @@ div,h1,h2,h3,h4,h5,h6,navbar,html,i,img,label,li,nav,p,small,span,ul {
 
 body {
   font-family: Helvetica, Arial, sans-serif;
+  height: 100vh;
 }
 
 input, textarea {
