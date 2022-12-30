@@ -6,9 +6,15 @@ const StyledLogin = styled.div`
   /* justify-content: space-between; */
   align-items: center;
   row-gap: 1rem;
+  @media (prefers-color-scheme: dark) {
+    background-color: transparent;
+  }
   .form-content {
     .title {
       padding: 3rem 0 1rem;
+      @media (prefers-color-scheme: dark) {
+        color: #c1c1c1;
+      }
     }
     form {
       display: flex;
@@ -21,6 +27,9 @@ const StyledLogin = styled.div`
           align-items: center;
           span {
             color: #414141aa;
+            @media (prefers-color-scheme: dark) {
+              color: #939393;
+            }
           }
           input {
             border: none;
@@ -68,7 +77,7 @@ const StyledLogin = styled.div`
       }
     }
   }
-  span.or{
+  span.or {
     display: block;
     padding: 1rem 0 0;
     text-align: center;
@@ -88,6 +97,12 @@ const StyledLogin = styled.div`
   .sign-up {
     font-size: 14px;
     font-weight: 600;
+    @media (prefers-color-scheme: dark) {
+      color: #c1c1c1;
+    a {
+      color: #015858;
+    }
+    }
     a {
       color: #009999;
       font-weight: 300;

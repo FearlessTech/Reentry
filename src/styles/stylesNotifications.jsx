@@ -1,12 +1,13 @@
 import styled from 'styled-components';
 
-
 const Container = styled.div`
   display: flex;
   height: 100vh;
+  background-color: #cdcdcd;
+  min-height: 100vh;
   @media (max-width: 623px) {
-      display: block;
-    }
+    display: block;
+  }
 `;
 const Left = styled.div`
   width: 18%;
@@ -17,8 +18,8 @@ const Left = styled.div`
   margin: 3% 0 0 5%;
   text-align: center;
   @media (max-width: 623px) {
-      display: none;
-    }
+    display: none;
+  }
 `;
 const LeftDiv = styled.div`
   p {
@@ -27,12 +28,10 @@ const LeftDiv = styled.div`
   }
   h1 {
     font-size: 95%;
-    color: rgb(3, 98, 223)
+    color: rgb(3, 98, 223);
   }
 `;
-const HR = styled.div`
-  
-`;
+const HR = styled.div``;
 const Middle = styled.div`
   width: 44%;
   background-color: white;
@@ -64,7 +63,7 @@ const MiddleContent = styled.div`
   border-radius: 50px;
   /* width: 50%; */
   button {
-    color: rgb(3, 98, 223); 
+    color: rgb(3, 98, 223);
     h&:hover {
       cursor: pointer;
       background-color: rgb(215, 233, 248);
@@ -74,9 +73,9 @@ const MiddleContent = styled.div`
 const Dots = styled.div`
   /* border: 1px solid red; */
   width: 10%;
-  img{
+  img {
     width: 60%;
-    &:hover{
+    &:hover {
       cursor: pointer;
       border-radius: 50px;
       background-color: rgb(211, 211, 211);
@@ -137,8 +136,6 @@ const RightImg = styled.div`
     background-color: rgb(215, 233, 248);
   }
 `;
-
-
 
 export {
   Container,
