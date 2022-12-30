@@ -6,7 +6,7 @@ const StyledSignUp = styled.div`
     align-items: center;
     .title {
       font-weight: 700;
-      color: #414141aa;
+      color: #cccccccc;
       text-transform: uppercase;
       margin: 3rem auto;
     }
@@ -20,7 +20,7 @@ const StyledSignUp = styled.div`
           column-gap: 1rem;
           align-items: center;
           span {
-            color: #414141aa;
+            color: #aaaaaa;
           }
           input {
             border: none;

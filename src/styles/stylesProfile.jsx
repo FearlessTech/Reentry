@@ -4,7 +4,8 @@ const Container = styled.div`
   padding-top: 52px;
   max-width: 100%;
   display: flex;
-  
+  min-height: 100vh;
+  background-color: #CDCDCD;
 `;
 
 const ArtCard = styled.div`

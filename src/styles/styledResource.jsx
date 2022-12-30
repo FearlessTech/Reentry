@@ -5,6 +5,8 @@ const ResourceDiv = styled.div`
   justify-content: space-around;
   max-width: 90rem;
   margin: 0 auto;
+  background-color: #CDCDCD;
+  min-height: 100vh;
 
   @media (max-width: 623px) {
     flex-direction: column;

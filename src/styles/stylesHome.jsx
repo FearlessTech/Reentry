@@ -3,6 +3,8 @@ import styled from 'styled-components';
 const Container = styled.div`
   padding-top: 52px;
   max-width: 100%;
+  background-color: #CDCDCD;
+  min-height: 100vh;
 `;
 
 const Content = styled.div`

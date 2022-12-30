@@ -9,6 +9,13 @@ const Container = styled.div`
     color: white;
     background: #c4640a;
   }
+  @media (prefers-color-scheme: dark) {
+    background-color: #3c585839;
+    & ::selection {
+      color: #3b3b3b;
+      background-color: #009999;
+    }
+  }
 `;
 
 const Nav = styled.nav`
@@ -21,9 +28,17 @@ const Nav = styled.nav`
   background-color: #2a3e3e39;
   transition: ease-in-out 120ms;
   border-radius: 2rem;
+  @media (prefers-color-scheme: dark) {
+    box-shadow: 0px 0px 2px #afafaf6b;
+    background-color: #3c585839;
+  }
   &:hover {
     background-color: #00999947;
     border-radius: 3rem;
+    @media (prefers-color-scheme: dark) {
+      box-shadow: 0px 0px 1px #4848486b;
+      background-color: #3c585839;
+    }
   }
   .logo {
     transition: ease-in-out 0.15s;
@@ -54,8 +69,11 @@ const Nav = styled.nav`
       cursor: pointer;
       transition: cubic-bezier(0.175, 0.885, 0.32, 1.275);
       &:hover {
-        transform: scale(1.01);
+        transform: scale(1.015);
         box-shadow: 2px 2px 2px #2a3e3e39;
+        @media (prefers-color-scheme: dark) {
+          box-shadow: 2px 2px 2px #b5b5b539;
+        }
       }
     }
   }
@@ -90,6 +108,9 @@ const Hero = styled.div`
     width: 100vw;
     min-height: 100vh;
     background-color: #7ff0ff;
+    @media (prefers-color-scheme: dark) {
+      background-color: #222222;
+    }
   }
 
   .hero-image-container {
@@ -122,6 +143,10 @@ const Form = styled.div`
   display: flex;
   justify-content: center;
   padding-bottom: 3rem;
+  @media (prefers-color-scheme: dark) {
+    background-color: #aaaaaa33;
+    box-shadow: 0px 0px 5px #d5d5d554;
+  }
 `;
 
 const Google = styled.button`
