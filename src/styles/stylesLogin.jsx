@@ -1,20 +1,28 @@
 import styled from 'styled-components';
 
 const Container = styled.div`
-  padding: 2rem;
-  min-height: 100vh;
-  background-color: transparent;
-  position: relative;
-  & ::selection {
-    color: white;
-    background: #c4640a;
-  }
-  @media (prefers-color-scheme: dark) {
-    background-color: #3c585839;
-    & ::selection {
-      color: #3b3b3b;
-      background-color: #009999;
-    }
+  //padding: 2rem;
+  height: 100vh;
+  background-size: cover;
+  background: radial-gradient(
+          ellipse 50% 90%,
+          #FFFBE0 5%,
+          #FFF3A7 20%,
+          #DFBAAA 50%,
+          #FAE2C0 70%,
+          #BFDDBF
+  );
+  //display: block;
+  //& ::selection {
+  //  color: white;
+  //  background: #c4640a;
+  //}
+  //@media (prefers-color-scheme: dark) {
+  //  background-color: #3c585839;
+  //  & ::selection {
+  //    color: #3b3b3b;
+  //    background-color: #009999;
+  //  }
   }
 `;
 
@@ -78,58 +86,80 @@ const Nav = styled.nav`
     }
   }
 `;
-
 const Join = styled.button``;
+const LoginBtn = styled.button``;
 
-const Guest = styled.button``;
-// hero
 const Hero = styled.div`
-  @keyframes freedom {
-    from {
-      top: -7px;
-    }
-    to {
-      top: 7px;
-    }
-  }
+  position: relative;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  //top: 0;
+  //left: -10px;
+  //z-index: -1;
+  //min-height: 100vh;
+  //@media (prefers-color-scheme: dark) {
+  //  background-color: #222222;
+  //}
+  
+  //@keyframes freedom {
+  //  from {
+  //    top: -7px;
+  //  }
+  //  to {
+  //    top: 7px;
+  //  }
+  //}
 
-  margin-top: 8rem;
-  .text {
-    font-size: 3.5rem;
-    padding: 3rem;
-    color: #009999;
-  }
-
-  .hero-container {
+  //margin-top: 8rem;
+  //.text {
+  //  font-size: 3.5rem;
+  //  padding: 3rem;
+  //  color: #009999;
+  //}
+  
+  h1 {
+    z-index: 1;
     position: absolute;
-    top: 0;
-    left: -10px;
-    z-index: -1;
-    width: 100vw;
-    min-height: 100vh;
-    background-color: #7ff0ff;
-    @media (prefers-color-scheme: dark) {
-      background-color: #222222;
-    }
-  }
-
-  .hero-image-container {
-    position: absolute;
-    animation: freedom 990ms ease-in-out infinite alternate;
-    max-width: 500px;
-    max-height: 500px;
-    transition: cubic-bezier(0.25, 0.46, 0.45, 0.94) 300ms;
-    .hero-image {
-      width: 100%;
+    color: #fff;
+    font-size: 50px;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 8px;
+    line-height: 60px;
+    span {
+      font-size: 32px;
+      font-weight: 300;
+      letter-spacing: 10px;
     }
   }
 `;
+const HeroImg = styled.img`
+  position: absolute;
+  width: 40%;
+  height: 40%;
+  top: 0;
+  left: 0;
+  object-fit: contain;
+`;
+const HeroBird = styled.img`
+  position: absolute;
+  width: 15%;
+  height: 15%;
+  top: 0;
+  left: 0;
+  object-fit: contain;
+`;
 
 const Section = styled.section`
-  display: flex;
-  justify-content: end;
+  //display: flex;
+  //justify-content: end;
   height: 90%;
-  padding-top: 2rem;
+  width: 100%;
+  //padding-top: 2rem;
 `;
 
 const Form = styled.div`
@@ -175,4 +205,4 @@ const Close = styled.button`
   margin-left: 80%;
   margin-top: 1rem;
 `;
-export { Container, Nav, Join, Guest, Section, Hero, Form, Google, Close };
+export { Container, Nav, Join, LoginBtn, Section, Hero, HeroImg, HeroBird, Form, Google, Close };
