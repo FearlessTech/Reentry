@@ -10,9 +10,11 @@ import {
   Container,
   Nav,
   Join,
-  Guest as LoginBtn,
+  LoginBtn,
   Section,
   Hero,
+  HeroImg,
+  HeroBird,
   Form,
   Google,
   Close,
@@ -115,18 +117,20 @@ const Login = (props) => {
 
       <Section>
         <Hero>
-          <div className='text'>
-            <h1>Welcome to the Maine Community Resources Network</h1>
-          </div>
-          <div className='hero-container'>
-            <div className='hero-image-container' ref={hero}>
-              <img
-                src='/images/tests/freedom-nobg.png'
-                className='hero-image'
-                alt=''
-              />
-            </div>
-          </div>
+          <h1 data-value={3}>Maine Prisoner Reentry<br/><span>Resources Network</span> </h1>
+          <HeroImg src='/images/tests/chain.png' data-value="-9" alt=''/>
+          <HeroBird src='/images/tests/bird-1.png' data-value="-7" alt=''/>
+          <HeroBird src='/images/tests/bird-2.png' data-value="-5" alt=''/>
+          <HeroBird src='/images/tests/bird-3.png' data-value="-3" alt=''/>
+          <HeroBird src='/images/tests/bird-4.png' data-value="-1" alt=''/>
+          <HeroBird src='/images/tests/bird-5.png' data-value="3" alt=''/>
+          <HeroBird src='/images/tests/bird-6.png' data-value="1" alt=''/>
+          <HeroBird src='/images/tests/bird-7.png' data-value="3" alt=''/>
+          <HeroBird src='/images/tests/bird-8.png' data-value="5" alt=''/>
+          <HeroBird src='/images/tests/bird-9.png' data-value="7" alt=''/>
+          <HeroBird src='/images/tests/bird-10.png' data-value="9" alt=''/>
+          <HeroBird src='/images/tests/bird-11.png' data-value="11" alt=''/>
+          <HeroBird src='/images/tests/bird-12.png' data-value="13" alt=''/>
         </Hero>
         <Modal show={show}/>
       </Section>
