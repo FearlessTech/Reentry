@@ -28,7 +28,7 @@ function App(props) {
             <Route path="/resource"><Navbar /><Resource /></Route>
             <Route path="/notifications"><Navbar /><Notifications /></Route>
             <Route path="/network"><Navbar /><Network /></Route>
-            <Route path="/messaging"><Navbar /><Messaging /></Route>
+            <Route path="/messaging:receiverId"><Messaging /></Route>
             <Route path="/profile"><Navbar /><Profile /></Route>
             <Route path="/aboutus"><Navbar/>><AboutUs /></Route>
           </Switch>
