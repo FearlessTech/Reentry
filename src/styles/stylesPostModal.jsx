@@ -44,6 +44,7 @@ const Header = styled.div`
       height: 30px;
       width: 30px;
       min-width: auto;
+      display: flex;
       color: darkslateblue;
       background: #FFFDD0;
       border-radius: 7px;
