@@ -147,6 +147,11 @@ const SocialActions = styled.div`
 
 const Content = styled.div`
   text-align: center;
+  overflow-y: scroll;
+  max-height: 400px;
+  ::-webkit-scrollbar {
+      display: none;
+  }
   & > img {
     width: 30px;
   }
@@ -185,7 +190,6 @@ const PostNav = styled.div`
 
 export {
   Container,
-  CommonCard,
   Article,
   SharedActor,
   Description,
