@@ -33,8 +33,9 @@ If you would like to contribute, just comment on an issue and I will assign it t
 
 [Click Here to Read the Contribution Guideline](https://github.com/4-Leafs-Code/Reentry/blob/main/contributing.md) 
 
-***Contributors have permission to add this site to their Web Developer portfolio after making a viable contribution***
----
+
+**Contributors have permission to add this site to their Web Developer portfolio after making a viable contribution.**
+
 
 <p align='center'>
 <img width='80%' src='mis/ShowCaseLogin.jpg'>
@@ -42,7 +43,6 @@ If you would like to contribute, just comment on an issue and I will assign it t
 <p align='center'>
 <img width='80%' src='mis/ShowCaseHome.jpg'>
 </p>
-
 
 
 ---
