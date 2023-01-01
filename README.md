@@ -3,6 +3,15 @@
 **Help Wanted**
 
 ---
+***12/31/22: Notice to Everyone that has logged into this site***  
+
+If you have loged into this site with your email, then you are stored in the database as a User. I would like to use the your user profiles to build the networking cards. Im going to wait untill 1/7/23 before I start working on the firebase rules to implament this so you have time to reach out and let me know if you would like to be excluded or erased from the database.  I need your accounts to help build and test: the networking cards, the user to user instant messaging and the message button from other pages, the resouces database and post modal, and personal profiles. I will not display anything more then your photo and your display name if you agree to let me use your account.  
+
+You can let me know your wishes by posting a comment on the issue: [Networking cards #30](https://github.com/4-Leafs-Code/Reentry/issues/30). <= Click on these blue words for an easy redirect. 
+
+**:notes: :fireworks: I'd like to wish everyone a Happy New Year! :fireworks: :notes:**
+
+---
 
 This site is being built for Maine Community of reentry advocates and/or anyone who concerns themselves with sucsesfull prisoner reintergration. [NAMI](https://www.namimaine.org/), [MPRN](https://re-entrymaine.org/) and [MPAC](https://www.maineprisoneradvocacy.org) are all non-profit orginizations that are fully involved in prisoner reentry. They have agreed to maintain this site after it is launched and spread the word as fast as possible to get every resource in the state signed up to this site. I'm estimating a 2000+ user base from day one.    
 
