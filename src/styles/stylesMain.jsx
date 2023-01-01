@@ -83,7 +83,9 @@ const Description = styled.div`
 
 const SharedImage = styled.div`
   margin-top: 8px;
-  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  width: 70%;
   display: block;
   position: relative;
   background-color: #e9e9e9;
