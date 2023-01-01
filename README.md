@@ -1,3 +1,12 @@
+<!--- Important information shared between us collaborators:
+Please add the date and your username before your comment so you can be reached if needed. Make sure your comment is inside the arrows so it remains hidden from everyone but us programmers. 
+
+12/31 4-Leafs-Code: The color schema for this build are blues and grays with a touch of yellows. You do not have to use these colors but your choices must look well with these colors. Here are the hex #'s for quick access:   Blues: #88bbd6 #99d3df   Grays: #cdcdcd  #e9e9e9   Yellows: #FFFDD0  #fcf4a3   Thank's for helping out!
+
+
+
+--->
+
 # Maine's Reentry Resources Networking Site  
 
 **Help Wanted**
