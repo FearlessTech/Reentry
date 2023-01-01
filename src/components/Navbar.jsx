@@ -1,10 +1,10 @@
-import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
-import { useEffect, useState } from 'react';
-import { signOutAPI } from '../actions';
+import { connect } from "react-redux";
+import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { signOutAPI } from "../actions";
 
-import { SiGooglemessages } from 'react-icons/si';
-import { BsFillBriefcaseFill } from 'react-icons/bs';
+import { SiGooglemessages } from "react-icons/si";
+import { BsFillBriefcaseFill } from "react-icons/bs";
 import {
   IoMdNotifications,
   IoIosHome,
@@ -14,32 +14,20 @@ import {
   IoMdSearch,
   IoMdPerson,
   IoMdInformationCircle,
-} from 'react-icons/io';
+} from "react-icons/io";
 
-import { capitalize } from '@material-ui/core';
+import { capitalize } from "@material-ui/core";
 
-import {
-  Container,
-  Content,
-  Logo,
-  Search,
-  SearchIcon,
-  Nav,
-  NavListWrap,
-  NavList,
-  SignOut,
-  User,
-  More,
-  Dropdown,
-} from '../styles/stylesNavbar';
+import { Container, Content, Logo, Nav, NavListWrap, NavList, SignOut, User, More, Dropdown } from "../styles/stylesNavbar";
+import { SearchResults } from "./Search/SearchResults";
 
 const Navbar = (props) => {
   const topics = [
-    { name: 'home', Icon: IoIosHome },
-    { name: 'network', Icon: IoMdPeople },
-    { name: 'resource', Icon: BsFillBriefcaseFill },
-    { name: 'messaging', Icon: SiGooglemessages },
-    { name: 'notifications', Icon: IoMdNotifications },
+    { name: "home", Icon: IoIosHome },
+    { name: "network", Icon: IoMdPeople },
+    { name: "resource", Icon: BsFillBriefcaseFill },
+    { name: "messaging", Icon: SiGooglemessages },
+    { name: "notifications", Icon: IoMdNotifications },
   ];
 
   const [url, setUrl] = useState(null);
@@ -47,38 +35,28 @@ const Navbar = (props) => {
   useEffect(() => {
     if (window?.location.href) setUrl(window.location.href);
   }, []);
-  
+
   return (
     <Container>
       <Content>
         <Logo>
-          <Link to='/home'>
-            <img src='/images/MaineRRLogo.png' alt='' width='100%' />
+          <Link to="/home">
+            <img src="/images/MaineRRLogo.png" alt="" width="100%" />
           </Link>
         </Logo>
-        <Search>
-          <div>
-            <input type='text' placeholder='Search' />
-          </div>
-          <SearchIcon>
-            <IoMdSearch />
-          </SearchIcon>
-        </Search>
+        <SearchResults />
         <Nav>
           <NavListWrap>
             {topics.map(({ name, Icon }) => {
               return (
-                <NavList
-                  key={name}
-                  className={(url ? url.includes(name) : false) ? 'active' : ''}
-                >
+                <NavList key={name} className={(url ? url.includes(name) : false) ? "active" : ""}>
                   <Link
                     to={`/${name}`}
                     onClick={() => {
                       setUrl(name);
                     }}
                   >
-                    <Icon size={18} style={{ fill: '#cdcdcd' }} />
+                    <Icon size={18} style={{ fill: "#cdcdcd" }} />
                     <span>{capitalize(name)}</span>
                   </Link>
                 </NavList>
@@ -86,7 +64,7 @@ const Navbar = (props) => {
             })}
             <More>
               <a>
-                <IoMdSettings size={18} style={{ fill: '#cdcdcd' }} />
+                <IoMdSettings size={18} style={{ fill: "#cdcdcd" }} />
                 <span>
                   More
                   <IoMdArrowDropdown />
@@ -94,38 +72,30 @@ const Navbar = (props) => {
               </a>
               <Dropdown>
                 <Link
-                  to='/profile'
-                  className={`dropdown-item ${
-                    (url ? url.includes('profile') : false) ? 'active' : ''
-                  }`}
+                  to="/profile"
+                  className={`dropdown-item ${(url ? url.includes("profile") : false) ? "active" : ""}`}
                   onClick={() => {
-                    setUrl('profile');
+                    setUrl("profile");
                   }}
                 >
-                  <IoMdPerson fill={'#00000099'} />
+                  <IoMdPerson fill={"#00000099"} />
                   <span>Profile</span>
                 </Link>
                 <Link
-                  to='/aboutus'
-                  className={`dropdown-item ${
-                    (url ? url.includes('aboutus') : false) ? 'active' : ''
-                  }`}
+                  to="/aboutus"
+                  className={`dropdown-item ${(url ? url.includes("aboutus") : false) ? "active" : ""}`}
                   onClick={() => {
-                    setUrl('aboutus');
+                    setUrl("aboutus");
                   }}
                 >
-                  <IoMdInformationCircle fill={'#00000099'} />
+                  <IoMdInformationCircle fill={"#00000099"} />
                   <span>About Us</span>
                 </Link>
               </Dropdown>
             </More>
             <User>
               <a>
-                {props.user && props.user.photoURL ? (
-                  <img src={props.user.photoURL} alt='' />
-                ) : (
-                  <img src='/images/user.svg' alt='' />
-                )}
+                {props.user && props.user.photoURL ? <img src={props.user.photoURL} alt="" /> : <img src="/images/user.svg" alt="" />}
                 <span>
                   Sign Out <IoMdArrowDropdown />
                 </span>
