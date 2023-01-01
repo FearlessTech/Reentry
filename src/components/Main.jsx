@@ -10,7 +10,6 @@ import { IoMdSettings, } from "react-icons/io";
 
 import {
   Container,
-  CommonCard,
   Article,
   SharedActor,
   Description,

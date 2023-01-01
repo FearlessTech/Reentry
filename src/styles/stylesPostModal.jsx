@@ -28,22 +28,30 @@ const Content = styled.div`
 `;
 
 const Header = styled.div`
-    padding: 16px 28px;
+    padding: 5px 25px ;
     border-bottom: 1px solid rgba(0,0,0,0.15);
     font-size: 16px;
     line-height: 1.5;
-    color: rgba(0,0,0,0.6);
+    color: darkslateblue;
     font-weight: 400;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #fcf4a3 ;
+    background-color: #99d3df;
+    border-radius: 5px;
 
     button {
-        height: 48px;
-        width: 40px;
-        min-width: auto;
-        color: rgba(0,0,0,0.15);
+      height: 30px;
+      width: 30px;
+      min-width: auto;
+      color: darkslateblue;
+      background: #FFFDD0;
+      border-radius: 7px;
+      border-color: #fcf4a3;
+      &:hover {
+        background: #fcf4a3 ;
+      }
+      
 
         img {
             pointer-events: none;
@@ -65,7 +73,7 @@ const SharedContent = styled.div`
 const UserInfo = styled.div`
     display: flex;
     align-items: center;
-    padding: 12px 24px;
+    padding: 5px;
 
     svg,img {
         width: 48px;
@@ -90,12 +98,20 @@ const SharedCreation = styled.div`
 `;
 
 const AssetButton = styled.button`
-    display: flex;
-    align-items: center;
-    height: 40px;
-    min-width: auto;
-    color: rgba(0,0,0,0.5);
-    background-color: #fcf4a3;
+  display: flex;
+  margin-right: 5px;
+  margin-left: 5px;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  min-width: auto;
+  color: darkslateblue;
+  background: #FFFDD0;
+  border-radius: 7px;
+  border-color: #fcf4a3;
+  &:hover {
+    background: #fcf4a3 ;
+  }
 `;
 
 const AttachAssets = styled.div`
@@ -108,28 +124,19 @@ const AttachAssets = styled.div`
     }
 `;
 
-const ShareComment = styled.div`
-    padding-left: 8px;
-    margin-right: auto;
-    border-left: 1px solid rgba(0,0,0,0.15);
-
-    ${AssetButton} {
-        img {
-            margin-right: 5px;
-        }
-    }
-`;
 
 const PostButton = styled.button`
-    min-width: 60px;
-    border-radius: 20px;
-    padding-left: 16px;
-    padding-right: 16px;
-    background: ${props => props.disabled ? 'rgba(0,0,0,0.5)' : '#004182'};
-    color: ${props => props.disabled ? 'rgba(1,1,1,0.2)' : '#fcf4a3;'};
+  min-width: 60px;
+  border-radius: 7px;
+  border-color: #fcf4a3;
+  padding-left: 16px;
+  padding-right: 16px;
+  font-weight: 600;
+  background: ${props => props.disabled ? 'lightgray' : '#FFFDD0'};
+  color: ${props => props.disabled ? 'rgba(1,1,1,0.2)' : 'darkslateblue;'};
 
     &:hover {
-        background: ${props => props.disabled ? 'rgba(0,0,0,0.08)' : '#004182'};
+        background: ${props => props.disabled ? '#fcf4a3' : '#fcf4a3'};
         cursor: ${props => props.disabled ? 'none' : 'pointer'};
         outline: none !important;
     }
@@ -139,27 +146,22 @@ const Editor = styled.div`
     padding: 12px 24px;
 
     textarea {
-        width: 100%;
-        min-height: 100px;
-        resize: none;
-        background-color: #FFFDD0;
+      width: 100%;
+      border-radius: 7px;
+      min-height: 100px;
+      resize: none;
+      background-color: white;
     }
 
     input {
-        width: 100%;
-        height: 35px;
-        font-size: 16px;
-        margin-bottom: 20px;
+      width: 100%;
+      border-radius: 7px;
+      height: 35px;
+      font-size: 16px;
+      margin-bottom: 20px;
     }
 `;
 
-const UploadImage = styled.div`
-    text-align: center;
-
-    img {
-        width: 100%;
-    }
-`;
 
 export {
   Container,
@@ -170,8 +172,7 @@ export {
   SharedCreation,
   AssetButton,
   AttachAssets,
-  ShareComment,
   PostButton,
   Editor,
-  UploadImage
+
 };
