@@ -33,20 +33,16 @@ If you would like to contribute, just comment on an issue and I will assign it t
 
 [Click Here to Read the Contribution Guideline](https://github.com/4-Leafs-Code/Reentry/blob/main/contributing.md) 
 
-**Contributors can add this site to their Web Developer portfolio**
+**Contributors have permission to add this site to their Web Developer portfolio after making a viable contribution.**
 ---
 
 <p align='center'>
-<img width='100%' src='mis/ShowCaseLogin.jpg'>
+<img width='80%' src='mis/ShowCaseLogin.jpg'>
 </p>
 <p align='center'>
-<img width='100%' src='mis/ShowCaseHome.jpg'>
+<img width='80%' src='mis/ShowCaseHome.jpg'>
 </p>
 
-### Feature Preview: User to User Instant Messaging
-<p align='center'>
-<img width='100%' src='mis/ShowCaseMessagingWIP.jpg'>
-</p>
 
 ---
    
