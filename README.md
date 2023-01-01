@@ -43,10 +43,6 @@ If you would like to contribute, just comment on an issue and I will assign it t
 <img width='100%' src='mis/ShowCaseHome.jpg'>
 </p>
 
-### Feature Preview: User to User Instant Messaging
-<p align='center'>
-<img width='100%' src='mis/ShowCaseMessagingWIP.jpg'>
-</p>
 
 ---
    
