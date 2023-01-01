@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 const Container = styled.div`
   grid-area: main;
+ 
 `;
 
 const CommonCard = styled.div`
@@ -86,8 +87,6 @@ const SharedImage = styled.div`
   display: block;
   position: relative;
   background-color: #e9e9e9;
-  
-
   img {
     object-fit: contain;
     width: 100%;
@@ -106,7 +105,6 @@ const SocialCounts = styled.ul`
   margin: 0 16px;
   padding: 8px 0;
   border-bottom: 1px solid #e9e5df;
-
   li {
     margin-right: 5px;
     font-size: 12px;
@@ -122,7 +120,6 @@ const SocialActions = styled.div`
   min-height: 40px;
   padding: 4px 8px;
   border-radius: 5px;
-
   button {
     display: inline-flex;
     align-items: center;
@@ -133,7 +130,6 @@ const SocialActions = styled.div`
     border-radius: 5px;
     margin: 5px;
     text-align: center;
-
     @media (min-width: 768px) {
       span {
         margin: 3px;
@@ -148,7 +144,7 @@ const SocialActions = styled.div`
 const Content = styled.div`
   text-align: center;
   overflow-y: scroll;
-  max-height: 400px;
+  max-height: 500px;
   ::-webkit-scrollbar {
       display: none;
   }
