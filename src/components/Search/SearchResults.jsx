@@ -56,7 +56,10 @@ export const SearchResults = () => {
             id="search-input"
             onChange={(e) => setsearchQuery(e.target.value)}
             onKeyUp={(e) => handleSearch(e, false)}
-            onBlur={() => setsearchQuery("")}
+            onBlur={() => {
+              setsearchQuery("");
+              setsearchResults(initialSearchState);
+            }}
           />
         </div>
         <SearchIcon>
