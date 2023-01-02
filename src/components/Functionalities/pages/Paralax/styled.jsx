@@ -9,6 +9,8 @@ export const Container = styled.div`
     width: 25px;
     height: 25px;
     border-radius: 100vmax;
-    transition: 250ms cubic-bezier(0.83, 0.81, 0.36, 0.37);
+    transition: 400ms cubic-bezier(0.83, 0.81, 0.36, 0.37);
+    position: absolute;
   }
+  
 `;
