@@ -1,10 +1,10 @@
 import { connect } from 'react-redux';
-import { signInAPI } from '../actions';
+import { signInAPI } from '../../../../actions';
 import { Redirect } from 'react-router-dom';
 import { useRef, useState, useEffect } from 'react';
 
-import LoginForm from './LoginComponents/Login';
-import SignUpForm from './LoginComponents/Signup';
+import LoginForm from '../../../../components/LoginComponents/Login';
+import SignUpForm from '../../../../components/LoginComponents/Signup';
 
 import {
   Container,
@@ -18,7 +18,8 @@ import {
   Form,
   Google,
   Close,
-} from '../styles/stylesLogin';
+} from './styles';
+
 import { Link } from 'react-router-dom';
 
 const Login = (props) => {

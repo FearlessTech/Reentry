@@ -8,6 +8,9 @@ const Functionalities = (props) => {
       <Route path='/functionalities/parallax'>
         <Parallax />
       </Route>
+      <Route path='/functionalities/birds'>
+        <BirdsParallax />
+      </Route>
       <Route exact path='/functionalities'>
         <div>functionalities route</div>
         <ul>
