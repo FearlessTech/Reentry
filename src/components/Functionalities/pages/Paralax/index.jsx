@@ -9,26 +9,26 @@ const Parallax = (props) => {
 
   return (
     <Container id='parallax'>
-      <div className='elm' />
-      <div className='elm' />
-      <div className='elm' />
-      <div className='elm' />
-      <div className='elm' />
-      <div className='elm' />
-      <div className='elm' />
-      <div className='elm' />
-      <div className='elm' />
-      <div className='elm' />
-      <div className='elm' />
-      <div className='elm' />
-      <div className='elm' />
-      <div className='elm' />
-      <div className='elm' />
-      <div className='elm' />
-      <div className='elm' />
-      <div className='elm' />
-      <div className='elm' />
-      <div className='elm' />
+      <div className='elm' speed='5' />
+      <div className='elm' speed='-5' />
+      <div className='elm' speed='10' />
+      <div className='elm' speed='-10' />
+      <div className='elm' speed='7' />
+      <div className='elm' speed='-7' />
+      <div className='elm' speed='8' />
+      <div className='elm' speed='-8' />
+      <div className='elm' speed='5' />
+      <div className='elm' speed='-9' />
+      <div className='elm' speed='-2' />
+      <div className='elm' speed='2' />
+      <div className='elm' speed='4' />
+      <div className='elm' speed='4' />
+      <div className='elm' speed='-4' />
+      <div className='elm' speed='8' />
+      <div className='elm' speed='1' />
+      <div className='elm' speed='-1' />
+      <div className='elm' speed='6' />
+      <div className='elm' speed='-6' />
     </Container>
   );
 };
@@ -57,16 +57,16 @@ function move(elm, event) {
   const x = (window.innerWidth - event.pageX * speed) / 100;
   const y = (window.innerHeight - event.pageY * speed) / 100;
 
+  console.log(x, y);
   elm.style.setProperty('transform', `translate(${x}px, ${y}px)`);
 }
 
 function preset(elm) {
   elm.style.setProperty('top', `${randint(1, window.innerHeight)}px`);
   elm.style.setProperty('left', `${randint(1, window.innerWidth)}px`);
-  elm.setAttribute('speed', `${randint(3, 10)}`);
+  // elm.setAttribute('speed', `${randint(-10, 10)}`);
 }
 
 function randint(min = 0, max) {
   return Math.floor(Math.random() * max + min);
 }
-
