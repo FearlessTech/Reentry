@@ -63,7 +63,11 @@ If you would like to contribute, just comment on an issue and I will assign it t
    in new window, wait for files to finish loading in terminal and reload the new window. 
    * Click on sign in with google and enjoy exploring!
 
+---
+### Contributors, Bots And Collaborators
 
+
+<img src="./contributors.svg">
 
 
 
