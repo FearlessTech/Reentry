@@ -9,6 +9,7 @@ import Login from './components/Login';
 import Navbar from './components/Navbar';
 import { getUserAuth } from './actions';
 import NotFound from './components/Fallbacks/NotFound';
+import Functionalities from './components/Functionalities';
 
 const Home = lazy(() => import('./components/Home'));
 const Resource = lazy(() => import('./components/Resource'));
@@ -30,6 +31,9 @@ function App(props) {
           <Switch>
             <Route exact path='/'>
               <Login />
+            </Route>
+            <Route path='/functionalities'>
+              <Functionalities />
             </Route>
             <Route path='/home'>
               <Navbar />
