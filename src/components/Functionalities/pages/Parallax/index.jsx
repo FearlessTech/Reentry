@@ -3,8 +3,8 @@ import { Container } from './styled';
 
 const Parallax = (props) => {
   useEffect(() => {
-    presetElements('elm', preset);
-    setListener('parallax');
+    presetElements('elm', preset); // bird class here
+    setListener('parallax'); // main container id here
   });
 
   return (

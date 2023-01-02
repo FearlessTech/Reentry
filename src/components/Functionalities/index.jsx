@@ -1,17 +1,19 @@
 import { Link, Route } from 'react-router-dom';
-import Paralax from './pages/Paralax';
+import Parallax from './pages/Parallax';
+import BirdsParallax from './pages/BirdsParallax';
 
 const Functionalities = (props) => {
   return (
     <>
-      <Route path='/functionalities/paralax'>
-        <Paralax />
+      <Route path='/functionalities/parallax'>
+        <Parallax />
       </Route>
       <Route exact path='/functionalities'>
         <div>functionalities route</div>
         <ul>
           <li>
-            <Link to='/functionalities/paralax'>paralax</Link>
+            <Link to='/functionalities/parallax'>parallax</Link>
+            <Link to='/functionalities/birds'>birds parallax</Link>
           </li>
         </ul>
       </Route>
