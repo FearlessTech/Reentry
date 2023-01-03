@@ -64,10 +64,7 @@ If you would like to contribute, just comment on an issue and I will assign it t
    * Click on sign in with google and enjoy exploring!
 
 ---
-### Contributors, Bots And Collaborators
 
-
-<img src="./contributors.svg">
 
 
 
