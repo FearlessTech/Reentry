@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import { signInAPI } from '../actions';
 import { Redirect } from 'react-router-dom';
-import { useRef, useState } from 'react';
+import { useRef, useState, useEffect } from 'react';
 
 import LoginForm from './LoginComponents/Login';
 import SignUpForm from './LoginComponents/Signup';
@@ -24,64 +24,45 @@ import { Link } from 'react-router-dom';
 // /images/google.svg
 
 const Login = (props) => {
+  const [login, setLogin] = useState(true);
   const [show, setShow] = useState(false);
 
-  const hero = useRef('hero-image-container');
-  function handleMovement(e) {
-    const paralax = hero.current;
-
-    // const heroX = hero.current.offsetWidth;
-    // const heroY = hero.current.offsetHeight;
-
-    const middleX = window.innerWidth / 2;
-    // const middleY = window.innerHeight / 2;
-
-    const posX = e.clientX;
-    // const posY = e.clientY;
-
-    // if (posY < middleY) {
-    //   paralax.style.top = '-10px';
-    // } else {
-    //   paralax.style.top = '10px';
-    // }
-    if (posX < middleX) {
-      paralax.style.left = '-10px';
-    } else {
-      paralax.style.left = '8px';
-    }
-  }
-
-  const [login, setLogin] = useState(true);
+  useEffect(() => {
+    // presetElements('bird', preset);
+    setListener('bird');
+  });
 
   const Modal = (props) => {
     if (!props.show) {
-      return null;}
+      return null;
+    }
+
     return (
       <Form>
         <Close onClick={() => setShow(false)}>X</Close>
         {login ? (
           <LoginForm>
-              <span className='sign-up'>
-                Doesn't have an account?{' '}
-                <Link
-                  onClick={(e) => {
-                    e.preventDefault();
-                    setLogin(false);
-                  }}
-                >
-                  Sign up
-                </Link>
-              </span>
+            <span className='sign-up'>
+              Doesn't have an account?{' '}
+              <Link
+                onClick={(e) => {
+                  e.preventDefault();
+                  setLogin(false);
+                }}
+              >
+                Sign up
+              </Link>
+            </span>
           </LoginForm>
         ) : (
-          <SignUpForm/>
+          <SignUpForm />
         )}
       </Form>
-    )
+    );
   };
 
   return (
-    <Container onMouseMove={handleMovement}>
+    <Container id='parallax'>
       {props.user && <Redirect to='/home' />}
       <Nav>
         <a href='/' className='logo'>
@@ -90,7 +71,7 @@ const Login = (props) => {
         <div className='button-container'>
           <Google className='google-btn' onClick={() => props.signIn()}>
             <div className='icon'>
-              <img src='/images/google.svg' alt=''/>
+              <img src='/images/google.svg' alt='' />
             </div>
             <span>Login with Google</span>
           </Google>
@@ -117,22 +98,56 @@ const Login = (props) => {
 
       <Section>
         <Hero>
-          <h1 data-value={3}>Maine Prisoner Reentry<br/><span>Resources Network</span> </h1>
-          <HeroImg src='/images/tests/chain.png' data-value="-9" alt=''/>
-          <HeroBird src='/images/tests/bird-1.png' data-value="-7" alt=''/>
-          <HeroBird src='/images/tests/bird-2.png' data-value="-5" alt=''/>
-          <HeroBird src='/images/tests/bird-3.png' data-value="-3" alt=''/>
-          <HeroBird src='/images/tests/bird-4.png' data-value="-1" alt=''/>
-          <HeroBird src='/images/tests/bird-5.png' data-value="3" alt=''/>
-          <HeroBird src='/images/tests/bird-6.png' data-value="1" alt=''/>
-          <HeroBird src='/images/tests/bird-7.png' data-value="3" alt=''/>
-          <HeroBird src='/images/tests/bird-8.png' data-value="5" alt=''/>
-          <HeroBird src='/images/tests/bird-9.png' data-value="7" alt=''/>
-          <HeroBird src='/images/tests/bird-10.png' data-value="9" alt=''/>
-          <HeroBird src='/images/tests/bird-11.png' data-value="11" alt=''/>
-          <HeroBird src='/images/tests/bird-12.png' data-value="13" alt=''/>
+          <h1>
+            Maine Prisoner Reentry
+            <br />
+            <span>Resources Network</span>{' '}
+          </h1>
+          <div className='assets-container'>
+            <div className='chain' top='270' left='0' speed='3'>
+              <img src='/images/tests/chain.png' alt='' />
+            </div>
+            <div className='birds'>
+              <div className='bird bird-01' speed='6' top='10' left='619'>
+                <img src='/images/tests/bird-1.png' alt='' />
+              </div>
+              <div className='bird bird-02' speed='5' top='65' left='925'>
+                <img src='/images/tests/bird-2.png' alt='' />
+              </div>
+              <div className='bird bird-03' speed='6' top='41' left='744'>
+                <img src='/images/tests/bird-3.png' alt='' />
+              </div>
+              <div className='bird bird-04' speed='5' top='167' left='457'>
+                <img src='/images/tests/bird-4.png' alt='' />
+              </div>
+              <div className='bird bird-05' speed='3' top='200' left='806'>
+                <img src='/images/tests/bird-5.png' alt='' />
+              </div>
+              <div className='bird bird-06' speed='4' top='215' left='724'>
+                <img src='/images/tests/bird-6.png' alt='' />
+              </div>
+              <div className='bird bird-07' speed='4' top='215' left='542'>
+                <img src='/images/tests/bird-7.png' alt='' />
+              </div>
+              <div className='bird bird-08' speed='3' top='294' left='595'>
+                <img src='/images/tests/bird-8.png' alt='' />
+              </div>
+              <div className='bird bird-09' speed='2' top='287' left='508'>
+                <img src='/images/tests/bird-9.png' alt='' />
+              </div>
+              <div className='bird bird-10' speed='1' top='275' left='440'>
+                <img src='/images/tests/bird-10.png' alt='' />
+              </div>
+              <div className='bird bird-11' speed='2' top='318' left='377'>
+                <img src='/images/tests/bird-11.png' alt='' />
+              </div>
+              <div className='bird bird-12' speed='1' top='265' left='377'>
+                <img src='/images/tests/bird-12.png' alt='' />
+              </div>
+            </div>
+          </div>
         </Hero>
-        <Modal show={show}/>
+        <Modal show={show} />
       </Section>
     </Container>
   );
@@ -149,3 +164,53 @@ const mapDispatchToProps = (dispatch) => ({
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Login);
+
+//                           //                             //
+
+function presetElements(className, lambda) {
+  const birds = document.getElementsByClassName(className);
+  for (let elm of birds) {
+    lambda(elm);
+  }
+}
+
+function setListener(className) {
+  document.addEventListener('mousemove', (e) => {
+    const birds = document.getElementsByClassName(className);
+    const chain = document.getElementsByClassName('chain')[0];
+    moveChain(chain, e);
+    for (let elm of birds) {
+      move(elm, e);
+    }
+  });
+}
+
+function move(elm, event) {
+  const speed = elm.getAttribute('speed');
+  const defaultTop = Number(elm.getAttribute('top'));
+  const defaultLeft = Number(elm.getAttribute('left'));
+
+  const x = (window.innerWidth - event.pageX * speed) / 100;
+  const y = (window.innerHeight - event.pageY * speed) / 100;
+
+  const yValue = defaultTop + y;
+  const xValue = defaultLeft + x;
+
+  elm.style.setProperty('top', `${yValue}px`);
+  elm.style.setProperty('left', `${xValue}px`);
+}
+
+function moveChain(elm, event) {
+  const speed = elm.getAttribute('speed');
+  const defaultTop = Number(elm.getAttribute('top'));
+  const defaultLeft = Number(elm.getAttribute('left'));
+
+  const x = (window.innerWidth - event.pageX * speed) / 100;
+  const y = (window.innerHeight - event.pageY * speed) / 100;
+
+  const yValue = defaultTop + y;
+  const xValue = defaultLeft + x;
+
+  elm.style.setProperty('top', `${yValue}px`);
+  elm.style.setProperty('left', `${xValue > 0 ? 0 : xValue}px`);
+}
