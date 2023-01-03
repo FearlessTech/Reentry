@@ -1,27 +1,64 @@
 import { connect } from 'react-redux';
-import { signInAPI } from '../actions';
+import { signInAPI } from '../../../../actions';
 import { Redirect } from 'react-router-dom';
 import { useRef, useState, useEffect } from 'react';
 
+import LoginForm from '../../../../components/LoginComponents/Login';
+import SignUpForm from '../../../../components/LoginComponents/Signup';
 
 import {
   Container,
   Nav,
+  Join,
   LoginBtn,
   Section,
   Hero,
-} from '../styles/stylesLogin';
+  HeroImg,
+  HeroBird,
+  Form,
+  Google,
+  Close,
+} from './styles';
+
 import { Link } from 'react-router-dom';
 
-// /images/google.svg
-
 const Login = (props) => {
+  const [login, setLogin] = useState(true);
+  const [show, setShow] = useState(false);
 
   useEffect(() => {
     // presetElements('bird', preset);
     setListener('bird');
   });
 
+  const Modal = (props) => {
+    if (!props.show) {
+      return null;
+    }
+
+    return (
+      <Form>
+        <Close onClick={() => setShow(false)}>X</Close>
+        {login ? (
+          <LoginForm>
+            <span className='sign-up'>
+              Doesn't have an account?{' '}
+              <Link
+                onClick={(e) => {
+                  e.preventDefault();
+                  setLogin(false);
+                }}
+              >
+                Sign up
+              </Link>
+            </span>
+          </LoginForm>
+        ) : (
+          <SignUpForm />
+        )}
+      </Form>
+    );
+  };
 
   return (
     <Container id='parallax'>
@@ -31,10 +68,29 @@ const Login = (props) => {
           <img src='/images/MaineRRLogo.png' alt='' />
         </a>
         <div className='button-container'>
-          <LoginBtn>
-            <Link to='/agreement'>
+          <Google className='google-btn' onClick={() => props.signIn()}>
+            <div className='icon'>
+              <img src='/images/google.svg' alt='' />
+            </div>
+            <span>Login with Google</span>
+          </Google>
+          <Join
+            className='button'
+            onClick={() => {
+              setLogin(false);
+              setShow(true);
+            }}
+          >
+            Join Now
+          </Join>
+          <LoginBtn
+            className='button'
+            onClick={() => {
+              setLogin(true);
+              setShow(true);
+            }}
+          >
             Login
-            </Link>
           </LoginBtn>
         </div>
       </Nav>
@@ -90,6 +146,7 @@ const Login = (props) => {
             </div>
           </div>
         </Hero>
+        <Modal show={show} />
       </Section>
     </Container>
   );

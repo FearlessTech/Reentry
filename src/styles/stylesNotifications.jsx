@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 const Container = styled.div`
+  margin-top: 1.5rem;
   display: flex;
   height: 100vh;
   background-color: #cdcdcd;
@@ -14,7 +15,6 @@ const Left = styled.div`
   height: 180px;
   border-radius: 10px;
   background-color: white;
-  /* border: 1px solid red; */
   margin: 3% 0 0 5%;
   text-align: center;
   @media (max-width: 623px) {
@@ -35,19 +35,23 @@ const HR = styled.div``;
 const Middle = styled.div`
   width: 44%;
   background-color: white;
-  margin: 3% 0 0 2%;
+  margin: 0 auto;
+  margin-top: 2.5rem;
   border-radius: 10px;
-  /* border: 1px solid red; */
+  padding: 1rem;
 `;
 const MiddleBoxes = styled.div`
   display: flex;
-  /* height: 90px; */
-  img {
-    /* border: 1px solid red; */
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    margin: 3% 4%;
+  border-radius: 100vmax;
+  margin: 1rem;
+  .img-wrapper {
+    height: 70px;
+    border-right: 1px solid black;
+    padding-right: 1rem;
+    img {
+      height: 100%;
+      border-radius: 50%;
+    }
   }
   @media (max-width: 623px) {
     width: 95%;
@@ -56,37 +60,36 @@ const MiddleBoxes = styled.div`
 `;
 const MiddleContent = styled.div`
   width: 70%;
-  /* border: 1px solid red; */
-  border: 1.4px solid rgb(3, 98, 223);
-  text-align: center;
+  /* outline: 1px solid red; */
+  display: flex;
   padding: 2% 4%;
-  border-radius: 50px;
-  /* width: 50%; */
-  button {
-    color: rgb(3, 98, 223);
-    h&:hover {
+  justify-content: space-between;
+  .prevMessage {
+    a {
+      text-decoration: none;
+      color: #474747;
+    }
+  }
+  .action {
+    /* outline: 1px solid blue; */
+    display: flex;
+    align-items: flex-start;
+    a {
+      background-color: aliceblue;
       cursor: pointer;
-      background-color: rgb(215, 233, 248);
+      padding: 1rem;
+      text-decoration: none;
+      color: #474747;
     }
   }
 `;
 const Dots = styled.div`
-  /* border: 1px solid red; */
-  width: 10%;
-  img {
-    width: 60%;
-    &:hover {
-      cursor: pointer;
-      border-radius: 50px;
-      background-color: rgb(211, 211, 211);
-    }
-  }
-  p {
-    color: gray;
-    font-size: 80%;
-    margin-left: 25%;
-  }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 4px;
 `;
+
 const Right = styled.div`
   width: 25%;
   /* border: 1px solid red; */

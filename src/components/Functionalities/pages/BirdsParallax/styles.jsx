@@ -160,12 +160,12 @@ const Hero = styled.div`
     height: 100%;
     z-index: -5;
     background: radial-gradient(
-            ellipse 50% 90%,
-            #fffbe0 5%,
-            #fff3a7 20%,
-            #dfbaaa 50%,
-            #fae2c0 70%,
-            #bfddbf
+      ellipse 50% 90%,
+      #fffbe0 5%,
+      #fff3a7 20%,
+      #dfbaaa 50%,
+      #fae2c0 70%,
+      #bfddbf
     );
     .chain {
       transition: 400ms cubic-bezier(0.83, 0.81, 0.36, 0.37);
