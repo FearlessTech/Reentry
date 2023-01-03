@@ -1,22 +1,25 @@
 import { connect } from 'react-redux';
 import { lazy, useEffect, Suspense } from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import Loading from './components/Fallbacks/Loading';
 
+import { getUserAuth } from './actions';
+import Loading from './components/Fallbacks/Loading';
+import NotFound from './components/Fallbacks/NotFound';
+
+import Functionalities from './components/Functionalities';
 import './App.css';
 import './utilities.css';
-import Login from './components/Login';
-import Navbar from './components/Navbar';
-import { getUserAuth } from './actions';
-import NotFound from './components/Fallbacks/NotFound';
-import Functionalities from './components/Functionalities';
 
+import Login from './components/Login';
+import AgreementLogin from "./components/AgreementLogin";
+import Navbar from './components/Navbar';
 const Home = lazy(() => import('./components/Home'));
 const Resource = lazy(() => import('./components/Resource'));
 const Notifications = lazy(() => import('./components/Notifications'));
 const Network = lazy(() => import('./components/Network'));
 const Messaging = lazy(() => import('./components/Messaging'));
 const Profile = lazy(() => import('./components/Profile'));
+
 const AboutUs = lazy(() => import('./components/AboutUs'));
 
 function App(props) {
@@ -31,6 +34,9 @@ function App(props) {
           <Switch>
             <Route exact path='/'>
               <Login />
+            </Route>
+            <Route exact path='/agreement'>
+              <AgreementLogin />
             </Route>
             <Route path='/functionalities'>
               <Functionalities />
