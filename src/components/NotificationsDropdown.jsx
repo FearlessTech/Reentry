@@ -4,6 +4,9 @@ import MoreHorizIcon from '@material-ui/icons/MoreHoriz';
 import { Link } from 'react-router-dom';
 
 const StNotificationsDropDown = styled.div`
+  .more {
+    width: 16px;
+  }
   .dropdown {
     position: absolute;
     display: flex;
@@ -23,7 +26,7 @@ const NotificationsDropdown = ({ notifications, setNotifications, id }) => {
   const [open, setOpen] = useState(false);
   return (
     <StNotificationsDropDown>
-      <MoreHorizIcon onClick={(e) => setOpen(!open)} />
+      <MoreHorizIcon onClick={(e) => setOpen(!open)} className='more' />
       {!open || (
         <div className='dropdown'>
           <Link
