@@ -1,16 +1,20 @@
 import styled from 'styled-components';
 
 const ResourceDiv = styled.div`
-  display: flex;
-  justify-content: space-around;
-  max-width: 90rem;
-  margin: 0 auto;
-  background-color: #CDCDCD;
-  min-height: 100vh;
+  width: 100%;
+  background-color: #cdcdcd;
+  & .main-container {
+    outline: 1px solid red;
+    display: flex;
+    justify-content: space-around;
+    max-width: 90rem;
+    margin: 0 auto;
+    min-height: 150vh;
 
-  @media (max-width: 623px) {
-    flex-direction: column;
-    width: 100%;
+    @media (max-width: 623px) {
+      flex-direction: column;
+      width: 100%;
+    }
   }
 `;
 
@@ -131,7 +135,7 @@ const MTcontent = styled.div`
     font-size: 90%;
     margin: 2% 0;
     span {
-      color: green;
+      color: #089408;
     }
   }
   h5 {
@@ -169,6 +173,9 @@ const MiddleM = styled.div`
     padding: 0.5rem 1rem 2rem 1rem;
     font-size: 80%;
     color: #00000090;
+  }
+  .cards {
+    outline: 1px;
   }
 `;
 
