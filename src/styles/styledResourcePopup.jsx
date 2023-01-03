@@ -122,35 +122,6 @@ const Switch = styled.label`
   }
 `;
 
-// .span:before {
-//   position: absolute;
-//   content: "";
-//   height: 26px;
-//   width: 26px;
-//   left: 4px;
-//   bottom: 4px;
-//   background-color: white;
-//   -webkit-transition: .4s;
-//   transition: .3s;
-// }
-// input:checked + .span {
-//   background-color: green;
-// }
-// input:focus + .span {
-//   box-shadow: 0 0 1px #2196F3;
-// }
-// input:checked + .span:before {
-//   -webkit-transform: translateX(26px);
-//   -ms-transform: translateX(26px);
-//   transform: translateX(26px);
-// }
-// .span.round {
-//   border-radius: 34px;
-// }
-// .span.round:before {
-//   border-radius: 50%;
-// }
-
 export {
   Popup,
   HR,
