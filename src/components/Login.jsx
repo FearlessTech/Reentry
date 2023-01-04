@@ -3,7 +3,6 @@ import { signInAPI } from '../actions';
 import { Redirect } from 'react-router-dom';
 import { useEffect } from 'react';
 
-
 import {
   Container,
   Nav,
@@ -13,15 +12,14 @@ import {
 } from '../styles/stylesLogin';
 import { Link } from 'react-router-dom';
 
-// /images/google.svg
-
 const Login = (props) => {
-
   useEffect(() => {
-    // presetElements('bird', preset);
-    setListener('bird');
-  });
+    document.addEventListener('mousemove', parallax);
 
+    return () => {
+      document.removeEventListener('mousemove', parallax)
+    }
+  });
 
   return (
     <Container id='parallax'>
@@ -31,9 +29,7 @@ const Login = (props) => {
         </a>
         <div className='button-container'>
           <LoginBtn1>
-            <Link to='/agreement'>
-            Login
-            </Link>
+            <Link to='/agreement'>Login</Link>
           </LoginBtn1>
         </div>
       </Nav>
@@ -106,24 +102,13 @@ const mapDispatchToProps = (dispatch) => ({
 
 export default connect(mapStateToProps, mapDispatchToProps)(Login);
 
-//                           //                             //
-
-function presetElements(className, lambda) {
-  const birds = document.getElementsByClassName(className);
+function parallax(e) {
+  const birds = document.getElementsByClassName('bird');
+  const chain = document.getElementsByClassName('chain')[0];
+  moveChain(chain, e);
   for (let elm of birds) {
-    lambda(elm);
+    move(elm, e);
   }
-}
-
-function setListener(className) {
-  document.addEventListener('mousemove', (e) => {
-    const birds = document.getElementsByClassName(className);
-    const chain = document.getElementsByClassName('chain')[0];
-    moveChain(chain, e);
-    for (let elm of birds) {
-      move(elm, e);
-    }
-  });
 }
 
 function move(elm, event) {
