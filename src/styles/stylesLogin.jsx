@@ -94,11 +94,7 @@ const LoginBtn1 = styled.button`
         }
         
       }
-  
 `;
-
-
-
 
 const Section = styled.section`
   height: 90%;
@@ -159,7 +155,7 @@ const Hero = styled.div`
 
   h1 {
     position: absolute;
-    color: #886724;
+    color: #009999;
     background-color: #998a001a;
     box-shadow: 0px 0px 5px #994c0029;
     border-radius: 20px;
@@ -176,10 +172,10 @@ const Hero = styled.div`
       font-weight: 300;
       letter-spacing: 10px;
     }
-    //&::select{
-    //  background-color: #3c58588c;
-    //  color: #aaa;
-    //}
+    &::selection {
+      background-color: #3c58588c;
+      color: #aaa;
+    }
   }
   .assets-container {
     display: flex;
