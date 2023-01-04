@@ -4,6 +4,9 @@ const ResourceDiv = styled.div`
   width: 100%;
   background-color: #cdcdcd;
   & .main-container {
+    & > * {
+      margin-top: 4rem;
+    }
     outline: 1px solid red;
     display: flex;
     justify-content: space-around;
@@ -41,14 +44,33 @@ const StyledLeftASide = styled.div`
   }
 `;
 
-const LeftTBox = styled.div`
+const LeftOptions = styled.div`
   background-color: white;
   border-radius: 10px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
 `;
 
 const LeftBox = styled.div`
   display: flex;
-  padding: 5%;
+  padding: 1rem;
+  justify-content: start;
+  align-items: flex-start;
+  column-gap: 2rem;
+  &:hover {
+    background-color: #d0d0d018;
+  }
+  a {
+    color: black;
+    width: max-content;
+    font-size: 16px;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
 `;
 
 const LeftLogo = styled.div`
@@ -57,38 +79,30 @@ const LeftLogo = styled.div`
   }
 `;
 
-const LeftName = styled.div`
-  width: 80%;
-  font-size: 90%;
-  padding-left: 5%;
-  hover {
-    text-decoration: underline;
-  }
-`;
-
-const LeftBBox = styled.div`
+const LeftPostResource = styled.div`
   display: flex;
-  padding: 3% 19%;
-  margin: 5%;
+  padding: 1rem 2rem;
   border: 2px solid rgb(3, 98, 223);
   color: rgb(3, 98, 223);
   border-radius: 50px;
   text-align: center;
-  margin: auto;
-  margin-top: 10px;
-  hover {
+  margin: 0.8rem auto;
+  &:hover {
     cursor: pointer;
     background-color: rgb(215, 233, 255);
   }
 `;
 
 const LeftBName = styled.div`
-  padding-left: 5%;
+  margin-left: 1rem;
 `;
 
 const LeftBLogo = styled.div`
+  width: 25px;
+  display: grid;
+  place-items: center;
   img {
-    width: 25px;
+    width: auto;
   }
 
   @media (max-width: 623px) {
@@ -116,7 +130,7 @@ const StyledMiddleAside = styled.div`
   }
 `;
 
-const MiddleT = styled.div`
+const StyledRecent = styled.div`
   display: flex;
   border-radius: 10px;
   padding: 2% 3%;
@@ -125,33 +139,34 @@ const MiddleT = styled.div`
 
 const MTcontent = styled.div`
   font-size: medium;
-  width: 88.5%;
+  width: 100%;
   height: 100px;
   h1 {
-    font-size: 100%;
-    margin: 3% 0;
+    font-size: 20px;
+    margin: 0.5rem 0;
+    font-weight: 300;
   }
   h3 {
-    font-size: 90%;
+    text-indent: 1rem;
+    font-size: 15px;
     margin: 2% 0;
     span {
       color: #089408;
     }
   }
-  h5 {
-    font-size: 80%;
-    margin: 0%;
+  span {
+    font-size: 14px;
     color: #00000090;
   }
   button {
     width: 10%;
-    height: 10%;
+    height: 2rem;
     margin: 2rem;
     background-color: white;
     border: none;
     color: #00000090;
     cursor: pointer;
-    hover {
+    &:hover {
       padding: 2%;
       margin: 2% 0 0 0.5%;
       border-radius: 50px;
@@ -184,13 +199,16 @@ const OcupationCard = styled.div`
   cursor: pointer;
   align-items: stretch;
   margin: 2rem 0;
+  &:hover {
+    background-color: #dfdfdf29;
+  }
 `;
 
 const OcupationCardLogo = styled.div`
-  width: 200px;
+  width: 120px;
   img {
     width: auto;
-    margin: 1rem;
+    margin: 0 1rem 1rem 1rem;
   }
 `;
 
@@ -321,6 +339,10 @@ const RT = styled.div`
 `;
 
 const RB = styled.div`
+  transition: ease-in-out 300ms;
+  &:hover {
+    transform: scale(1.01) translateX(10px);
+  }
   margin-top: 2rem;
   p {
     color: rgb(201, 122, 247);
@@ -374,15 +396,14 @@ const RBLink = styled.div`
 export {
   ResourceDiv,
   StyledLeftASide,
-  LeftTBox,
+  LeftOptions,
   LeftBox,
   LeftLogo,
-  LeftName,
-  LeftBBox,
+  LeftPostResource,
   LeftBName,
   LeftBLogo,
   StyledMiddleAside,
-  MiddleT,
+  StyledRecent,
   MTcontent,
   MiddleM,
   OcupationCard,
