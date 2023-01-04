@@ -4,7 +4,7 @@ import { Article, SharedActor, Description, SharedImage, SocialCounts, SocialAct
 import { useEffect, useState } from "react";
 import { AddComment } from "./AddComment";
 import db, { auth } from "../../firebase";
-import { AllComments } from "./AllComments";
+import { AllComments, SingleComment } from "./SingleComment";
 export function SinglePost({ article, id }) {
   const user = auth.currentUser;
   const [showCommentBox, setshowCommentBox] = useState(false);
@@ -63,7 +63,17 @@ export function SinglePost({ article, id }) {
         </button>
       </SocialActions>
       {showCommentBox && <AddComment articleId={id} setshowCommentBox={setshowCommentBox} user={user} />}
-      {comments.length > 0 && <AllComments articleId={id} comments={comments} triggerPostRerender={triggerPostRerender} />}
+      {comments.length > 0 && (
+        <>
+          <p style={{ textAlign: "left", marginLeft: "15px" }}>Comments:</p>
+          {comments.map((comment) => (
+            <SingleComment comment={comment} articleId={id} triggerPostRerender={triggerPostRerender} />
+          ))}
+        </>
+      )}
     </Article>
   );
+}
+
+{
 }
