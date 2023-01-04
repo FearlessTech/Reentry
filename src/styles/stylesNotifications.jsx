@@ -1,36 +1,48 @@
 import styled from 'styled-components';
 
 const Container = styled.div`
-  margin-top: 1.5rem;
-  display: flex;
-  height: 100vh;
   background-color: #cdcdcd;
-  min-height: 100vh;
-  @media (max-width: 623px) {
-    display: block;
+  .container {
+    margin: auto;
+    margin-top: 1.5rem;
+    display: flex;
+    max-width: 100rem;
+    min-height: 100vh;
+    hr {
+      width: 100%;
+    }
+    @media (max-width: 623px) {
+      display: block;
+    }
   }
 `;
+
 const Left = styled.div`
   width: 18%;
   height: 180px;
   border-radius: 10px;
   background-color: white;
-  margin: 3% 0 0 5%;
+  margin: 0 auto;
+  margin-top: 2.5rem;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
   @media (max-width: 623px) {
     display: none;
   }
-`;
-const LeftDiv = styled.div`
-  p {
-    font-size: 100%;
-    color: gray;
+  div {
+    p {
+      font-size: 100%;
+      color: gray;
+    }
+    h1 {
+      font-size: 95%;
+      color: rgb(3, 98, 223);
+    }
   }
-  h1 {
-    font-size: 95%;
-    color: rgb(3, 98, 223);
-  }
 `;
+
 const HR = styled.div``;
 const Middle = styled.div`
   width: 44%;
@@ -70,6 +82,7 @@ const MiddleContent = styled.div`
       color: #474747;
     }
   }
+
   .action {
     /* outline: 1px solid blue; */
     display: flex;
@@ -121,12 +134,9 @@ const Ads = styled.div`
 `;
 const RightImg = styled.div`
   img {
-    width: 30%;
-    padding: 3%;
-    border-radius: 50%;
+    padding: 1rem;
+    border-radius: 100vmax;
     @media (max-width: 623px) {
-      width: 14%;
-      /* border: 1px solid red; */
     }
   }
   border: 1.4px solid rgb(3, 98, 223);
@@ -143,7 +153,6 @@ const RightImg = styled.div`
 export {
   Container,
   Left,
-  LeftDiv,
   HR,
   Middle,
   MiddleBoxes,

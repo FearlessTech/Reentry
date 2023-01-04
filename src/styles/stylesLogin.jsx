@@ -2,6 +2,10 @@ import styled from 'styled-components';
 
 const Container = styled.div`
   height: 100vh;
+  overflow: hidden;
+  @media (max-width: 768px) {
+    overflow: scroll;
+  }
 `;
 
 const Nav = styled.nav`
@@ -27,6 +31,7 @@ const Nav = styled.nav`
   .logo {
     transition: ease-in-out 0.15s;
     height: 40px;
+    margin-top: 15px;
     img {
       height: 100%;
     }
@@ -40,6 +45,7 @@ const Nav = styled.nav`
     transition: ease-in-out 0.15s;
     display: flex;
     column-gap: 1rem;
+    margin-top: 15px;
     .button {
       border-radius: 100vmax;
       border: none;
@@ -62,22 +68,38 @@ const Nav = styled.nav`
     }
   }
 `;
-const Join = styled.button``;
-
-const LoginBtn = styled.button``;
-
-const HeroImg = styled.img`
-  position: absolute;
-  width: 40%;
-  height: 40%;
-  top: 0;
-  left: 0;
-  object-fit: contain;
+const Join = styled.button`
+  margin-top: 30px;
 `;
-const HeroBird = styled.img`
-  position: absolute;
-  top: 0;
-  left: 0;
+
+const LoginBtn = styled.button`
+  margin-top: 30px;
+`;
+
+const LoginBtn1 = styled.button`
+      border-radius: 100vmax;
+      border: none;
+      min-width: 6.5rem;
+      font-weight: 600;
+      font-size: 16px;
+      text-decoration: none;
+      
+      padding: 10px 12px;
+      margin-right: 12px;
+      cursor: pointer;
+      transition: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  a {
+    color: #009999;
+    text-decoration: none
+  }
+      &:hover {
+        transform: scale(1.015);
+        box-shadow: 2px 2px 2px #2a3e3e39;
+        @media (prefers-color-scheme: dark) {
+          box-shadow: 2px 2px 2px #b5b5b539;
+        }
+        
+      }
 `;
 
 const Section = styled.section`
@@ -131,21 +153,30 @@ const Close = styled.button`
 
 const Hero = styled.div`
   position: relative;
-  min-height: 100vh;
+  height: 90vh;
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
 
   h1 {
-    z-index: 1;
     position: absolute;
-    color: #fff;
+    color: #009999;
+    background-color: #998a001a;
+    box-shadow: 0px 0px 5px #994c0029;
+    border-radius: 20px;
+    Margin-top: 22%;
+    margin-left: 30%;
+    font-family: Prosto One;
     font-size: 50px;
-    text-transform: uppercase;
+    //text-transform: uppercase;
     font-weight: 700;
     letter-spacing: 8px;
     line-height: 60px;
+    &::selection {
+      background-color: #3599998b;
+      color: #eee;
+    }
     span {
       font-size: 32px;
       font-weight: 300;
@@ -248,10 +279,9 @@ export {
   Nav,
   Join,
   LoginBtn,
+  LoginBtn1,
   Section,
   Hero,
-  HeroImg,
-  HeroBird,
   Form,
   Google,
   Close,
