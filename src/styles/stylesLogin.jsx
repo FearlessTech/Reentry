@@ -165,9 +165,9 @@ const Hero = styled.div`
     border-radius: 20px;
     Margin-top: 22%;
     margin-left: 25%;
-    font-family: Aclonica;
+    font-family: Prosto One;
     font-size: 50px;
-    text-transform: uppercase;
+    //text-transform: uppercase;
     font-weight: 700;
     letter-spacing: 8px;
     line-height: 60px;
