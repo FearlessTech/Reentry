@@ -1,21 +1,20 @@
-import React from 'react';
+import React, { useState } from 'react';
 import DeleteOutlineIcon from '@material-ui/icons/DeleteOutline';
-import { IoIosBookmark, IoIosEyeOff } from 'react-icons/io';
+import { IoIosBookmark, IoIosEyeOff, IoMdCloseCircle } from 'react-icons/io';
 import { IoCreateOutline } from 'react-icons/io5';
 import { HiBellAlert } from 'react-icons/hi2';
 import { FiTarget } from 'react-icons/fi';
 import {
   ResourceDiv,
   StyledLeftASide,
-  LeftTBox,
+  LeftOptions,
   LeftBox,
   LeftLogo,
-  LeftName,
-  LeftBBox,
+  LeftPostResource,
   LeftBName,
   LeftBLogo,
   StyledMiddleAside,
-  MiddleT,
+  StyledRecent,
   MTcontent,
   MiddleM,
   OcupationCard,
@@ -33,6 +32,34 @@ import {
   RBottomBox,
   RBLink,
 } from '../styles/styledResource';
+import { Link } from 'react-router-dom';
+
+const Recent = (props) => {
+  const [open, setOpen] = useState(true);
+  return (
+    <div>
+      {!open || (
+        <StyledRecent>
+          <MTcontent>
+            <h1>Recent searches</h1>
+            <h3>
+              google <span>(1000 new)</span>
+            </h3>
+            <span>Maine</span>
+          </MTcontent>
+          <IoMdCloseCircle
+            size={25}
+            color='#a5a5a5'
+            onClick={() => {
+              setOpen(!open);
+            }}
+          />
+        </StyledRecent>
+      )}
+    </div>
+  );
+};
+
 const Resource = (props) => {
   const ocupations = [
     {
@@ -73,41 +100,32 @@ const Resource = (props) => {
     <ResourceDiv>
       <div className='main-container'>
         <StyledLeftASide>
-          <LeftTBox>
+          <LeftOptions>
             <LeftBox>
               <LeftLogo>
                 <IoIosBookmark />
               </LeftLogo>
-              <LeftName>My resources</LeftName>
+              <Link>My resources</Link>
             </LeftBox>
 
-            <LeftBox onClick='PesourcePopup()'>
+            <LeftBox>
               <LeftLogo>
                 <HiBellAlert />
               </LeftLogo>
-              <LeftName>resource Alert</LeftName>
+              <Link>resource Alert</Link>
             </LeftBox>
-          </LeftTBox>
+          </LeftOptions>
 
-          <LeftBBox>
+          <LeftPostResource>
             <LeftBLogo>
               <IoCreateOutline />
             </LeftBLogo>
             <LeftBName>Post a free resource</LeftBName>
-          </LeftBBox>
+          </LeftPostResource>
         </StyledLeftASide>
 
         <StyledMiddleAside>
-          <MiddleT>
-            <MTcontent>
-              <h1>Recent searches</h1>
-              <h3>
-                google <span>(1000 new)</span>
-              </h3>
-              <h5>Maine</h5>
-            </MTcontent>
-            <button>Clear</button>
-          </MiddleT>
+          <Recent />
           {/* ....................middle heading/........ */}
           <MiddleM>
             <h2>Recommended for you</h2>
@@ -145,7 +163,7 @@ const Resource = (props) => {
                           <span>{isPromoted ? 'Promoted' : ''}</span>
                         </ContentBottom>
                       </OcupationCardInfo>
-                    
+
                       <ActionsContainer>
                         <Actions>
                           <IconHolder>
