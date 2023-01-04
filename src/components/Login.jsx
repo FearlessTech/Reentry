@@ -1,13 +1,13 @@
 import { connect } from 'react-redux';
 import { signInAPI } from '../actions';
 import { Redirect } from 'react-router-dom';
-import { useRef, useState, useEffect } from 'react';
+import { useEffect } from 'react';
 
 
 import {
   Container,
   Nav,
-  LoginBtn,
+  LoginBtn1,
   Section,
   Hero,
 } from '../styles/stylesLogin';
@@ -25,17 +25,16 @@ const Login = (props) => {
 
   return (
     <Container id='parallax'>
-      {props.user && <Redirect to='/home' />}
       <Nav>
         <a href='/' className='logo'>
           <img src='/images/MaineRRLogo.png' alt='' />
         </a>
         <div className='button-container'>
-          <LoginBtn>
+          <LoginBtn1>
             <Link to='/agreement'>
             Login
             </Link>
-          </LoginBtn>
+          </LoginBtn1>
         </div>
       </Nav>
 
