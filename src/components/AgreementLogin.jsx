@@ -12,6 +12,7 @@ import {
   LoginBtn,
   Section,
   Form,
+  Nav,
   Google,
   Close,
 } from '../styles/stylesLogin';
@@ -54,6 +55,7 @@ const Login = (props) => {
   return (
     <Container>
       {props.user && <Redirect to='/home' />}
+      <Nav>
       <Section>
         <a href='/' className='logo'>
           <img src='/images/MaineRRLogo.png' alt='' />
@@ -86,6 +88,7 @@ const Login = (props) => {
         </div>
         <Modal show={show} />
       </Section>
+      </Nav>
     </Container>
   );
 };
