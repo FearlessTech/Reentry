@@ -2,6 +2,10 @@ import styled from 'styled-components';
 
 const Container = styled.div`
   height: 100vh;
+  overflow: hidden;
+  @media (max-width: 768px) {
+    overflow: scroll;
+  }
 `;
 
 const Nav = styled.nav`
@@ -27,6 +31,7 @@ const Nav = styled.nav`
   .logo {
     transition: ease-in-out 0.15s;
     height: 40px;
+    margin-top: 15px;
     img {
       height: 100%;
     }
@@ -40,6 +45,7 @@ const Nav = styled.nav`
     transition: ease-in-out 0.15s;
     display: flex;
     column-gap: 1rem;
+    margin-top: 15px;
     .button {
       border-radius: 100vmax;
       border: none;
@@ -147,7 +153,7 @@ const Close = styled.button`
 
 const Hero = styled.div`
   position: relative;
-  min-height: 100vh;
+  height: 90vh;
   width: 100%;
   display: flex;
   align-items: center;
@@ -160,21 +166,21 @@ const Hero = styled.div`
     box-shadow: 0px 0px 5px #994c0029;
     border-radius: 20px;
     Margin-top: 22%;
-    margin-left: 25%;
+    margin-left: 30%;
     font-family: Prosto One;
     font-size: 50px;
     //text-transform: uppercase;
     font-weight: 700;
     letter-spacing: 8px;
     line-height: 60px;
+    &::selection {
+      background-color: #3599998b;
+      color: #eee;
+    }
     span {
       font-size: 32px;
       font-weight: 300;
       letter-spacing: 10px;
-    }
-    &::selection {
-      background-color: #3c58588c;
-      color: #aaa;
     }
   }
   .assets-container {
