@@ -61,13 +61,12 @@ const Notifications = () => {
       <div className='container'>
         <Left>
           <div>
-            <h1>Notifications</h1>
-            <p>You have new notifications</p>
-          </div>
-          <hr />
-          <div>
-            <h1>View settings</h1>
-            <p>Improve your notifications</p>
+            <h1>
+              <Link to='/configurations/notifications'>
+                Notifications settings
+              </Link>
+            </h1>
+            <p>Configure your notifications</p>
           </div>
         </Left>
 
@@ -106,14 +105,40 @@ const Notifications = () => {
         <Right>
           <RTopDiv>
             <Ads>
-              <p>Ad</p> <MoreHorizIcon />
+              <p>Ad</p> <MoreHorizIcon className='options' />
             </Ads>
-            <p>100 years of Japanese innovation built to meet all your needs</p>
-            {/* <RightImg>
-            </RightImg> */}
-            <hr />
-            <p>A powerhouse for all your printing needs!</p>
-            <button> Follow</button>
+            <div className='add'>
+              <div className='slug'>
+                <p>
+                  100 years of Japanese innovation built to meet all your needs
+                </p>
+              </div>
+              <RightImg>
+                <Link to="/add/:idHere">
+                  <img
+                    src='https://via.placeholder.com/300x150/25b048/eeeeee'
+                    alt='placeholder'
+                  />
+                </Link>
+              </RightImg>
+              <button> Follow</button>
+              <hr />
+            </div>
+            <div className='add'>
+              <div className='slug'>
+                <p>A powerhouse for all your printing needs!</p>
+              </div>
+              <RightImg>
+                <Link to="/add/:idHere">
+                  <img
+                    src='https://via.placeholder.com/300x150/991245/eeeeee'
+                    alt='placeholder'
+                  />
+                </Link>
+              </RightImg>
+              <button> Follow</button>
+              <hr />
+            </div>
           </RTopDiv>
           <RBottomBox>
             <span>
