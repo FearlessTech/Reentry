@@ -1,0 +1,16 @@
+.search_results {
+  position: absolute;
+  width: 90%;
+  background-color: white;
+  padding: 5%;
+  overflow: hidden;
+}
+
+.result_list {
+  overflow-y: auto;
+  max-height: 80vh;
+}
+
+::-webkit-scrollbar {
+  width: 0px;
+}

@@ -1,11 +1,6 @@
-import { auth, provider, storage } from '../firebase';
-import db from '../firebase';
-import {
-  SET_DARK_MODE,
-  SET_USER,
-  SET_LOADING_STATUS,
-  GET_ARTICLES,
-} from './actionType';
+import { auth, provider, storage } from "../firebase";
+import db from "../firebase";
+import { SET_DARK_MODE, SET_USER, SET_LOADING_STATUS, GET_ARTICLES } from "./actionType";
 
 export const setUser = (payload) => ({
   type: SET_USER,
@@ -65,24 +60,21 @@ export function postArticleAPI(payload) {
     dispatch(setLoading(true));
 
     if (payload.image) {
-      const upload = storage
-        .ref(`images/${payload.image.name}`)
-        .put(payload.image);
+      const upload = storage.ref(`images/${payload.image.name}`).put(payload.image);
       upload.on(
-        'state-changed',
+        "state-changed",
         (snapshot) => {
-          const progress =
-            (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+          const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
 
           console.log(`Progress: ${progress}%`);
-          if (snapshot.state === 'RUNNING') {
+          if (snapshot.state === "RUNNING") {
             console.log(`Progress: ${progress}%`);
           }
         },
         (error) => console.log(error.code),
         async () => {
           const downloadURL = await upload.snapshot.ref.getDownloadURL();
-          db.collection('articles').add({
+          db.collection("articles").add({
             actor: {
               description: payload.user.email,
               title: payload.user.displayName,
@@ -99,7 +91,7 @@ export function postArticleAPI(payload) {
         }
       );
     } else if (payload.video) {
-      db.collection('articles').add({
+      db.collection("articles").add({
         actor: {
           description: payload.user.email,
           title: payload.user.displayName,
@@ -107,22 +99,22 @@ export function postArticleAPI(payload) {
           image: payload.user.photoURL,
         },
         video: payload.video,
-        sharedImg: '',
+        sharedImg: "",
         comments: 0,
         likes: 0,
         description: payload.description,
       });
       dispatch(setLoading(false));
     } else {
-      db.collection('articles').add({
+      db.collection("articles").add({
         actor: {
           description: payload.user.email,
           title: payload.user.displayName,
           date: payload.timestamp,
           image: payload.user.photoURL,
         },
-        video: '',
-        sharedImg: '',
+        video: "",
+        sharedImg: "",
         comments: 0,
         likes: 0,
         description: payload.description,
@@ -136,10 +128,13 @@ export function getArticlesAPI() {
   return (dispatch) => {
     let payload;
 
-    db.collection('articles')
-      .orderBy('actor.date', 'desc')
+    db.collection("articles")
+      .orderBy("actor.date", "desc")
       .onSnapshot((snapshot) => {
-        payload = snapshot.docs.map((doc) => doc.data());
+        payload = snapshot.docs.map((doc) => {
+          const articleObject = { ...doc.data(), id: doc.id };
+          return articleObject;
+        });
         dispatch(getArticles(payload));
       });
   };

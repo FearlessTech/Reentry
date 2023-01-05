@@ -1,0 +1,8 @@
+.menu_button {
+  fill: #99d3df;
+  transform: rotate(90deg) scale(0.5);
+}
+
+.menu_items {
+  width: 80%;
+}
