@@ -105,7 +105,7 @@ const Notifications = () => {
         <Right>
           <RTopDiv>
             <Ads>
-              <p>Ad</p> <MoreHorizIcon />
+              <p>Ad</p> <MoreHorizIcon className='options' />
             </Ads>
             <div className='add'>
               <div className='slug'>
@@ -114,10 +114,12 @@ const Notifications = () => {
                 </p>
               </div>
               <RightImg>
-                <img
-                  src='https://via.placeholder.com/300x150/25b048/eeeeee'
-                  alt='placeholder'
-                />
+                <Link to="/add/:idHere">
+                  <img
+                    src='https://via.placeholder.com/300x150/25b048/eeeeee'
+                    alt='placeholder'
+                  />
+                </Link>
               </RightImg>
               <button> Follow</button>
               <hr />
@@ -127,10 +129,12 @@ const Notifications = () => {
                 <p>A powerhouse for all your printing needs!</p>
               </div>
               <RightImg>
-                <img
-                  src='https://via.placeholder.com/300x150/991245/eeeeee'
-                  alt='placeholder'
-                />
+                <Link to="/add/:idHere">
+                  <img
+                    src='https://via.placeholder.com/300x150/991245/eeeeee'
+                    alt='placeholder'
+                  />
+                </Link>
               </RightImg>
               <button> Follow</button>
               <hr />

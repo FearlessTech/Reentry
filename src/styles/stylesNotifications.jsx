@@ -69,7 +69,7 @@ const MiddleBoxes = styled.div`
     position: relative;
     &::before {
       content: '';
-      background-color: black;
+      background-color: #3f7d95;
       right: 0;
       height: 100%;
       width: 1px;
@@ -101,7 +101,7 @@ const MiddleContent = styled.div`
   .prevMessage {
     a {
       text-decoration: none;
-      color: #474747;
+      color: #3f7d95;
     }
   }
 
@@ -113,7 +113,7 @@ const MiddleContent = styled.div`
       cursor: pointer;
       padding: 1rem;
       text-decoration: none;
-      color: #474747;
+      color: #1d5970;
       &:hover {
         transform: scale(1.01);
         background-color: #f5faff;
@@ -142,7 +142,7 @@ const Right = styled.div`
 const RTopDiv = styled.div`
   background-color: white;
   border-radius: 10px;
-  padding: 2% 5%;
+  padding: .4rem 1rem;
   text-align: center;
   p {
     color: gray;
@@ -151,10 +151,10 @@ const RTopDiv = styled.div`
     border: none;
     width: 100%;
     padding: 1rem;
-    color: #5f5f5f;
-    background-color: #b6dcf1;
+    color: #3f7d95;
+    background-color: #d3efff;
     &:hover {
-      background-color: #a2cee7;
+    background-color: #c5e6f9;
     }
   }
   .add {
@@ -162,16 +162,24 @@ const RTopDiv = styled.div`
     background-color: #ecf8ff;
     padding: 1rem;
     border-radius: 1rem;
+    hr{
+      background-color: #3f7d95;
+    }
   }
 `;
 const Ads = styled.div`
+  margin-top: 0.5rem;
   display: flex;
   justify-content: space-between;
-  padding-left: 1rem;
+  padding: 0 1rem;
   p {
     margin-top: 1%;
     font-size: 80%;
-    color: gray;
+    color: #959595;
+  }
+  .options {
+    width: 16px;
+    color: #757575;
   }
 `;
 

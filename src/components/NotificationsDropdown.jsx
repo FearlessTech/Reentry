@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 const StNotificationsDropDown = styled.div`
   .more {
     width: 16px;
+    color: #757575;
   }
   .closespan {
     height: 100%;
@@ -29,7 +30,7 @@ const StNotificationsDropDown = styled.div`
       background-color: #f0f8ff;
       text-decoration: none;
       padding: 10px;
-      color: #474747;
+      color: #505050;
       &:hover {
         background-color: #e3f2ff;
       }
