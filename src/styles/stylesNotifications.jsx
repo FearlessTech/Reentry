@@ -165,7 +165,6 @@ const RTopDiv = styled.div`
   }
 `;
 const Ads = styled.div`
-  outline: 1px solid red;
   display: flex;
   justify-content: space-between;
   padding-left: 1rem;
