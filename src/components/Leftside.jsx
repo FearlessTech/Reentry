@@ -38,8 +38,9 @@ const Leftside = (props) => {
         <Widget>
           <a>
             <div>
-              <span>Connections</span>
-              <span>Grow your network</span>
+              <Link to='/notifications'><span>Notifications</span></Link>
+              <Link to='/network'><span>Network</span></Link>
+              <Link to='/functionalities'><span>Welcome</span></Link>
             </div>
             <AiOutlineUserAdd/>
           </a>
