@@ -3,12 +3,13 @@
 ---
 ## Showcase Login Page to be implamented for small media devices
 
-### Login.jsx  COPY ONLY DO NOT PASTE OVER THIS FILE 
+### Login.jsx  COPY ONLY DO NOT PASTE OVER THIS FILE
+
 ```jsx
-import { connect } from 'react-redux';
-import { signInAPI } from '../actions';
-import { Redirect } from 'react-router-dom';
-import { useRef, useState } from 'react';
+import {connect} from 'react-redux';
+import {signInAPI} from '../actions';
+import {Redirect} from 'react-router-dom';
+import {useRef, useState} from 'react';
 
 import LoginForm from './LoginComponents/Login';
 import SignUpForm from './LoginComponents/Signup';
@@ -25,7 +26,7 @@ import {
   Google,
   Close,
 } from '../styles/stylesLogin';
-import { Link } from 'react-router-dom';
+import {Link} from 'react-router-dom';
 
 const Login = (props) => {
   const [show, setShow] = useState(false);
@@ -33,7 +34,8 @@ const Login = (props) => {
 
   const Modal = (props) => {
     if (!props.show) {
-      return null;}
+      return null;
+    }
     return (
       <Form>
         <Close onClick={() => setShow(false)}>X</Close>
@@ -60,10 +62,10 @@ const Login = (props) => {
 
   return (
     <Container>
-      {props.user && <Redirect to='/home' />}
+      {props.user && <Redirect to='/home'/>}
       <Nav>
         <a href='/' className='logo'>
-          <img src='/images/MaineRRLogo.png' alt='' />
+          <img src='/images/MaineRRLogo.png' alt=''/>
         </a>
         <div className='button-container'>
           <Google className='google-btn' onClick={() => props.signIn()}>
@@ -95,8 +97,8 @@ const Login = (props) => {
 
       <Section>
         <Hero>
-          <HeroImg src='/images/tempBG.png'  alt=''/>
-          <h1 >Maine Prisoner Reentry<br/><span>Resources Network</span> </h1>
+          <HeroImg src='/images/tempBG.png' alt=''/>
+          <h1>Maine Prisoner Reentry<br/><span>Resources Network</span></h1>
         </Hero>
         <Modal show={show}/>
       </Section>

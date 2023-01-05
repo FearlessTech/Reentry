@@ -3,7 +3,7 @@ import db, { auth } from "../../firebase";
 import { Button } from "@material-ui/core";
 import { CommentMenuButton } from "./CommentMenuButton";
 
-export function SingleComment({ comment, triggerPostRerender, articleId }) {
+export function SingleComment( { comment, triggerPostRerender, articleId }, props ) {
   const [editCommentText, seteditCommentText] = useState("");
   const [openCommentEditInput, setopenCommentEditInput] = useState(false);
   const user = auth.currentUser;
@@ -53,13 +53,22 @@ export function SingleComment({ comment, triggerPostRerender, articleId }) {
         key={comment.timestamp}
       >
         <div>
-          <img
-            src="https://surgeinstitute.org/wp-content/uploads/2015/04/Facebook-no-profile-picture-icon-620x389.jpg"
-            alt="commenter profile picture"
-            width="44px"
-            height="40px"
-            style={{ marginRight: "10px", borderRadius: "5px" }}
-          />
+          {props.user && props.user.photoURL ? (
+            <img
+              src={props.commenter.photoURL}
+              alt="commenter profile picture"
+              width="44px"
+              height="40px"
+              style={{ marginRight: "10px", borderRadius: "5px" }}
+            />
+          ) : (
+            <img
+              src="/images/user.svg"
+              width="44px"
+              height="40px"
+              style={{ marginRight: "10px", borderRadius: "5px" }}
+            />
+          )}
         </div>
         <div style={{ display: "flex", justifyContent: "space-between", width: "100%" }}>
           {openCommentEditInput && comment.commenterUid === user.uid ? (
