@@ -10,6 +10,14 @@ export function SinglePost({ article, id }) {
   const [showCommentBox, setshowCommentBox] = useState(false);
   const [comments, setcomments] = useState([]);
   const [rerender, triggerPostRerender] = useState(1);
+  const dateOptions = {
+    weekday: "long",
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+    hour: "numeric",
+    minute: "numeric",
+  };
   useEffect(() => {
     (async function getComments() {
       const articleRef = db.collection("articles").doc(id);
@@ -29,7 +37,7 @@ export function SinglePost({ article, id }) {
           <img src={article.actor.image} alt="" />
           <div>
             <span>{article.actor.title}</span>
-            <span>{article.actor.date.toDate().toLocaleDateString()}</span>
+            <span>{article.actor.date.toDate().toLocaleDateString(undefined, dateOptions)}</span>
           </div>
         </a>
         <button>
