@@ -15,7 +15,7 @@ Blues: #88bbd6 #99d3df   Grays: #cdcdcd  #e9e9e9   Yellows: #FFFDD0  #fcf4a3   T
 # Maine's Reentry Resources Networking Site  
 
 **Help Wanted**
-### If your looking at my repo please click the star button! Thank you so much!
+### 🌟 If you support my cause, please give this repo a star 🌟
 ---
 ***12/31/22: Notice to Everyone that has logged into this site***  
 
