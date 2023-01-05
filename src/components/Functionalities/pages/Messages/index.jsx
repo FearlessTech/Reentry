@@ -1,49 +1,25 @@
-import {
-  Container,
-  Messengers,
-  MessengersHeader,
-  ActorsList,
-  Messages,
-  MessagesHeader,
-  SelectedAct,
-  Reply,
-  ReplyText,
-} from "./styles";
+import "./App.css";
+import { BrowserRouter, Routes, Route }
+  from "react-router-dom";
+import SignIn from "./Screens/Signin";
+import SignUp from "./Screens/Signup";
+import ChatHome from "./Screens/ChatHome";
 
-const Messaging = () => {
+function App() {
   return (
-    <Container>
-      <Messengers>
-        <MessengersHeader>
-          <h2>Users Messages</h2>
-        </MessengersHeader>
-        <ActorsList>
-          Actors who messaged user
-          <br/>
-          <br/>
-          When user clicks on an actor,
-          the messages between the user
-          and the actor will be displayed
-          in the SelectedAct section and
-          the Actors Name displayed
-          in the MessagesHeader h2.
-        </ActorsList>
-      </Messengers>
-      <Messages>
-        <MessagesHeader>
-          <h2>Messages from Actor</h2>
-          <p>Icon click to delete</p>
-        </MessagesHeader>
-        <SelectedAct>
-          Selected actors messages to user
-        </SelectedAct>
-        <Reply>
-          <ReplyText></ReplyText>
-          button to send reply
-        </Reply>
-      </Messages>
-    </Container>
+    <div className="App">
+      <BrowserRouter>
+        <Routes>
+          <Route exact path="/"
+                 element={<SignIn />} />
+          <Route path="/Signup"
+                 element={<SignUp />} />
+          <Route path="/chat-home/:receiverId"
+                 element={<ChatHome />} />
+        </Routes>
+      </BrowserRouter>
+    </div>
   );
-};
+}
 
-export default Messaging;
+export default App;
