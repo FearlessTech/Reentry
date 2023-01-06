@@ -4,7 +4,7 @@ import { Article, SharedActor, Description, SharedImage, SocialCounts, SocialAct
 import { useEffect, useState } from "react";
 import { AddComment } from "./AddComment";
 import db, { auth } from "../../firebase";
-import { AllComments, SingleComment } from "./SingleComment";
+import { SingleComment } from "./SingleComment";
 export function SinglePost({ article, id }) {
   const user = auth.currentUser;
   const [showCommentBox, setshowCommentBox] = useState(false);
@@ -21,7 +21,7 @@ export function SinglePost({ article, id }) {
   useEffect(() => {
     (async function getComments() {
       const articleRef = db.collection("articles").doc(id);
-      const commentsRef = articleRef.collection("comments").orderBy("timestamp", "desc");
+      const commentsRef = articleRef.collection("comments").orderBy("timestamp", "asc");
       const snapshot = await commentsRef.get();
       const allComments = snapshot.docs.map((doc) => {
         const commentObject = { ...doc.data(), id: doc.id };
@@ -74,9 +74,11 @@ export function SinglePost({ article, id }) {
       {comments.length > 0 && (
         <>
           <p style={{ textAlign: "left", marginLeft: "15px" }}>Comments:</p>
-          {comments.map((comment) => (
-            <SingleComment comment={comment} articleId={id} triggerPostRerender={triggerPostRerender} />
-          ))}
+          <div style={{ maxHeight: "300px", overflow: "scroll" }}>
+            {comments.map((comment) => (
+              <SingleComment comment={comment} articleAuthor={article.actor.uid} articleId={id} triggerPostRerender={triggerPostRerender} />
+            ))}
+          </div>
         </>
       )}
     </Article>

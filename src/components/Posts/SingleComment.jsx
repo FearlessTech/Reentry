@@ -3,7 +3,7 @@ import db, { auth } from "../../firebase";
 import { Button } from "@material-ui/core";
 import { CommentMenuButton } from "./CommentMenuButton";
 
-export function SingleComment( { comment, triggerPostRerender, articleId }, props ) {
+export function SingleComment({ comment, triggerPostRerender, articleId, articleAuthor }, props) {
   const [editCommentText, seteditCommentText] = useState("");
   const [openCommentEditInput, setopenCommentEditInput] = useState(false);
   const user = auth.currentUser;
@@ -53,22 +53,13 @@ export function SingleComment( { comment, triggerPostRerender, articleId }, prop
         key={comment.timestamp}
       >
         <div>
-          {props.user && props.user.photoURL ? (
-            <img
-              src={props.commenter.photoURL}
-              alt="commenter profile picture"
-              width="44px"
-              height="40px"
-              style={{ marginRight: "10px", borderRadius: "5px" }}
-            />
-          ) : (
-            <img
-              src="/images/user.svg"
-              width="44px"
-              height="40px"
-              style={{ marginRight: "10px", borderRadius: "5px" }}
-            />
-          )}
+          <img
+            src={comment.commenterProfilePic ? comment.commenterProfilePic : "./images/user.svg"}
+            alt="commenter profile picture"
+            width="44px"
+            height="40px"
+            style={{ marginRight: "10px", borderRadius: "5px" }}
+          />
         </div>
         <div style={{ display: "flex", justifyContent: "space-between", width: "100%" }}>
           {openCommentEditInput && comment.commenterUid === user.uid ? (
@@ -83,7 +74,7 @@ export function SingleComment( { comment, triggerPostRerender, articleId }, prop
             </section>
           )}
 
-          {comment.commenterUid === user.uid ? (
+          {comment.commenterUid === user.uid || articleAuthor === user.uid ? (
             !openCommentEditInput ? (
               <section>
                 <CommentMenuButton
@@ -92,6 +83,7 @@ export function SingleComment( { comment, triggerPostRerender, articleId }, prop
                   commentText={comment.text}
                   deleteComment={deleteComment}
                   commentId={comment.id}
+                  allowEdit={comment.commenterUid === user.uid}
                 />
               </section>
             ) : (

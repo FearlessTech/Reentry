@@ -2,7 +2,7 @@ import { Button, IconButton, Menu, MenuItem } from "@material-ui/core";
 import { useState } from "react";
 import { FaEllipsisH } from "react-icons/fa";
 import styles from "./Posts.module.css";
-export function CommentMenuButton({ initateCommentEdit, commentText, seteditCommentText, commentId, deleteComment }) {
+export function CommentMenuButton({ initateCommentEdit, commentText, seteditCommentText, commentId, deleteComment, allowEdit }) {
   const [anchorEl, setAnchorEl] = useState(null);
 
   const handleClick = (event) => {
@@ -33,14 +33,16 @@ export function CommentMenuButton({ initateCommentEdit, commentText, seteditComm
         open={Boolean(anchorEl)}
         onClose={handleClose}
       >
-        <MenuItem
-          onClick={() => {
-            initateCommentEdit(true);
-            seteditCommentText(commentText);
-          }}
-        >
-          Edit
-        </MenuItem>
+        {allowEdit && (
+          <MenuItem
+            onClick={() => {
+              initateCommentEdit(true);
+              seteditCommentText(commentText);
+            }}
+          >
+            Edit
+          </MenuItem>
+        )}
         <MenuItem onClick={() => deleteComment(commentId)}>Delete</MenuItem>
       </Menu>
     </div>
