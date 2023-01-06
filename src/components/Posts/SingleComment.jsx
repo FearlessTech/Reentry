@@ -53,17 +53,13 @@ export function SingleComment({ comment, triggerPostRerender, articleId, article
         key={comment.timestamp}
       >
         <div>
-          {props.user && props.user.photoURL ? (
-            <img
-              src={props.commenter.photoURL}
-              alt="commenter profile picture"
-              width="44px"
-              height="40px"
-              style={{ marginRight: "10px", borderRadius: "5px" }}
-            />
-          ) : (
-            <img src="/images/user.svg" width="44px" height="40px" style={{ marginRight: "10px", borderRadius: "5px" }} />
-          )}
+          <img
+            src={comment.commenterProfilePic ? comment.commenterProfilePic : "./images/user.svg"}
+            alt="commenter profile picture"
+            width="44px"
+            height="40px"
+            style={{ marginRight: "10px", borderRadius: "5px" }}
+          />
         </div>
         <div style={{ display: "flex", justifyContent: "space-between", width: "100%" }}>
           {openCommentEditInput && comment.commenterUid === user.uid ? (

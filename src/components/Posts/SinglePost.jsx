@@ -4,10 +4,9 @@ import { Article, SharedActor, Description, SharedImage, SocialCounts, SocialAct
 import { useEffect, useState } from "react";
 import { AddComment } from "./AddComment";
 import db, { auth } from "../../firebase";
-import { AllComments, SingleComment } from "./SingleComment";
+import { SingleComment } from "./SingleComment";
 export function SinglePost({ article, id }) {
   const user = auth.currentUser;
-  console.log(article);
   const [showCommentBox, setshowCommentBox] = useState(false);
   const [comments, setcomments] = useState([]);
   const [rerender, triggerPostRerender] = useState(1);
