@@ -5,17 +5,17 @@ import { useState, useEffect } from 'react';
 
 import LoginForm from './LoginComponents/Login';
 import SignUpForm from './LoginComponents/Signup';
+import { ImFacebook2, ImGoogle2, ImTwitter, ImMail3, ImPen, ImWindows8 } from "react-icons/im";
+
 
 import {
   Container,
-  Join,
-  LoginBtn,
   SectionA,
   SectionB,
   Form,
   Nav,
   Close,
-  FireProviderBTN,
+  NavBTN,
 } from '../styles/stylesAgreementLogin';
 import { Link } from 'react-router-dom';
 
@@ -23,7 +23,7 @@ import { Link } from 'react-router-dom';
 
 const AgreementLogin = (props) => {
   const [login, setLogin] = useState(true);
-  const [show, setShow] = useState(false);
+  const [show, setShow] = useState(true);
   const Modal = (props) => {
     if (!props.show) {
       return null;
@@ -58,81 +58,85 @@ const AgreementLogin = (props) => {
       {props.user && <Redirect to='/home' />}
       <Nav>
         <img src='/images/RRLogo.png' alt='' />
-        <Join
+        <NavBTN
           className='button'
           onClick={() => {
             setLogin(false);
             setShow(true);
           }}
         >
+          <ImPen/>
           Join Now
-        </Join>
-        <LoginBtn
+        </NavBTN>
+        <NavBTN
           className='button'
           onClick={() => {
             setLogin(true);
             setShow(true);
           }}
         >
-          Login
-        </LoginBtn>
-        <FireProviderBTN onClick={() => props.signIn()}>
+          <ImMail3/>
+          Email Login
+        </NavBTN>
+        <NavBTN onClick={() => props.signIn()}>
           <div className='icon'>
-            <img src='/images/google.svg' alt='' />
+            <ImGoogle2/>
           </div>
           <span>Google Login</span>
-        </FireProviderBTN>
-        <FireProviderBTN onClick={() => props.signIn()}>
+        </NavBTN>
+        <NavBTN onClick={() => props.signIn()}>
           <div className='icon'>
-            <img src='/images/google.svg' alt='' />
+            <ImFacebook2/>
           </div>
           <span>Facebook Login</span>
-        </FireProviderBTN>
-        <FireProviderBTN onClick={() => props.signIn()}>
+        </NavBTN>
+        <NavBTN onClick={() => props.signIn()}>
           <div className='icon'>
-            <img src='/images/google.svg' alt='' />
+            <ImTwitter/>
           </div>
           <span>Twitter Login</span>
-        </FireProviderBTN>
-        <FireProviderBTN onClick={() => props.signIn()}>
+        </NavBTN>
+        <NavBTN onClick={() => props.signIn()}>
           <div className='icon'>
-            <img src='/images/google.svg' alt='' />
+            <ImWindows8/>
           </div>
           <span>Microsoft Login</span>
-        </FireProviderBTN>
+        </NavBTN>
       </Nav>
       <SectionA>
         <Modal show={show} />
       </SectionA>
       <SectionB>
-        <h5>
-          Be cautious on social networking sites.
-        </h5>
+        <div>
+          <h5>
+            Be cautious on social networking sites.
+          </h5>
+            <br />
+          <h5>
+            Remember: once posted, always posted. Protect your reputation on social networks. What you post online stays
+            online. Think twice before posting pictures you wouldn't want your parents or future employers to see.
+          </h5>
           <br />
-        <h5>
-          Remember: once posted, always posted. Protect your reputation on social networks. What you post online stays
-          online. Think twice before posting pictures you wouldn't want your parents or future employers to see.
-        </h5>
-        <br />
-        <h5>
-          Build a positive online reputation.
-        </h5>
-        <br />
-        <h5>
-          Keep personal info personal. Be careful how much personal info you provide on social networking sites.
-          The more information you post, the easier it may be for someone to use that information to steal your
-          identity, access your data, or commit other crimes such as stalking.
-        </h5>
-        <br />
-        <h5>
-          Protect your computer. Security start with protecting your computer. Install Antivirus software. Keep your
-          operating system, web browser, and other software current.
-        </h5>
-        <br />
-        <h5>
-          Use strong passwords. Make sure that your password is at least eight characters long and consists of some
-          combination of letters, numbers, and special characters (for example, +, @, #, or $).
-        </h5>
+          <h5>
+            Build a positive online reputation.
+          </h5>
+          <br />
+          <h5>
+            Keep personal info personal. Be careful how much personal info you provide on social networking sites.
+            The more information you post, the easier it may be for someone to use that information to steal your
+            identity, access your data, or commit other crimes such as stalking.
+          </h5>
+          <br />
+          <h5>
+            Protect your computer. Security start with protecting your computer. Install Antivirus software. Keep your
+            operating system, web browser, and other software current.
+          </h5>
+          <br />
+          <h5>
+            Use strong passwords. Make sure that your password is at least eight characters long and consists of some
+            combination of letters, numbers, and special characters (for example, +, @, #, or $).
+          </h5>
+        </div>
       </SectionB>
     </Container>
   );

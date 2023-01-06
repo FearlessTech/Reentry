@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 const Container = styled.div`
   height: 100vh;
-  width: 100%;
+  width: 100vw;
   overflow: scroll;
   overflow-x: hidden;
   display: flex;
@@ -21,19 +21,19 @@ const Nav = styled.nav`
   overflow-x: hidden;
   padding-top: 20px;
   padding-bottom: 20px;
-  box-shadow: 5px 5px 15px #bef4ff36;
+  box-shadow: 5px 5px 15px #0aaaaa;
   display: flex;
   justify-content: space-between;
   flex-direction: column;
   align-items: center;
-  background-color: #2a3e3e39;
+  background-color: #077a7a;
   transition: ease-in-out 120ms;
   @media (prefers-color-scheme: dark) {
     box-shadow: 0px 0px 2px #afafaf6b;
     background-color: #3c585839;
   }
   &:hover {
-    background-color: #00999947;
+    background-color: #0aaaaa;
     @media (prefers-color-scheme: dark) {
       box-shadow: 0px 0px 1px #4848486b;
       background-color: #3c585839;
@@ -58,22 +58,16 @@ const Nav = styled.nav`
 const SectionA = styled.section`
   height: 90vh;
   width: 42vw;
-  flex-direction: row;
-  justify-content: space-between;  
+  margin-left: 50%;
+  margin-top: 5%;
 `;
 
 const SectionB = styled.section`
   height: 90%;
   width: 30vw;
-  flex-direction: row;
-  justify-content: space-between;
-`;
-
-const Join = styled.button`
-  margin-top: 30px;
-`;
-const LoginBtn = styled.button`
-  margin-top: 30px;
+  position: absolute;
+  margin-left: 20%;
+  margin-top: 5vh;
 `;
 
 const Form = styled.div`
@@ -101,18 +95,18 @@ const Close = styled.button`
   margin-top: 1rem;
 `;
 
-const FireProviderBTN = styled.button`
+const NavBTN = styled.button`
   background-color: #f1f1f1;
   border-radius: 100vmax;
   border: none;
-  width: 12rem;
+  width: 10rem;
   height: 2.5rem;
   display: flex;
   align-items: center;
   column-gap: 2rem;
-  .icon {
-    width: 2rem;
-    height: 2rem;
+  icon {
+    width: 4rem;
+    height: 4rem;
     img {
       width: 100%;
       height: 100%;
@@ -122,12 +116,10 @@ const FireProviderBTN = styled.button`
 
 export {
   Container,
-  Join,
-  LoginBtn,
   SectionA,
   SectionB,
   Form,
   Nav,
   Close,
-  FireProviderBTN,
+  NavBTN,
 };
