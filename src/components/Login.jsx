@@ -6,6 +6,7 @@ import { useState, useEffect } from 'react';
 import LoginForm from './LoginComponents/Login';
 import SignUpForm from './LoginComponents/Signup';
 import { ImFacebook2, ImGoogle2, ImTwitter, ImMail3, ImPen, ImWindows8 } from "react-icons/im";
+import {IoCloseCircle} from "react-icons/io5"
 
 
 import {
@@ -31,7 +32,9 @@ const Login = (props) => {
 
     return (
       <Form>
-        <Close onClick={() => setShow(false)}></Close>
+        <Close onClick={() => setShow(false)}>
+        <IoCloseCircle size={20} color="#cbcbcb"/>
+        </Close>
         {login ? (
           <LoginForm>
             <span className='sign-up'>

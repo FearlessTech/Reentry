@@ -33,7 +33,6 @@ export default function LoginForm({ children }) {
             className='send-form'
             onClick={(e) => {
               e.preventDefault();
-              // sign in code
             }}
           >
             Send

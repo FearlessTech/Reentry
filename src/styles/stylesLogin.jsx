@@ -109,10 +109,11 @@ const Form = styled.div`
 
 const Close = styled.button`
   display: flex;
-  width: 20px;
   justify-content: center;
   margin-left: 80%;
   margin-top: 1rem;
+  background-color: transparent;
+  border: none;
 `;
 
 export {
