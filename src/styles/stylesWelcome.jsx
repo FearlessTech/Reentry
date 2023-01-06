@@ -158,6 +158,11 @@ const Hero = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  
+  *::selection {
+      background-color: #3599998b;
+      color: #eee;
+    }
 
   h1 {
     position: absolute;
@@ -169,14 +174,9 @@ const Hero = styled.div`
     margin-left: 30%;
     font-family: Prosto One;
     font-size: 50px;
-    //text-transform: uppercase;
     font-weight: 700;
     letter-spacing: 8px;
     line-height: 60px;
-    &::selection {
-      background-color: #3599998b;
-      color: #eee;
-    }
     span {
       font-size: 32px;
       font-weight: 300;
