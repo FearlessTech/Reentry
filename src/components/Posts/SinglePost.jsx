@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import { AddComment } from "./AddComment";
 import db, { auth } from "../../firebase";
 import { SingleComment } from "./SingleComment";
+import { isUrl, splitString } from './urlIdentifier';
 export function SinglePost({ article, id }) {
   const user = auth.currentUser;
   const [showCommentBox, setshowCommentBox] = useState(false);
@@ -44,7 +45,12 @@ export function SinglePost({ article, id }) {
           <FaEllipsisH size={20} style={{ margin: "8px", fill: "#99d3df" }} />
         </button>
       </SharedActor>
-      <Description>{article.description}</Description>
+      <Description>{
+                  (() => {
+                    const res = splitString(article.description).map(str => isUrl(str) ? <a href={str} target="_blank">{str}</a> : str)
+                    return res
+                  })()
+              }</Description>
       <SharedImage>
         <a>
           {!article.sharedImg && article.video ? (
@@ -83,7 +89,4 @@ export function SinglePost({ article, id }) {
       )}
     </Article>
   );
-}
-
-{
 }

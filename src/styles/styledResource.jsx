@@ -133,8 +133,9 @@ const StyledMiddleAside = styled.div`
 const StyledRecent = styled.div`
   display: flex;
   border-radius: 10px;
-  padding: 2% 3%;
+  padding: .4rem .8rem;
   background-color: white;
+  margin-bottom: 1rem;
 `;
 
 const MTcontent = styled.div`
@@ -178,7 +179,6 @@ const MTcontent = styled.div`
 const MiddleM = styled.div`
   background-color: white;
   border-radius: 10px;
-  margin-top: 3%;
   padding: 0.2rem;
   h2 {
     padding: 1rem 1rem 0.25rem 1rem;
