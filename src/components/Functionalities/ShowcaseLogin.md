@@ -1,9 +1,9 @@
 # This is a collaborators only file. It's not meant to be read by the public.
 
 ---
-## Showcase Login Page to be implamented for small media devices
+## Showcase Welcome Page to be implamented for small media devices
 
-### Login.jsx  COPY ONLY DO NOT PASTE OVER THIS FILE
+### Welcome.jsx  COPY ONLY DO NOT PASTE OVER THIS FILE
 
 ```jsx
 import {connect} from 'react-redux';
@@ -11,7 +11,7 @@ import {signInAPI} from '../actions';
 import {Redirect} from 'react-router-dom';
 import {useRef, useState} from 'react';
 
-import LoginForm from './LoginComponents/Login';
+import LoginForm from './LoginComponents/Welcome';
 import SignUpForm from './LoginComponents/Signup';
 
 import {
@@ -28,7 +28,7 @@ import {
 } from '../styles/stylesLogin';
 import {Link} from 'react-router-dom';
 
-const Login = (props) => {
+const Welcome = (props) => {
   const [show, setShow] = useState(false);
   const [login, setLogin] = useState(true);
 
@@ -72,7 +72,7 @@ const Login = (props) => {
             <div className='icon'>
               <img src='/images/google.svg' alt=''/>
             </div>
-            <span>Login with Google</span>
+            <span>Welcome with Google</span>
           </Google>
           <Join
             className='button'
@@ -90,7 +90,7 @@ const Login = (props) => {
               setShow(true);
             }}
           >
-            Login
+            Welcome
           </LoginBtn>
         </div>
       </Nav>
@@ -116,11 +116,11 @@ const mapDispatchToProps = (dispatch) => ({
   signIn: () => dispatch(signInAPI()),
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(Login);
+export default connect(mapStateToProps, mapDispatchToProps)(Welcome);
 
 ```
 
-### stylesLogin.jsx  COPY ONLY DO NOT PASTE OVER THIS FILE 
+### stylesWelcome.jsx  COPY ONLY DO NOT PASTE OVER THIS FILE 
 ```jsx
 import styled from 'styled-components';
 
