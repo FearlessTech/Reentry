@@ -2,6 +2,7 @@ import { useState } from "react";
 import db, { auth } from "../../firebase";
 import { Button } from "@material-ui/core";
 import { CommentMenuButton } from "./CommentMenuButton";
+import { splitString, isUrl } from './urlIdentifier';
 
 export function SingleComment({ comment, triggerPostRerender, articleId, articleAuthor }, props) {
   const [editCommentText, seteditCommentText] = useState("");
