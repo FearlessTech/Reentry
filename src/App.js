@@ -10,8 +10,8 @@ import Functionalities from './components/Functionalities';
 import './App.css';
 import './utilities.css';
 
-import Login from './components/Login';
-import AgreementLogin from "./components/AgreementLogin";
+import Login from './components/Welcome';
+import AgreementLogin from "./components/Login";
 import Navbar from './components/Navbar';
 const Home = lazy(() => import('./components/Home'));
 const Resource = lazy(() => import('./components/Resource'));
