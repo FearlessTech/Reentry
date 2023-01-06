@@ -11,8 +11,9 @@ const AboutUs = (props) => {
       <Content>
         <Image>
           <iframe
-            width="560"
-            height="315"
+            width="460"
+            height="275"
+
             src="https://www.youtube.com/embed/pBy1zgt0XPc"
             title="YouTube video player"
             frameBorder="0"
