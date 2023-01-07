@@ -65,7 +65,6 @@ const Nav = styled.nav`
   flex-direction: column;
   align-items: center;
   transition: ease-in-out 180ms;
-  box-shadow: 0px 0px 2px #afafaf6b;
   background-color: #077a7a;
   box-shadow: 0 12px 42px 0 #074453af;
   backdrop-filter: blur(4px);

@@ -41,7 +41,7 @@ const Navbar = (props) => {
       <Content>
         <Logo>
           <Link to="/home">
-            <img src="/images/MaineRRLogo.png" alt="" width="100%" />
+            <img src="/images/PRALgLogo.png" alt="" width="100%" />
           </Link>
         </Logo>
         <SearchResults />

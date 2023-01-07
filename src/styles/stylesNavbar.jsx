@@ -1,7 +1,8 @@
 import styled from 'styled-components';
 
 const Container = styled.div`
-  background-color: #88bbd6;
+  background-color: #077a7a;
+  box-shadow: 0 12px 42px 0 #074453af;
   border-bottom: 1px solid rgba(0, 0, 0, 0.08);
   left: 0;
   padding: 0 24px;
