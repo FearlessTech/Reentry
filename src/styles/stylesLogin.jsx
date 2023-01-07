@@ -63,11 +63,11 @@ const Nav = styled.nav`
 
   @media (prefers-color-scheme: dark) {
     box-shadow: 0px 0px 2px #afafaf6b;
-    background: rgba(255, 255, 255, 0.25);
-    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    background-color: #313e3e5a;
+    box-shadow: 0 8px 32px 0 #1f26875e;
     backdrop-filter: blur(4px);
     -webkit-backdrop-filter: blur(4px);
-    border: 1px solid rgba(255, 255, 255, 0.18);
+    border: 1px solid #ffffff2d;
   }
 
   &:hover {
@@ -75,6 +75,7 @@ const Nav = styled.nav`
     @media (prefers-color-scheme: dark) {
       box-shadow: 0px 0px 1px #4848486b;
       background-color: #343f3f39;
+      background: #36363635;
     }
   }
 
