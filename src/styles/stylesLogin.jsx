@@ -60,13 +60,17 @@ const Nav = styled.nav`
   overflow-x: hidden;
   padding-top: 20px;
   padding-bottom: 20px;
-  box-shadow: 5px 5px 15px #0aaaaa;
   display: flex;
   justify-content: space-between;
   flex-direction: column;
   align-items: center;
   transition: ease-in-out 180ms;
+  box-shadow: 0px 0px 2px #afafaf6b;
   background-color: #077a7a;
+  box-shadow: 0 8px 32px 0 #1f26875e;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border: 1px solid #ffffff2d;
   top: 0;
   left: 0;
 
@@ -74,24 +78,6 @@ const Nav = styled.nav`
     z-index: 1;
     left: -235px;
     top: 0;
-  }
-
-  @media (prefers-color-scheme: dark) {
-    box-shadow: 0px 0px 2px #afafaf6b;
-    background-color: #313e3e5a;
-    box-shadow: 0 8px 32px 0 #1f26875e;
-    backdrop-filter: blur(4px);
-    -webkit-backdrop-filter: blur(4px);
-    border: 1px solid #ffffff2d;
-  }
-
-  &:hover {
-    background-color: #0aaaaa;
-    @media (prefers-color-scheme: dark) {
-      box-shadow: 0px 0px 1px #4848486b;
-      background-color: #343f3f39;
-      background: #36363635;
-    }
   }
 
   .logo {
