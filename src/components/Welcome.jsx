@@ -22,7 +22,7 @@ const Welcome = (props) => {
     <Container id="parallax">
       <Nav>
         <a href="/" className="logo">
-          <img src="/images/MaineRRLogo.png" alt="" />
+          <img src="/images/PRALgLogo.png" alt="" />
         </a>
         <div className="button-container">
           <LoginBtn1>

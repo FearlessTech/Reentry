@@ -60,7 +60,7 @@ const Login = (props) => {
     <Container>
       {props.user && <Redirect to='/home' />}
       <Nav className={sideBar ? "open" : ""}>
-        <img src='/images/RRLogo.png' alt='' />
+        <img src='/images/PRAIcon.png' alt='' />
         <NavBTN
           className='button'
           onClick={() => {
