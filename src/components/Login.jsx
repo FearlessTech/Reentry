@@ -20,8 +20,6 @@ import {
 } from '../styles/stylesLogin';
 import { Link } from 'react-router-dom';
 
-// /images/google.svg
-
 const Login = (props) => {
   const [login, setLogin] = useState(true);
   const [show, setShow] = useState(true);
@@ -33,7 +31,7 @@ const Login = (props) => {
     return (
       <Form>
         <Close onClick={() => setShow(false)}>
-        <IoCloseCircle size={20} color="#cbcbcb"/>
+          <IoCloseCircle size={22} color="#cbcbcb" className='close-icon'/>
         </Close>
         {login ? (
           <LoginForm>
@@ -106,9 +104,7 @@ const Login = (props) => {
           <span>Microsoft Login</span>
         </NavBTN>
       </Nav>
-      <SectionA>
-        <Modal show={show} />
-      </SectionA>
+      <main>
       <SectionB>
         <div>
           <h5>
@@ -141,6 +137,10 @@ const Login = (props) => {
           </h5>
         </div>
       </SectionB>
+      <SectionA>
+        <Modal show={show} />
+      </SectionA>
+      </main>
     </Container>
   );
 };
