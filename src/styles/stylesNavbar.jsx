@@ -97,7 +97,7 @@ const NavListWrap = styled.ul`
     &:after {
       content: '';
       position: absolute;
-      background-color: #fcf4a3;
+      background-color: #88bbd6;
       height: 3px;
       width: 100%;
       left: 0;
