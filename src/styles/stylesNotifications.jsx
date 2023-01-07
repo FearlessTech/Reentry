@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 const Container = styled.div`
   background-color: #cdcdcd;
@@ -68,7 +68,7 @@ const MiddleBoxes = styled.div`
     transition: 100ms ease-in-out;
     position: relative;
     &::before {
-      content: '';
+      content: "";
       background-color: #3f7d95;
       right: 0;
       height: 100%;
@@ -142,7 +142,7 @@ const Right = styled.div`
 const RTopDiv = styled.div`
   background-color: white;
   border-radius: 10px;
-  padding: .4rem 1rem;
+  padding: 0.4rem 1rem;
   text-align: center;
   p {
     color: gray;
@@ -154,7 +154,7 @@ const RTopDiv = styled.div`
     color: #3f7d95;
     background-color: #d3efff;
     &:hover {
-    background-color: #c5e6f9;
+      background-color: #c5e6f9;
     }
   }
   .add {
@@ -162,7 +162,7 @@ const RTopDiv = styled.div`
     background-color: #ecf8ff;
     padding: 1rem;
     border-radius: 1rem;
-    hr{
+    hr {
       background-color: #3f7d95;
     }
   }

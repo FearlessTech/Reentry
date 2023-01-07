@@ -18,14 +18,14 @@ const ArtCard = styled.div`
 `;
 
 const UserInfo = styled.div`
-  border-bottom: 1px solid rgba(0,0,0,0.15);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
   padding: 12px 12px 16px;
   word-wrap: break-word;
   word-break: break-word;
 `;
 
 const CardBackground = styled.div`
-  background: url('/images/card-bg.svg');
+  background: url("/images/card-bg.svg");
   background-position: center;
   background-size: 462px;
   height: 54px;
@@ -44,11 +44,10 @@ const Photo = styled.div`
     background-size: 60%;
     background-repeat: no-repeat;
     border: 2px solid #ffffff;
-    margin : -38px auto 12px;
+    margin: -38px auto 12px;
     border-radius: 50%;
   }
 `;
-
 
 const AddPhotoText = styled.div`
   color: #0a66c2;
@@ -59,7 +58,7 @@ const AddPhotoText = styled.div`
 `;
 
 const Widget = styled.div`
-  border-bottom: 1px solid rgba(0,0,0,0.15);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
   padding-top: 12px;
   padding-bottom: 12px;
   & > a {
@@ -69,7 +68,7 @@ const Widget = styled.div`
     align-items: center;
     padding: 4px 12px;
     &:hover {
-      background-color: rgba(0,0,0,0.08);
+      background-color: rgba(0, 0, 0, 0.08);
     }
     div {
       display: flex;
@@ -130,12 +129,12 @@ const CommunityCard = styled(ArtCard)`
       justify-content: space-between;
     }
     &:last-child {
-      color: rgba(0,0,0,0.6);
+      color: rgba(0, 0, 0, 0.6);
       text-decoration: none;
       border-top: 1px solid #d6cec2;
       padding: 12px;
       &:hover {
-        background-color: rgba(0,0,0,0.08);
+        background-color: rgba(0, 0, 0, 0.08);
       }
     }
   }
@@ -150,5 +149,5 @@ export {
   AddPhotoText,
   Widget,
   Item,
-  CommunityCard
+  CommunityCard,
 };

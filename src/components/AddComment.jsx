@@ -33,9 +33,19 @@ export function AddComment({ articleId, setshowCommentBox }) {
       </div>
       <div style={{ width: "100%" }}>
         <form onSubmit={(e) => addCommentToFireStoreDocument(e, articleId)}>
-          <textarea style={{ width: "95%" }} type="text" value={commentText} onChange={(e) => setcommentText(e.target.value)} required />
+          <textarea
+            style={{ width: "95%" }}
+            type="text"
+            value={commentText}
+            onChange={(e) => setcommentText(e.target.value)}
+            required
+          />
 
-          <button style={{ alignSelf: "start" }} type="submit" disabled={!commentText.length > 0}>
+          <button
+            style={{ alignSelf: "start" }}
+            type="submit"
+            disabled={!commentText.length > 0}
+          >
             Add Comment
           </button>
           <button onClick={() => setshowCommentBox(false)}>Cancel</button>

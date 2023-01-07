@@ -3,9 +3,9 @@ import styled from "styled-components";
 const Container = styled.div`
   padding-top: 52px;
   max-width: 100%;
-  max-height: 100% ;
+  max-height: 100%;
   display: flex;
-  background-color: #CDCDCD;
+  background-color: #cdcdcd;
   min-height: 100vh;
 `;
 
@@ -24,7 +24,7 @@ const QueryBoxHeader = styled.div`
   width: 87%;
   height: 10%;
   margin-top: 20px;
-  margin-left: 20px ;
+  margin-left: 20px;
   margin-right: 20px;
   background-color: #88bbd6;
   border-radius: 10px;
@@ -34,7 +34,7 @@ const QueryOptions = styled.div`
   display: flex;
   flex-direction: column;
   margin-bottom: 20px;
-  margin-left: 20px ;
+  margin-left: 20px;
   margin-right: 20px;
   width: 87%;
   height: 90%;
@@ -50,8 +50,6 @@ const ShowQueryBox = styled.div`
   background-color: #e9e9e9;
   height: 85vh;
   border-radius: 10px;
-  
-  
 `;
 
 const ShowQueryBoxHeader = styled.div`
@@ -60,7 +58,7 @@ const ShowQueryBoxHeader = styled.div`
   height: 10%;
   border-radius: 10px;
   margin-top: 20px;
-  margin-left: 20px ;
+  margin-left: 20px;
   margin-right: 20px;
   background-color: #88bbd6;
 `;
@@ -68,7 +66,7 @@ const ShowQueryBoxHeader = styled.div`
 const QueriedItems = styled.div`
   display: flex;
   flex-direction: column;
-  margin-left: 20px ;
+  margin-left: 20px;
   margin-right: 20px;
   width: 96%;
   height: 90%;
@@ -89,8 +87,7 @@ const QueryResult = styled.div`
     height: 70px;
     margin: 10px;
     border-radius: 10px;
-    
-  };
+  }
 `;
 
 export {

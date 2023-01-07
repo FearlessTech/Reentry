@@ -1,14 +1,14 @@
 import styled from "styled-components";
 
 const Popup = styled.div`
-  width:56% ;
+  width: 56%;
   border-radius: 10px;
   padding: 1%;
   margin: auto;
   margin-top: 3%;
   border: 1px solid rgb(201, 201, 201);
-  height:  70%;
-  button{
+  height: 70%;
+  button {
     border-radius: 50px;
     padding: 7px 20px;
     background-color: rgb(27, 126, 255);
@@ -20,23 +20,23 @@ const Popup = styled.div`
 `;
 const HR = styled.div`
   width: 103.5%;
-  margin-left: -1.90%;
-  margin-top: 1% ;
+  margin-left: -1.9%;
+  margin-top: 1%;
 `;
 const Top = styled.div`
   display: flex;
-  p{
+  p {
     font-size: 130%;
     /* border: 1px solid red; */
     width: 95%;
     margin-top: -0.5%;
   }
-  img{
+  img {
     width: 20px;
     height: 20px;
     cursor: pointer;
     /* margin: 0 0 0 85%; */
-    hover{
+    hover {
       cursor: pointer;
       border-radius: 50px;
       background-color: rgb(209, 209, 209);
@@ -53,7 +53,7 @@ const SubContent = styled.div`
 `;
 const LeftCon = styled.div`
   width: 85%;
-  line-height:5px;
+  line-height: 5px;
   /* border: 1px solid red; */
   h4 {
     hover {
@@ -68,13 +68,13 @@ const LeftCon = styled.div`
 `;
 const RightCon = styled.div`
   display: flex;
-  img{
+  img {
     width: 20px;
     margin: 15%;
     height: 20px;
     padding: 10%;
     /* border: 3px solid red; */
-    hover{
+    hover {
       cursor: pointer;
       border-radius: 50px;
       background-color: rgb(209, 209, 209);
@@ -86,7 +86,7 @@ const Bottom = styled.div`
 `;
 const LeftB = styled.div`
   width: 85%;
-  line-height:5px;
+  line-height: 5px;
   color: rgb(27, 126, 255);
   span {
     hover {
@@ -109,7 +109,7 @@ const Switch = styled.label`
     width: 0;
     height: 0;
   }
-  span{
+  span {
     position: absolute;
     cursor: pointer;
     top: 0;
@@ -117,8 +117,8 @@ const Switch = styled.label`
     right: 0;
     bottom: 0;
     background-color: #ccc;
-    -webkit-transition: .4s;
-    transition: .4s;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
   }
 `;
 

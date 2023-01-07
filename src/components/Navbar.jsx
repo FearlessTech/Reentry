@@ -18,7 +18,18 @@ import {
 
 import { capitalize } from "@material-ui/core";
 
-import { Container, Content, Logo, Nav, NavListWrap, NavList, SignOut, User, More, Dropdown } from "../styles/stylesNavbar";
+import {
+  Container,
+  Content,
+  Logo,
+  Nav,
+  NavListWrap,
+  NavList,
+  SignOut,
+  User,
+  More,
+  Dropdown,
+} from "../styles/stylesNavbar";
 import { SearchResults } from "./Search/SearchResults";
 
 const Navbar = (props) => {
@@ -49,7 +60,10 @@ const Navbar = (props) => {
           <NavListWrap>
             {topics.map(({ name, Icon }) => {
               return (
-                <NavList key={name} className={(url ? url.includes(name) : false) ? "active" : ""}>
+                <NavList
+                  key={name}
+                  className={(url ? url.includes(name) : false) ? "active" : ""}
+                >
                   <Link
                     to={`/${name}`}
                     onClick={() => {
@@ -73,7 +87,9 @@ const Navbar = (props) => {
               <Dropdown>
                 <Link
                   to="/profile"
-                  className={`dropdown-item ${(url ? url.includes("profile") : false) ? "active" : ""}`}
+                  className={`dropdown-item ${
+                    (url ? url.includes("profile") : false) ? "active" : ""
+                  }`}
                   onClick={() => {
                     setUrl("profile");
                   }}
@@ -83,7 +99,9 @@ const Navbar = (props) => {
                 </Link>
                 <Link
                   to="/aboutus"
-                  className={`dropdown-item ${(url ? url.includes("aboutus") : false) ? "active" : ""}`}
+                  className={`dropdown-item ${
+                    (url ? url.includes("aboutus") : false) ? "active" : ""
+                  }`}
                   onClick={() => {
                     setUrl("aboutus");
                   }}
@@ -95,7 +113,11 @@ const Navbar = (props) => {
             </More>
             <User>
               <a>
-                {props.user && props.user.photoURL ? <img src={props.user.photoURL} alt="" /> : <img src="/images/user.svg" alt="" />}
+                {props.user && props.user.photoURL ? (
+                  <img src={props.user.photoURL} alt="" />
+                ) : (
+                  <img src="/images/user.svg" alt="" />
+                )}
                 <span>
                   Sign Out <IoMdArrowDropdown />
                 </span>

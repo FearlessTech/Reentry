@@ -1,4 +1,4 @@
-import { SET_USER, SET_DARK_MODE } from '../actions/actionType';
+import { SET_USER, SET_DARK_MODE } from "../actions/actionType";
 
 const INITIAL_STATE = {
   user: null,

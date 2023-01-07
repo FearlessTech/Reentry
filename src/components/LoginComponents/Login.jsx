@@ -1,38 +1,38 @@
-import StyledLogin from './LoginStyles/styledLogin';
-import { Link } from 'react-router-dom';
+import StyledLogin from "./LoginStyles/styledLogin";
+import { Link } from "react-router-dom";
 
 export default function LoginForm({ children }) {
   return (
     <StyledLogin>
-      <div className='form-content'>
-        <div className='title'>Login</div>
+      <div className="form-content">
+        <div className="title">Login</div>
         <form>
-          <div className='input-container'>
-            <label htmlFor='username'>
+          <div className="input-container">
+            <label htmlFor="username">
               <span>username</span>
               <input
-                type='text'
-                id='username'
-                name='username'
-                placeholder='example@email.com'
-                autoComplete='username'
-                />
+                type="text"
+                id="username"
+                name="username"
+                placeholder="example@email.com"
+                autoComplete="username"
+              />
             </label>
           </div>
-          <div className='input-container'>
-            <label htmlFor='password'>
+          <div className="input-container">
+            <label htmlFor="password">
               <span>password</span>
               <input
-                type='password'
-                id='password'
-                name='password'
-                placeholder='password'
-                autoComplete='password'
+                type="password"
+                id="password"
+                name="password"
+                placeholder="password"
+                autoComplete="password"
               />
             </label>
           </div>
           <button
-            className='send-form'
+            className="send-form"
             onClick={(e) => {
               e.preventDefault();
             }}
@@ -40,9 +40,7 @@ export default function LoginForm({ children }) {
             Send
           </button>
         </form>
-        <span className='or'>
-          or
-        </span>
+        <span className="or">or</span>
       </div>
       {children}
     </StyledLogin>

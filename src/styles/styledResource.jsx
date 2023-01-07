@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 const ResourceDiv = styled.div`
   width: 100%;
@@ -133,7 +133,7 @@ const StyledMiddleAside = styled.div`
 const StyledRecent = styled.div`
   display: flex;
   border-radius: 10px;
-  padding: .4rem .8rem;
+  padding: 0.4rem 0.8rem;
   background-color: white;
   margin-bottom: 1rem;
 `;

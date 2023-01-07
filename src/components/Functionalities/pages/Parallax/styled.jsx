@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const Container = styled.div`
   display: grid;
@@ -12,5 +12,4 @@ export const Container = styled.div`
     transition: 400ms cubic-bezier(0.83, 0.81, 0.36, 0.37);
     position: absolute;
   }
-  
 `;
