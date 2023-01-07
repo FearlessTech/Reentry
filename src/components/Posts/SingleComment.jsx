@@ -43,6 +43,7 @@ export function SingleComment({ comment, triggerPostRerender, articleId, article
   return (
     <>
       <div
+        key={comment.id}
         style={{
           display: "flex",
           alignItems: "center",
@@ -51,7 +52,6 @@ export function SingleComment({ comment, triggerPostRerender, articleId, article
           margin: "5px 15px 5px 15px",
           borderRadius: "10px",
         }}
-        key={comment.timestamp}
       >
         <div>
           <img
@@ -70,11 +70,11 @@ export function SingleComment({ comment, triggerPostRerender, articleId, article
           ) : (
             <section>
               <p style={{ textAlign: "left", fontSize: "0.8em" }}>{comment.postedBy}</p>
-                <p style={{ textAlign: "left", fontSize: "0.7em" }}>{
-                  (() => {
-                    const res = splitString(comment.text).map(str => isUrl(str) ? <a href={str} target="_blank">{str}</a> : str)
-                    return res
-                  })()
+              <p style={{ textAlign: "left", fontSize: "0.7em" }}>{
+                (() => {
+                  const res = splitString(comment.text).map(str => isUrl(str) ? <a key={comment.id} href={str} target="_blank">{str}</a> : str)
+                  return res
+                })()
               }</p>
               <p style={{ textAlign: "left", fontSize: "0.5em" }}>{getTimeString(comment)}</p>
             </section>

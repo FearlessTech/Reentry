@@ -4,7 +4,7 @@ import { Redirect } from "react-router-dom";
 import { useEffect } from "react";
 
 import { Container, Nav, LoginBtn1, Section, Hero } from "../styles/stylesWelcome";
-import { Link, Navigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const Welcome = (props) => {
   useEffect(() => {
