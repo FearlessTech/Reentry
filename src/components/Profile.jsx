@@ -1,9 +1,8 @@
-import { connect } from "react-redux";
-import { Link } from "react-router-dom";
+import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 
-import { AiOutlineUserAdd, AiOutlinePlus, } from "react-icons/ai";
-import { BsFillBookmarkFill } from "react-icons/bs";
-
+import { AiOutlineUserAdd, AiOutlinePlus } from 'react-icons/ai';
+import { BsFillBookmarkFill } from 'react-icons/bs';
 
 import {
   Container,
@@ -16,68 +15,67 @@ import {
   Photo,
   AddPhotoText,
   ProfileMain,
-  ProfileLeft
+  ProfileLeft,
 } from '../styles/stylesProfile.jsx';
 
 const Profile = (props) => {
   return (
     <Container>
       <ProfileLeft>
-      <ArtCard>
-        <UserInfo>
-          <CardBackground />
-          <Link to={<Profile/>} className="welcome">
-            <Photo>
-              {props.user && props.user.photoURL ? (
-                <img src={props.user.photoURL} alt="" />
-              ) : (
-                <img src="/images/user.svg" alt=""/>
-              )}
-            </Photo>
-            <h3>
-              Welcome, {props.user ? props.user.displayName : "there"}!
-            </h3>
-          </Link>
+        <ArtCard>
+          <UserInfo>
+            <CardBackground />
+            <Link to={<Profile />} className='welcome'>
+              <Photo>
+                {props.user && props.user.photoURL ? (
+                  <img src={props.user.photoURL} alt='' />
+                ) : (
+                  <img src='/images/user.svg' alt='' />
+                )}
+              </Photo>
+              <h3>Welcome, {props.user ? props.user.displayName : 'there'}!</h3>
+            </Link>
+            <a>
+              <AddPhotoText></AddPhotoText>
+            </a>
+          </UserInfo>
+
+          <Widget>
+            <a>
+              <div>
+                <span>Connections</span>
+                <span>Grow your network</span>
+              </div>
+              <AiOutlineUserAdd />
+            </a>
+          </Widget>
+
+          <Item>
+            <span>
+              <BsFillBookmarkFill />
+              My Items
+            </span>
+          </Item>
+        </ArtCard>
+
+        <CommunityCard>
           <a>
-            <AddPhotoText></AddPhotoText>
+            <span>Groups</span>
           </a>
-        </UserInfo>
-
-        <Widget>
           <a>
-            <div>
-              <span>Connections</span>
-              <span>Grow your network</span>
-            </div>
-            <AiOutlineUserAdd/>
+            <span>
+              Events
+              <AiOutlinePlus />
+            </span>
           </a>
-        </Widget>
-
-        <Item>
-                    <span>
-                        <BsFillBookmarkFill />
-                        My Items
-                    </span>
-        </Item>
-      </ArtCard>
-
-      <CommunityCard>
-        <a>
-          <span>Groups</span>
-        </a>
-        <a>
-                    <span>
-                        Events
-                        <AiOutlinePlus />
-                    </span>
-        </a>
-      </CommunityCard>
+        </CommunityCard>
       </ProfileLeft>
       <ProfileMain>
-        <h1>Profile</h1>
+        <main>
+          <h1>Profile</h1>
+        </main>
       </ProfileMain>
     </Container>
-
   );
 };
 

@@ -108,7 +108,7 @@ const Login = (props) => {
         <div className="dragger" onClick={(e) => setSideBar(!sideBar)}>
         </div>
       </Nav>
-      <main>
+      <main  className={sideBar ? "open" : ""}>
       <SectionB>
         <div>
           <h5>
