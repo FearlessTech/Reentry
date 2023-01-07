@@ -36,7 +36,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "prepare": "husky install",
+    "format": "lint-staged"
   },
   "eslintConfig": {
     "extends": [
@@ -54,6 +56,16 @@
       "last 1 chrome version",
       "last 1 firefox version",
       "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "husky": "^8.0.0",
+    "lint-staged": "^13.1.0",
+    "prettier": "^2.8.2"
+  },
+  "lint-staged": {
+    "*.{js,jsx,css}": [
+      "prettier --write"
     ]
   }
 }

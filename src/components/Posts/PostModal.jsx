@@ -90,7 +90,11 @@ const PostModal = (props) => {
           <Content>
             <Header>
               <UserInfo>
-                {props.user.photoURL ? <img src={props.user.photoURL} /> : <img src="/images/user.svg" alt="" />}
+                {props.user.photoURL ? (
+                  <img src={props.user.photoURL} />
+                ) : (
+                  <img src="/images/user.svg" alt="" />
+                )}
                 <span>{props.user.displayName}</span>
               </UserInfo>
               <button onClick={(event) => handleClickBubbling(event)}>
