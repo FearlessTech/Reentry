@@ -103,6 +103,7 @@ const Nav = styled.nav`
 
 const NavBTN = styled.button`
   background-color: #f1f1f1;
+  color: #7a7a7a;
   border-radius: 100vmax;
   border: none;
   width: 10rem;
