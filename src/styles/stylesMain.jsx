@@ -146,7 +146,7 @@ const SocialActions = styled.div`
 const Content = styled.div`
   text-align: center;
   overflow-y: scroll;
-  max-height: 500px;
+  height: 100vh;
   ::-webkit-scrollbar {
       display: none;
   }
