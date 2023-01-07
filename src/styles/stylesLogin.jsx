@@ -16,15 +16,25 @@ const Container = styled.div`
       color: white;
     }
   }
+
   @media (max-width: 768px) {
     overflow: scroll;
   }
+
   main {
     display: flex;
-    width: 100%;
+    margin: 1rem auto;
+    justify-content: center;
+    width: 1300px;
+    max-width: 100%;
+    justify-content: space-around;
+    align-items: center;
+    height: max-content;
     @media (max-width: 650px) {
-      margin-top: 5rem;
+      margin: 1rem;
+      margin-top: 1rem;
       flex-direction: column;
+      padding: 15px;
     }
   }
 `;
@@ -53,13 +63,18 @@ const Nav = styled.nav`
 
   @media (prefers-color-scheme: dark) {
     box-shadow: 0px 0px 2px #afafaf6b;
-    background-color: #3c585839;
+    background: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
   }
+
   &:hover {
     background-color: #0aaaaa;
     @media (prefers-color-scheme: dark) {
       box-shadow: 0px 0px 1px #4848486b;
-      background-color: #3c585839;
+      background-color: #343f3f39;
     }
   }
 
@@ -112,42 +127,53 @@ const NavBTN = styled.button`
 
 const SectionA = styled.section`
   height: 90vh;
-  width: 42vw;
-  margin-top: 5%;
+  max-width: 50%;
+  display: flex;
+  align-items: center;
+  & > * {
+    max-width: 500px;
+  }
+
   @media (max-width: 650px) {
+    max-width: initial;
+    width: 100%;
+    max-width: 85vw;
     margin: 1rem auto;
-    width: 95%;
     height: min-content;
+    & > * {
+      width: 100%;
+    }
   }
 `;
 
 const SectionB = styled.section`
   height: 90%;
+  max-width: 50%;
   width: 30vw;
-  margin-left: 20%;
-  margin-top: 5vh;
+  display: flex;
+  align-items: center;
+  margin-top: 2rem;
   *::selection {
     background-color: #343434;
     color: white;
   }
+  > * {
+    max-width: 85vw;
+  }
 
   @media (max-width: 650px) {
-    margin: 1rem auto;
-    width: 95%;
+    max-width: 100%;
+    margin: auto;
+    width: 100%;
     height: min-content;
-    & > * {
-      margin: auto;
-    }
   }
 `;
 
 const Form = styled.div`
-  width: 50rem;
-  max-width: 100%;
+  padding: 2rem;
   background-color: #ffffff;
   box-shadow: 0px 0px 2px #1e1e1e66;
   border-radius: 2rem;
-  margin: 1rem 3rem 3rem 3rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
