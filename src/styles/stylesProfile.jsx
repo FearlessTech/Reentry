@@ -4,28 +4,34 @@ const Container = styled.div`
   padding-top: 52px;
   max-width: 100%;
   display: flex;
-  min-height: 100vh;
+  height: max-content;
+  align-items: flex-start;
   background-color: #cdcdcd;
-  /* outline: red 1px solid; */
   column-gap: 1rem;
-  padding: 5rem 1rem 1rem ;
+  padding: 5rem 1rem 1rem;
+  flex-wrap: wrap;
+  min-height: 100vh;
+`;
+
+const ProfileLeft = styled.div`
+  flex: 0 1 250px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: 0 auto;
+  height: max-content;
 `;
 
 const ProfileMain = styled.div`
   display: flex;
   flex-direction: column;
-  width: 75%;
+  margin: 0 auto;
+  flex: 1 1 250px;
   main {
-    outline: red 1px solid;
     min-height: 100%;
   }
 `;
 
-const ProfileLeft = styled.div`
-  display: flex;
-  flex-direction: column;
-  width: 25%;
-`;
 
 const ArtCard = styled.div`
   text-align: center;
