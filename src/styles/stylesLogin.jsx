@@ -67,10 +67,11 @@ const Nav = styled.nav`
   transition: ease-in-out 180ms;
   box-shadow: 0px 0px 2px #afafaf6b;
   background-color: #077a7a;
-  box-shadow: 0 8px 32px 0 #1f26875e;
+  box-shadow: 0 12px 42px 0 #074453af;
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
   border: 1px solid #ffffff2d;
+  
   top: 0;
   left: 0;
 
