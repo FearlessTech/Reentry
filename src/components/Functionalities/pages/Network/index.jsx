@@ -7,7 +7,7 @@ const Parallax = (props) => {
 
   return (
     <Container>
-      test
+      
     </Container>
   );
 };
