@@ -14,6 +14,7 @@ export default function SignUpForm(props) {
                 id='username'
                 name='username'
                 placeholder='example@email.com'
+                autoComplete='username'
               />
             </label>
           </div>
@@ -25,6 +26,7 @@ export default function SignUpForm(props) {
                 id='password'
                 name='password'
                 placeholder='password'
+                autoComplete='password'
               />
             </label>
           </div>

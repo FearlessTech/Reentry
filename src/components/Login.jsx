@@ -23,6 +23,7 @@ import { Link } from 'react-router-dom';
 const Login = (props) => {
   const [login, setLogin] = useState(true);
   const [show, setShow] = useState(true);
+  const [sideBar, setSideBar] = useState(true);
   const Modal = (props) => {
     if (!props.show) {
       return null;
@@ -42,6 +43,7 @@ const Login = (props) => {
                   e.preventDefault();
                   setLogin(false);
                 }}
+                to="#"
               >
                 Sign up
               </Link>
@@ -57,7 +59,7 @@ const Login = (props) => {
   return (
     <Container>
       {props.user && <Redirect to='/home' />}
-      <Nav>
+      <Nav className={sideBar ? "open" : ""}>
         <img src='/images/RRLogo.png' alt='' />
         <NavBTN
           className='button'
@@ -103,6 +105,8 @@ const Login = (props) => {
           </div>
           <span>Microsoft Login</span>
         </NavBTN>
+        <div className="dragger" onClick={(e) => setSideBar(!sideBar)}>
+        </div>
       </Nav>
       <main>
       <SectionB>
