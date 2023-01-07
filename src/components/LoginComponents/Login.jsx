@@ -15,7 +15,8 @@ export default function LoginForm({ children }) {
                 id='username'
                 name='username'
                 placeholder='example@email.com'
-              />
+                autoComplete='username'
+                />
             </label>
           </div>
           <div className='input-container'>
@@ -26,6 +27,7 @@ export default function LoginForm({ children }) {
                 id='password'
                 name='password'
                 placeholder='password'
+                autoComplete='password'
               />
             </label>
           </div>
@@ -33,7 +35,6 @@ export default function LoginForm({ children }) {
             className='send-form'
             onClick={(e) => {
               e.preventDefault();
-              // sign in code
             }}
           >
             Send

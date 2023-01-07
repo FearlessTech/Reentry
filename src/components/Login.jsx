@@ -6,6 +6,7 @@ import { useState, useEffect } from 'react';
 import LoginForm from './LoginComponents/Login';
 import SignUpForm from './LoginComponents/Signup';
 import { ImFacebook2, ImGoogle2, ImTwitter, ImMail3, ImPen, ImWindows8 } from "react-icons/im";
+import {IoCloseCircle} from "react-icons/io5"
 
 
 import {
@@ -19,11 +20,10 @@ import {
 } from '../styles/stylesLogin';
 import { Link } from 'react-router-dom';
 
-// /images/google.svg
-
 const Login = (props) => {
   const [login, setLogin] = useState(true);
   const [show, setShow] = useState(true);
+  const [sideBar, setSideBar] = useState(true);
   const Modal = (props) => {
     if (!props.show) {
       return null;
@@ -31,7 +31,9 @@ const Login = (props) => {
 
     return (
       <Form>
-        <Close onClick={() => setShow(false)}></Close>
+        <Close onClick={() => setShow(false)}>
+          <IoCloseCircle size={22} color="#cbcbcb" className='close-icon'/>
+        </Close>
         {login ? (
           <LoginForm>
             <span className='sign-up'>
@@ -41,6 +43,7 @@ const Login = (props) => {
                   e.preventDefault();
                   setLogin(false);
                 }}
+                to="#"
               >
                 Sign up
               </Link>
@@ -56,7 +59,7 @@ const Login = (props) => {
   return (
     <Container>
       {props.user && <Redirect to='/home' />}
-      <Nav>
+      <Nav className={sideBar ? "open" : ""}>
         <img src='/images/RRLogo.png' alt='' />
         <NavBTN
           className='button'
@@ -102,10 +105,10 @@ const Login = (props) => {
           </div>
           <span>Microsoft Login</span>
         </NavBTN>
+        <div className="dragger" onClick={(e) => setSideBar(!sideBar)}>
+        </div>
       </Nav>
-      <SectionA>
-        <Modal show={show} />
-      </SectionA>
+      <main>
       <SectionB>
         <div>
           <h5>
@@ -138,6 +141,10 @@ const Login = (props) => {
           </h5>
         </div>
       </SectionB>
+      <SectionA>
+        <Modal show={show} />
+      </SectionA>
+      </main>
     </Container>
   );
 };

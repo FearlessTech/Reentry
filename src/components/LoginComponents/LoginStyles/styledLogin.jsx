@@ -10,10 +10,16 @@ const StyledLogin = styled.div`
     background-color: transparent;
   }
   .form-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     .title {
-      padding: 3rem 0 1rem;
+      font-weight: 700;
+      color: #939393;
+      text-transform: uppercase;
+      margin: 3rem auto;
       @media (prefers-color-scheme: dark) {
-        color: #c1c1c1;
+        color: #939393;
       }
     }
     form {

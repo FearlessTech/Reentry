@@ -77,29 +77,28 @@ const LoginBtn = styled.button`
 `;
 
 const LoginBtn1 = styled.button`
-      border-radius: 100vmax;
-      border: none;
-      min-width: 6.5rem;
-      font-weight: 600;
-      font-size: 16px;
-      text-decoration: none;
-      
-      padding: 10px 12px;
-      margin-right: 12px;
-      cursor: pointer;
-      transition: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  border-radius: 100vmax;
+  border: none;
+  min-width: 6.5rem;
+  font-weight: 600;
+  font-size: 16px;
+  text-decoration: none;
+
+  padding: 10px 12px;
+  margin-right: 12px;
+  cursor: pointer;
+  transition: cubic-bezier(0.175, 0.885, 0.32, 1.275);
   a {
     color: #009999;
-    text-decoration: none
+    text-decoration: none;
   }
-      &:hover {
-        transform: scale(1.015);
-        box-shadow: 2px 2px 2px #2a3e3e39;
-        @media (prefers-color-scheme: dark) {
-          box-shadow: 2px 2px 2px #b5b5b539;
-        }
-        
-      }
+  &:hover {
+    transform: scale(1.015);
+    box-shadow: 2px 2px 2px #2a3e3e39;
+    @media (prefers-color-scheme: dark) {
+      box-shadow: 2px 2px 2px #b5b5b539;
+    }
+  }
 `;
 
 const Section = styled.section`
@@ -159,13 +158,18 @@ const Hero = styled.div`
   align-items: center;
   justify-content: center;
 
+  * ::selection {
+    background-color: #3599998b;
+    color: #eee;
+  }
+
   h1 {
     position: absolute;
     color: #009999;
     background-color: #998a001a;
     box-shadow: 0px 0px 5px #994c0029;
     border-radius: 20px;
-    Margin-top: 22%;
+    margin-top: 22%;
     margin-left: 30%;
     font-family: Prosto One;
     font-size: 50px;
@@ -173,10 +177,6 @@ const Hero = styled.div`
     font-weight: 700;
     letter-spacing: 8px;
     line-height: 60px;
-    &::selection {
-      background-color: #3599998b;
-      color: #eee;
-    }
     span {
       font-size: 32px;
       font-weight: 300;
@@ -191,12 +191,12 @@ const Hero = styled.div`
     height: 100%;
     z-index: -5;
     background: radial-gradient(
-            ellipse 50% 90%,
-            #fffbe0 5%,
-            #fff3a7 20%,
-            #dfbaaa 50%,
-            #fae2c0 70%,
-            #bfddbf
+      ellipse 50% 90%,
+      #fffbe0 5%,
+      #fff3a7 20%,
+      #dfbaaa 50%,
+      #fae2c0 70%,
+      #bfddbf
     );
     .chain {
       transition: 400ms cubic-bezier(0.83, 0.81, 0.36, 0.37);
