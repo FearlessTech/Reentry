@@ -40,9 +40,9 @@ const Welcome = (props) => {
       <Section>
         <Hero>
           <h1>
-            Maine Prisoner Reentry
-            <br />
-            <span>Resources Network</span>{" "}
+            Prisoner Reentry Advocates
+            {/*<br />*/}
+            {/*<span></span>*/}
           </h1>
           <div className="assets-container">
             <div className="chain" top="270" left="0" speed="3">

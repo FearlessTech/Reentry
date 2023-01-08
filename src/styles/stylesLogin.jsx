@@ -28,7 +28,6 @@ const Container = styled.div`
     justify-content: center;
     width: 1300px;
     max-width: 100%;
-    justify-content: space-around;
     align-items: center;
     height: max-content;
     column-gap: 1rem;
@@ -42,7 +41,6 @@ const Container = styled.div`
     }
 
     @media (max-width: 650px) {
-      margin: 1rem;
       margin-top: 1rem;
       flex-direction: column;
       padding: 15px;
@@ -65,8 +63,8 @@ const Nav = styled.nav`
   flex-direction: column;
   align-items: center;
   transition: ease-in-out 180ms;
-  background-color: #077a7a;
-  box-shadow: 0 12px 42px 0 #074453af;
+  background-color: whitesmoke;
+  box-shadow: 0 12px 42px 0 #009999;
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
   border: 1px solid #ffffff2d;
@@ -89,7 +87,7 @@ const Nav = styled.nav`
     }
     &:hover {
       transform: scale(1.05);
-      box-shadow: 0px 0px 5px #00999973;
+      box-shadow: 0 0 5px #00999973;
     }
   }
 
@@ -104,8 +102,8 @@ const Nav = styled.nav`
 `;
 
 const NavBTN = styled.button`
-  background-color: #f1f1f1;
-  color: #7a7a7a;
+  background-color: #077a7a;
+  color: white;
   border-radius: 100vmax;
   border: none;
   width: 10rem;
@@ -124,7 +122,8 @@ const NavBTN = styled.button`
   &:hover {
     transform: scale(1.01);
     cursor: pointer;
-    box-shadow: -1px 1px 2px #0aaaaa6e;
+    background-color: #009999;
+    box-shadow: 3px 3px 3px #009999;
   }
 `;
 
@@ -141,7 +140,7 @@ const SectionA = styled.section`
   @media (max-width: 650px) {
     max-width: initial;
     width: 100%;
-    max-width: 85vw;
+    //max-width: 85vw;
     margin: 1rem auto;
     height: min-content;
     & > * {
@@ -175,15 +174,14 @@ const SectionB = styled.section`
 const Form = styled.div`
   padding: 2rem;
   background-color: #ffffff;
-  box-shadow: 0px 0px 2px #1e1e1e66;
+  box-shadow: 0 0 2px #1e1e1e66;
   border-radius: 2rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding-bottom: 3rem;
   @media (prefers-color-scheme: dark) {
     background-color: #aaaaaa33;
-    box-shadow: 0px 0px 5px #d5d5d554;
+    box-shadow: 0 0 5px #d5d5d554;
   }
   @media (max-width: 650px) {
     margin: auto;
