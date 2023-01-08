@@ -48,6 +48,7 @@ export function SingleComment(
   return (
     <>
       <div
+        key={comment.id}
         style={{
           display: "flex",
           alignItems: "center",
@@ -56,7 +57,6 @@ export function SingleComment(
           margin: "5px 15px 5px 15px",
           borderRadius: "10px",
         }}
-        key={comment.timestamp}
       >
         <div>
           <img

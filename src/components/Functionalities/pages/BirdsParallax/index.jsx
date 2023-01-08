@@ -64,8 +64,8 @@ const Login = (props) => {
     <Container id="parallax">
       {props.user && <Redirect to="/home" />}
       <Nav>
-        <a href='/' className='logo'>
-          <img src='/images/PRALgLogo.png' alt='' />
+        <a href="/" className="logo">
+          <img src="/images/PRALgLogo.png" alt="" />
         </a>
         <div className="button-container">
           <Google className="google-btn" onClick={() => props.signIn()}>
