@@ -19,10 +19,6 @@ const Nav = styled.nav`
   transition: ease-in-out 120ms;
   &:hover {
     background-color: #00999947;
-    @media (prefers-color-scheme: dark) {
-      box-shadow: 0px 0px 1px #4848486b;
-      background-color: #3c585839;
-    }
   }
   .logo {
     transition: ease-in-out 0.15s;
