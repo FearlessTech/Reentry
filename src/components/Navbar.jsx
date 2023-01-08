@@ -11,7 +11,6 @@ import {
   IoMdPeople,
   IoMdSettings,
   IoMdArrowDropdown,
-  IoMdSearch,
   IoMdPerson,
   IoMdInformationCircle,
 } from "react-icons/io";
@@ -41,7 +40,7 @@ const Navbar = (props) => {
       <Content>
         <Logo>
           <Link to="/home">
-            <img src="/images/PRALgLogo.png" alt="" width="100%" />
+            <img src="/images/PRALgLogo.png" alt="" />
           </Link>
         </Logo>
         <SearchResults />
