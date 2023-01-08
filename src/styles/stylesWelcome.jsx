@@ -18,7 +18,13 @@ const Nav = styled.nav`
   background-color: #009999;
   transition: ease-in-out 120ms;
   &:hover {
-    background-color: #00999947;
+    background-color: whitesmoke;
+    button {
+      background-color: #009999;
+      a {
+        color: whitesmoke;
+      }
+    }
   }
   .logo {
     transition: ease-in-out 0.15s;
