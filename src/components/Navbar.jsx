@@ -69,7 +69,7 @@ const Navbar = (props) => {
                       setUrl(name);
                     }}
                   >
-                    <Icon size={18} style={{ fill: "#cdcdcd" }} />
+                    <Icon size={18} style={{ fill: "whitesmoke" }} />
                     <span>{capitalize(name)}</span>
                   </Link>
                 </NavList>
@@ -77,7 +77,7 @@ const Navbar = (props) => {
             })}
             <More>
               <a>
-                <IoMdSettings size={18} style={{ fill: "#cdcdcd" }} />
+                <IoMdSettings size={18} style={{ fill: "whitesmoke" }} />
                 <span>
                   More
                   <IoMdArrowDropdown />

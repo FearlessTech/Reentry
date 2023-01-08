@@ -32,7 +32,7 @@ const FeedList = styled.div`
   flex-direction: column;
   a {
     text-decoration: none;
-    color: slateblue;
+    color: #074453af;
     align-items: center;
     margin: 12px;
     position: relative;
