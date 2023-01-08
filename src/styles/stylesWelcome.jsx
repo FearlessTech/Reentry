@@ -172,16 +172,15 @@ const Hero = styled.div`
     margin-top: 22%;
     margin-left: 30%;
     font-family: Prosto One;
-    font-size: 50px;
-    //text-transform: uppercase;
+    font-size: 42px;
     font-weight: 700;
     letter-spacing: 8px;
     line-height: 60px;
-    span {
-      font-size: 32px;
-      font-weight: 300;
-      letter-spacing: 10px;
-    }
+    //span {
+    //  font-size: 32px;
+    //  font-weight: 300;
+    //  letter-spacing: 10px;
+    //}
   }
   .assets-container {
     display: flex;
