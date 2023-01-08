@@ -66,7 +66,7 @@ const Login = (props) => {
     <Container>
       {props.user && <Redirect to="/home" />}
       <Nav className={sideBar ? "open" : ""}>
-        <img src="/images/PRAIcon.png" alt="" />
+        <img src='/images/PRAIcon.png' alt='' />
         <NavBTN
           className="button"
           onClick={() => {
@@ -113,10 +113,12 @@ const Login = (props) => {
         </NavBTN>
         <div className="dragger" onClick={(e) => setSideBar(!sideBar)}></div>
       </Nav>
-      <main className={sideBar ? "open" : ""}>
-        <SectionB>
-          <div>
-            <h5>Be cautious on social networking sites.</h5>
+      <main  className={sideBar ? "open" : ""}>
+      <SectionB>
+        <div>
+          <h5>
+            Be cautious on social networking sites.
+          </h5>
             <br />
             <h5>
               Keep personal info personal. Be careful how much personal info you

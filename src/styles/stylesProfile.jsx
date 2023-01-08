@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 const Container = styled.div`
   padding-top: 52px;
@@ -32,6 +32,7 @@ const ProfileMain = styled.div`
   }
 `;
 
+
 const ArtCard = styled.div`
   text-align: center;
   overflow: hidden;
@@ -52,7 +53,7 @@ const UserInfo = styled.div`
 `;
 
 const CardBackground = styled.div`
-  background: url("/images/card-bg.svg");
+  background: url('/images/card-bg.svg');
   background-position: center;
   background-size: 462px;
   height: 54px;
