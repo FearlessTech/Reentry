@@ -12,11 +12,14 @@ import { useEffect, useState } from "react";
 import { AddComment } from "./AddComment";
 import db, { auth } from "../../firebase";
 import { SingleComment } from "./SingleComment";
+import firebase from "firebase";
 import { isUrl, splitString } from "./urlIdentifier";
 export function SinglePost({ article, id }) {
   const user = auth.currentUser;
   const [showCommentBox, setshowCommentBox] = useState(false);
   const [comments, setcomments] = useState([]);
+  const [likes, setLikes] = useState([]);
+  const [hasLiked, setHasLiked] = useState(false);
   const [rerender, triggerPostRerender] = useState(1);
   const dateOptions = {
     weekday: "long",
@@ -38,8 +41,42 @@ export function SinglePost({ article, id }) {
         return commentObject;
       });
       setcomments(allComments);
+      const likedBy = article.likedBy;
+
+      if (likedBy) {
+        setLikes(likedBy);
+        console.log(likedBy);
+        if (likedBy.includes(user.uid)) {
+          console.log("yes");
+          setHasLiked(true);
+        }
+      } else {
+        setLikes([]);
+      }
     })();
   }, [showCommentBox, rerender]);
+
+  const handleLike = async () => {
+    try {
+      if (hasLiked) {
+        setHasLiked(false);
+        setLikes((likes) => likes.filter((like) => like === user.id));
+        const articleRef = db.collection("articles").doc(id);
+        await articleRef.update({
+          likedBy: firebase.firestore.FieldValue.arrayRemove(user.uid),
+        });
+      } else {
+        setHasLiked(true);
+        setLikes((likes) => [...likes, user.uid]);
+        const articleRef = db.collection("articles").doc(id);
+        await articleRef.update({
+          likedBy: firebase.firestore.FieldValue.arrayUnion(user.uid),
+        });
+      }
+    } catch (error) {
+      triggerPostRerender(rerender + Math.random());
+    }
+  };
   return (
     <Article>
       <SharedActor>
@@ -90,8 +127,8 @@ export function SinglePost({ article, id }) {
         </li>
       </SocialCounts>
       <SocialActions>
-        <button>
-          <span>Like</span>
+        <button onClick={() => handleLike()}>
+          <span>{hasLiked ? "Unlike" : "Like"}</span>
         </button>
         <button onClick={() => setshowCommentBox(true)}>
           <span>Comment</span>
