@@ -120,7 +120,7 @@ export function SinglePost({ article, id }) {
       </SharedImage>
       <SocialCounts>
         <li>
-          <a>{article.length} Likes</a>
+          <a>{likes?.length} Likes</a>
         </li>
         <li>
           <a>{comments.length} Comments</a>
