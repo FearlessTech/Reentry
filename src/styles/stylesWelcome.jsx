@@ -15,12 +15,8 @@ const Nav = styled.nav`
   align-items: center;
   justify-content: space-between;
   padding: 0 3rem;
-  background-color: #2a3e3e39;
+  background-color: #009999;
   transition: ease-in-out 120ms;
-  @media (prefers-color-scheme: dark) {
-    box-shadow: 0px 0px 2px #afafaf6b;
-    background-color: #3c585839;
-  }
   &:hover {
     background-color: #00999947;
     @media (prefers-color-scheme: dark) {
@@ -37,7 +33,7 @@ const Nav = styled.nav`
     }
     &:hover {
       transform: scale(1.05);
-      box-shadow: 0px 0px 5px #00999973;
+      box-shadow: 0px 0px 5px #bebebe73;
     }
   }
 
