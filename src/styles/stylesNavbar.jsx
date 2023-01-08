@@ -1,8 +1,7 @@
 import styled from "styled-components";
 
 const Container = styled.div`
-  background-color: #077a7a;
-  box-shadow: 0 12px 42px 0 #074453af;
+  background-color: #009999;
   border-bottom: 1px solid rgba(0, 0, 0, 0.08);
   left: 0;
   padding: 0 24px;
@@ -10,6 +9,10 @@ const Container = styled.div`
   position: fixed;
   width: 100vw;
   z-index: 100;
+  &:hover {
+    background-color: #077a7a;
+    box-shadow: 0 0 22px #009999;
+  }
 `;
 
 const Content = styled.div`
@@ -104,7 +107,7 @@ const NavListWrap = styled.ul`
     a:after {
       content: "";
       position: absolute;
-      background-color: #a1a9fe;
+      background-color: whitesmoke;
       height: 3px;
       width: 100%;
       left: 0;
@@ -115,7 +118,7 @@ const NavListWrap = styled.ul`
     &:after {
       content: "";
       position: absolute;
-      background-color: #88bbd6;
+      background-color: whitesmoke;
       height: 3px;
       width: 100%;
       left: 0;

@@ -51,7 +51,7 @@ export function SingleComment(
         style={{
           display: "flex",
           alignItems: "center",
-          backgroundColor: "#FFFDD0",
+          backgroundColor: "whitesmoke",
           padding: "10px",
           margin: "5px 15px 5px 15px",
           borderRadius: "10px",

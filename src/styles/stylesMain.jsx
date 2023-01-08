@@ -124,9 +124,9 @@ const SocialActions = styled.div`
     display: inline-flex;
     align-items: center;
     padding: 8px;
-    color: #88bbd6;
+    color: #009999;
     border: none;
-    background-color: #fcf4a3;
+    background-color: whitesmoke;
     border-radius: 5px;
     margin: 5px;
     text-align: center;
@@ -136,7 +136,9 @@ const SocialActions = styled.div`
       }
     }
     &:hover {
-      background-color: #fffdd0;
+      background-color: #077a7a;
+      box-shadow: 0 0 5px #009999;
+      color: whitesmoke;
     }
   }
 `;
@@ -153,7 +155,7 @@ const Content = styled.div`
   }
 `;
 const PostNav = styled.div`
-  background-color: #fcf4a3;
+  background-color: #009999;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -163,13 +165,18 @@ const PostNav = styled.div`
   position: relative;
   border: none;
   border-radius: 0 0 0 1px rgb(0 0 0 / 15%), 0 0 0 rgb(0 0 0 / 20%);
+  &:hover {
+    background-color: #077a7a;
+    box-shadow: 0 0 10px #009999;
+    color: whitesmoke;
+  }
   button {
     display: inline-flex;
     align-items: center;
     padding: 8px;
-    color: #0a66c2;
+    color: #077a7a;
     border: none;
-    background-color: #99d3df;
+    background-color: whitesmoke;
     margin: 8px;
     border-radius: 5px;
 
@@ -179,7 +186,8 @@ const PostNav = styled.div`
       }
     }
     &:hover {
-      background-color: #88bbd6;
+      background-color: #009999;
+      color: whitesmoke;
     }
   }
 `;

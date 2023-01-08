@@ -44,7 +44,7 @@ const Main = (props) => {
         </button>
         <IoMdSettings
           size={30}
-          style={{ margin: "8px", fill: "#99d3df" }}
+          style={{ margin: "8px", fill: "whitesmoke" }}
         ></IoMdSettings>
       </PostNav>
       <Content>
