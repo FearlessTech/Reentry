@@ -70,7 +70,7 @@ const Nav = styled.nav`
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
   border: 1px solid #ffffff2d;
-
+  
   top: 0;
   left: 0;
 

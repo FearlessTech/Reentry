@@ -104,7 +104,7 @@ const NavListWrap = styled.ul`
     a:after {
       content: "";
       position: absolute;
-      background-color: #a1a9fe;
+      background-color: #A1A9FE;
       height: 3px;
       width: 100%;
       left: 0;
@@ -147,7 +147,7 @@ const NavList = styled.li`
       display: flex;
       align-items: center;
     }
-
+    
     @media (max-width: 500px) {
       min-width: 45px;
       padding: 0 5px;
@@ -247,8 +247,9 @@ const Dropdown = styled.div`
     justify-content: center;
     gap: 1rem;
     @media (max-width: 500px) {
-      gap: 0.2rem;
+      gap: .2rem;
     }
+    
   }
   @media (max-width: 500px) {
     top: -100px;

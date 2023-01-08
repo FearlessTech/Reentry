@@ -1,8 +1,13 @@
 // import { useEffect, useRef } from 'react';
-import { Container } from "./styled";
+import { Container } from './styled';
 
 const Parallax = (props) => {
-  return <Container></Container>;
+
+  return (
+    <Container>
+      
+    </Container>
+  );
 };
 
 export default Parallax;

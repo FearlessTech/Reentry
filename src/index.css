@@ -75,7 +75,7 @@ textarea {
 /*// Huge size (Larger screen) max-width: 1281px and greater *!*/
 
 @media (max-width: 768px) {
-  body {
+  body{
     overflow-y: scroll;
   }
 }
