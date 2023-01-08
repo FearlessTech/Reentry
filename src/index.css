@@ -54,17 +54,8 @@ textarea {
 /*// Tablets Ipads portrait mode max-width:1024px*/
 /*// Desktops max-width:1280px*/
 /*// Huge size (Larger screen) max-width: 1281px and greater *!*/
-@media only screen and (max-width: 1024px) {
-  body{
-    overflow-y: scroll;
-  }
-}
-// Mobile (Smartphone) max-width: 480px
-// Low Resolution Tablets and ipads max-width: 767px
-// Tablets Ipads portrait mode max-width:1024px
-// Desktops max-width:1280px
-// Huge size (Larger screen) max-width: 1281px and greater */
-@media only screen and (max-width: 1024px) {
+
+@media (max-width: 768px) {
   body{
     overflow-y: scroll;
   }
