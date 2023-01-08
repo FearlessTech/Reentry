@@ -1,12 +1,30 @@
-
-:root,body,html {
+:root,
+body,
+html {
   background-color: transparent;
   box-sizing: border-box;
   padding: 0;
   margin: 0;
 }
 
-div,h1,h2,h3,h4,h5,h6,navbar,html,i,img,label,li,nav,p,small,span,ul {
+div,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+navbar,
+html,
+i,
+img,
+label,
+li,
+nav,
+p,
+small,
+span,
+ul {
   margin: 0;
   padding: 0;
   border: 0;
@@ -21,13 +39,14 @@ body {
   height: 100vh;
 }
 
-input, textarea {
-  font-family: sans-serif; color: #333;
+input,
+textarea {
+  font-family: sans-serif;
+  color: #333;
 }
 textarea {
-  padding: .5rem 0;
+  padding: 0.5rem 0;
 }
-
 
 @keyframes fadeIn {
   from {

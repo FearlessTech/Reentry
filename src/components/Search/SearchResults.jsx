@@ -19,8 +19,13 @@ export const SearchResults = () => {
   const handleSearch = async (e) => {
     const userSearchQuery = e.target.value;
     console.log(e.keyCode);
-    if ((e.keyCode >= 48 && e.keyCode <= 57) || (e.keyCode >= 65 && e.keyCode <= 91)) {
-      const query = db.collection("articles").where("description", "==", userSearchQuery);
+    if (
+      (e.keyCode >= 48 && e.keyCode <= 57) ||
+      (e.keyCode >= 65 && e.keyCode <= 91)
+    ) {
+      const query = db
+        .collection("articles")
+        .where("description", "==", userSearchQuery);
 
       try {
         setisLoading(true);
@@ -73,7 +78,10 @@ export const SearchResults = () => {
               <p>Loading...</p>
             ) : (
               <>
-                {searchResults.posts.length + searchResults.resources.length + searchResults.users.length === 0 ? (
+                {searchResults.posts.length +
+                  searchResults.resources.length +
+                  searchResults.users.length ===
+                0 ? (
                   <p>No results</p>
                 ) : (
                   <div className={styles.result_list}>

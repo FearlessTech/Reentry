@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 const StyledLoading = styled.div`
   width: 99%;
@@ -9,7 +9,7 @@ const StyledLoading = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: -apple-system, Roboto, 'Open Sans', sans-serif;
+  font-family: -apple-system, Roboto, "Open Sans", sans-serif;
   font-size: 7rem;
   font-weight: 700;
   color: #88bbd6;

@@ -27,22 +27,52 @@ export function AddComment({ articleId, setshowCommentBox }) {
   return (
     <div style={{ display: "flex", width: "auto", padding: "1%" }}>
       <div>
-        <img src={user.photoURL} alt="commenter profile picture" width="40px" height="40px" style={{ borderRadius: "5px" }} />
+        <img
+          src={user.photoURL}
+          alt="commenter profile picture"
+          width="40px"
+          height="40px"
+          style={{ borderRadius: "5px" }}
+        />
       </div>
       <div style={{ width: "100%" }}>
-        <form onSubmit={(e) => addCommentToFireStoreDocument(e, articleId)} style={{ display: "flex", flexDirection: "column" }}>
-          <textarea style={{ width: "95%" }} type="text" value={commentText} onChange={(e) => setcommentText(e.target.value)} required />
-          <ButtonGroup style={{ justifyContent: "flex-end", width: "95%", marginTop: "5px" }}>
+        <form
+          onSubmit={(e) => addCommentToFireStoreDocument(e, articleId)}
+          style={{ display: "flex", flexDirection: "column" }}
+        >
+          <textarea
+            style={{ width: "95%" }}
+            type="text"
+            value={commentText}
+            onChange={(e) => setcommentText(e.target.value)}
+            required
+          />
+          <ButtonGroup
+            style={{
+              justifyContent: "flex-end",
+              width: "95%",
+              marginTop: "5px",
+            }}
+          >
             <Button
               size="small"
               variant="outlined"
-              style={{ alignSelf: "start", backgroundColor: "#88BBD6", marginRight: "5px", border: "none" }}
+              style={{
+                alignSelf: "start",
+                backgroundColor: "#88BBD6",
+                marginRight: "5px",
+                border: "none",
+              }}
               type="submit"
               disabled={!commentText.length > 0}
             >
               Add Comment
             </Button>
-            <Button size="small" style={{ border: "none" }} onClick={() => setshowCommentBox(false)}>
+            <Button
+              size="small"
+              style={{ border: "none" }}
+              onClick={() => setshowCommentBox(false)}
+            >
               Cancel
             </Button>
           </ButtonGroup>

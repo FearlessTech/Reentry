@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 const Container = styled.div`
   background-color: #077a7a;
@@ -102,7 +102,7 @@ const NavListWrap = styled.ul`
 
   .active {
     a:after {
-      content: '';
+      content: "";
       position: absolute;
       background-color: #A1A9FE;
       height: 3px;
@@ -113,7 +113,7 @@ const NavListWrap = styled.ul`
   }
   .dropdown-item.active {
     &:after {
-      content: '';
+      content: "";
       position: absolute;
       background-color: #88bbd6;
       height: 3px;

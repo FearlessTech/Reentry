@@ -17,15 +17,15 @@ const Network = () => {
           <h2>Users Network</h2>
         </QueryBoxHeader>
         <QueryOptions>
-          <br/>
+          <br />
           <h3>Search Box</h3>
-          <br/>
+          <br />
           <h3>My Network</h3>
-          <br/>
+          <br />
           <h3>Status Pending</h3>
-          <br/>
+          <br />
           <h3>Request Pending</h3>
-          <br/>
+          <br />
           <h3>People You May Know</h3>
         </QueryOptions>
       </QueryBox>
@@ -35,28 +35,28 @@ const Network = () => {
         </ShowQueryBoxHeader>
         <QueriedItems>
           <QueryResult>
-            <img src='/images/user.svg' alt=''/>
+            <img src="/images/user.svg" alt="" />
           </QueryResult>
           <QueryResult>
-            <img src='/images/user.svg' alt=''/>
+            <img src="/images/user.svg" alt="" />
           </QueryResult>
           <QueryResult>
-            <img src='/images/user.svg' alt=''/>
+            <img src="/images/user.svg" alt="" />
           </QueryResult>
           <QueryResult>
-            <img src='/images/user.svg' alt=''/>
+            <img src="/images/user.svg" alt="" />
           </QueryResult>
           <QueryResult>
-            <img src='/images/user.svg' alt=''/>
+            <img src="/images/user.svg" alt="" />
           </QueryResult>
           <QueryResult>
-            <img src='/images/user.svg' alt=''/>
+            <img src="/images/user.svg" alt="" />
           </QueryResult>
           <QueryResult>
-            <img src='/images/user.svg' alt=''/>
+            <img src="/images/user.svg" alt="" />
           </QueryResult>
           <QueryResult>
-            <img src='/images/user.svg' alt=''/>
+            <img src="/images/user.svg" alt="" />
           </QueryResult>
         </QueriedItems>
       </ShowQueryBox>

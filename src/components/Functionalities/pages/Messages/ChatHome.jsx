@@ -32,8 +32,7 @@ function UsersComponent(props) {
   return (
     <List
       dense
-      sx={{ width: "100%", maxWidth: 360,
-        bgcolor: "background.paper" }}
+      sx={{ width: "100%", maxWidth: 360, bgcolor: "background.paper" }}
     >
       {props.users?.map((value, index) => {
         const labelId = `checkbox-list-secondary-label-${value}`;
@@ -52,8 +51,7 @@ function UsersComponent(props) {
                     src={`${value.username}.jpg`}
                   />
                 </ListItemAvatar>
-                <ListItemText id={labelId}
-                              primary={`${value.username}`} />
+                <ListItemText id={labelId} primary={`${value.username}`} />
               </ListItemButton>
             </ListItem>
           );
@@ -207,24 +205,24 @@ export default function Home() {
                         : "row",
                   }}
                 >
-				<span
-          style={{
-            backgroundColor: "#BB8FCE",
-            padding: 6,
-            borderTopLeftRadius:
-              user?.uid == messages.messageUserId ? 10 : 0,
-            borderTopRightRadius:
-              user?.uid == messages.messageUserId ? 0 : 10,
-            borderBottomLeftRadius: 10,
-            borderBottomRightRadius: 10,
-            maxWidth: 400,
-            fontSize: 15,
-            textAlign:
-              user?.uid == messages.messageUserId ? "right" : "left",
-          }}
-        >
-					{messages.message}
-				</span>
+                  <span
+                    style={{
+                      backgroundColor: "#BB8FCE",
+                      padding: 6,
+                      borderTopLeftRadius:
+                        user?.uid == messages.messageUserId ? 10 : 0,
+                      borderTopRightRadius:
+                        user?.uid == messages.messageUserId ? 0 : 10,
+                      borderBottomLeftRadius: 10,
+                      borderBottomRightRadius: 10,
+                      maxWidth: 400,
+                      fontSize: 15,
+                      textAlign:
+                        user?.uid == messages.messageUserId ? "right" : "left",
+                    }}
+                  >
+                    {messages.message}
+                  </span>
                 </div>
               );
             })}

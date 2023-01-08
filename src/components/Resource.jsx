@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
-import DeleteOutlineIcon from '@material-ui/icons/DeleteOutline';
-import { IoIosBookmark, IoIosEyeOff, IoMdCloseCircle } from 'react-icons/io';
-import { IoCreateOutline } from 'react-icons/io5';
-import { HiBellAlert } from 'react-icons/hi2';
-import { FiTarget } from 'react-icons/fi';
+import React, { useState } from "react";
+import DeleteOutlineIcon from "@material-ui/icons/DeleteOutline";
+import { IoIosBookmark, IoIosEyeOff, IoMdCloseCircle } from "react-icons/io";
+import { IoCreateOutline } from "react-icons/io5";
+import { HiBellAlert } from "react-icons/hi2";
+import { FiTarget } from "react-icons/fi";
 import {
   ResourceDiv,
   StyledLeftASide,
@@ -31,8 +31,8 @@ import {
   RB,
   RBottomBox,
   RBLink,
-} from '../styles/styledResource';
-import { Link } from 'react-router-dom';
+} from "../styles/styledResource";
+import { Link } from "react-router-dom";
 
 const Recent = (props) => {
   const [open, setOpen] = useState(true);
@@ -49,7 +49,7 @@ const Recent = (props) => {
           </MTcontent>
           <IoMdCloseCircle
             size={25}
-            color='#a5a5a5'
+            color="#a5a5a5"
             onClick={() => {
               setOpen(!open);
             }}
@@ -64,33 +64,33 @@ const Resource = (props) => {
   const ocupations = [
     {
       logoUrl: null,
-      title: 'Account Manager',
-      name: 'Digital Room',
-      address: 'Glendal, CA (On-site)',
+      title: "Account Manager",
+      name: "Digital Room",
+      address: "Glendal, CA (On-site)",
       activelyRecruiting: true, // Actively recruiting
       isPromoted: true, // Promoted
     },
     {
       logoUrl: null,
-      title: 'Account Manager',
-      name: 'Digital Room',
-      address: 'Glendal, CA (On-site)',
+      title: "Account Manager",
+      name: "Digital Room",
+      address: "Glendal, CA (On-site)",
       activelyRecruiting: true, // Actively recruiting
       isPromoted: true, // Promoted
     },
     {
       logoUrl: null,
-      title: 'Account Manager',
-      name: 'Digital Room',
-      address: 'Glendal, CA (On-site)',
+      title: "Account Manager",
+      name: "Digital Room",
+      address: "Glendal, CA (On-site)",
       activelyRecruiting: true, // Actively recruiting
       isPromoted: true, // Promoted
     },
     {
       logoUrl: null,
-      title: 'Account Manager',
-      name: 'Digital Room',
-      address: 'Glendal, CA (On-site)',
+      title: "Account Manager",
+      name: "Digital Room",
+      address: "Glendal, CA (On-site)",
       activelyRecruiting: true, // Actively recruiting
       isPromoted: true, // Promoted
     },
@@ -98,7 +98,7 @@ const Resource = (props) => {
 
   return (
     <ResourceDiv>
-      <div className='main-container'>
+      <div className="main-container">
         <StyledLeftASide>
           <LeftOptions>
             <LeftBox>
@@ -130,7 +130,7 @@ const Resource = (props) => {
           <MiddleM>
             <h2>Recommended for you</h2>
             <p>Based on your profile and search history.</p>
-            <div className='cards'>
+            <div className="cards">
               {ocupations.map(
                 ({
                   logoUrl,
@@ -144,7 +144,7 @@ const Resource = (props) => {
                     <OcupationCard key={name}>
                       <OcupationCardLogo>
                         <img
-                          src={logoUrl ? logoUrl : '/images/user.svg'}
+                          src={logoUrl ? logoUrl : "/images/user.svg"}
                           alt={name}
                         />
                       </OcupationCardLogo>
@@ -154,23 +154,23 @@ const Resource = (props) => {
                         <span>{name}</span>
                         <span>{address}</span>
                         <ActiveLogo>
-                          <FiTarget color='#990000' />
+                          <FiTarget color="#990000" />
                           <span>
-                            {activelyRecruiting ? 'Actively recruiting' : ''}
+                            {activelyRecruiting ? "Actively recruiting" : ""}
                           </span>
                         </ActiveLogo>
                         <ContentBottom>
-                          <span>{isPromoted ? 'Promoted' : ''}</span>
+                          <span>{isPromoted ? "Promoted" : ""}</span>
                         </ContentBottom>
                       </OcupationCardInfo>
 
                       <ActionsContainer>
                         <Actions>
                           <IconHolder>
-                            <IoIosEyeOff className='hide' size={18} />
+                            <IoIosEyeOff className="hide" size={18} />
                           </IconHolder>
                           <IconHolder>
-                            <DeleteOutlineIcon className='delete' size={18} />
+                            <DeleteOutlineIcon className="delete" size={18} />
                           </IconHolder>
                         </Actions>
                       </ActionsContainer>

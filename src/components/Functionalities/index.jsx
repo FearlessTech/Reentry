@@ -4,6 +4,7 @@ import BirdsParallax from './pages/BirdsParallax';
 import Network from './pages/Network';
 import NotFound from '../Fallbacks/NotFound';
 
+
 const Functionalities = (props) => {
   return (
     <>

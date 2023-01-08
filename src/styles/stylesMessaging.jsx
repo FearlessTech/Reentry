@@ -3,9 +3,9 @@ import styled from "styled-components";
 const Container = styled.div`
   padding-top: 52px;
   max-width: 100%;
-  max-height: 100% ;
+  max-height: 100%;
   display: flex;
-  background-color: #CDCDCD;
+  background-color: #cdcdcd;
   min-height: 100vh;
 `;
 
@@ -24,7 +24,7 @@ const MessengersHeader = styled.div`
   width: 87%;
   height: 10%;
   margin-top: 20px;
-  margin-left: 20px ;
+  margin-left: 20px;
   margin-right: 20px;
   background-color: #88bbd6;
   border-radius: 10px;
@@ -34,7 +34,7 @@ const ActorsList = styled.div`
   display: flex;
   flex-direction: column;
   margin-bottom: 20px;
-  margin-left: 20px ;
+  margin-left: 20px;
   margin-right: 20px;
   width: 87%;
   height: 90%;
@@ -51,8 +51,6 @@ const Messages = styled.div`
   background-color: #e9e9e9;
   height: 85vh;
   border-radius: 10px;
-  
-  
 `;
 
 const MessagesHeader = styled.div`
@@ -61,7 +59,7 @@ const MessagesHeader = styled.div`
   height: 10%;
   border-radius: 10px;
   margin-top: 20px;
-  margin-left: 20px ;
+  margin-left: 20px;
   margin-right: 20px;
   background-color: #88bbd6;
 `;
@@ -69,7 +67,7 @@ const MessagesHeader = styled.div`
 const SelectedAct = styled.div`
   display: flex;
   flex-direction: column;
-  margin-left: 20px ;
+  margin-left: 20px;
   margin-right: 20px;
   width: 96%;
   height: 65%;
@@ -81,7 +79,7 @@ const SelectedAct = styled.div`
 
 const Reply = styled.div`
   margin-bottom: 20px;
-  margin-left: 20px ;
+  margin-left: 20px;
   margin-right: 20px;
   width: 96%;
   height: 25%;
