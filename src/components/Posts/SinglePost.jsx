@@ -60,7 +60,10 @@ export function SinglePost({ article, id }) {
     try {
       if (hasLiked) {
         setHasLiked(false);
-        setLikes((likes) => likes.filter((like) => like === user.id));
+        const updatedLikes = likes.slice();
+        const index = updatedLikes.indexOf(user.id);
+        updatedLikes.splice(index, 1);
+        setLikes(updatedLikes);
         const articleRef = db.collection("articles").doc(id);
         await articleRef.update({
           likedBy: firebase.firestore.FieldValue.arrayRemove(user.uid),
