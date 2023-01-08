@@ -148,7 +148,7 @@ const Notifications = () => {
             </span>
 
             <RBLink>
-              <img src='/images/PRAIcon.png' alt='' />
+              <img src="/images/PRAIcon.png" alt="" />
               <p> Maine Reentry Resources © 2022</p>
             </RBLink>
           </RBottomBox>
