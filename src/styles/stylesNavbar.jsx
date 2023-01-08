@@ -1,7 +1,8 @@
 import styled from "styled-components";
 
 const Container = styled.div`
-  background-color: #88bbd6;
+  background-color: #077a7a;
+  box-shadow: 0 12px 42px 0 #074453af;
   border-bottom: 1px solid rgba(0, 0, 0, 0.08);
   left: 0;
   padding: 0 24px;
@@ -16,24 +17,33 @@ const Content = styled.div`
   align-items: center;
   margin: 0 auto;
   min-height: 100%;
-  max-width: 1128px;
+  max-width: 100vw;
 `;
 
 const Logo = styled.span`
   margin-right: 8px;
+  margin-left: 8px;
   font-size: 0px;
+  a {
+    img {
+      width: 15vw;
+      @media (max-width: 500px) {
+        width: 35vw;
+      }
+    }
+  }
+  @media (max-width: 768px) {
+    margin-right: 2px;
+    margin-left: 2px;
 `;
 
 const Search = styled.div`
   opacity: 1;
   flex-grow: 1;
   position: relative;
-
   & > div {
     max-width: 280px;
-
     input {
-      border: none;
       box-shadow: none;
       background-color: #eef3f8;
       border-radius: 2px;
@@ -46,6 +56,12 @@ const Search = styled.div`
       height: 34px;
       border-color: #dce6f1;
       vertical-align: text-top;
+      @media (max-width: 500px) {
+        width: 150px;
+      }
+      @media (max-width: 1124px) {
+        width: 150px;
+      }
     }
   }
 `;
@@ -66,14 +82,16 @@ const SearchIcon = styled.div`
 
 const Nav = styled.nav`
   margin-left: auto;
+  margin-right: 10px;
   display: block;
 
-  @media (max-width: 768px) {
+  @media (max-width: 500px) {
     position: fixed;
     left: 0;
     bottom: 0;
-    background: #88bbd6;
-    width: 100%;
+    background-color: #077a7a;
+    box-shadow: 0 12px 42px 0 #074453af;
+    width: 100vw;
   }
 `;
 
@@ -86,7 +104,7 @@ const NavListWrap = styled.ul`
     a:after {
       content: "";
       position: absolute;
-      background-color: #fcf4a3;
+      background-color: #A1A9FE;
       height: 3px;
       width: 100%;
       left: 0;
@@ -97,7 +115,7 @@ const NavListWrap = styled.ul`
     &:after {
       content: "";
       position: absolute;
-      background-color: #fcf4a3;
+      background-color: #88bbd6;
       height: 3px;
       width: 100%;
       left: 0;
@@ -124,18 +142,23 @@ const NavList = styled.li`
     position: relative;
     text-decoration: none;
     padding: 0 10px;
-
     span {
       color: rgba(0, 0, 0, 0.6);
       display: flex;
       align-items: center;
     }
-
-    @media (max-width: 768px) {
-      min-width: 70px;
+    
+    @media (max-width: 500px) {
+      min-width: 45px;
+      padding: 0 5px;
+      font-size: 8px;
+    }
+    @media (max-width: 1124px) {
+      padding: 5px;
+      font-size: 8px;
+      min-width: 75px;
     }
   }
-
   &:hover,
   &:active {
     a {
@@ -143,6 +166,11 @@ const NavList = styled.li`
         color: rgba(0, 0, 0, 0.9);
       }
     }
+  }
+  @media (max-width: 500px) {
+    min-width: 25px;
+    padding: 0 2px;
+    font-size: 8px;
   }
 `;
 
@@ -152,13 +180,19 @@ const SignOut = styled.div`
   top: 48px;
   background: #e9e9e9;
   border-radius: 0 0 5px 5px;
-  width: 100px;
+  width: 70px;
   box-shadow: 2px 3px 5px -2px rgba(110, 104, 104, 0.75);
-  height: 100%;
+  height: auto;
   font-size: 16px;
   transition-duration: 167ms;
   text-align: center;
   display: none;
+  @media (max-width: 500px) {
+    top: -48px;
+    right: 2px;
+    width: 60px;
+    border-radius: 5px;
+  }
 `;
 
 const User = styled(NavList)`
@@ -189,6 +223,9 @@ const User = styled(NavList)`
       justify-content: center;
     }
   }
+  @media (max-width: 1124px) {
+    margin-right: 10px;
+  }
 `;
 
 const Dropdown = styled.div`
@@ -207,8 +244,16 @@ const Dropdown = styled.div`
   a {
     display: flex;
     flex-direction: row;
-    justify-content: left;
+    justify-content: center;
     gap: 1rem;
+    @media (max-width: 500px) {
+      gap: .2rem;
+    }
+    
+  }
+  @media (max-width: 500px) {
+    top: -100px;
+    border-radius: 5px;
   }
 `;
 const More = styled(NavList)`

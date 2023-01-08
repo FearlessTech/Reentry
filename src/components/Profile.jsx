@@ -1,8 +1,8 @@
-import { connect } from "react-redux";
-import { Link } from "react-router-dom";
+import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 
-import { AiOutlineUserAdd, AiOutlinePlus } from "react-icons/ai";
-import { BsFillBookmarkFill } from "react-icons/bs";
+import { AiOutlineUserAdd, AiOutlinePlus } from 'react-icons/ai';
+import { BsFillBookmarkFill } from 'react-icons/bs';
 
 import {
   Container,
@@ -16,7 +16,7 @@ import {
   AddPhotoText,
   ProfileMain,
   ProfileLeft,
-} from "../styles/stylesProfile.jsx";
+} from '../styles/stylesProfile.jsx';
 
 const Profile = (props) => {
   return (
@@ -25,15 +25,15 @@ const Profile = (props) => {
         <ArtCard>
           <UserInfo>
             <CardBackground />
-            <Link to={<Profile />} className="welcome">
+            <Link to={<Profile />} className='welcome'>
               <Photo>
                 {props.user && props.user.photoURL ? (
-                  <img src={props.user.photoURL} alt="" />
+                  <img src={props.user.photoURL} alt='' />
                 ) : (
-                  <img src="/images/user.svg" alt="" />
+                  <img src='/images/user.svg' alt='' />
                 )}
               </Photo>
-              <h3>Welcome, {props.user ? props.user.displayName : "there"}!</h3>
+              <h3>Welcome, {props.user ? props.user.displayName : 'there'}!</h3>
             </Link>
             <a>
               <AddPhotoText></AddPhotoText>
@@ -71,7 +71,9 @@ const Profile = (props) => {
         </CommunityCard>
       </ProfileLeft>
       <ProfileMain>
-        <h1>Profile</h1>
+        <main>
+          <h1>Profile</h1>
+        </main>
       </ProfileMain>
     </Container>
   );

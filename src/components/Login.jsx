@@ -66,7 +66,7 @@ const Login = (props) => {
     <Container>
       {props.user && <Redirect to="/home" />}
       <Nav className={sideBar ? "open" : ""}>
-        <img src="/images/RRLogo.png" alt="" />
+        <img src='/images/PRAIcon.png' alt='' />
         <NavBTN
           className="button"
           onClick={() => {
@@ -113,19 +113,12 @@ const Login = (props) => {
         </NavBTN>
         <div className="dragger" onClick={(e) => setSideBar(!sideBar)}></div>
       </Nav>
-      <main>
-        <SectionB>
-          <div>
-            <h5>Be cautious on social networking sites.</h5>
-            <br />
-            <h5>
-              Remember: once posted, always posted. Protect your reputation on
-              social networks. What you post online stays online. Think twice
-              before posting pictures you wouldn't want your parents or future
-              employers to see.
-            </h5>
-            <br />
-            <h5>Build a positive online reputation.</h5>
+      <main  className={sideBar ? "open" : ""}>
+      <SectionB>
+        <div>
+          <h5>
+            Be cautious on social networking sites.
+          </h5>
             <br />
             <h5>
               Keep personal info personal. Be careful how much personal info you
