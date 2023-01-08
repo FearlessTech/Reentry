@@ -6,7 +6,7 @@ export function isUrl(str) {
 }
 
 export function splitString(string) {
-  const corrected = string.replaceAll(httpRegex, '<url*>$1<url*>');
-  const stringArr = corrected.split('<url*>');
+  const corrected = string.replaceAll(httpRegex, "<url*>$1<url*>");
+  const stringArr = corrected.split("<url*>");
   return stringArr;
 }

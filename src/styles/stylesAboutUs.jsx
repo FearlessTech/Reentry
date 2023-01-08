@@ -40,13 +40,8 @@ const Info = styled.div`
     margin: 5px;
   }
   p: {
-    font-size: .7rem;
+    font-size: 0.7rem;
   }
 `;
 
-export {
-  Container,
-  Content,
-  Image,
-  Info,
-};
+export { Container, Content, Image, Info };

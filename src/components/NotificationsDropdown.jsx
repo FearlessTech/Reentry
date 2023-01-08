@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
-import styled from 'styled-components';
-import MoreHorizIcon from '@material-ui/icons/MoreHoriz';
-import { Link } from 'react-router-dom';
+import React, { useState } from "react";
+import styled from "styled-components";
+import MoreHorizIcon from "@material-ui/icons/MoreHoriz";
+import { Link } from "react-router-dom";
 
 const StNotificationsDropDown = styled.div`
   .more {
@@ -42,13 +42,13 @@ const NotificationsDropdown = ({ notifications, setNotifications, id }) => {
   const [open, setOpen] = useState(false);
   return (
     <StNotificationsDropDown>
-      <MoreHorizIcon onClick={(e) => setOpen(!open)} className='more' />
+      <MoreHorizIcon onClick={(e) => setOpen(!open)} className="more" />
       {!open || (
         <>
-          <div className='closespan' onClick={(e) => setOpen(!open)} />
-          <div className='dropdown'>
+          <div className="closespan" onClick={(e) => setOpen(!open)} />
+          <div className="dropdown">
             <Link
-              to='#'
+              to="#"
               onClick={(e) => {
                 e.preventDefault();
                 setNotifications(() => {

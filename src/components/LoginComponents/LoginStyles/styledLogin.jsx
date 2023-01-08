@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 const StyledLogin = styled.div`
   background-color: white;
   display: flex;
@@ -105,9 +105,9 @@ const StyledLogin = styled.div`
     font-weight: 600;
     @media (prefers-color-scheme: dark) {
       color: #c1c1c1;
-    a {
-      color: #015858;
-    }
+      a {
+        color: #015858;
+      }
     }
     a {
       color: #009999;

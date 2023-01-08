@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 const Container = styled.div`
   height: 100vh;
@@ -24,17 +24,32 @@ const Container = styled.div`
   main {
     display: flex;
     margin: 1rem auto;
+    flex-wrap: wrap;
     justify-content: center;
     width: 1300px;
     max-width: 100%;
     justify-content: space-around;
     align-items: center;
     height: max-content;
+    column-gap: 1rem;
+    row-gap: 1rem;
+
+    &:not(.open) {
+      padding-left: 255px;
+    }
+    &.open {
+      padding-left: 2rem;
+    }
+
     @media (max-width: 650px) {
       margin: 1rem;
       margin-top: 1rem;
       flex-direction: column;
       padding: 15px;
+      transition: 400ms ease-in-out;
+      &:not(.open) {
+        padding-left: 15px;
+      }
     }
   }
 `;
@@ -45,13 +60,17 @@ const Nav = styled.nav`
   overflow-x: hidden;
   padding-top: 20px;
   padding-bottom: 20px;
-  box-shadow: 5px 5px 15px #0aaaaa;
   display: flex;
   justify-content: space-between;
   flex-direction: column;
   align-items: center;
   transition: ease-in-out 180ms;
   background-color: #077a7a;
+  box-shadow: 0 12px 42px 0 #074453af;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border: 1px solid #ffffff2d;
+
   top: 0;
   left: 0;
 
@@ -59,23 +78,6 @@ const Nav = styled.nav`
     z-index: 1;
     left: -235px;
     top: 0;
-  }
-
-  @media (prefers-color-scheme: dark) {
-    box-shadow: 0px 0px 2px #afafaf6b;
-    background: rgba(255, 255, 255, 0.25);
-    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-    backdrop-filter: blur(4px);
-    -webkit-backdrop-filter: blur(4px);
-    border: 1px solid rgba(255, 255, 255, 0.18);
-  }
-
-  &:hover {
-    background-color: #0aaaaa;
-    @media (prefers-color-scheme: dark) {
-      box-shadow: 0px 0px 1px #4848486b;
-      background-color: #343f3f39;
-    }
   }
 
   .logo {
@@ -128,9 +130,10 @@ const NavBTN = styled.button`
 
 const SectionA = styled.section`
   height: 90vh;
-  max-width: 50%;
   display: flex;
   align-items: center;
+  justify-content: center;
+  flex: 1 1 250px;
   & > * {
     max-width: 500px;
   }
@@ -149,11 +152,10 @@ const SectionA = styled.section`
 
 const SectionB = styled.section`
   height: 90%;
-  max-width: 50%;
-  width: 30vw;
   display: flex;
   align-items: center;
   margin-top: 2rem;
+  flex: 1 1 350px;
   *::selection {
     background-color: #343434;
     color: white;

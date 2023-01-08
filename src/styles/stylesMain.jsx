@@ -2,7 +2,6 @@ import styled from "styled-components";
 
 const Container = styled.div`
   grid-area: main;
- 
 `;
 
 const CommonCard = styled.div`
@@ -20,7 +19,6 @@ const Article = styled(CommonCard)`
   padding: 0;
   margin: 0 0 8px;
   overflow: visible;
-
 `;
 
 const SharedActor = styled.div`
@@ -56,7 +54,7 @@ const SharedActor = styled.div`
           font-weight: 700;
           color: rgba(0, 0, 0, 1);
         }
-        &:nth-child(n+1) {
+        &:nth-child(n + 1) {
           font-size: 12px;
           color: rgba(0, 0, 0, 0.6);
         }
@@ -76,7 +74,7 @@ const SharedActor = styled.div`
 const Description = styled.div`
   padding: 0 16px;
   overflow: hidden;
-  color: rgba(0,0,0,0.9);
+  color: rgba(0, 0, 0, 0.9);
   font-size: 14px;
   text-align: left;
 `;
@@ -126,9 +124,9 @@ const SocialActions = styled.div`
     display: inline-flex;
     align-items: center;
     padding: 8px;
-    color: #88BBD6;
+    color: #88bbd6;
     border: none;
-    background-color: #FCF4A3;
+    background-color: #fcf4a3;
     border-radius: 5px;
     margin: 5px;
     text-align: center;
@@ -138,7 +136,7 @@ const SocialActions = styled.div`
       }
     }
     &:hover {
-      background-color: #FFFDD0;
+      background-color: #fffdd0;
     }
   }
 `;
@@ -146,16 +144,16 @@ const SocialActions = styled.div`
 const Content = styled.div`
   text-align: center;
   overflow-y: scroll;
-  max-height: 500px;
+  height: 100vh;
   ::-webkit-scrollbar {
-      display: none;
+    display: none;
   }
   & > img {
     width: 30px;
   }
 `;
 const PostNav = styled.div`
-  background-color: #FCF4A3;
+  background-color: #fcf4a3;
   display: flex;
   flex-direction: row;
   justify-content: space-between;

@@ -1,13 +1,19 @@
-import { connect } from 'react-redux';
-import { signInAPI } from '../actions';
-import { Redirect } from 'react-router-dom';
-import { useState, useEffect } from 'react';
+import { connect } from "react-redux";
+import { signInAPI } from "../actions";
+import { Redirect } from "react-router-dom";
+import { useState, useEffect } from "react";
 
-import LoginForm from './LoginComponents/Login';
-import SignUpForm from './LoginComponents/Signup';
-import { ImFacebook2, ImGoogle2, ImTwitter, ImMail3, ImPen, ImWindows8 } from "react-icons/im";
-import {IoCloseCircle} from "react-icons/io5"
-
+import LoginForm from "./LoginComponents/Login";
+import SignUpForm from "./LoginComponents/Signup";
+import {
+  ImFacebook2,
+  ImGoogle2,
+  ImTwitter,
+  ImMail3,
+  ImPen,
+  ImWindows8,
+} from "react-icons/im";
+import { IoCloseCircle } from "react-icons/io5";
 
 import {
   Container,
@@ -17,8 +23,8 @@ import {
   Nav,
   Close,
   NavBTN,
-} from '../styles/stylesLogin';
-import { Link } from 'react-router-dom';
+} from "../styles/stylesLogin";
+import { Link } from "react-router-dom";
 
 const Login = (props) => {
   const [login, setLogin] = useState(true);
@@ -32,12 +38,12 @@ const Login = (props) => {
     return (
       <Form>
         <Close onClick={() => setShow(false)}>
-          <IoCloseCircle size={22} color="#cbcbcb" className='close-icon'/>
+          <IoCloseCircle size={22} color="#cbcbcb" className="close-icon" />
         </Close>
         {login ? (
           <LoginForm>
-            <span className='sign-up'>
-              Doesn't have an account?{' '}
+            <span className="sign-up">
+              Doesn't have an account?{" "}
               <Link
                 onClick={(e) => {
                   e.preventDefault();
@@ -58,92 +64,84 @@ const Login = (props) => {
 
   return (
     <Container>
-      {props.user && <Redirect to='/home' />}
+      {props.user && <Redirect to="/home" />}
       <Nav className={sideBar ? "open" : ""}>
-        <img src='/images/RRLogo.png' alt='' />
+        <img src="/images/PRAIcon.png" alt="" />
         <NavBTN
-          className='button'
+          className="button"
           onClick={() => {
             setLogin(false);
             setShow(true);
           }}
         >
-          <ImPen/>
+          <ImPen />
           Join Now
         </NavBTN>
         <NavBTN
-          className='button'
+          className="button"
           onClick={() => {
             setLogin(true);
             setShow(true);
           }}
         >
-          <ImMail3/>
+          <ImMail3 />
           Email Login
         </NavBTN>
         <NavBTN onClick={() => props.signIn()}>
-          <div className='icon'>
-            <ImGoogle2/>
+          <div className="icon">
+            <ImGoogle2 />
           </div>
           <span>Google Login</span>
         </NavBTN>
         <NavBTN onClick={() => props.signIn()}>
-          <div className='icon'>
-            <ImFacebook2/>
+          <div className="icon">
+            <ImFacebook2 />
           </div>
           <span>Facebook Login</span>
         </NavBTN>
         <NavBTN onClick={() => props.signIn()}>
-          <div className='icon'>
-            <ImTwitter/>
+          <div className="icon">
+            <ImTwitter />
           </div>
           <span>Twitter Login</span>
         </NavBTN>
         <NavBTN onClick={() => props.signIn()}>
-          <div className='icon'>
-            <ImWindows8/>
+          <div className="icon">
+            <ImWindows8 />
           </div>
           <span>Microsoft Login</span>
         </NavBTN>
-        <div className="dragger" onClick={(e) => setSideBar(!sideBar)}>
-        </div>
+        <div className="dragger" onClick={(e) => setSideBar(!sideBar)}></div>
       </Nav>
-      <main>
-      <SectionB>
-        <div>
-          <h5>
-            Be cautious on social networking sites.
-          </h5>
+      <main className={sideBar ? "open" : ""}>
+        <SectionB>
+          <div>
+            <h5>Be cautious on social networking sites.</h5>
             <br />
-          <h5>
-            Remember: once posted, always posted. Protect your reputation on social networks. What you post online stays
-            online. Think twice before posting pictures you wouldn't want your parents or future employers to see.
-          </h5>
-          <br />
-          <h5>
-            Build a positive online reputation.
-          </h5>
-          <br />
-          <h5>
-            Keep personal info personal. Be careful how much personal info you provide on social networking sites.
-            The more information you post, the easier it may be for someone to use that information to steal your
-            identity, access your data, or commit other crimes such as stalking.
-          </h5>
-          <br />
-          <h5>
-            Protect your computer. Security start with protecting your computer. Install Antivirus software. Keep your
-            operating system, web browser, and other software current.
-          </h5>
-          <br />
-          <h5>
-            Use strong passwords. Make sure that your password is at least eight characters long and consists of some
-            combination of letters, numbers, and special characters (for example, +, @, #, or $).
-          </h5>
-        </div>
-      </SectionB>
-      <SectionA>
-        <Modal show={show} />
-      </SectionA>
+            <h5>
+              Keep personal info personal. Be careful how much personal info you
+              provide on social networking sites. The more information you post,
+              the easier it may be for someone to use that information to steal
+              your identity, access your data, or commit other crimes such as
+              stalking.
+            </h5>
+            <br />
+            <h5>
+              Protect your computer. Security start with protecting your
+              computer. Install Antivirus software. Keep your operating system,
+              web browser, and other software current.
+            </h5>
+            <br />
+            <h5>
+              Use strong passwords. Make sure that your password is at least
+              eight characters long and consists of some combination of letters,
+              numbers, and special characters (for example, +, @, #, or $).
+            </h5>
+          </div>
+        </SectionB>
+        <SectionA>
+          <Modal show={show} />
+        </SectionA>
       </main>
     </Container>
   );

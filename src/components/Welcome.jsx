@@ -3,8 +3,14 @@ import { signInAPI } from "../actions";
 import { Redirect } from "react-router-dom";
 import { useEffect } from "react";
 
-import { Container, Nav, LoginBtn1, Section, Hero } from "../styles/stylesWelcome";
-import { Link } from "react-router-dom";
+import {
+  Container,
+  Nav,
+  LoginBtn1,
+  Section,
+  Hero,
+} from "../styles/stylesWelcome";
+import { Link, Navigate } from "react-router-dom";
 
 const Welcome = (props) => {
   useEffect(() => {
@@ -22,7 +28,7 @@ const Welcome = (props) => {
     <Container id="parallax">
       <Nav>
         <a href="/" className="logo">
-          <img src="/images/MaineRRLogo.png" alt="" />
+          <img src="/images/PRALgLogo.png" alt="" />
         </a>
         <div className="button-container">
           <LoginBtn1>

@@ -35,14 +35,24 @@ const Main = (props) => {
   return (
     <Container>
       <PostNav>
-        <button onClick={handleClick} disabled={!!props.loading} className="post-space">
+        <button
+          onClick={handleClick}
+          disabled={!!props.loading}
+          className="post-space"
+        >
           Start a Post
         </button>
-        <IoMdSettings size={30} style={{ margin: "8px", fill: "#99d3df" }}></IoMdSettings>
+        <IoMdSettings
+          size={30}
+          style={{ margin: "8px", fill: "#99d3df" }}
+        ></IoMdSettings>
       </PostNav>
       <Content>
         {props.loading && <img src="public/images/spin-loading.gif" alt="" />}
-        {props.articles.length != 0 && props.articles.map((article) => <SinglePost article={article} id={article.id} key={article.id} />)}
+        {props.articles.length != 0 &&
+          props.articles.map((article) => (
+            <SinglePost article={article} id={article.id} key={article.id} />
+          ))}
       </Content>
       <PostModal showModal={showModal} handleClick={handleClick} />
     </Container>

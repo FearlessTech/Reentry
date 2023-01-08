@@ -13,11 +13,11 @@ const FollowCard = styled.div`
   border-radius: 5px;
   position: relative;
   border: none;
-  box-shadow: 2px 3px 2px -2px rgba(110,104,104,0.75);
+  box-shadow: 2px 3px 2px -2px rgba(110, 104, 104, 0.75);
   padding: 12px;
 `;
 
-const Title =styled.div`
+const Title = styled.div`
   align-items: center;
   justify-content: space-between;
   font-size: 16px;
@@ -48,10 +48,4 @@ const BannerCard = styled(FollowCard)`
   }
 `;
 
-export {
-  Container,
-  FollowCard,
-  Title,
-  FeedList,
-  BannerCard
-};
+export { Container, FollowCard, Title, FeedList, BannerCard };

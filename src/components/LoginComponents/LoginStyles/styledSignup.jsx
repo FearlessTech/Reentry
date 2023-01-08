@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 const StyledSignUp = styled.div`
   .signin-container {
     display: flex;
@@ -36,7 +36,7 @@ const StyledSignUp = styled.div`
             &:focus-within {
               outline: none;
               transform: scale(1.1);
-              &::placeholder{
+              &::placeholder {
                 color: transparent;
               }
             }

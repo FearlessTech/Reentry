@@ -1,12 +1,30 @@
-
-:root,body,html {
+:root,
+body,
+html {
   background-color: transparent;
   box-sizing: border-box;
   padding: 0;
   margin: 0;
 }
 
-div,h1,h2,h3,h4,h5,h6,navbar,html,i,img,label,li,nav,p,small,span,ul {
+div,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+navbar,
+html,
+i,
+img,
+label,
+li,
+nav,
+p,
+small,
+span,
+ul {
   margin: 0;
   padding: 0;
   border: 0;
@@ -21,13 +39,14 @@ body {
   height: 100vh;
 }
 
-input, textarea {
-  font-family: sans-serif; color: #333;
+input,
+textarea {
+  font-family: sans-serif;
+  color: #333;
 }
 textarea {
-  padding: .5rem 0;
+  padding: 0.5rem 0;
 }
-
 
 @keyframes fadeIn {
   from {
@@ -54,18 +73,9 @@ textarea {
 /*// Tablets Ipads portrait mode max-width:1024px*/
 /*// Desktops max-width:1280px*/
 /*// Huge size (Larger screen) max-width: 1281px and greater *!*/
-@media only screen and (max-width: 1024px) {
-  body{
-    overflow-y: scroll;
-  }
-}
-// Mobile (Smartphone) max-width: 480px
-// Low Resolution Tablets and ipads max-width: 767px
-// Tablets Ipads portrait mode max-width:1024px
-// Desktops max-width:1280px
-// Huge size (Larger screen) max-width: 1281px and greater */
-@media only screen and (max-width: 1024px) {
-  body{
+
+@media (max-width: 768px) {
+  body {
     overflow-y: scroll;
   }
 }

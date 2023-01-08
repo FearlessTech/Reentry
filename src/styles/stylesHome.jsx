@@ -1,9 +1,9 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 const Container = styled.div`
   padding-top: 52px;
   max-width: 100%;
-  background-color: #CDCDCD;
+  background-color: #cdcdcd;
   min-height: 100vh;
 `;
 
@@ -15,7 +15,7 @@ const Content = styled.div`
 
 const Layout = styled.div`
   display: grid;
-  grid-template-areas: 'leftside main rightside';
+  grid-template-areas: "leftside main rightside";
   grid-template-columns: minmax(0, 6fr) minmax(0, 10fr) minmax(300px, 8fr);
   column-gap: 25px;
   row-gap: 25px;

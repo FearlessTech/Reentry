@@ -1,6 +1,11 @@
 import { auth, provider, storage } from "../firebase";
 import db from "../firebase";
-import { SET_DARK_MODE, SET_USER, SET_LOADING_STATUS, GET_ARTICLES } from "./actionType";
+import {
+  SET_DARK_MODE,
+  SET_USER,
+  SET_LOADING_STATUS,
+  GET_ARTICLES,
+} from "./actionType";
 
 export const setUser = (payload) => ({
   type: SET_USER,
@@ -60,11 +65,14 @@ export function postArticleAPI(payload) {
     dispatch(setLoading(true));
 
     if (payload.image) {
-      const upload = storage.ref(`images/${payload.image.name}`).put(payload.image);
+      const upload = storage
+        .ref(`images/${payload.image.name}`)
+        .put(payload.image);
       upload.on(
         "state-changed",
         (snapshot) => {
-          const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+          const progress =
+            (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
 
           console.log(`Progress: ${progress}%`);
           if (snapshot.state === "RUNNING") {

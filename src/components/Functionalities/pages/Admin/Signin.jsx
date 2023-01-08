@@ -90,8 +90,7 @@ export default function SignIn() {
               onChange={(e) => setPassword(e.target.value)}
             />
             <FormControlLabel
-              control={<Checkbox value="remember"
-                                 color="primary" />}
+              control={<Checkbox value="remember" color="primary" />}
               label="Remember me"
             />
             <Button
