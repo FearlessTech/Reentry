@@ -2,11 +2,10 @@ import { useEffect, useState } from "react";
 import { connect } from "react-redux";
 import { getArticlesAPI } from "../actions";
 import PostModal from "./Posts/PostModal";
-
 import { IoMdSettings } from "react-icons/io";
-
 import { Container, Content, PostNav } from "../styles/stylesMain";
 import { SinglePost } from "./Posts/SinglePost";
+
 const Main = (props) => {
   const [showModal, setShowModal] = useState("close");
   useEffect(() => {
