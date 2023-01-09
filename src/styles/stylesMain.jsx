@@ -79,7 +79,7 @@ const Description = styled.div`
   text-align: left;
 `;
 
-const SharedImage = styled.div`
+const SharedMedia = styled.div`
   margin-top: 8px;
   margin-right: auto;
   margin-left: auto;
@@ -197,7 +197,7 @@ export {
   Article,
   SharedActor,
   Description,
-  SharedImage,
+  SharedMedia,
   SocialCounts,
   SocialActions,
   Content,

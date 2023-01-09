@@ -4,7 +4,7 @@ import {
   Article,
   SharedActor,
   Description,
-  SharedImage,
+  SharedMedia,
   SocialCounts,
   SocialActions,
 } from "../../styles/stylesMain";
@@ -14,6 +14,10 @@ import db, { auth } from "../../firebase";
 import { SingleComment } from "./SingleComment";
 import firebase from "firebase";
 import { isUrl, splitString } from "./urlIdentifier";
+import MediaContainer from "./MediaContainer";
+
+//
+
 export function SinglePost({ article, id }) {
   const user = auth.currentUser;
   const [showCommentBox, setshowCommentBox] = useState(false);
@@ -112,15 +116,7 @@ export function SinglePost({ article, id }) {
           return res;
         })()}
       </Description>
-      <SharedImage>
-        <a>
-          {!article.sharedImg && article.video ? (
-            <ReactPlayer width={"100%"} url={article.video} />
-          ) : (
-            article.sharedImg && <img src={article.sharedImg} alt="" />
-          )}
-        </a>
-      </SharedImage>
+      <MediaContainer article={article} />
       <SocialCounts>
         <li>
           <a>{likes?.length} Likes</a>
