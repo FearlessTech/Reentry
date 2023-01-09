@@ -116,8 +116,10 @@ export const PostButton = styled.div`
   background: ${(props) => (props.disabled ? "rgba(0,0,0,0.8)" : "#0a66c2")};
   text-align: center;
   padding-top: 10px;
-  color: ${(props) => (props.disabled ? "rgba(1,1,0,0.4)" : "White")};
+  color: ${(props) => (props.disabled ? "#fdfdfd66" : "#000000")};
   &:hover {
+    color: ${(props) => (props.disabled ? "#1c1c1ce7" : "#000000")};
+    font-weight: 700;
     background: ${(props) => (props.disabled ? "rgba(0,0,0,0.08)" : "#004182")};
   }
 `;
