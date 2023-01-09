@@ -5,7 +5,6 @@ import db, { auth } from "../../firebase";
 export function AddComment({ articleId, setshowCommentBox }) {
   const [commentText, setcommentText] = useState("");
   const user = auth.currentUser;
-  console.log(user);
   async function addCommentToFireStoreDocument(e, articleId) {
     e.preventDefault();
     const timestamp = new Date();

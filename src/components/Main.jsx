@@ -54,7 +54,7 @@ const Main = (props) => {
             <SinglePost article={article} id={article.id} key={article.id} />
           ))}
       </Content>
-      <PostModal showModal={showModal} handleClick={handleClick} />
+      {showModal === "open" && <PostModal showModal={showModal} handleClick={handleClick} />}
     </Container>
   );
 };

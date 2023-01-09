@@ -1,11 +1,11 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { connect } from "react-redux";
 import firebase from "firebase";
 import { postArticleAPI } from "../../actions";
 import React from "react";
 import { FaRegImage } from "react-icons/fa";
 import { AiOutlineCloseCircle } from "react-icons/ai";
-
+import db from "../../firebase";
 import {
   Container,
   Content,
@@ -52,7 +52,12 @@ const PostModal = (props) => {
   const [editorText, setEditorText] = useState("");
   const [sharedImage, setSharedImage] = useState("");
   const [videoLink, setVideoLink] = useState("");
+  const postMode = props.postMode || "new";
 
+  useEffect(() => {
+    const postText = props.postText || "";
+    setEditorText(postText);
+  }, []); 
   const postArticle = (e) => {
     e.preventDefault();
     if (e.target !== e.currentTarget) {
@@ -70,6 +75,18 @@ const PostModal = (props) => {
     props.postArticle(payload);
     reset(e);
   };
+
+  async function saveEditedArticle(e) {
+    const postId = props.postId;
+    const editedText = editorText;
+    const articleRef = db.collection("articles").doc(postId);
+    await articleRef.update({ description: editedText, edited: true });
+    props.setShowModal("close");
+    props.setshowMenu(true);
+    setEditorText("");
+    setSharedImage("");
+    setVideoLink("");
+  }
 
   const reset = (e) => {
     setEditorText("");
@@ -107,7 +124,6 @@ const PostModal = (props) => {
                   value={editorText}
                   onChange={(e) => setEditorText(e.target.value)}
                   placeholder="What do you want to talk about?"
-                  onFocus={true}
                 />
               </Editor>
             </SharedContent>
@@ -116,12 +132,16 @@ const PostModal = (props) => {
                 <FileUploader handleFile={setSharedImage} />
               </AttachAssets>
 
-              <PostButton
-                disabled={!editorText || !FileUploader ? true : false} // if editorText or file is empty, disable the button
-                onClick={(event) => postArticle(event)}
-              >
-                Post
-              </PostButton>
+              {postMode === "new" ? (
+                <PostButton
+                  disabled={!editorText || !FileUploader ? true : false} // if editorText or file is empty, disable the button
+                  onClick={(event) => postArticle(event)}
+                >
+                  Post
+                </PostButton>
+              ) : (
+                <PostButton onClick={(e) => saveEditedArticle(e)}>Save Changes</PostButton>
+              )}
             </SharedCreation>
           </Content>
         </Container>
