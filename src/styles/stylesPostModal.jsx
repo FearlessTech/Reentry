@@ -88,6 +88,7 @@ export const AssetButton = styled.div`
   height: 40px;
   min-width: auto;
   color: rgba(0, 0, 0, 0.5);
+  justify-content: center;
 `;
 
 export const AttachAssets = styled.div`
@@ -117,9 +118,9 @@ export const PostButton = styled.div`
   text-align: center;
   padding-top: 10px;
   color: ${(props) => (props.disabled ? "#fdfdfd66" : "#000000")};
+  font-weight: 700;
   &:hover {
-    color: ${(props) => (props.disabled ? "#1c1c1ce7" : "#000000")};
-    font-weight: 700;
+    color: ${(props) => (props.disabled ? "#1c1c1ce7" : "#a0a0a0")};
     background: ${(props) => (props.disabled ? "rgba(0,0,0,0.08)" : "#004182")};
   }
 `;
@@ -132,7 +133,7 @@ export const Editor = styled.div`
   textarea {
     width: 100%;
     min-height: 100px;
-    resize: nome;
+    resize: vertical;
     align-items: center;
   }
   input {
