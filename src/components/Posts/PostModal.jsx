@@ -61,6 +61,7 @@ const PostModal = (props) => {
     if (e.target !== e.currentTarget) {
       return;
     }
+    console.log("target step passed 1");
     const payload = {
       image: shareImage,
       video: videoLink,
@@ -68,6 +69,9 @@ const PostModal = (props) => {
       description: editorText,
       timestamp: firebase.firestore.Timestamp.now(),
     };
+    console.log("preload is");
+    console.log(payload);
+    console.log();
     props.postArticle(payload);
     reset(e);
   };

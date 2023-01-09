@@ -61,10 +61,12 @@ export const getArticles = (payload) => ({
 });
 
 export function postArticleAPI(payload) {
+  console.log("defining where it should be");
   return (dispatch) => {
     dispatch(setLoading(true));
 
     if (payload.image) {
+      console.log("image is", payload.image);
       const upload = storage
         .ref(`images/${payload.image.name}`)
         .put(payload.image);
@@ -88,8 +90,9 @@ export function postArticleAPI(payload) {
               title: payload.user.displayName,
               date: payload.timestamp,
               image: payload.user.photoURL,
+              uid: payload.user.uid,
             },
-            video: payload.video,
+            video: "",
             sharedImg: downloadURL,
             comments: 0,
             likes: 0,
@@ -99,21 +102,41 @@ export function postArticleAPI(payload) {
         }
       );
     } else if (payload.video) {
-      db.collection("articles").add({
-        actor: {
-          description: payload.user.email,
-          title: payload.user.displayName,
-          date: payload.timestamp,
-          image: payload.user.photoURL,
-          uid: payload.user.uid,
+      console.log("video is", payload.video);
+      const upload = storage
+        .ref(`videos/${payload.video.name}`)
+        .put(payload.video);
+      upload.on(
+        "state-changed",
+        (snapshot) => {
+          const progress =
+            (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+
+          console.log(`Progress: ${progress}%`);
+          if ((snapshot.state = "RUNNING")) {
+            console.log(`Progress: ${progress}%`);
+          }
         },
-        video: payload.video,
-        sharedImg: "",
-        comments: 0,
-        likes: 0,
-        description: payload.description,
-      });
-      dispatch(setLoading(false));
+        (error) => console.log(error.code),
+        async () => {
+          const downloadURL = await upload.snapshot.ref.getDownloadURL();
+          db.collection("articles").add({
+            actor: {
+              description: payload.user.email,
+              title: payload.user.displayName,
+              date: payload.timestamp,
+              image: payload.user.photoURL,
+              uid: payload.user.uid,
+            },
+            video: downloadURL,
+            sharedImg: "",
+            comments: 0,
+            likes: 0,
+            description: payload.description,
+          });
+          dispatch(setLoading(false));
+        }
+      );
     } else {
       db.collection("articles").add({
         actor: {
