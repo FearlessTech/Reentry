@@ -14,6 +14,8 @@ import db, { auth } from "../../firebase";
 import { SingleComment } from "./SingleComment";
 import firebase from "firebase";
 import { isUrl, splitString } from "./urlIdentifier";
+import { ArticleMenuButton } from "./ArticleMenuButton";
+
 export function SinglePost({ article, id }) {
   const user = auth.currentUser;
   const [showCommentBox, setshowCommentBox] = useState(false);
@@ -45,9 +47,7 @@ export function SinglePost({ article, id }) {
 
       if (likedBy) {
         setLikes(likedBy);
-        console.log(likedBy);
         if (likedBy.includes(user.uid)) {
-          console.log("yes");
           setHasLiked(true);
         }
       } else {
@@ -94,9 +94,11 @@ export function SinglePost({ article, id }) {
             </span>
           </div>
         </a>
-        <button>
-          <FaEllipsisH size={20} style={{ margin: "8px", fill: "#99d3df" }} />
-        </button>
+        {article.actor.uid === user.uid ? (
+          <section>
+            <ArticleMenuButton articleText={article.description} articleId={id} triggerPostRerender={triggerPostRerender} />
+          </section>
+        ) : null}
       </SharedActor>
       <Description>
         {(() => {
