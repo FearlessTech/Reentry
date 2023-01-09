@@ -1,79 +1,66 @@
 import styled from "styled-components";
 
-const Container = styled.div`
+export const Container = styled.div`
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
   z-index: 9999;
-  color: #000000;
+  color: black;
   background-color: rgba(0, 0, 0, 0.8);
   animation: fadeIn 0.3s;
 `;
-
-const Content = styled.div`
+export const Content = styled.div`
   width: 100%;
   max-width: 552px;
-  background-color: #fff;
+  background-color: white;
   max-height: 90%;
   overflow: initial;
   border-radius: 5px;
   position: relative;
-  display: flex;
   flex-direction: column;
   top: 32px;
   margin: 0 auto;
-  background-color: #e9e9e9;
+  overflow-y: scroll;
 `;
 
-const Header = styled.div`
-  padding: 5px 25px;
+export const Header = styled.div`
+  display: block;
+  padding: 16px 20px;
   border-bottom: 1px solid rgba(0, 0, 0, 0.15);
   font-size: 16px;
   line-height: 1.5;
-  color: darkslateblue;
+  color: rgba(0, 0, 0, 0.6);
   font-weight: 400;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #99d3df;
-  border-radius: 5px;
-
   button {
-    height: 30px;
-    width: 30px;
-    min-width: auto;
-    display: flex;
-    color: darkslateblue;
-    background: #fffdd0;
-    border-radius: 7px;
-    border-color: #fcf4a3;
-    &:hover {
-      background: #fcf4a3;
-    }
-
+    height: 40px;
+    width: 40px;
+    min-height: auto;
+    color: rgba(0, 0, 0, 0.15);
+    svg,
     img {
       pointer-events: none;
     }
   }
 `;
 
-const SharedContent = styled.div`
+export const ShareContent = styled.div`
   display: flex;
   flex-direction: column;
   flex-grow: 1;
   overflow-y: auto;
-  vertical-align: baseline;
-  background: transparent;
+  vartical-align: baseline;
   padding: 8px 12px;
+  background: transparent;
 `;
-
-const UserInfo = styled.div`
+export const UserInfo = styled.div`
   display: flex;
   align-items: center;
-  padding: 5px;
-
+  padding: 12px 24px;
   svg,
   img {
     width: 48px;
@@ -81,95 +68,104 @@ const UserInfo = styled.div`
     background-clip: content-box;
     border: 2px solid transparent;
     border-radius: 50%;
-    margin-right: 5px;
   }
-
   span {
     font-weight: 600;
     font-size: 16px;
     line-height: 1.5;
+    margin-left: 5px;
   }
 `;
 
-const SharedCreation = styled.div`
+export const ShareCreation = styled.div`
   display: flex;
   justify-content: space-between;
   padding: 12px 24px 12px 16px;
 `;
-
-const AssetButton = styled.button`
+export const AssetButton = styled.div`
   display: flex;
-  margin-right: 5px;
-  margin-left: 5px;
-  justify-content: center;
   align-items: center;
   height: 40px;
   min-width: auto;
-  color: darkslateblue;
-  background: #fffdd0;
-  border-radius: 7px;
-  border-color: #fcf4a3;
-  &:hover {
-    background: #fcf4a3;
-  }
+  color: rgba(0, 0, 0, 0.5);
 `;
 
-const AttachAssets = styled.div`
+export const AttachAssets = styled.div`
   align-items: center;
   display: flex;
   padding-right: 8px;
+  ${AssetButton} {
+    width: 50px;
+  }
+`;
+export const ShareComment = styled.div`
+  padding-left: 8px;
+  margin-right: auto;
+  border-left: 1px solid rgba(0, 0, 0, 0.15);
 
   ${AssetButton} {
-    width: 40px;
+    margin-right: 5px;
   }
 `;
-
-const PostButton = styled.button`
+export const PostButton = styled.div`
   min-width: 60px;
-  border-radius: 7px;
-  border-color: #fcf4a3;
+  border: 2px solid rgba(0, 0, 0, 0.15);
+  border-radius: 20px;
   padding-left: 16px;
   padding-right: 16px;
-  font-weight: 600;
-  background: ${(props) => (props.disabled ? "lightgray" : "#FFFDD0")};
-  color: ${(props) => (props.disabled ? "rgba(1,1,1,0.2)" : "darkslateblue;")};
-
+  background: ${(props) => (props.disabled ? "rgba(0,0,0,0.8)" : "#0a66c2")};
+  text-align: center;
+  padding-top: 10px;
+  color: ${(props) => (props.disabled ? "rgba(1,1,0,0.4)" : "White")};
   &:hover {
-    background: ${(props) => (props.disabled ? "#fcf4a3" : "#fcf4a3")};
-    cursor: ${(props) => (props.disabled ? "none" : "pointer")};
-    outline: none !important;
+    background: ${(props) => (props.disabled ? "rgba(0,0,0,0.08)" : "#004182")};
   }
 `;
 
-const Editor = styled.div`
+export const Editor = styled.div`
   padding: 12px 24px;
-
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
   textarea {
     width: 100%;
-    border-radius: 7px;
     min-height: 100px;
-    resize: none;
-    background-color: white;
+    resize: nome;
+    align-items: center;
   }
-
   input {
     width: 100%;
-    border-radius: 7px;
     height: 35px;
     font-size: 16px;
     margin-bottom: 20px;
   }
 `;
 
-export {
-  Container,
-  Content,
-  Header,
-  SharedContent,
-  UserInfo,
-  SharedCreation,
-  AssetButton,
-  AttachAssets,
-  PostButton,
-  Editor,
-};
+export const UploadImage = styled.div`
+  text-align: center;
+  position: relative;
+  img {
+    width: 100%;
+  }
+  .filename {
+    position: absolute;
+    bottom: 1rem;
+    text-align: center;
+    width: 100%;
+    background-color: #616a725b;
+  }
+`;
+
+export const UploadVideo = styled.div`
+  flex: 1 1 300px;
+  position: relative;
+  video {
+  }
+  .filename {
+    position: absolute;
+    bottom: 2rem;
+    text-align: center;
+    width: 100%;
+    background-color: #616a725b;
+  }
+`;
