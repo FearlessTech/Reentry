@@ -116,12 +116,16 @@ const PostModal = (props) => {
                 {videoLink && (
                   <UploadVideo>
                     <ReactPlayer
+                      onClick={() => {
+                        const video =
+                          document.getElementById("video-player").children[0];
+                        video.paused ? video.play() : video.pause();
+                      }}
+                      id="video-player"
                       url={URL.createObjectURL(videoLink)}
                       width="100%"
                       height="min-content"
-                      autoPlay
                       muted
-                      preload
                     />
                     <div className="filename">{videoLink.name}</div>
                   </UploadVideo>
@@ -150,7 +154,7 @@ const PostModal = (props) => {
                     <AiFillFileImage size={20} />
                   </AssetButton>
                 </label>
-                <label htmlfor="video-file">
+                <label htmlFor="video-file">
                   <input
                     type="file"
                     accept="video/mp4,video/x-m4v,video/*"
