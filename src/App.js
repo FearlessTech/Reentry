@@ -13,9 +13,9 @@ import "./utilities.css";
 import Login from "./components/Welcome";
 import AgreementLogin from "./components/Login";
 import Navbar from "./components/Navbar";
-import Resources from "./components/Resources";
+// import Resources from "./components/Resources";
 const Home = lazy(() => import("./components/Home"));
-const Resource = lazy(() => import("./components/Resource"));
+// const Resource = lazy(() => import("./components/Resource"));
 const Notifications = lazy(() => import("./components/Notifications"));
 const Network = lazy(() => import("./components/Network"));
 const Messaging = lazy(() => import("./components/Messaging"));
@@ -46,7 +46,7 @@ function App(props) {
               <Navbar />
               <Home />
             </Route>
-            <Route path="/resource">
+            <Route path="/resources">
               <Navbar />
               <Resources />
             </Route>
