@@ -58,6 +58,7 @@ const PostModal = (props) => {
       setSharedVideo("");
       cb();
     };
+
     const handleInputChange = (e) => {
       // Call a function (passed as a prop from the parent component)
       // to handle the user-selected file
@@ -68,17 +69,16 @@ const PostModal = (props) => {
         });
       }
     };
+    const handleAssetBtnClick = () => {
+      // Programatically click the hidden file input element
+      // when the Button component is clicked
+
+      const input = hiddenFileInput.current;
+      input.click();
+    };
     return (
       <>
-        <AssetButton
-          onClick={(e) => {
-            // Programatically click the hidden file input element
-            // when the Button component is clicked
-
-            const input = hiddenFileInput.current;
-            input.click();
-          }}
-        >
+        <AssetButton onClick={handleAssetBtnClick}>
           <config.Icon />
         </AssetButton>
         <input
@@ -96,6 +96,7 @@ const PostModal = (props) => {
     const postText = props.postText || "";
     setEditorText(postText);
   }, []);
+
   const postArticle = (e) => {
     e.preventDefault();
     if (e.target !== e.currentTarget) {
@@ -137,6 +138,10 @@ const PostModal = (props) => {
   const handleClickBubbling = (event) => {
     reset(event);
   };
+  const handlePlayerClick = () => {
+    const videoTag = videoPlayer.current.player.player.player;
+    videoTag.paused ? videoTag.play() : videoTag.pause();
+  };
 
   return (
     <>
@@ -177,11 +182,7 @@ const PostModal = (props) => {
                   className="vid-container"
                   width={"100%"}
                   height={"100%"}
-                  onClick={() => {
-                    const videoTag = videoPlayer.current.player.player.player;
-                    videoTag.paused ? videoTag.play() : videoTag.pause();
-                    // console.log(videoTag);
-                  }}
+                  onClick={handlePlayerClick}
                 />
               ) : (
                 ""
@@ -207,7 +208,7 @@ const PostModal = (props) => {
               {postMode === "new" ? (
                 <PostButton
                   disabled={!editorText || !FileUploader ? true : false} // if editorText or file is empty, disable the button
-                  onClick={(event) => postArticle(event)}
+                  onClick={postArticle}
                 >
                   Post
                 </PostButton>
