@@ -35,7 +35,7 @@ const Navbar = (props) => {
   const topics = [
     { name: "home", Icon: IoIosHome },
     { name: "network", Icon: IoMdPeople },
-    { name: "resource", Icon: BsFillBriefcaseFill },
+    { name: "resources", Icon: BsFillBriefcaseFill },
     { name: "messaging", Icon: SiGooglemessages },
     { name: "notifications", Icon: IoMdNotifications },
   ];
