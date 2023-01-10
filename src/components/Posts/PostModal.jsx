@@ -45,6 +45,7 @@ const PostModal = (props) => {
   const [editorText, setEditorText] = useState("");
   const [sharedImage, setSharedImage] = useState("");
   const [sharedVideo, setSharedVideo] = useState("");
+  const videoPlayer = useRef();
   const postMode = props.postMode || "new";
 
   const FileUploader = (props) => {
@@ -171,9 +172,16 @@ const PostModal = (props) => {
                 </div>
               ) : sharedVideo ? (
                 <ReactPlayer
+                  ref={videoPlayer}
                   url={URL.createObjectURL(sharedVideo)}
                   className="vid-container"
-                  width="100%"
+                  width={"100%"}
+                  height={"100%"}
+                  onClick={() => {
+                    const videoTag = videoPlayer.current.player.player.player;
+                    videoTag.paused ? videoTag.play() : videoTag.pause();
+                    // console.log(videoTag);
+                  }}
                 />
               ) : (
                 ""

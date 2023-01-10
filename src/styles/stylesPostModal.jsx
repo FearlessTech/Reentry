@@ -16,7 +16,6 @@ const Content = styled.div`
   width: 100%;
   max-width: 552px;
   background-color: #fff;
-  max-height: 90%;
   overflow: initial;
   border-radius: 5px;
   position: relative;
@@ -27,17 +26,27 @@ const Content = styled.div`
   background-color: #e9e9e9;
 
   .preview {
-    height: 400px;
-    padding: 1rem 2rem;
+    padding: 0.5rem 2rem;
     .img-container {
+      width: 250px;
+      margin: auto;
+      max-width: 100%;
       flex: 1 1 300px;
       text-align: center;
+      img {
+        width: 100%;
+      }
+      &:hover {
+        transform: scale(1.3);
+      }
     }
     .vid-container {
-      max-height: 200px;
-      flex: 1 1 300px;
+      flex: 1 1 200px;
       margin: auto;
-      max-width: 300px;
+      max-width: 250px;
+      &:hover {
+        transform: scale(1.3);
+      }
     }
   }
 `;
@@ -78,6 +87,7 @@ const SharedContent = styled.div`
   display: flex;
   flex-direction: column;
   flex-grow: 1;
+  height: max-content;
   overflow-y: auto;
   vertical-align: baseline;
   background: transparent;
@@ -160,14 +170,15 @@ const PostButton = styled.button`
 `;
 
 const Editor = styled.div`
-  padding: 12px 24px;
+  padding: 0.5rem 2rem;
 
   textarea {
     box-sizing: border-box;
     width: 100%;
     border-radius: 7px;
     min-height: 100px;
-    resize: none;
+    resize: vertical;
+    max-height: 200px;
     background-color: white;
     padding-left: 0.5rem;
   }
