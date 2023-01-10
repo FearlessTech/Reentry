@@ -52,8 +52,12 @@
       {"id": "5.3", "name" : "Career Centers"},
       {"id": "5.4", "name" : "Temp Agent"},
 
-    {"id": "", "name" : ""},
-    {"id": "", "name" : ""},
+    {"id": "6", "name" : ""},
+    {"id": "6", "name" : ""},
+    {"id": "6", "name" : ""},
+    {"id": "6", "name" : ""},
+    {"id": "6", "name" : ""},
+
     {"id": "", "name" : ""},
     {"id": "", "name" : ""},
     {"id": "", "name" : ""},
@@ -70,18 +74,6 @@
     {"id": "", "name" : ""},
     {"id": "", "name" : ""},
 
-
-    "Family Services": [
-      "Adoption",
-      "Child Care",
-      "Counseling",
-      "Family Planning",
-      "Foster Care",
-      "Parenting",
-      "Pregnancy",
-      "Reunification",
-      "WIC"
-    ],
     "Housing": {
       "Halfway House": {
         "Gender Accepted": [
