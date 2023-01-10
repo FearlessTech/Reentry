@@ -25,6 +25,21 @@ const Content = styled.div`
   top: 32px;
   margin: 0 auto;
   background-color: #e9e9e9;
+
+  .preview {
+    height: 400px;
+    padding: 1rem 2rem;
+    .img-container {
+      flex: 1 1 300px;
+      text-align: center;
+    }
+    .vid-container {
+      max-height: 200px;
+      flex: 1 1 300px;
+      margin: auto;
+      max-width: 300px;
+    }
+  }
 `;
 
 const Header = styled.div`
@@ -94,7 +109,10 @@ const UserInfo = styled.div`
 const SharedCreation = styled.div`
   display: flex;
   justify-content: space-between;
-  padding: 12px 24px 12px 16px;
+  padding: 1.5rem 2rem 1rem;
+  .files-container {
+    display: flex;
+  }
 `;
 
 const AssetButton = styled.button`
@@ -145,11 +163,13 @@ const Editor = styled.div`
   padding: 12px 24px;
 
   textarea {
+    box-sizing: border-box;
     width: 100%;
     border-radius: 7px;
     min-height: 100px;
     resize: none;
     background-color: white;
+    padding-left: 0.5rem;
   }
 
   input {
