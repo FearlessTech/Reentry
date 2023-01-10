@@ -22,16 +22,6 @@ const ProfileLeft = styled.div`
   height: max-content;
 `;
 
-const ProfileMain = styled.div`
-  display: flex;
-  flex-direction: column;
-  margin: 0 auto;
-  flex: 1 1 250px;
-  main {
-    min-height: 100%;
-  }
-`;
-
 const ArtCard = styled.div`
   text-align: center;
   overflow: hidden;
@@ -181,6 +171,25 @@ const CommunityCard = styled(ArtCard)`
   }
 `;
 
+const ProfileMain = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  flex: 1 1 250px;
+  main {
+    min-height: 100%;
+  }
+`;
+
+const PFHeading = styled.div``;
+const PFIntro = styled.div``;
+
+const PFCheckBoxes = styled.div``;
+
+const PFPost = styled.div``;
+
+const PFResoucesPost = styled.div``;
+
 export {
   Container,
   ArtCard,
@@ -193,4 +202,9 @@ export {
   CommunityCard,
   ProfileLeft,
   ProfileMain,
+  PFIntro,
+  PFCheckBoxes,
+  PFPost,
+  PFResoucesPost,
+  PFHeading,
 };

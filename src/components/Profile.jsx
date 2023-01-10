@@ -16,7 +16,13 @@ import {
   AddPhotoText,
   ProfileMain,
   ProfileLeft,
+  PFIntro,
+  PFCheckBoxes,
+  PFPost,
+  PFResoucesPost,
+  PFHeading,
 } from "../styles/stylesProfile.jsx";
+// import ResourceCheckBoxes from "../ResourceCheckBoxes";
 
 const Profile = (props) => {
   return (
@@ -71,9 +77,19 @@ const Profile = (props) => {
         </CommunityCard>
       </ProfileLeft>
       <ProfileMain>
-        <main>
-          <h1>Profile</h1>
-        </main>
+        <PFIntro>
+          <PFHeading>Introductions</PFHeading>
+        </PFIntro>
+        <PFCheckBoxes>
+          <PFHeading>Resources Check Boxes</PFHeading>
+          {/*<ResourceCheckBoxes/>*/}
+        </PFCheckBoxes>
+        <PFPost>
+          <PFPost>Users Post</PFPost>
+        </PFPost>
+        <PFResoucesPost>
+          <PFHeading>Users Posted Resources</PFHeading>
+        </PFResoucesPost>
       </ProfileMain>
     </Container>
   );
