@@ -13,7 +13,6 @@ import {
   ImPen,
   ImWindows8,
 } from "react-icons/im";
-import { IoCloseCircle } from "react-icons/io5";
 
 import {
   Container,
@@ -21,7 +20,6 @@ import {
   SectionB,
   Form,
   Nav,
-  Close,
   NavBTN,
 } from "../styles/stylesLogin";
 import { Link } from "react-router-dom";
@@ -30,16 +28,9 @@ const Login = (props) => {
   const [login, setLogin] = useState(true);
   const [show, setShow] = useState(true);
   const [sideBar, setSideBar] = useState(true);
-  const Modal = (props) => {
-    if (!props.show) {
-      return null;
-    }
-
+  const Modal = () => {
     return (
       <Form>
-        <Close onClick={() => setShow(false)}>
-          <IoCloseCircle size={22} color="#cbcbcb" className="close-icon" />
-        </Close>
         {login ? (
           <LoginForm>
             <span className="sign-up">
@@ -71,7 +62,6 @@ const Login = (props) => {
           className="button"
           onClick={() => {
             setLogin(false);
-            setShow(true);
           }}
         >
           <ImPen />
@@ -81,7 +71,6 @@ const Login = (props) => {
           className="button"
           onClick={() => {
             setLogin(true);
-            setShow(true);
           }}
         >
           <ImMail3 />
@@ -140,7 +129,7 @@ const Login = (props) => {
           </div>
         </SectionB>
         <SectionA>
-          <Modal show={show} />
+          <Modal />
         </SectionA>
       </main>
     </Container>
