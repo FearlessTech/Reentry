@@ -81,6 +81,11 @@ export function SinglePost({ article, id }) {
       triggerPostRerender(rerender + Math.random());
     }
   };
+  const fileType = article.video
+    ? article.video
+    : article.sharedImg
+    ? article.sharedImg
+    : null;
   return (
     <Article>
       <SharedActor>
@@ -98,6 +103,7 @@ export function SinglePost({ article, id }) {
         {article.actor.uid === user.uid ? (
           <section>
             <ArticleMenuButton
+              fileType={fileType}
               articleText={article.description}
               articleId={id}
               triggerPostRerender={triggerPostRerender}
