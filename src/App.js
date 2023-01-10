@@ -13,6 +13,7 @@ import "./utilities.css";
 import Login from "./components/Welcome";
 import AgreementLogin from "./components/Login";
 import Navbar from "./components/Navbar";
+import Resources from "./components/Resources";
 const Home = lazy(() => import("./components/Home"));
 const Resource = lazy(() => import("./components/Resource"));
 const Notifications = lazy(() => import("./components/Notifications"));
@@ -47,7 +48,7 @@ function App(props) {
             </Route>
             <Route path="/resource">
               <Navbar />
-              <Resource />
+              <Resources />
             </Route>
             <Route path="/notifications">
               <Navbar />
