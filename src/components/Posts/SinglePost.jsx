@@ -31,6 +31,7 @@ export function SinglePost({ article, id }) {
     hour: "numeric",
     minute: "numeric",
   };
+
   useEffect(() => {
     (async function getComments() {
       const articleRef = db.collection("articles").doc(id);
@@ -80,6 +81,11 @@ export function SinglePost({ article, id }) {
       triggerPostRerender(rerender + Math.random());
     }
   };
+  const fileType = article.video
+    ? article.video
+    : article.sharedImg
+    ? article.sharedImg
+    : null;
   return (
     <Article>
       <SharedActor>
@@ -96,7 +102,12 @@ export function SinglePost({ article, id }) {
         </a>
         {article.actor.uid === user.uid ? (
           <section>
-            <ArticleMenuButton articleText={article.description} articleId={id} triggerPostRerender={triggerPostRerender} />
+            <ArticleMenuButton
+              fileType={fileType}
+              articleText={article.description}
+              articleId={id}
+              triggerPostRerender={triggerPostRerender}
+            />
           </section>
         ) : null}
       </SharedActor>
@@ -117,7 +128,12 @@ export function SinglePost({ article, id }) {
       <SharedImage>
         <a>
           {!article.sharedImg && article.video ? (
-            <ReactPlayer width={"100%"} url={article.video} />
+            <ReactPlayer
+              width={"100%"}
+              height="100%"
+              url={article.video}
+              controls
+            />
           ) : (
             article.sharedImg && <img src={article.sharedImg} alt="" />
           )}

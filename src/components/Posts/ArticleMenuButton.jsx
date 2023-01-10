@@ -1,11 +1,11 @@
 import { IconButton, Menu, MenuItem } from "@material-ui/core";
 import { useState } from "react";
 import { FaEllipsisH } from "react-icons/fa";
-import db from "../../firebase";
+import { db, storage } from "../../firebase";
 import PostModal from "./PostModal";
 import styles from "./Posts.module.css";
 
-export function ArticleMenuButton({ articleText, articleId }) {
+export function ArticleMenuButton({ articleText, articleId, fileType }) {
   const [anchorEl, setAnchorEl] = useState(null);
   const [showModal, setShowModal] = useState("close");
   const open = Boolean(anchorEl);
@@ -40,12 +40,26 @@ export function ArticleMenuButton({ articleText, articleId }) {
 
   async function deleteArticle(articleId) {
     const articleRef = db.collection("articles").doc(articleId);
-    await articleRef.delete();
+    const fileRef = fileType ? storage.refFromURL(fileType) : null;
+
+    if (fileRef) {
+      await fileRef.delete().then(() => {
+        console.log("file deleted");
+      });
+    }
+    await articleRef.delete().then(() => {
+      console.log("article deleted");
+    });
   }
 
   return (
     <div>
-      <IconButton className={styles.menu_button} aria-controls="simple-menu" aria-haspopup="true" onClick={handleClick}>
+      <IconButton
+        className={styles.menu_button}
+        aria-controls="simple-menu"
+        aria-haspopup="true"
+        onClick={handleClick}
+      >
         <FaEllipsisH />
       </IconButton>
       <Menu
