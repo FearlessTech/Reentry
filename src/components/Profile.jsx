@@ -19,10 +19,11 @@ import {
   PFIntro,
   PFCheckBoxes,
   PFPost,
-  PFResoucesPost,
+  PFResourcesPost,
   PFHeading,
+  Content,
 } from "../styles/stylesProfile.jsx";
-// import ResourceCheckBoxes from "../ResourceCheckBoxes";
+import ResourceCheckBoxes from "./ResourceCheckBoxes";
 
 const Profile = (props) => {
   return (
@@ -79,17 +80,22 @@ const Profile = (props) => {
       <ProfileMain>
         <PFIntro>
           <PFHeading>Introductions</PFHeading>
+          <Content></Content>
         </PFIntro>
         <PFCheckBoxes>
           <PFHeading>Resources Check Boxes</PFHeading>
-          {/*<ResourceCheckBoxes/>*/}
+          <Content>
+            <ResourceCheckBoxes />
+          </Content>
         </PFCheckBoxes>
         <PFPost>
-          <PFPost>Users Post</PFPost>
+          <PFHeading>Users Post</PFHeading>
+          <Content></Content>
         </PFPost>
-        <PFResoucesPost>
+        <PFResourcesPost>
           <PFHeading>Users Posted Resources</PFHeading>
-        </PFResoucesPost>
+          <Content></Content>
+        </PFResourcesPost>
       </ProfileMain>
     </Container>
   );

@@ -174,21 +174,29 @@ const CommunityCard = styled(ArtCard)`
 const ProfileMain = styled.div`
   display: flex;
   flex-direction: column;
-  margin: 0 auto;
+  margin: 70px;
   flex: 1 1 250px;
   main {
     min-height: 100%;
   }
 `;
 
-const PFHeading = styled.div``;
+const PFHeading = styled.div`
+  background-color: #077a7a;
+`;
 const PFIntro = styled.div``;
 
-const PFCheckBoxes = styled.div``;
+const PFCheckBoxes = styled.div`
+  height: max-content;
+`;
 
 const PFPost = styled.div``;
 
-const PFResoucesPost = styled.div``;
+const PFResourcesPost = styled.div``;
+
+const Content = styled.div`
+  min-height: 100px;
+`;
 
 export {
   Container,
@@ -205,6 +213,7 @@ export {
   PFIntro,
   PFCheckBoxes,
   PFPost,
-  PFResoucesPost,
+  PFResourcesPost,
   PFHeading,
+  Content,
 };
