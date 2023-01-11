@@ -1,4 +1,4 @@
-import styles from "../Resources.module.css";
+import styles from "./Resources.module.css";
 
 const ResourceOutput = () => {
   return (

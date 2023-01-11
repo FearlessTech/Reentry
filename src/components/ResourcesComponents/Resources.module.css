@@ -15,22 +15,12 @@
   flex: 0 1 30%;
   background-color: #d9d9d9;
 }
-.searchForm {
+.searchDiv {
   max-width: 569px;
   padding: 58px 45px 0px 34px;
   height: 50px;
 }
-.searchInput {
-  border: none;
-  height: 100%;
-  width: 100%;
-  font-family: Inter;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 32px;
-  line-height: 39px;
-  color: #000000;
-}
+
 .searchInput::placeholder {
   font-family: Inter;
   font-style: normal;

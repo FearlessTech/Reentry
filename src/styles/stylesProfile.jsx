@@ -1,19 +1,20 @@
 import styled from "styled-components";
 
 const Container = styled.div`
-  padding-top: 52px;
+  padding-top: 10px;
   max-width: 100%;
   display: flex;
   height: max-content;
   align-items: flex-start;
   background-color: #cdcdcd;
   column-gap: 1rem;
-  padding: 5rem 1rem 1rem;
+
   flex-wrap: wrap;
   min-height: 100vh;
 `;
 
 const ProfileLeft = styled.div`
+  padding-top: 60px;
   flex: 0 1 250px;
   display: flex;
   flex-direction: column;
@@ -183,6 +184,12 @@ const ProfileMain = styled.div`
 
 const PFHeading = styled.div`
   background-color: #077a7a;
+  height: 50px;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  padding-right: 20px;
+  color: whitesmoke;
 `;
 const PFIntro = styled.div``;
 
@@ -196,6 +203,8 @@ const PFResourcesPost = styled.div``;
 
 const Content = styled.div`
   min-height: 100px;
+  background-color: whitesmoke;
+  margin-left: 40px;
 `;
 
 export {
