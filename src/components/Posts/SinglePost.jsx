@@ -9,9 +9,9 @@ import {
   SocialActions,
 } from "../../styles/stylesMain";
 import { useEffect, useState } from "react";
-import { AddComment } from "./AddComment";
+import { AddComment } from "./comments/AddComment";
 import db, { auth } from "../../firebase";
-import { SingleComment } from "./SingleComment";
+import { SingleComment } from "./comments/SingleComment";
 import firebase from "firebase";
 import { isUrl, splitString } from "./urlIdentifier";
 import { ArticleMenuButton } from "./ArticleMenuButton";
