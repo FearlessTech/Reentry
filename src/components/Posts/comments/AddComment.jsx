@@ -1,12 +1,15 @@
+import Container from "./styledComments";
 import { Button, ButtonGroup } from "@material-ui/core";
 import { useState } from "react";
-import db, { auth } from "../../firebase";
+import db, { auth } from "../../../firebase";
 
 export function AddComment({ articleId, setshowCommentBox }) {
   const [commentText, setcommentText] = useState("");
-  const user = auth.currentUser;
+
   async function addCommentToFireStoreDocument(e, articleId) {
+    const user = auth.currentUser;
     e.preventDefault();
+
     const timestamp = new Date();
     const comment = {
       text: commentText,
@@ -24,59 +27,41 @@ export function AddComment({ articleId, setshowCommentBox }) {
   }
 
   return (
-    <div style={{ display: "flex", width: "auto", padding: "1%" }}>
-      <div>
-        <img
-          src={user.photoURL}
-          alt="commenter profile picture"
-          width="40px"
-          height="40px"
-          style={{ borderRadius: "5px" }}
-        />
+    <Container>
+      <div className="picture-wrapper">
+        <img src={auth.currentUser.photoURL} alt="commenter profile picture" />
       </div>
-      <div style={{ width: "100%" }}>
+      <div className="comment-container">
         <form
           onSubmit={(e) => addCommentToFireStoreDocument(e, articleId)}
-          style={{ display: "flex", flexDirection: "column" }}
+          className="comment-form"
         >
           <textarea
-            style={{ width: "95%" }}
             type="text"
             value={commentText}
             onChange={(e) => setcommentText(e.target.value)}
             required
           />
-          <ButtonGroup
-            style={{
-              justifyContent: "flex-end",
-              width: "95%",
-              marginTop: "5px",
-            }}
-          >
+          <ButtonGroup className="button-group">
             <Button
               size="small"
               variant="outlined"
-              style={{
-                alignSelf: "start",
-                backgroundColor: "#88BBD6",
-                marginRight: "5px",
-                border: "none",
-              }}
               type="submit"
               disabled={!commentText.length > 0}
+              className="btn btn-comment"
             >
               Add Comment
             </Button>
             <Button
               size="small"
-              style={{ border: "none" }}
               onClick={() => setshowCommentBox(false)}
+              className="btn btn-cancel"
             >
               Cancel
             </Button>
           </ButtonGroup>
         </form>
       </div>
-    </div>
+    </Container>
   );
 }
