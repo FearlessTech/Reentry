@@ -1,4 +1,4 @@
-import styles from "../Resources.module.css";
+import styles from "./Resources.module.css";
 const ResourcesItem = () => {
   return (
     <div className={styles.item}>

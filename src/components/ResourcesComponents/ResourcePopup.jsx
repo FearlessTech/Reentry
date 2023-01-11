@@ -13,7 +13,7 @@ import {
   LeftB,
   RightB,
   Switch,
-} from "../styles/styledResourcePopup";
+} from "./styledResourcePopup";
 
 export const ResourcePopup = () => {
   return (

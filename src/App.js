@@ -20,7 +20,9 @@ const Notifications = lazy(() => import("./components/Notifications"));
 const Network = lazy(() => import("./components/Network"));
 const Messaging = lazy(() => import("./components/Messaging"));
 const Profile = lazy(() => import("./components/Profile"));
-const Resources = lazy(() => import("./components/Resources"));
+const Resources = lazy(() =>
+  import("./components/ResourcesComponents/Resources")
+);
 const AboutUs = lazy(() => import("./components/AboutUs"));
 
 function App(props) {
