@@ -30,6 +30,7 @@ export const Container = styled.div`
       margin: 0 auto;
       max-width: 300px;
       .left-content {
+        box-shadow: 1px 1px 15px #046b6b28;
         background-color: #ebebeb;
         height: 100%;
         width: 100%;
@@ -173,6 +174,7 @@ export const Container = styled.div`
       flex: 6 1 300px;
       padding: 0.6rem;
       .main-content {
+        box-shadow: 1px 1px 15px #046b6b28;
         background-color: #ebebeb;
         height: 100%;
         width: 100%;
