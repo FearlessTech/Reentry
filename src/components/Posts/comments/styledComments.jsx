@@ -54,8 +54,14 @@ const Container = styled.div`
             border: none;
             padding: 0.4rem 0.8rem;
             align-items: center;
+            :hover {
+              background-color: #008383;
+            }
             &.Mui-disabled {
               background-color: #00999992;
+              :hover {
+                background-color: #00999992;
+              }
             }
             span {
               height: 0.95rem;
