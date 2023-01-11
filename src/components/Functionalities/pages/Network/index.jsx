@@ -67,6 +67,7 @@ const Parallax = (props) => {
                 Results For <span>Lorem Ipsum Dolor</span>
               </h1>
             </div>
+            <div className="content"></div>
           </div>
         </main>
       </div>

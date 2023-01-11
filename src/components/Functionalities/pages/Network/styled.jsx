@@ -4,6 +4,9 @@ export const Container = styled.div`
   @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
   padding-top: calc(3rem - 5px);
   border: 1px solid green;
+  background-color: #c1c1c1;
+  border: 1px solid red;
+  overflow: scroll;
   &,
   * {
     box-sizing: border-box;
@@ -173,6 +176,36 @@ export const Container = styled.div`
         background-color: #ebebeb;
         height: 100%;
         width: 100%;
+        .header-container {
+          & ::selection {
+            background-color: #ebebeb;
+            color: #077a7a;
+          }
+          &::before {
+            content: "";
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: #077a7a;
+            bottom: -10px;
+            left: 0;
+            transform: rotateY("45deg");
+            clip-path: polygon(56% 0, 55% 100%, 3% 51%, 4% 0);
+          }
+          background-color: #077a7a;
+          width: calc(100% + 10px);
+          right: 0;
+          padding: 0.8rem 1rem;
+          display: flex;
+          transform: translateX(-10px);
+          justify-content: flex-start;
+          h1 {
+            font-weight: 500;
+            font-size: 1.8rem;
+            color: #ededed;
+            margin-left: 1rem;
+          }
+        }
       }
     }
   }
