@@ -275,6 +275,9 @@ export const Container = styled.div`
         background-color: #ebebeb;
         height: 100%;
         width: 100%;
+        display: flex;
+        flex-direction: column;
+        row-gap: 1rem;
         .header-container {
           & ::selection {
             background-color: #ebebeb;
@@ -303,6 +306,83 @@ export const Container = styled.div`
             font-size: 1.8rem;
             color: #ededed;
             margin-left: 1rem;
+          }
+        }
+        .content {
+          display: flex;
+          flex-direction: column;
+          row-gap: 1rem;
+          .filters {
+            min-height: 60px;
+            flex: 1 1 1;
+            display: flex;
+            padding: 0.5rem;
+            column-gap: 0.5rem;
+            row-gap: 0.5rem;
+            flex-wrap: wrap;
+
+            .filter {
+              flex: 1 1 19%;
+              max-width: 300px;
+              margin: 0 auto;
+              background-color: #d2d2d2;
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+              padding: 0 0.5rem;
+              .filter-icon-wrapper {
+                width: 40px;
+                height: 40px;
+                display: grid;
+                place-items: center;
+                & > * {
+                  color: #1c5c7e;
+                }
+              }
+              .filter-name {
+                color: #1c5c7e;
+                font-weight: 500;
+                margin: 0 auto;
+              }
+            }
+          }
+          .results {
+            flex: 1 1 1;
+            display: flex;
+            flex-wrap: wrap;
+            column-gap: 0.5rem;
+            row-gap: 0.5rem;
+            padding: 0.5rem;
+            margin-bottom: 50px;
+            .single-user {
+              flex: 1 1 400px;
+              box-shadow: 0 0 5px #2a2a2a80;
+              display: flex;
+              padding: 0.4rem 1rem;
+              column-gap: 1rem;
+              .pictute-wrapper {
+                flex: 1 0 1;
+                width: 100px;
+                img {
+                  width: 100%;
+                }
+              }
+              .text-content {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                row-gap: 0.5rem;
+                .name-wrapper {
+                  .name {
+                    color: #1c5c7e;
+                    font-weight: 600;
+                  }
+                }
+                .bio-wrapper {
+                  font-size: 14px;
+                }
+              }
+            }
           }
         }
       }

@@ -1,12 +1,20 @@
 import { Container } from "./styled";
 import Navbar from "../../../Navbar";
-import { receivedRequests as RR, sentRequests as SR } from "./api";
+import {
+  receivedRequests as RR,
+  sentRequests as SR,
+  searchResults as SRS,
+  youMayKnow as MN,
+} from "./api";
 import { useEffect, useState } from "react";
-import { IoClose, IoCheckmark, IoSearch } from "react-icons/io5";
+import { IoClose, IoCheckmark, IoSearch, IoFilter } from "react-icons/io5";
 
 const Network = (props) => {
   const [sentRequests, useSentRequests] = useState(SR);
   const [receivedRequests, setReceivedRequests] = useState(RR);
+  const [searchRequest, setSearchRequest] = useState(null);
+  const [searchResults, setSearchResults] = useState(null);
+  const [youMayKnow, setYouMayKnow] = useState(MN);
 
   const [scrollPos, setScrollPos] = useState({
     start: true,
@@ -158,11 +166,87 @@ const Network = (props) => {
         <main className="main-panel">
           <div className="main-content">
             <div className="header-container">
-              <h1>
-                Results For <span>Lorem Ipsum Dolor:</span>
-              </h1>
+              {searchResults ? (
+                <h1>
+                  Results For <span>{searchRequest}</span>
+                </h1>
+              ) : (
+                <h1>People you may know</h1>
+              )}
             </div>
-            <div className="content"></div>
+            <div className="content">
+              <div className="filters">
+                <div className="filter">
+                  <div className="filter-icon-wrapper">
+                    <IoFilter size={20} />
+                  </div>
+                  <span className="filter-name">lorem ipsum</span>
+                </div>
+                <div className="filter">
+                  <div className="filter-icon-wrapper">
+                    <IoFilter size={20} />
+                  </div>
+                  <span className="filter-name">lorem ipsum</span>
+                </div>
+                <div className="filter">
+                  <div className="filter-icon-wrapper">
+                    <IoFilter size={20} />
+                  </div>
+                  <span className="filter-name">lorem ipsum</span>
+                </div>
+                <div className="filter">
+                  <div className="filter-icon-wrapper">
+                    <IoFilter size={20} />
+                  </div>
+                  <span className="filter-name">lorem ipsum</span>
+                </div>
+                <div className="filter">
+                  <div className="filter-icon-wrapper">
+                    <IoFilter size={20} />
+                  </div>
+                  <span className="filter-name">lorem ipsum</span>
+                </div>
+              </div>
+              {searchResults ? (
+                <div className="results">
+                  {searchResults.map((user) => {
+                    <div className="single-user">
+                      <div className="pictute-wrapper">
+                        <img src={user.image?.url} alt="user profile picture" />
+                      </div>
+
+                      <div className="text-content">
+                        <div className="name-wrapper">
+                          <span className="name">{user.name}</span>
+                        </div>
+                        <div className="bio-wrapper">
+                          <span className="bio">{user.bio}</span>
+                        </div>
+                      </div>
+                    </div>;
+                  })}
+                </div>
+              ) : (
+                <div className="results">
+                  {youMayKnow.map((user) => (
+                    <div className="single-user">
+                      <div className="pictute-wrapper">
+                        <img src={user.image?.url} alt="user profile picture" />
+                      </div>
+
+                      <div className="text-content">
+                        <div className="name-wrapper">
+                          <span className="name">{user.name}</span>
+                        </div>
+                        <div className="bio-wrapper">
+                          <span className="bio">{user.bio}</span>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
           </div>
         </main>
       </div>
