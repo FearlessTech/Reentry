@@ -61,8 +61,7 @@ const Widget = styled.div`
   border-bottom: 1px solid rgba(0, 0, 0, 0.15);
   padding-top: 12px;
   padding-bottom: 12px;
-  & > a {
-    text-decoration: none;
+  & > nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -71,6 +70,9 @@ const Widget = styled.div`
       background-color: rgba(0, 0, 0, 0.08);
     }
     div {
+      a {
+        text-decoration: none;
+      }
       display: flex;
       flex-direction: column;
       text-align: left;

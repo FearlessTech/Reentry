@@ -37,7 +37,7 @@ const Leftside = (props) => {
           </a>
         </UserInfo>
         <Widget>
-          <a>
+          <nav>
             <div>
               <Link to="/notifications">
                 <span>Notifications</span>
@@ -50,7 +50,7 @@ const Leftside = (props) => {
               </Link>
             </div>
             <AiOutlineUserAdd />
-          </a>
+          </nav>
         </Widget>
         <Item>
           <span>
