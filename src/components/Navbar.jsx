@@ -112,11 +112,13 @@ const Navbar = (props) => {
             </More>
             <User>
               <a>
-                {props.user && props.user.photoURL ? (
-                  <img src={props.user.photoURL} alt="" />
-                ) : (
-                  <img src="/images/user.svg" alt="" />
-                )}
+                <div className="img-wrapper">
+                  {props.user && props.user.photoURL ? (
+                    <img src={props.user.photoURL} alt="" />
+                  ) : (
+                    <img src="/images/user.svg" alt="" />
+                  )}
+                </div>
                 <span>
                   Sign Out <IoMdArrowDropdown />
                 </span>
