@@ -13,6 +13,7 @@ const Container = styled.div`
     img {
       border-radius: 5px;
       width: 100%;
+      font-size: 0;
     }
   }
   .comment-content-container {

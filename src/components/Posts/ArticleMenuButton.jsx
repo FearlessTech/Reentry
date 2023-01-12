@@ -40,6 +40,8 @@ export function ArticleMenuButton({ articleText, articleId, fileType }) {
 
   async function deleteArticle(articleId) {
     const articleRef = db.collection("articles").doc(articleId);
+    const commentsRef = articleRef.collection("comments");
+
     const fileRef = fileType ? storage.refFromURL(fileType) : null;
 
     if (fileRef) {
@@ -49,6 +51,11 @@ export function ArticleMenuButton({ articleText, articleId, fileType }) {
     }
     await articleRef.delete().then(() => {
       console.log("article deleted");
+    });
+    commentsRef.get().then((querySnapshot) => {
+      querySnapshot.docs.forEach((snapshot) => {
+        snapshot.ref.delete();
+      });
     });
   }
 
