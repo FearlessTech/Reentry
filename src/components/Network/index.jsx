@@ -1,5 +1,4 @@
 import { Container } from "./styled";
-import Navbar from "../Navbar";
 import {
   receivedRequests as RR,
   sentRequests as SR,
@@ -16,14 +15,8 @@ const Network = (props) => {
   const [searchResults, setSearchResults] = useState(null);
   const [youMayKnow, setYouMayKnow] = useState(MN);
 
-  const [scrollPos, setScrollPos] = useState({
-    start: true,
-    end: false,
-  });
-
   return (
     <Container>
-      <Navbar />
       <div className="wrapper">
         <div className="left-box">
           <div className="left-content">
@@ -43,25 +36,7 @@ const Network = (props) => {
                 <IoSearch className="icon" size={20} color="#d9d9d9" />
               </button>
             </div>
-            <div
-              className="sections"
-              onScroll={(e) => {
-                const calc = e.target.scrollHeight - e.target.offsetHeight;
-                if (e.target.scrollTop === calc) {
-                  setScrollPos(({ start, end }) => {
-                    return { start, end: true };
-                  });
-                } else if (e.target.scrollTop === 0) {
-                  setScrollPos(({ start, end }) => {
-                    return { start: true, end };
-                  });
-                } else {
-                  setScrollPos(() => {
-                    return { start: false, end: false };
-                  });
-                }
-              }}
-            >
+            <div className="sections">
               {sentRequests && (
                 <section className="section">
                   <div className="sections-header-container">

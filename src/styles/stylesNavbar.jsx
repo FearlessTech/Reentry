@@ -38,6 +38,7 @@ const Logo = styled.span`
   @media (max-width: 768px) {
     margin-right: 2px;
     margin-left: 2px;
+  }
 `;
 
 const Search = styled.div`
@@ -203,14 +204,12 @@ const User = styled(NavList)`
     padding-top: 5px;
     width: 24px;
     height: 24px;
-    border-radius: 50%;
   }
 
   a > img {
     width: 24px;
     height: 24px;
     padding-top: 5px;
-    border-radius: 50%;
   }
 
   span {
