@@ -1,15 +1,10 @@
 import { NoteTwoTone } from "@material-ui/icons";
 import firebase from "firebase/app";
+import { useEffect } from "react";
 
 import db from "../firebase";
 
 export default {
-  // // Need to change this to the already active user
-  // fbPopup:async () => {
-  //     const provider = new firebase.auth.GoogleAuthProvider();
-  //     let result = await auth().signInWithPopup(provider);
-  //     return result;
-  // },
   addUser: async (u) => {
     await db.collection("users").doc(u.id).set(
       {

@@ -24,7 +24,7 @@ import {
   SidebarHeaderButtons,
   TextInput,
 } from "./stylesMessages";
-import Api from "../../actions/Api";
+import "../../actions/Api";
 
 const Messages = (props) => {
   const [chatlist, setChatlist] = useState([]);
@@ -42,23 +42,6 @@ const Messages = (props) => {
     setshowNewChat(true);
   };
 
-  const handleLoginData = async (u) => {
-    console.log(u);
-    let newUser = {
-      id: u.uid,
-      name: u.displayName,
-      avatar: u.photoURL,
-    };
-    console.log(newUser);
-    await Api.addUser(newUser);
-    //
-    setUser(newUser);
-  };
-
-  if (user === null) {
-    return "" + "";
-  }
-
   return (
     <AppWindow>
       <Sidebar>
@@ -69,7 +52,13 @@ const Messages = (props) => {
           setShow={setshowNewChat}
         />
         <SidebarHeader>
-          <Avatar src={user.avatar} alt="" />
+          <Avatar>
+            {props.user && props.user.photoURL ? (
+              <img src={props.user.photoURL} alt="" />
+            ) : (
+              <img src="/images/user.svg" alt="" />
+            )}
+          </Avatar>
           <SidebarHeaderButtons>
             <button>
               <MdDonutLarge style={{ color: "#919191" }} />
