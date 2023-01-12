@@ -24,13 +24,11 @@ export class commentValidador {
   }
 
   isDate(field) {
-    console.log(field, typeof field);
     this.currentField = field;
     return typeof field === "object";
   }
 
   isText(field, acceptNull) {
-    console.log(field, typeof field);
     this.currentField = field;
     if (acceptNull) {
       return typeof field === "string" || field === null;
