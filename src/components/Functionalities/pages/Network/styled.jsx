@@ -118,20 +118,6 @@ export const Container = styled.div`
         .sections {
           box-shadow: 0 0 5px #00000036;
           position: relative;
-          .shadow-start {
-            width: 100%;
-            height: 5px;
-            position: absolute;
-            top: 430px;
-            box-shadow: 0 0 5px #000b29;
-          }
-          .shadow-end {
-            width: 100%;
-            height: 5px;
-            position: absolute;
-            top: 242px;
-            box-shadow: 0 0 5px #000b29;
-          }
           max-height: 430px;
           overflow-y: scroll;
           .section {

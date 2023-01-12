@@ -54,11 +54,6 @@ const Network = (props) => {
                 }
               }}
             >
-              <div
-                className={`shadow-${
-                  scrollPos.start ? "start" : scrollPos.end ? "end" : ""
-                }`}
-              ></div>
               {sentRequests && (
                 <section className="section">
                   <div className="sections-header-container">
