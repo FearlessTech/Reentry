@@ -2,6 +2,7 @@ import Container from "./styledComments";
 import { Button, ButtonGroup } from "@material-ui/core";
 import { useRef, useState } from "react";
 import db, { auth } from "../../../../firebase";
+import { commentValidador } from "../../../../services/validators";
 
 export function AddComment({ articleId, setshowCommentBox }) {
   const [commentText, setcommentText] = useState("");
@@ -9,6 +10,7 @@ export function AddComment({ articleId, setshowCommentBox }) {
 
   async function addCommentToFireStoreDocument(e, articleId) {
     const user = auth.currentUser;
+
     try {
       e.preventDefault();
     } catch (e) {
@@ -24,6 +26,14 @@ export function AddComment({ articleId, setshowCommentBox }) {
       commenterUid: user.uid,
       commenterProfilePic: user.photoURL,
     };
+
+    const validator = new commentValidador(comment);
+
+    if (!validator.isValid) {
+      console.log("error in ", validator.currentField);
+      console.log("obj: ", comment);
+      return window.alert("validation error");
+    }
 
     const articleRef = db.collection("articles").doc(articleId);
     const commentsRef = articleRef.collection("comments");
@@ -41,7 +51,7 @@ export function AddComment({ articleId, setshowCommentBox }) {
       keyController.ctrl = true;
     }
     if (e.key === "Enter" && keyController.ctrl) {
-      addCommentToFireStoreDocument(articleId);
+      addCommentToFireStoreDocument(e, articleId);
     }
   };
 
