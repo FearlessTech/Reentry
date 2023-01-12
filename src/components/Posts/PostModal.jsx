@@ -17,7 +17,7 @@ import {
   AttachAssets,
   PostButton,
   Editor,
-} from "../../styles/stylesPostModal.jsx";
+} from "./stylesPostModal.jsx";
 import ReactPlayer from "react-player";
 import { useRef } from "react";
 
