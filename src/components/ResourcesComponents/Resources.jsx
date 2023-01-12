@@ -3,6 +3,8 @@ import styles from "./Resources.module.css";
 import ResourceOutput from "./ResourceOutput";
 import ResourcesItem from "./ResourcesItem";
 import { SearchResults } from "../Search/SearchResults";
+import PostModal from "../Posts/PostModal";
+import { ResourcePopup } from "./ResourcePopup";
 const Resources = (props) => {
   const [showModal, setShowModal] = useState("close");
 
@@ -58,6 +60,9 @@ const Resources = (props) => {
           <ResourcesItem />
         </div>
       </div>
+      {showModal === "open" && (
+        <ResourcePopup showModal={showModal} handleClick={handleClick} />
+      )}
     </div>
   );
 };

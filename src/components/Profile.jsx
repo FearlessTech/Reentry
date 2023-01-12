@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 import { AiOutlineUserAdd, AiOutlinePlus } from "react-icons/ai";
 import { BsFillBookmarkFill } from "react-icons/bs";
-
+import ResourceCheckBoxes from "./ResourceCheckBoxes";
 import {
   Container,
   ArtCard,
@@ -23,7 +23,6 @@ import {
   PFHeading,
   Content,
 } from "../styles/stylesProfile.jsx";
-import ResourceCheckBoxes from "./ResourceCheckBoxes";
 
 const Profile = (props) => {
   return (

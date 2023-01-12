@@ -1,15 +1,16 @@
 @import url(https://fonts.googleapis.com/css?family=Inter:100,200,300,regular,500,600,700,800,900);
 .container {
-  display: none;
   padding-top: 103px;
   max-width: 2150px;
   display: flex;
-  height: max-content;
+  height: 80%;
   gap: 73px;
   background-color: #ffffff;
   min-height: 100vh;
   padding-left: 75px;
   padding-right: 75px;
+  overflow-y: scroll;
+  overflow-x: hidden;
 }
 .searchBox {
   flex: 0 1 30%;

@@ -1,13 +1,23 @@
 import styled from "styled-components";
 
 const Popup = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 9999;
+  background-color: whitesmoke;
   width: 56%;
   border-radius: 10px;
   padding: 1%;
-  margin: auto;
-  margin-top: 3%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 4%;
   border: 1px solid rgb(201, 201, 201);
-  height: 70%;
+  height: 85%;
+  overflow-y: scroll;
+  overflow-x: hidden;
   button {
     border-radius: 50px;
     padding: 7px 20px;
@@ -18,11 +28,7 @@ const Popup = styled.div`
     cursor: pointer;
   }
 `;
-const HR = styled.div`
-  width: 103.5%;
-  margin-left: -1.9%;
-  margin-top: 1%;
-`;
+
 const Top = styled.div`
   display: flex;
   p {
@@ -44,94 +50,39 @@ const Top = styled.div`
   }
 `;
 const Content = styled.div`
-  height: 300px;
+  min-height: 100px;
+  background-color: whitesmoke;
+  margin-left: 40px;
   overflow-y: scroll;
   /* border: 1px solid blue; */
 `;
-const SubContent = styled.div`
+
+const RPUHeading = styled.div`
+  background-color: #077a7a;
+  height: 50px;
   display: flex;
-`;
-const LeftCon = styled.div`
-  width: 85%;
-  line-height: 5px;
-  /* border: 1px solid red; */
-  h4 {
-    hover {
-      color: rgb(27, 126, 255);
-      text-decoration: underline;
-      cursor: pointer;
-    }
-  }
-  p {
-    color: gray;
-  }
-`;
-const RightCon = styled.div`
-  display: flex;
-  img {
-    width: 20px;
-    margin: 15%;
-    height: 20px;
-    padding: 10%;
-    /* border: 3px solid red; */
-    hover {
-      cursor: pointer;
-      border-radius: 50px;
-      background-color: rgb(209, 209, 209);
-    }
-  }
-`;
-const Bottom = styled.div`
-  display: flex;
-`;
-const LeftB = styled.div`
-  width: 85%;
-  line-height: 5px;
-  color: rgb(27, 126, 255);
-  span {
-    hover {
-      text-decoration: underline;
-      cursor: pointer;
-    }
-  }
-`;
-const RightB = styled.div`
-  margin: 3% 0 0 -1%;
+  flex-direction: row-reverse;
+  align-items: center;
+  padding-right: 20px;
+  color: whitesmoke;
 `;
 
-const Switch = styled.label`
-  position: relative;
-  display: inline-block;
-  width: 60px;
-  height: 34px;
-  input {
-    opacity: 0;
-    width: 0;
-    height: 0;
-  }
-  span {
-    position: absolute;
-    cursor: pointer;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: #ccc;
-    -webkit-transition: 0.4s;
-    transition: 0.4s;
+const OrgInfo = styled.div`
+  img {
+    width: 20%;
   }
 `;
+
+const ResourceDescription = styled.div``;
+
+const ResourcesCheckBoxes = styled.div``;
 
 export {
   Popup,
-  HR,
   Top,
   Content,
-  SubContent,
-  LeftCon,
-  RightCon,
-  Bottom,
-  LeftB,
-  RightB,
-  Switch,
+  RPUHeading,
+  OrgInfo,
+  ResourceDescription,
+  ResourcesCheckBoxes,
 };
