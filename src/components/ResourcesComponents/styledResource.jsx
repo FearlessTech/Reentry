@@ -39,8 +39,6 @@ const StyledLeftASide = styled.div`
     margin: 3rem auto;
     width: 100%;
     max-width: auto;
-    width: 100%;
-    max-width: auto;
   }
 `;
 
@@ -123,8 +121,6 @@ const StyledMiddleAside = styled.div`
 
   @media (max-width: 623px) {
     margin: 1rem auto 0rem auto;
-    width: 100%;
-    max-width: auto;
     width: 100%;
     max-width: auto;
   }
