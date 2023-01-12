@@ -5,8 +5,13 @@ export const Container = styled.div`
   padding-top: calc(3rem - 5px);
   border: 1px solid green;
   background-color: #c1c1c1;
-  border: 1px solid red;
   overflow: scroll;
+  .navbar {
+    * ::selection {
+      background-color: #ebebeb;
+      color: #077a7a;
+    }
+  }
   &,
   * {
     box-sizing: border-box;
@@ -68,18 +73,22 @@ export const Container = styled.div`
         .search-container {
           display: flex;
           padding: 1rem;
+          column-gap: 0.2rem;
           .outline {
+            flex: 1 1 1;
             width: 100%;
             input {
               width: 100%;
               text-indent: 1rem;
+              font-size: 18px;
+              font-weight: 300;
               &::placeholder {
                 font-size: 18px;
                 font-weight: 300;
                 color: #2e2e2e95;
               }
               height: 40px;
-              border: 2px solid #d9d9d9;
+              border: 2px solid #0087875d;
               &:focus,
               &:focus-visible,
               &:focus-within {
@@ -88,9 +97,44 @@ export const Container = styled.div`
               }
             }
           }
+          .search-btn {
+            width: 40px;
+            height: 40px;
+            flex: 0 0 40px;
+            background-color: #009999;
+            border: none;
+            &:hover {
+              background-color: #008484;
+            }
+            &:active {
+              background-color: #009b9b;
+              transform: scale(0.95);
+            }
+            .icon {
+              border: none;
+            }
+          }
         }
         .sections {
-          .pending {
+          box-shadow: 0 0 5px #00000036;
+          position: relative;
+          .shadow-start {
+            width: 100%;
+            height: 5px;
+            position: absolute;
+            top: 430px;
+            box-shadow: 0 0 5px #000b29;
+          }
+          .shadow-end {
+            width: 100%;
+            height: 5px;
+            position: absolute;
+            top: 242px;
+            box-shadow: 0 0 5px #000b29;
+          }
+          max-height: 430px;
+          overflow-y: scroll;
+          .section {
             width: 100%;
             display: flex;
             flex-direction: column;
@@ -128,12 +172,75 @@ export const Container = styled.div`
                   }
                 }
               }
+              .middle {
+                display: flex;
+                flex: 1 1 0;
+                flex-wrap: wrap;
+                flex-direction: column;
+                position: relative;
+                &:hover {
+                  .popup {
+                    display: flex;
+                  }
+                }
+                .popup {
+                  bottom: 0;
+                  left: -50px;
+                }
+                .status {
+                  font-size: 12px;
+                  font-weight: 200;
+                }
+              }
+              .popup {
+                display: none;
+                background-color: #077a7a;
+                width: 180px;
+                height: 200px;
+                position: absolute;
+                z-index: 10;
+                padding: 0.5rem;
+                column-gap: 0.5rem;
+
+                .img-wrapper {
+                  flex: 1 0 45px;
+                  height: 100%;
+                }
+                .content-wrapper {
+                  display: flex;
+                  flex-direction: column;
+                  justify-content: flex-start;
+                  row-gap: 0.4rem;
+                  .name {
+                    color: #ededed;
+                    flex: 0 1 10px;
+                  }
+                  .bio {
+                    flex: 1 1 10px;
+                    font-size: 11px;
+                    color: #d2d2d2;
+                    font-weight: 200;
+                  }
+                }
+              }
+
               .name {
                 flex: 1 1 0;
                 font-size: 12px;
                 font-weight: 600;
                 color: #1c5c7e;
+                position: relative;
+                &:hover {
+                  .popup {
+                    display: flex;
+                  }
+                }
+                .popup {
+                  top: 0;
+                  left: -50px;
+                }
               }
+
               .options {
                 flex: 0 0 40px;
                 display: flex;
@@ -163,6 +270,10 @@ export const Container = styled.div`
                       border: 0.2px solid #ffffff;
                     }
                   }
+                }
+
+                &.received {
+                  justify-content: flex-end;
                 }
               }
             }
