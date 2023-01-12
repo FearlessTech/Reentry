@@ -166,8 +166,9 @@ export function SinglePost({ article, id }) {
         <>
           <p style={{ textAlign: "left", marginLeft: "15px" }}>Comments:</p>
           <div style={{ maxHeight: "300px", overflow: "scroll" }}>
-            {comments.map((comment) => (
+            {comments.map((comment, i) => (
               <SingleComment
+                key={i}
                 comment={comment}
                 articleAuthor={article.actor.uid}
                 articleId={id}

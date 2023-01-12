@@ -1,16 +1,22 @@
 import Container from "./styledComments";
 import { Button, ButtonGroup } from "@material-ui/core";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import db, { auth } from "../../../../firebase";
 
 export function AddComment({ articleId, setshowCommentBox }) {
   const [commentText, setcommentText] = useState("");
+  const form = useRef();
 
   async function addCommentToFireStoreDocument(e, articleId) {
     const user = auth.currentUser;
-    e.preventDefault();
+    try {
+      e.preventDefault();
+    } catch (e) {
+      console.log(e.message);
+    }
 
     const timestamp = new Date();
+
     const comment = {
       text: commentText,
       postedBy: user.displayName,
@@ -26,13 +32,33 @@ export function AddComment({ articleId, setshowCommentBox }) {
     setshowCommentBox(false);
   }
 
+  const keyController = {
+    ctrl: false,
+  };
+
+  const handleMessageKeyDown = (e) => {
+    if (e.key === "Control") {
+      keyController.ctrl = true;
+    }
+    if (e.key === "Enter" && keyController.ctrl) {
+      addCommentToFireStoreDocument(articleId);
+    }
+  };
+
+  const handleMessageKeyUp = (e) => {
+    if (e.key === "Control") {
+      keyController.ctrl = false;
+    }
+  };
+
   return (
-    <Container>
+    <Container onKeyDown={handleMessageKeyDown} onKeyUp={handleMessageKeyUp}>
       <div className="picture-wrapper">
         <img src={auth.currentUser.photoURL} alt="commenter profile picture" />
       </div>
       <div className="comment-container">
         <form
+          ref={form}
           onSubmit={(e) => addCommentToFireStoreDocument(e, articleId)}
           className="comment-form"
         >

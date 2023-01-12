@@ -10,7 +10,7 @@ import {
   Section,
   Hero,
 } from "../styles/stylesWelcome";
-import { Link, Navigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const Welcome = (props) => {
   useEffect(() => {
@@ -115,31 +115,39 @@ function parallax(e) {
 }
 
 function move(elm, event) {
-  const speed = elm.getAttribute("speed");
-  const defaultTop = Number(elm.getAttribute("top"));
-  const defaultLeft = Number(elm.getAttribute("left"));
+  try {
+    const speed = elm.getAttribute("speed");
+    const defaultTop = Number(elm.getAttribute("top"));
+    const defaultLeft = Number(elm.getAttribute("left"));
 
-  const x = (window.innerWidth - event.pageX * speed) / 100;
-  const y = (window.innerHeight - event.pageY * speed) / 100;
+    const x = (window.innerWidth - event.pageX * speed) / 100;
+    const y = (window.innerHeight - event.pageY * speed) / 100;
 
-  const yValue = defaultTop + y;
-  const xValue = defaultLeft + x;
+    const yValue = defaultTop + y;
+    const xValue = defaultLeft + x;
 
-  elm.style.setProperty("top", `${yValue}px`);
-  elm.style.setProperty("left", `${xValue}px`);
+    elm.style.setProperty("top", `${yValue}px`);
+    elm.style.setProperty("left", `${xValue}px`);
+  } catch (e) {
+    console.log(e.message);
+  }
 }
 
 function moveChain(elm, event) {
-  const speed = elm.getAttribute("speed");
-  const defaultTop = Number(elm.getAttribute("top"));
-  const defaultLeft = Number(elm.getAttribute("left"));
+  try {
+    const speed = elm.getAttribute("speed");
+    const defaultTop = Number(elm.getAttribute("top"));
+    const defaultLeft = Number(elm.getAttribute("left"));
 
-  const x = (window.innerWidth - event.pageX * speed) / 100;
-  const y = (window.innerHeight - event.pageY * speed) / 100;
+    const x = (window.innerWidth - event.pageX * speed) / 100;
+    const y = (window.innerHeight - event.pageY * speed) / 100;
 
-  const yValue = defaultTop + y;
-  const xValue = defaultLeft + x;
+    const yValue = defaultTop + y;
+    const xValue = defaultLeft + x;
 
-  elm.style.setProperty("top", `${yValue}px`);
-  elm.style.setProperty("left", `${xValue > 0 ? 0 : xValue}px`);
+    elm.style.setProperty("top", `${yValue}px`);
+    elm.style.setProperty("left", `${xValue > 0 ? 0 : xValue}px`);
+  } catch (e) {
+    console.log(e.message);
+  }
 }
