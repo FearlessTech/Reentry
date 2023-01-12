@@ -47,7 +47,7 @@ const Navbar = (props) => {
   }, []);
 
   return (
-    <Container>
+    <Container className="navbar">
       <Content>
         <Logo>
           <Link to="/home">
