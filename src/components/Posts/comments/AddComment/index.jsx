@@ -30,9 +30,10 @@ export function AddComment({ articleId, setshowCommentBox }) {
     const validator = new commentValidador(comment);
 
     if (!validator.isValid) {
-      console.log("error in ", validator.currentField);
-      console.log("obj: ", comment);
-      return window.alert("validation error");
+      return window.alert(
+        "validation error during validation of ",
+        validator.currentField
+      );
     }
 
     const articleRef = db.collection("articles").doc(articleId);
