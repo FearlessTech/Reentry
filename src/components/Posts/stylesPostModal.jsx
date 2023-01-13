@@ -15,7 +15,7 @@ const Container = styled.div`
 const Content = styled.div`
   width: 100%;
   max-width: 552px;
-  background-color: #fff;
+  background-color: whitesmoke;
   overflow: initial;
   border-radius: 5px;
   position: relative;
@@ -23,8 +23,6 @@ const Content = styled.div`
   flex-direction: column;
   top: 32px;
   margin: 0 auto;
-  background-color: #e9e9e9;
-
   .preview {
     padding: 0.5rem 2rem;
     .img-container {
@@ -56,12 +54,12 @@ const Header = styled.div`
   border-bottom: 1px solid rgba(0, 0, 0, 0.15);
   font-size: 16px;
   line-height: 1.5;
-  color: darkslateblue;
+  color: whitesmoke;
   font-weight: 400;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #99d3df;
+  background-color: #077a7a;
   border-radius: 5px;
 
   button {
@@ -69,12 +67,12 @@ const Header = styled.div`
     width: 30px;
     min-width: auto;
     display: flex;
-    color: darkslateblue;
-    background: #fffdd0;
+    color: #077a7a;
+    background: whitesmoke;
     border-radius: 7px;
-    border-color: #fcf4a3;
+    border-color: lightgray;
     &:hover {
-      background: #fcf4a3;
+      background: lightgray;
     }
 
     img {
@@ -133,12 +131,12 @@ const AssetButton = styled.button`
   align-items: center;
   height: 40px;
   min-width: auto;
-  color: darkslateblue;
-  background: #fffdd0;
+  color: whitesmoke;
+  background: #009999;
   border-radius: 7px;
-  border-color: #fcf4a3;
+  border-color: #009999;
   &:hover {
-    background: #fcf4a3;
+    background: #077a7a;
   }
 `;
 
@@ -155,15 +153,15 @@ const AttachAssets = styled.div`
 const PostButton = styled.button`
   min-width: 60px;
   border-radius: 7px;
-  border-color: #fcf4a3;
+  border-color: lightgray;
   padding-left: 16px;
   padding-right: 16px;
   font-weight: 600;
-  background: ${(props) => (props.disabled ? "lightgray" : "#FFFDD0")};
-  color: ${(props) => (props.disabled ? "rgba(1,1,1,0.2)" : "darkslateblue;")};
+  background: ${(props) => (props.disabled ? "lightgray" : "#077a7a")};
+  color: ${(props) => (props.disabled ? "rgba(1,1,1,0.2)" : "whitesmoke")};
 
   &:hover {
-    background: ${(props) => (props.disabled ? "#fcf4a3" : "#fcf4a3")};
+    background: ${(props) => (props.disabled ? "lightgray" : "#009999")};
     cursor: ${(props) => (props.disabled ? "none" : "pointer")};
     outline: none !important;
   }
