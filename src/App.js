@@ -18,7 +18,7 @@ const Home = lazy(() => import("./components/Home"));
 // const Resource = lazy(() => import("./components/Resource"));
 const Notifications = lazy(() => import("./components/Notifications"));
 const Network = lazy(() => import("./components/Network"));
-const Messaging = lazy(() => import("./components/Messaging"));
+const Messaging = lazy(() => import("./components/Messages/App"));
 const Profile = lazy(() => import("./components/Profile"));
 const Resources = lazy(() =>
   import("./components/ResourcesComponents/Resources")
