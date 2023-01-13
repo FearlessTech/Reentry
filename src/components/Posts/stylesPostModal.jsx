@@ -56,8 +56,8 @@ const Header = styled.div`
   line-height: 1.5;
   color: whitesmoke;
   font-weight: 400;
-  display: grid;
-  place-items: center;
+  display: flex;
+  justify-content: space-between;
   border-bottom: 1px solid #ffffff4d;
   background-color: #077a7a;
   border-radius: 5px;
