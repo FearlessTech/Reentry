@@ -68,5 +68,6 @@
     "*.{js,jsx,css}": [
       "prettier --write"
     ]
-  }
+  },
+  "proxy": "http://www.prisonerreentryadvocates.rocks/"
 }
