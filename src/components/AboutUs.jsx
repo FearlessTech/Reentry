@@ -1,28 +1,29 @@
-import { Container, Content, Image, Info } from "../styles/stylesAboutUs";
+import {
+  Container,
+  Content,
+  Image,
+  Info,
+  AUHeading,
+} from "../styles/stylesAboutUs";
 
 const AboutUs = (props) => {
   return (
     <Container>
       <Content>
-        <Image>
-          <iframe
-            width="460"
-            height="275"
-            src="https://www.youtube.com/embed/pBy1zgt0XPc"
-            title="YouTube video player"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-          ></iframe>
-        </Image>
+        <Image></Image>
         <Info>
-          <h1>Clover Baxter and GitHub Contributors</h1>
+          <AUHeading>
+            <h1>Clover Baxter and GitHub Contributors</h1>
+          </AUHeading>
           <p>Here is some information about us.</p>
         </Info>
       </Content>
 
       <Content>
         <Info>
-          <h1>National Alliance of Mental Health (NAMI)</h1>
+          <AUHeading>
+            <h1>National Alliance of Mental Health (NAMI)</h1>
+          </AUHeading>
           <p>
             Our Mission: Through support, education, and advocacy NAMI Maine is
             dedicated to building better lives for the 1 in 4 Mainers who are
@@ -58,7 +59,9 @@ const AboutUs = (props) => {
           <img src="/images/MPRNaboutme2.jpg" alt="" />
         </Image>
         <Info>
-          <h1>Maine Prisoner Reentry Network (MRRN)</h1>
+          <AUHeading>
+            <h1>Maine Prisoner Reentry Network (MRRN)</h1>
+          </AUHeading>
           <a>https://re-entrymaine.org/</a>
           <p>
             In June of 2017, 5 people gathered together at the Catholic
@@ -90,7 +93,9 @@ const AboutUs = (props) => {
       </Content>
       <Content>
         <Info>
-          <h1>The Maine Prisoner Advocacy Coalition (MPAC)</h1>
+          <AUHeading>
+            <h1>The Maine Prisoner Advocacy Coalition (MPAC)</h1>
+          </AUHeading>
           <a>https://www.maineprisoneradvocacy.org/</a>
           <p>
             The Maine Prisoner Advocacy Coalition (MPAC) is committed to
@@ -126,17 +131,6 @@ const AboutUs = (props) => {
         <Image>
           <img src="/images/MPACaboutme.jpg" alt="" />
         </Image>
-      </Content>
-
-      <Content>
-        <Info>
-          <h1>User Agreement</h1>
-          <p>
-            This space will hold a copy of the user agreement that users will{" "}
-            <br />
-            agree to before being allowed to interact with this site.
-          </p>
-        </Info>
       </Content>
     </Container>
   );
