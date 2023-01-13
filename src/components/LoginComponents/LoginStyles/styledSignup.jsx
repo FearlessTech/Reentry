@@ -4,6 +4,7 @@ const StyledSignUp = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
+    row-gap: 1rem;
     .title {
       font-weight: 700;
       color: #939393;
@@ -14,6 +15,7 @@ const StyledSignUp = styled.div`
       display: flex;
       flex-direction: column;
       row-gap: 1rem;
+      align-items: center;
       .input-container {
         label {
           display: flex;
@@ -65,6 +67,33 @@ const StyledSignUp = styled.div`
           background-color: #077a7a;
           transform: scale(0.98);
         }
+      }
+    }
+  }
+  .username-signup-label,
+  .password-signup-label,
+  .password-confirm-signup-label {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+  }
+  .log-in {
+    font-size: 14px;
+    font-weight: 600;
+    @media (prefers-color-scheme: dark) {
+      color: #c1c1c1;
+      a {
+        color: #015858;
+      }
+    }
+    a {
+      color: #009999;
+      font-weight: 300;
+      text-decoration: none;
+      &:hover {
+        text-decoration: underline;
+        transition: 20ms;
       }
     }
   }

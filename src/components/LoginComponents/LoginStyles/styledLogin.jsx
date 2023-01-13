@@ -5,9 +5,16 @@ const StyledLogin = styled.div`
   flex-direction: column;
   /* justify-content: space-between; */
   align-items: center;
-  row-gap: 1rem;
+  // row-gap: 1rem;
   @media (prefers-color-scheme: dark) {
     background-color: transparent;
+  }
+  .username-login-label,
+  .password-login-label {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
   }
   .form-content {
     display: flex;
@@ -100,23 +107,23 @@ const StyledLogin = styled.div`
     }
   }
 
-  .sign-up {
-    font-size: 14px;
-    font-weight: 600;
-    @media (prefers-color-scheme: dark) {
-      color: #c1c1c1;
-      a {
-        color: #015858;
-      }
-    }
+}
+.sign-up {
+  font-size: 14px;
+  font-weight: 600;
+  @media (prefers-color-scheme: dark) {
+    color: #c1c1c1;
     a {
-      color: #009999;
-      font-weight: 300;
-      text-decoration: none;
-      &:hover {
-        text-decoration: underline;
-        transition: 20ms;
-      }
+      color: #015858;
+    }
+  }
+  a {
+    color: #009999;
+    font-weight: 300;
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+      transition: 20ms;
     }
   }
 `;

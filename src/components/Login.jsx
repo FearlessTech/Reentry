@@ -47,7 +47,20 @@ const Login = (props) => {
             </span>
           </LoginForm>
         ) : (
-          <SignUpForm />
+          <SignUpForm>
+            <span className="log-in">
+              Already have an acccount?{" "}
+              <Link
+                onClick={(e) => {
+                  e.preventDefault();
+                  setLogin(true);
+                }}
+                to="#"
+              >
+                Log In
+              </Link>
+            </span>
+          </SignUpForm>
         )}
       </Form>
     );
