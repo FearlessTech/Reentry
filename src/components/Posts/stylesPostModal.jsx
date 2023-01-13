@@ -51,14 +51,14 @@ const Content = styled.div`
 
 const Header = styled.div`
   padding: 5px 25px;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+  border-bottom: 1px solid #00000026;
   font-size: 16px;
   line-height: 1.5;
   color: whitesmoke;
   font-weight: 400;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  display: grid;
+  place-items: center;
+  border-bottom: 1px solid #ffffff4d;
   background-color: #077a7a;
   border-radius: 5px;
 
