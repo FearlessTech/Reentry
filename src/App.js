@@ -13,12 +13,12 @@ import "./utilities.css";
 import Login from "./components/Welcome";
 import AgreementLogin from "./components/Login";
 import Navbar from "./components/Navbar";
-// import Resources from "./components/Resources";
+// import Resources from "./extensions/Resources";
 const Home = lazy(() => import("./components/Home"));
-// const Resource = lazy(() => import("./components/Resource"));
+// const Resource = lazy(() => import("./extensions/Resource"));
 const Notifications = lazy(() => import("./components/Notifications"));
 const Network = lazy(() => import("./components/Network"));
-const Messaging = lazy(() => import("./components/Messages/App"));
+const Messaging = lazy(() => import("./components/Messages"));
 const Profile = lazy(() => import("./components/Profile"));
 const Resources = lazy(() =>
   import("./components/ResourcesComponents/Resources")

@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
 // Components
-import Button from "./components/Button";
+import Button from "./extensions/Button";
 // firebase deps
 
 import { Container } from "./stylesMessaging";
 
-import Channel from "./components/Channel";
+import Channel from "./extensions/Channel";
 
 import firebase, { auth, db } from "../../firebase";
 
