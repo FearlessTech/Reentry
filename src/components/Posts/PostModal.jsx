@@ -158,7 +158,10 @@ const PostModal = (props) => {
                 <span>{props.user.displayName}</span>
               </UserInfo>
               <button onClick={(event) => handleClickBubbling(event)}>
-                <AiOutlineCloseCircle onClick={(event) => reset(event)} />
+                <AiOutlineCloseCircle
+                  style={{ margin: "auto" }}
+                  onClick={(event) => reset(event)}
+                />
               </button>
             </Header>
             <SharedContent>

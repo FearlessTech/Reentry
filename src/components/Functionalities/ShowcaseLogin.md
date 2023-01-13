@@ -122,7 +122,7 @@ export default connect(mapStateToProps, mapDispatchToProps)(Welcome);
 
 ### stylesWelcome.jsx  COPY ONLY DO NOT PASTE OVER THIS FILE 
 ```jsx
-import styled from 'styled-components';
+import styled from 'styled-extensions';
 
 const Container = styled.div`
   height: 100vh;
