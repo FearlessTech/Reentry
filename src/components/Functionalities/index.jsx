@@ -23,8 +23,6 @@ const Functionalities = (props) => {
             <li>
               <Link to="/functionalities/parallax">parallax</Link>
               <Link to="/functionalities/birds">birds parallax</Link>
-              <Link to="/functionalities/messages">Messages</Link>
-              <Link to="/functionalities/">Admin</Link>
             </li>
           </ul>
         </Route>
