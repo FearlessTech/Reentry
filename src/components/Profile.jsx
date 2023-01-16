@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 import { AiOutlineUserAdd, AiOutlinePlus } from "react-icons/ai";
 import { BsFillBookmarkFill } from "react-icons/bs";
-
+import ResourceCheckBoxes from "./ResourceCheckBoxes";
 import {
   Container,
   ArtCard,
@@ -16,6 +16,12 @@ import {
   AddPhotoText,
   ProfileMain,
   ProfileLeft,
+  PFIntro,
+  PFCheckBoxes,
+  PFPost,
+  PFResourcesPost,
+  PFHeading,
+  Content,
 } from "../styles/stylesProfile.jsx";
 
 const Profile = (props) => {
@@ -71,9 +77,24 @@ const Profile = (props) => {
         </CommunityCard>
       </ProfileLeft>
       <ProfileMain>
-        <main>
-          <h1>Profile</h1>
-        </main>
+        <PFIntro>
+          <PFHeading>Introductions</PFHeading>
+          <Content></Content>
+        </PFIntro>
+        <PFCheckBoxes>
+          <PFHeading>Resources Check Boxes</PFHeading>
+          <Content>
+            <ResourceCheckBoxes />
+          </Content>
+        </PFCheckBoxes>
+        <PFPost>
+          <PFHeading>Users Post</PFHeading>
+          <Content></Content>
+        </PFPost>
+        <PFResourcesPost>
+          <PFHeading>Users Posted Resources</PFHeading>
+          <Content></Content>
+        </PFResourcesPost>
       </ProfileMain>
     </Container>
   );

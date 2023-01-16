@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import firebase from "firebase";
 import { postArticleAPI } from "../../actions";
 import React from "react";
-import { FaRegImage } from "react-icons/fa";
+import { FaRegFileVideo, FaRegImage } from "react-icons/fa";
 import { AiOutlineCloseCircle } from "react-icons/ai";
 import db from "../../firebase";
 import {
@@ -17,47 +17,86 @@ import {
   AttachAssets,
   PostButton,
   Editor,
-} from "../../styles/stylesPostModal.jsx";
+} from "./stylesPostModal.jsx";
+import ReactPlayer from "react-player";
+import { useRef } from "react";
 
-const FileUploader = (props) => {
-  // Create a reference to the hidden file input element
-  const hiddenFileInput = React.useRef(null);
-
-  // Programatically click the hidden file input element
-  // when the Button component is clicked
-  const handleClick = (event) => {
-    hiddenFileInput.current.click();
-  };
-  // Call a function (passed as a prop from the parent component)
-  // to handle the user-selected file
-  const handleChange = (event) => {
-    const fileUploaded = event.target.files[0];
-    props.handleFile(fileUploaded);
-  };
-  return (
-    <>
-      <AssetButton onClick={handleClick}>
-        <FaRegImage />
-      </AssetButton>
-      <input
-        type="file"
-        ref={hiddenFileInput}
-        onChange={handleChange}
-        style={{ display: "none" }} // Hide the file input element
-      />
-    </>
-  );
+const getConfigForType = (type) => {
+  switch (type) {
+    case "video":
+      return {
+        Icon: FaRegFileVideo,
+        types: "video/mp4,video/x-m4v,video/*",
+      };
+    case "image":
+      return {
+        Icon: FaRegImage,
+        types: "image/png, image/gif, image/jpeg",
+      };
+    default:
+      return {
+        Icon: FaRegImage,
+        types: "image/png,image/gif,image/jpeg,image/*",
+      };
+  }
 };
+
 const PostModal = (props) => {
   const [editorText, setEditorText] = useState("");
   const [sharedImage, setSharedImage] = useState("");
-  const [videoLink, setVideoLink] = useState("");
+  const [sharedVideo, setSharedVideo] = useState("");
+  const videoPlayer = useRef();
   const postMode = props.postMode || "new";
+
+  const FileUploader = (props) => {
+    const config = getConfigForType(props.type);
+    // Create a reference to the hidden file input element
+    const hiddenFileInput = useRef();
+
+    const clear = (cb) => {
+      setSharedImage("");
+      setSharedVideo("");
+      cb();
+    };
+
+    const handleInputChange = (e) => {
+      // Call a function (passed as a prop from the parent component)
+      // to handle the user-selected file
+      if (e.target.files.length > 0) {
+        clear(() => {
+          const fileUploaded = e.target.files[0];
+          props.handleFile(fileUploaded);
+        });
+      }
+    };
+    const handleAssetBtnClick = () => {
+      // Programatically click the hidden file input element
+      // when the Button component is clicked
+
+      const input = hiddenFileInput.current;
+      input.click();
+    };
+    return (
+      <>
+        <AssetButton onClick={handleAssetBtnClick}>
+          <config.Icon />
+        </AssetButton>
+        <input
+          accept={config.types}
+          type="file"
+          ref={hiddenFileInput}
+          onChange={handleInputChange}
+          style={{ display: "none" }} // Hide the file input element
+        />
+      </>
+    );
+  };
 
   useEffect(() => {
     const postText = props.postText || "";
     setEditorText(postText);
-  }, []); 
+  }, []);
+
   const postArticle = (e) => {
     e.preventDefault();
     if (e.target !== e.currentTarget) {
@@ -66,7 +105,7 @@ const PostModal = (props) => {
 
     const payload = {
       image: sharedImage,
-      video: videoLink,
+      video: sharedVideo,
       user: props.user,
       description: editorText,
       timestamp: firebase.firestore.Timestamp.now(),
@@ -85,19 +124,23 @@ const PostModal = (props) => {
     props.setshowMenu(true);
     setEditorText("");
     setSharedImage("");
-    setVideoLink("");
+    setSharedVideo("");
   }
 
   const reset = (e) => {
     setEditorText("");
     setSharedImage("");
-    setVideoLink("");
+    setSharedVideo("");
     props.handleClick(e);
   };
 
   // This function bubble the event between the parent and child of the close modal button
   const handleClickBubbling = (event) => {
     reset(event);
+  };
+  const handlePlayerClick = () => {
+    const videoTag = videoPlayer.current.player.player.player;
+    videoTag.paused ? videoTag.play() : videoTag.pause();
   };
 
   return (
@@ -115,7 +158,10 @@ const PostModal = (props) => {
                 <span>{props.user.displayName}</span>
               </UserInfo>
               <button onClick={(event) => handleClickBubbling(event)}>
-                <AiOutlineCloseCircle onClick={(event) => reset(event)} />
+                <AiOutlineCloseCircle
+                  style={{ margin: "auto" }}
+                  onClick={(event) => reset(event)}
+                />
               </button>
             </Header>
             <SharedContent>
@@ -127,20 +173,52 @@ const PostModal = (props) => {
                 />
               </Editor>
             </SharedContent>
+            <div className="preview">
+              {sharedImage ? (
+                <div className="img-container">
+                  <img src={URL.createObjectURL(sharedImage)} alt="" />
+                </div>
+              ) : sharedVideo ? (
+                <ReactPlayer
+                  ref={videoPlayer}
+                  url={URL.createObjectURL(sharedVideo)}
+                  className="vid-container"
+                  width={"100%"}
+                  height={"100%"}
+                  onClick={handlePlayerClick}
+                />
+              ) : (
+                ""
+              )}
+            </div>
             <SharedCreation>
-              <AttachAssets>
-                <FileUploader handleFile={setSharedImage} />
-              </AttachAssets>
-
+              <div className="files-container">
+                <AttachAssets>
+                  <FileUploader
+                    handleFile={setSharedImage}
+                    type={"image"}
+                    sharedFile={sharedImage}
+                  />
+                </AttachAssets>
+                <AttachAssets>
+                  <FileUploader
+                    handleFile={setSharedVideo}
+                    type={"video"}
+                    sharedFile={sharedVideo}
+                  />
+                </AttachAssets>
+              </div>
               {postMode === "new" ? (
                 <PostButton
                   disabled={!editorText || !FileUploader ? true : false} // if editorText or file is empty, disable the button
-                  onClick={(event) => postArticle(event)}
+                  onClick={postArticle}
                 >
                   Post
                 </PostButton>
               ) : (
-                <PostButton onClick={(e) => saveEditedArticle(e)}>Save Changes</PostButton>
+                <PostButton onClick={(e) => saveEditedArticle(e)}>
+                  Save Changes
+                </PostButton>
               )}
             </SharedCreation>
           </Content>

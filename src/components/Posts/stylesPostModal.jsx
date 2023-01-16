@@ -15,8 +15,7 @@ const Container = styled.div`
 const Content = styled.div`
   width: 100%;
   max-width: 552px;
-  background-color: #fff;
-  max-height: 90%;
+  background-color: whitesmoke;
   overflow: initial;
   border-radius: 5px;
   position: relative;
@@ -24,20 +23,43 @@ const Content = styled.div`
   flex-direction: column;
   top: 32px;
   margin: 0 auto;
-  background-color: #e9e9e9;
+  .preview {
+    padding: 0.5rem 2rem;
+    .img-container {
+      width: 250px;
+      margin: auto;
+      max-width: 100%;
+      flex: 1 1 300px;
+      text-align: center;
+      img {
+        width: 100%;
+      }
+      &:hover {
+        transform: scale(1.3);
+      }
+    }
+    .vid-container {
+      flex: 1 1 200px;
+      margin: auto;
+      max-width: 250px;
+      &:hover {
+        transform: scale(1.3);
+      }
+    }
+  }
 `;
 
 const Header = styled.div`
   padding: 5px 25px;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+  border-bottom: 1px solid #00000026;
   font-size: 16px;
   line-height: 1.5;
-  color: darkslateblue;
+  color: whitesmoke;
   font-weight: 400;
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  background-color: #99d3df;
+  border-bottom: 1px solid #ffffff4d;
+  background-color: #077a7a;
   border-radius: 5px;
 
   button {
@@ -45,12 +67,12 @@ const Header = styled.div`
     width: 30px;
     min-width: auto;
     display: flex;
-    color: darkslateblue;
-    background: #fffdd0;
+    color: #077a7a;
+    background: whitesmoke;
     border-radius: 7px;
-    border-color: #fcf4a3;
+    border-color: lightgray;
     &:hover {
-      background: #fcf4a3;
+      background: lightgray;
     }
 
     img {
@@ -63,6 +85,7 @@ const SharedContent = styled.div`
   display: flex;
   flex-direction: column;
   flex-grow: 1;
+  height: max-content;
   overflow-y: auto;
   vertical-align: baseline;
   background: transparent;
@@ -94,7 +117,10 @@ const UserInfo = styled.div`
 const SharedCreation = styled.div`
   display: flex;
   justify-content: space-between;
-  padding: 12px 24px 12px 16px;
+  padding: 1.5rem 2rem 1rem;
+  .files-container {
+    display: flex;
+  }
 `;
 
 const AssetButton = styled.button`
@@ -105,12 +131,12 @@ const AssetButton = styled.button`
   align-items: center;
   height: 40px;
   min-width: auto;
-  color: darkslateblue;
-  background: #fffdd0;
+  color: whitesmoke;
+  background: #009999;
   border-radius: 7px;
-  border-color: #fcf4a3;
+  border-color: #009999;
   &:hover {
-    background: #fcf4a3;
+    background: #077a7a;
   }
 `;
 
@@ -127,29 +153,32 @@ const AttachAssets = styled.div`
 const PostButton = styled.button`
   min-width: 60px;
   border-radius: 7px;
-  border-color: #fcf4a3;
+  border-color: lightgray;
   padding-left: 16px;
   padding-right: 16px;
   font-weight: 600;
-  background: ${(props) => (props.disabled ? "lightgray" : "#FFFDD0")};
-  color: ${(props) => (props.disabled ? "rgba(1,1,1,0.2)" : "darkslateblue;")};
+  background: ${(props) => (props.disabled ? "lightgray" : "#077a7a")};
+  color: ${(props) => (props.disabled ? "rgba(1,1,1,0.2)" : "whitesmoke")};
 
   &:hover {
-    background: ${(props) => (props.disabled ? "#fcf4a3" : "#fcf4a3")};
+    background: ${(props) => (props.disabled ? "lightgray" : "#009999")};
     cursor: ${(props) => (props.disabled ? "none" : "pointer")};
     outline: none !important;
   }
 `;
 
 const Editor = styled.div`
-  padding: 12px 24px;
+  padding: 0.5rem 2rem;
 
   textarea {
+    box-sizing: border-box;
     width: 100%;
     border-radius: 7px;
     min-height: 100px;
-    resize: none;
+    resize: vertical;
+    max-height: 200px;
     background-color: white;
+    padding-left: 0.5rem;
   }
 
   input {

@@ -1,7 +1,7 @@
 import { Button, IconButton, Menu, MenuItem } from "@material-ui/core";
 import { useState } from "react";
 import { FaEllipsisH } from "react-icons/fa";
-import styles from "./Posts.module.css";
+import styles from "../../Posts.module.css";
 export function CommentMenuButton({
   initateCommentEdit,
   commentText,

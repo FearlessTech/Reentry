@@ -38,6 +38,7 @@ const Logo = styled.span`
   @media (max-width: 768px) {
     margin-right: 2px;
     margin-left: 2px;
+  }
 `;
 
 const Search = styled.div`
@@ -199,18 +200,19 @@ const SignOut = styled.div`
 `;
 
 const User = styled(NavList)`
-  a > svg {
-    padding-top: 5px;
-    width: 24px;
-    height: 24px;
-    border-radius: 50%;
-  }
-
-  a > img {
-    width: 24px;
-    height: 24px;
-    padding-top: 5px;
-    border-radius: 50%;
+  a {
+    display: flex;
+    flex-direction: column;
+    .img-wrapper {
+      width: 25px;
+      height: 25px;
+      border-radius: 100vmax;
+      margin-top: 5px;
+      overflow: hidden;
+      img {
+        width: 100%;
+      }
+    }
   }
 
   span {
