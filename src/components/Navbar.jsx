@@ -35,7 +35,7 @@ const Navbar = (props) => {
   const topics = [
     { name: "home", Icon: IoIosHome },
     { name: "network", Icon: IoMdPeople },
-    { name: "resource", Icon: BsFillBriefcaseFill },
+    { name: "resources", Icon: BsFillBriefcaseFill },
     { name: "messaging", Icon: SiGooglemessages },
     { name: "notifications", Icon: IoMdNotifications },
   ];
@@ -47,7 +47,7 @@ const Navbar = (props) => {
   }, []);
 
   return (
-    <Container>
+    <Container className="navbar">
       <Content>
         <Logo>
           <Link to="/home">
@@ -112,11 +112,13 @@ const Navbar = (props) => {
             </More>
             <User>
               <a>
-                {props.user && props.user.photoURL ? (
-                  <img src={props.user.photoURL} alt="" />
-                ) : (
-                  <img src="/images/user.svg" alt="" />
-                )}
+                <div className="img-wrapper">
+                  {props.user && props.user.photoURL ? (
+                    <img src={props.user.photoURL} alt="" />
+                  ) : (
+                    <img src="/images/user.svg" alt="" />
+                  )}
+                </div>
                 <span>
                   Sign Out <IoMdArrowDropdown />
                 </span>

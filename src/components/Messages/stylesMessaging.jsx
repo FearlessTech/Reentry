@@ -6,7 +6,7 @@ const Container = styled.div`
   max-height: 100%;
   display: flex;
   background-color: #cdcdcd;
-  min-height: 100vh;
+  min-height: 91vh;
 `;
 
 const Messengers = styled.div`
@@ -26,7 +26,7 @@ const MessengersHeader = styled.div`
   margin-top: 20px;
   margin-left: 20px;
   margin-right: 20px;
-  background-color: #88bbd6;
+  background-color: #009999;
   border-radius: 10px;
 `;
 
@@ -61,7 +61,7 @@ const MessagesHeader = styled.div`
   margin-top: 20px;
   margin-left: 20px;
   margin-right: 20px;
-  background-color: #88bbd6;
+  background-color: #009999;
 `;
 
 const SelectedAct = styled.div`
@@ -83,15 +83,23 @@ const Reply = styled.div`
   margin-right: 20px;
   width: 96%;
   height: 25%;
-  background-color: #88bbd6;
+  background-color: #009999;
   border-radius: 10px;
   display: flex;
+
+  form {
+    display: flex;
+    justify-content: space-between;
+    button {
+    }
+  }
 `;
 
-const ReplyText = styled.textarea`
+const ReplyText = styled.input`
   margin: 10px;
-  width: 85%;
+  width: 800px;
   height: 80%;
+
   background-color: #e9e9e9;
   border-radius: 10px;
 `;

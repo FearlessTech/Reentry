@@ -59,27 +59,36 @@ export const getArticles = (payload) => ({
   type: GET_ARTICLES,
   payload: payload,
 });
+const keepTrack = (snap) => {
+  const progress = (snap.bytesTransferred / snap.totalBytes) * 100;
+
+  console.log(`Progress: ${progress}%`);
+  if (snap.state === "RUNNING") {
+    console.log(`Progress: ${progress}%`);
+  }
+};
 
 export function postArticleAPI(payload) {
   return (dispatch) => {
     dispatch(setLoading(true));
 
     if (payload.image) {
+      // upload the image
       const upload = storage
         .ref(`images/${payload.image.name}`)
         .put(payload.image);
+
       upload.on(
+        // code to be executed after the upload change state
         "state-changed",
         (snapshot) => {
-          const progress =
-            (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-
-          console.log(`Progress: ${progress}%`);
-          if (snapshot.state === "RUNNING") {
-            console.log(`Progress: ${progress}%`);
-          }
+          //keep track of progress
+          keepTrack(snapshot);
         },
-        (error) => console.log(error.code),
+        (error) => {
+          console.log("an error ocurred while sending the file to our servers");
+          console.log(error.code);
+        },
         async () => {
           const downloadURL = await upload.snapshot.ref.getDownloadURL();
           db.collection("articles").add({
@@ -88,8 +97,9 @@ export function postArticleAPI(payload) {
               title: payload.user.displayName,
               date: payload.timestamp,
               image: payload.user.photoURL,
+              uid: payload.user.uid,
             },
-            video: payload.video,
+            video: "",
             sharedImg: downloadURL,
             comments: 0,
             likes: 0,
@@ -99,21 +109,40 @@ export function postArticleAPI(payload) {
         }
       );
     } else if (payload.video) {
-      db.collection("articles").add({
-        actor: {
-          description: payload.user.email,
-          title: payload.user.displayName,
-          date: payload.timestamp,
-          image: payload.user.photoURL,
-          uid: payload.user.uid,
+      const upload = storage
+        .ref(`videos/${payload.video.name}`)
+        .put(payload.video);
+
+      upload.on(
+        // code to be executed after the upload change state
+        "state-changed",
+        (snapshot) => {
+          //keep track of progress
+          keepTrack(snapshot);
         },
-        video: payload.video,
-        sharedImg: "",
-        comments: 0,
-        likes: 0,
-        description: payload.description,
-      });
-      dispatch(setLoading(false));
+        (error) => {
+          console.log("an error ocurred while sending the file to our servers");
+          console.log(error.code);
+        },
+        async () => {
+          const downloadURL = await upload.snapshot.ref.getDownloadURL();
+          db.collection("articles").add({
+            actor: {
+              description: payload.user.email,
+              title: payload.user.displayName,
+              date: payload.timestamp,
+              image: payload.user.photoURL,
+              uid: payload.user.uid,
+            },
+            video: downloadURL,
+            sharedImg: "",
+            comments: 0,
+            likes: 0,
+            description: payload.description,
+          });
+          dispatch(setLoading(false));
+        }
+      );
     } else {
       db.collection("articles").add({
         actor: {

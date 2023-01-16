@@ -43,5 +43,13 @@ const Info = styled.div`
     font-size: 0.7rem;
   }
 `;
-
-export { Container, Content, Image, Info };
+const AUHeading = styled.div`
+  background-color: #077a7a;
+  height: 50px;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  padding-right: 20px;
+  color: whitesmoke;
+`;
+export { Container, Content, Image, Info, AUHeading };
