@@ -1,25 +1,23 @@
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import Results, { Header } from "./networkComponents/Result";
 import { Container } from "./styled";
-import { auth } from "../../firebase";
-import store from "../../store/index";
-import {
-  receivedRequests as RR,
-  sentRequests as SR,
-  youMayKnow as MN,
-  useGetUsers,
-  useGetResults,
-} from "./api";
+
+import { useGetSentRequests, useGetReceivedRequests } from "./api/requests";
+import { useGetResults } from "./api/search";
 
 import { IoClose, IoCheckmark, IoSearch, IoFilter } from "react-icons/io5";
 
 const Network = (props) => {
-  const [filters, setFilters] = useState(null);
+  // REFS
   const search = useRef();
 
-  const [sentRequests, useSentRequests] = useState(SR);
-  const [receivedRequests, setReceivedRequests] = useState(RR);
+  const [filters, setFilters] = useState(null);
+
   const [searchFlag, setSearchFlag] = useState(false);
+
+  const receivedRequests = useGetReceivedRequests();
+
+  const sentRequests = useGetSentRequests();
 
   const searchResults = useGetResults(
     filters,
@@ -67,7 +65,7 @@ const Network = (props) => {
                         <div className="img-wrapper">
                           <img
                             src={
-                              request?.image?.url ||
+                              request?.photoURL ||
                               "https://via.placeholder.com/150"
                             }
                             alt=""
@@ -80,7 +78,7 @@ const Network = (props) => {
                             <div className="img-wrapper">
                               <img
                                 src={
-                                  request.image?.url ||
+                                  request?.photoURL ||
                                   "https://via.placeholder.com/150"
                                 }
                                 alt=""
@@ -88,7 +86,9 @@ const Network = (props) => {
                             </div>
                             <div className="content-wrapper">
                               <div className="name">{request.name}</div>
-                              <div className="bio">{request.bio}</div>
+                              <div className="bio">
+                                {request.bio ? request.bio : "Hello There!"}
+                              </div>
                             </div>
                           </div>
                         </span>
@@ -116,7 +116,7 @@ const Network = (props) => {
                         <div className="img-wrapper">
                           <img
                             src={
-                              request.image?.url ||
+                              request?.photoURL ||
                               "https://via.placeholder.com/150"
                             }
                             alt=""
@@ -124,11 +124,11 @@ const Network = (props) => {
                         </div>
 
                         <div className="middle">
-                          <div className="popup">
+                          <div className={`popup`}>
                             <div className="img-wrapper">
                               <img
                                 src={
-                                  request.image?.url ||
+                                  request?.photoURL ||
                                   "https://via.placeholder.com/150"
                                 }
                                 alt=""
@@ -136,7 +136,9 @@ const Network = (props) => {
                             </div>
                             <div className="content-wrapper">
                               <div className="name">{request.name}</div>
-                              <div className="bio">{request.bio}</div>
+                              <div className="bio">
+                                {request.bio ? request.bio : "Hello there!"}
+                              </div>
                             </div>
                           </div>
                           <span className="name">{request.name}</span>

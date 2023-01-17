@@ -121,6 +121,7 @@ export const Container = styled.div`
           overflow-y: scroll;
           .section {
             width: 100%;
+            min-height: 100px;
             display: flex;
             flex-direction: column;
             row-gap: 1rem;
@@ -189,9 +190,14 @@ export const Container = styled.div`
 
                 .img-wrapper {
                   flex: 1 0 45px;
-                  height: 100%;
+                  width: 40px;
+                  img {
+                    max-width: 40px;
+                  }
                 }
+
                 .content-wrapper {
+                  width: 100%;
                   display: flex;
                   flex-direction: column;
                   justify-content: flex-start;
