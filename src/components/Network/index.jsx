@@ -1,19 +1,31 @@
+import { useEffect, useRef, useState } from "react";
+import Results, { Header } from "./networkComponents/Result";
 import { Container } from "./styled";
+import { auth } from "../../firebase";
+import store from "../../store/index";
 import {
   receivedRequests as RR,
   sentRequests as SR,
-  searchResults as SRS,
   youMayKnow as MN,
+  useGetUsers,
+  useGetResults,
 } from "./api";
-import { useEffect, useState } from "react";
+
 import { IoClose, IoCheckmark, IoSearch, IoFilter } from "react-icons/io5";
 
 const Network = (props) => {
+  const [filters, setFilters] = useState(null);
+  const search = useRef();
+
   const [sentRequests, useSentRequests] = useState(SR);
   const [receivedRequests, setReceivedRequests] = useState(RR);
-  const [searchRequest, setSearchRequest] = useState(null);
-  const [searchResults, setSearchResults] = useState(null);
-  const [youMayKnow, setYouMayKnow] = useState(MN);
+  const [searchFlag, setSearchFlag] = useState(false);
+
+  const searchResults = useGetResults(
+    filters,
+    search.current?.value,
+    searchFlag
+  );
 
   return (
     <Container>
@@ -25,12 +37,16 @@ const Network = (props) => {
             </div>
             <div className="search-container">
               <div className="outline">
-                <input type="text" placeholder="Search for users" />
+                <input
+                  type="text"
+                  placeholder="Search for users"
+                  ref={search}
+                />
               </div>
               <button
                 className="search-btn"
                 onClick={(e) => {
-                  console.log("should search user");
+                  setSearchFlag(true);
                 }}
               >
                 <IoSearch className="icon" size={20} color="#d9d9d9" />
@@ -86,7 +102,7 @@ const Network = (props) => {
                   })}
                 </section>
               )}
-              {receivedRequests && (
+              {receivedRequests ? (
                 <section className="section">
                   <div className="sections-header-container">
                     <h1>Pending</h1>
@@ -134,6 +150,10 @@ const Network = (props) => {
                     );
                   })}
                 </section>
+              ) : (
+                <div>
+                  <p>no results were found.</p>
+                </div>
               )}
             </div>
           </div>
@@ -141,13 +161,11 @@ const Network = (props) => {
         <main className="main-panel">
           <div className="main-content">
             <div className="header-container">
-              {searchResults ? (
-                <h1>
-                  Results For <span>{searchRequest}</span>
-                </h1>
-              ) : (
-                <h1>People you may know</h1>
-              )}
+              <Header
+                flag={searchFlag}
+                results={searchResults}
+                search={search}
+              />
             </div>
             <div className="content">
               <div className="filters">
@@ -182,45 +200,7 @@ const Network = (props) => {
                   <span className="filter-name">lorem ipsum</span>
                 </div>
               </div>
-              {searchResults ? (
-                <div className="results">
-                  {searchResults.map((user) => {
-                    <div className="single-user">
-                      <div className="pictute-wrapper">
-                        <img src={user.image?.url} alt="user profile picture" />
-                      </div>
-
-                      <div className="text-content">
-                        <div className="name-wrapper">
-                          <span className="name">{user.name}</span>
-                        </div>
-                        <div className="bio-wrapper">
-                          <span className="bio">{user.bio}</span>
-                        </div>
-                      </div>
-                    </div>;
-                  })}
-                </div>
-              ) : (
-                <div className="results">
-                  {youMayKnow.map((user) => (
-                    <div className="single-user">
-                      <div className="pictute-wrapper">
-                        <img src={user.image?.url} alt="user profile picture" />
-                      </div>
-
-                      <div className="text-content">
-                        <div className="name-wrapper">
-                          <span className="name">{user.name}</span>
-                        </div>
-                        <div className="bio-wrapper">
-                          <span className="bio">{user.bio}</span>
-                        </div>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              )}
+              <Results users={searchResults} />
             </div>
           </div>
         </main>

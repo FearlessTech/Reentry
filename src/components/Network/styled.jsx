@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
   padding-top: calc(3rem - 5px);
   border: 1px solid green;
   background-color: #c1c1c1;
@@ -16,7 +15,7 @@ export const Container = styled.div`
   * {
     box-sizing: border-box;
     transition: 120ms ease-in-out;
-    font-family: "Inter", sans-serif;
+    font-family: "Inter", sans-serif !important;
   }
   * ::selection {
     background-color: #077a7a;
@@ -206,6 +205,11 @@ export const Container = styled.div`
                     font-size: 11px;
                     color: #d2d2d2;
                     font-weight: 200;
+                    &::selection {
+                      background-color: #ebebeb;
+                      color: #063939;
+                      font-weight: 600;
+                    }
                   }
                 }
               }
@@ -380,6 +384,7 @@ export const Container = styled.div`
                 }
                 .bio-wrapper {
                   font-size: 14px;
+                  font-weight: 300;
                 }
               }
             }
