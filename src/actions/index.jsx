@@ -59,7 +59,8 @@ export const getArticles = (payload) => ({
   type: GET_ARTICLES,
   payload: payload,
 });
-const keepTrack = (snap) => {
+
+const showProgress = (snap) => {
   const progress = (snap.bytesTransferred / snap.totalBytes) * 100;
 
   console.log(`Progress: ${progress}%`);
@@ -83,7 +84,7 @@ export function postArticleAPI(payload) {
         "state-changed",
         (snapshot) => {
           //keep track of progress
-          keepTrack(snapshot);
+          showProgress(snapshot);
         },
         (error) => {
           console.log("an error ocurred while sending the file to our servers");
@@ -118,7 +119,7 @@ export function postArticleAPI(payload) {
         "state-changed",
         (snapshot) => {
           //keep track of progress
-          keepTrack(snapshot);
+          showProgress(snapshot);
         },
         (error) => {
           console.log("an error ocurred while sending the file to our servers");
