@@ -210,7 +210,7 @@ const PostModal = (props) => {
               </div>
               {postMode === "new" ? (
                 <PostButton
-                  disabled={!editorText || !FileUploader ? true : false} // if editorText or file is empty, disable the button
+                  disabled={!editorText && !sharedImage && !sharedVideo}
                   onClick={postArticle}
                 >
                   Post
