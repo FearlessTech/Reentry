@@ -11,6 +11,9 @@ const Container = styled.div`
   margin-top: 3rem;
   column-gap: 3rem;
   padding: 2rem;
+  flex-wrap: wrap;
+  max-width: 100%;
+
   &,
   * {
     box-sizing: border-box;
@@ -18,9 +21,14 @@ const Container = styled.div`
   }
 
   .search-box {
+    flex: 0 1 300px;
+    display: flex;
+    flex-direction: column;
     padding: 1rem;
     padding-top: 3rem;
     background-color: #d9d9d9;
+    margin: 1rem auto;
+    max-width: 100%;
 
     .search-container {
       .resource-search {
@@ -51,17 +59,34 @@ const Container = styled.div`
     }
   }
   .items {
+    flex: 1 1 300px;
     width: 100%;
     display: flex;
     justify-content: center;
+    max-height: calc(100vh - 100px);
+    overflow-y: scroll;
+    ::-webkit-scrollbar {
+      width: 0;
+    }
     .items-wrapper {
       margin: auto;
       background-color: #d9d9d9;
       display: flex;
       flex-wrap: wrap;
       padding: 1rem;
-      column-gap: 2rem;
+      column-gap: 1.4rem;
       row-gap: 1rem;
+    }
+  }
+  @media (max-width: 600px) {
+    padding: 0;
+    row-gap: 1rem;
+    .search-box {
+      flex-grow: 1;
+    }
+    .items {
+      margin-top: 2rem;
+      padding-bottom: 2rem;
     }
   }
 `;
@@ -169,9 +194,10 @@ const Resources = (props) => {
       </div>
       <div className="items">
         <div className="items-wrapper">
-          {resources.map(({ resourceType, resourceImage, description }) => {
+          {resources.map(({ resourceType, resourceImage, description }, i) => {
             return (
               <ResourceItem
+                key={`${resourceType} ${i}`}
                 type={resourceType}
                 imageSrc={resourceImage}
                 description={description}

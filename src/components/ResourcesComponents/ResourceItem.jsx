@@ -1,9 +1,9 @@
 import styled from "styled-components";
 
 const StyledResource = styled.div`
-  flex: 0 1 400px;
-  max-width: 100%;
-  width: 400px;
+  flex: 0 1 350px;
+  max-width: 100vw;
+  width: 350px;
   margin: auto;
   background-color: white;
   display: flex;
