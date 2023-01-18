@@ -3,7 +3,6 @@ import { IoMdSearch } from "react-icons/io";
 import { Link } from "react-router-dom";
 import db from "../../firebase";
 import { Search, SearchIcon } from "../../styles/stylesNavbar";
-import styles from "./SearchResults.module.css";
 
 export const SearchResults = () => {
   const initialSearchState = {
@@ -11,6 +10,7 @@ export const SearchResults = () => {
     resources: [],
     posts: [],
   };
+
   let [searchResults, setsearchResults] = useState(initialSearchState);
 
   const [searchQuery, setsearchQuery] = useState("");
@@ -51,9 +51,9 @@ export const SearchResults = () => {
   };
 
   return (
-    <>
-      <Search>
-        <div>
+    <Search className="resource-search">
+      <div className="search-bar">
+        <div className="input-container">
           <input
             type="text"
             placeholder="Search"
@@ -67,68 +67,68 @@ export const SearchResults = () => {
             }}
           />
         </div>
-        <SearchIcon>
+        <SearchIcon className="icon-wrapper">
           <IoMdSearch />
         </SearchIcon>
-        {searchQuery.length > 0 && (
-          <div className={styles.search_results}>
-            <h4>Search Results</h4>
-            <br />
-            {isLoading ? (
-              <p>Loading...</p>
-            ) : (
-              <>
-                {searchResults.posts.length +
-                  searchResults.resources.length +
-                  searchResults.users.length ===
-                0 ? (
-                  <p>No results</p>
-                ) : (
-                  <div className={styles.result_list}>
-                    {searchResults.users.length > 0 && (
-                      <>
-                        <p>
-                          <strong>{`Users [${searchResults.users.length}]`}</strong>
-                        </p>
-                        {searchResults.users.map((user, index) => (
-                          <p key={user.name + index}>{user.name}</p>
-                        ))}
-                        <hr />
-                      </>
-                    )}
+      </div>
+      {searchQuery.length > 0 && (
+        <div className="search-results">
+          <h4>Search Results</h4>
+          <br />
+          {isLoading ? (
+            <p>Loading...</p>
+          ) : (
+            <>
+              {searchResults.posts.length +
+                searchResults.resources.length +
+                searchResults.users.length ===
+              0 ? (
+                <p>No results</p>
+              ) : (
+                <div className="result-list">
+                  {searchResults.users.length > 0 && (
+                    <>
+                      <p>
+                        <strong>{`Users [${searchResults.users.length}]`}</strong>
+                      </p>
+                      {searchResults.users.map((user, index) => (
+                        <p key={user.name + index}>{user.name}</p>
+                      ))}
+                      <hr />
+                    </>
+                  )}
 
-                    {searchResults.resources.length > 0 && (
-                      <>
-                        <p>
-                          <strong>{`Resources [${searchResults.resources.length}]`}</strong>
-                        </p>
-                        {searchResults.resources.map((resource, index) => (
-                          <p key={resource.name + index}>{resource.name}</p>
-                        ))}
-                        <hr />
-                      </>
-                    )}
-                    {searchResults.posts.length > 0 && (
-                      <>
-                        <p>
-                          <strong>{`Posts [${searchResults.posts.length}]`}</strong>
-                        </p>
-                        {searchResults.posts.map((post, index) => (
-                          <React.Fragment key={post.detail + index}>
-                            <Link to="">{post.detail}</Link>
-                            <br />
-                            <br />
-                          </React.Fragment>
-                        ))}
-                      </>
-                    )}
-                  </div>
-                )}
-              </>
-            )}
-          </div>
-        )}
-      </Search>
-    </>
+                  {searchResults.resources.length > 0 && (
+                    <>
+                      <p>
+                        <strong>{`Resources [${searchResults.resources.length}]`}</strong>
+                      </p>
+                      {searchResults.resources.map((resource, index) => (
+                        <p key={resource.name + index}>{resource.name}</p>
+                      ))}
+                      <hr />
+                    </>
+                  )}
+                  {searchResults.posts.length > 0 && (
+                    <>
+                      <p>
+                        <strong>{`Posts [${searchResults.posts.length}]`}</strong>
+                      </p>
+                      {searchResults.posts.map((post, index) => (
+                        <React.Fragment key={post.detail + index}>
+                          <Link to="">{post.detail}</Link>
+                          <br />
+                          <br />
+                        </React.Fragment>
+                      ))}
+                    </>
+                  )}
+                </div>
+              )}
+            </>
+          )}
+        </div>
+      )}
+    </Search>
   );
 };

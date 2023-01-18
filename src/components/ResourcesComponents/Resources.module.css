@@ -1,4 +1,5 @@
 @import url(https://fonts.googleapis.com/css?family=Inter:100,200,300,regular,500,600,700,800,900);
+
 .container {
   padding-top: 103px;
   max-width: 2150px;
@@ -12,10 +13,12 @@
   overflow-y: scroll;
   overflow-x: hidden;
 }
+
 .searchBox {
   flex: 0 1 30%;
   background-color: #d9d9d9;
 }
+
 .searchDiv {
   max-width: 569px;
   padding: 58px 45px 0px 34px;
@@ -179,6 +182,7 @@
 .resourceOutput {
   background: #009999;
 }
+
 .resourceOutputText {
   font-family: "Inter";
   font-style: normal;
@@ -188,6 +192,7 @@
   color: #ffffff;
   padding: 5px 50px;
 }
+
 .resourcesOutputBox {
   text-align: center;
   display: flex;
