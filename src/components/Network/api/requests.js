@@ -29,7 +29,6 @@ const getReceivedRequests = async (currentUser) => {
   try {
     const users = [];
     const currentUserData = await getSingleUserInfo("uid", currentUser.uid);
-
     for (let userId of currentUserData.received_requests) {
       const userData = await getSingleUserInfo("email", userId);
       users.push(userData);

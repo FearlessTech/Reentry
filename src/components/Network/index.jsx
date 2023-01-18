@@ -3,6 +3,13 @@ import Results, { Header } from "./networkComponents/Result";
 import { Container } from "./styled";
 
 import { useGetSentRequests, useGetReceivedRequests } from "./api/requests";
+
+import {
+  handleRejectRequest,
+  handleAcceptRequest,
+  handleCancelRequest,
+} from "./api/handlers";
+
 import { useGetResults } from "./api/search";
 
 import { IoClose, IoCheckmark, IoSearch, IoFilter } from "react-icons/io5";
@@ -51,12 +58,12 @@ const Network = (props) => {
               </button>
             </div>
             <div className="sections">
-              {sentRequests && (
+              {receivedRequests && (
                 <section className="section">
                   <div className="sections-header-container">
                     <h1>Requests</h1>
                   </div>
-                  {sentRequests.map((request, i) => {
+                  {receivedRequests.map((request, i) => {
                     return (
                       <div
                         className="request-container"
@@ -94,20 +101,30 @@ const Network = (props) => {
                         </span>
 
                         <div className="options">
-                          <IoCheckmark className="icon icon-accept" />
-                          <IoClose className="icon icon-reject" />
+                          <IoCheckmark
+                            className="icon icon-accept"
+                            onClick={async () => {
+                              await handleAcceptRequest(request.email);
+                            }}
+                          />
+                          <IoClose
+                            className="icon icon-reject"
+                            onClick={async () => {
+                              await handleRejectRequest(request.email);
+                            }}
+                          />
                         </div>
                       </div>
                     );
                   })}
                 </section>
               )}
-              {receivedRequests ? (
+              {sentRequests ? (
                 <section className="section">
                   <div className="sections-header-container">
                     <h1>Pending</h1>
                   </div>
-                  {receivedRequests.map((request, i) => {
+                  {sentRequests.map((request, i) => {
                     return (
                       <div
                         className="request-container"
@@ -146,7 +163,12 @@ const Network = (props) => {
                         </div>
 
                         <div className="options received">
-                          <IoClose className="icon icon-reject" />
+                          <IoClose
+                            className="icon icon-reject"
+                            onClick={async () => {
+                              await handleCancelRequest(request.email);
+                            }}
+                          />
                         </div>
                       </div>
                     );
