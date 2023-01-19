@@ -42,6 +42,7 @@ const Logo = styled.span`
 `;
 
 const Search = styled.div`
+  width: 100%;
   opacity: 1;
   flex-grow: 1;
   position: relative;

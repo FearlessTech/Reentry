@@ -9,7 +9,7 @@ import {
   OrgInfo,
   ResourceDescription,
   ResourcesCheckBoxes,
-} from "./styledResourcePopup";
+} from "./styles/styledResourcePopup";
 
 export const ResourcePopup = (props) => {
   return (
