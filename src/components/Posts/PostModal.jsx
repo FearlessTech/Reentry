@@ -47,6 +47,16 @@ const PostModal = (props) => {
   const [sharedVideo, setSharedVideo] = useState("");
   const videoPlayer = useRef();
   const postMode = props.postMode || "new";
+  const maxFileSize = 10000000;
+
+  const handleFile = (file, type) => {
+    if (file.size > maxFileSize) {
+      alert("File size exceeded the maximum limit of 10MB");
+      return;
+    }
+    if (type === "image") setSharedImage(file);
+    else if (type === "video") setSharedVideo(file);
+  };
 
   const FileUploader = (props) => {
     const config = getConfigForType(props.type);
@@ -195,14 +205,14 @@ const PostModal = (props) => {
               <div className="files-container">
                 <AttachAssets>
                   <FileUploader
-                    handleFile={setSharedImage}
+                    handleFile={(file) => handleFile(file, "image")}
                     type={"image"}
                     sharedFile={sharedImage}
                   />
                 </AttachAssets>
                 <AttachAssets>
                   <FileUploader
-                    handleFile={setSharedVideo}
+                    handleFile={(file) => handleFile(file, "video")}
                     type={"video"}
                     sharedFile={sharedVideo}
                   />
@@ -210,7 +220,7 @@ const PostModal = (props) => {
               </div>
               {postMode === "new" ? (
                 <PostButton
-                  disabled={!editorText || !FileUploader ? true : false} // if editorText or file is empty, disable the button
+                  disabled={!editorText && !sharedImage && !sharedVideo}
                   onClick={postArticle}
                 >
                   Post
