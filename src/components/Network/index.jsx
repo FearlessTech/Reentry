@@ -1,25 +1,30 @@
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import Results, { Header } from "./networkComponents/Result";
 import { Container } from "./styled";
-import { auth } from "../../firebase";
-import store from "../../store/index";
+
+import { useGetSentRequests, useGetReceivedRequests } from "./api/requests";
+
 import {
-  receivedRequests as RR,
-  sentRequests as SR,
-  youMayKnow as MN,
-  useGetUsers,
-  useGetResults,
-} from "./api";
+  handleRejectRequest,
+  handleAcceptRequest,
+  handleCancelRequest,
+} from "./api/handlers";
+
+import { useGetResults } from "./api/search";
 
 import { IoClose, IoCheckmark, IoSearch, IoFilter } from "react-icons/io5";
 
 const Network = (props) => {
-  const [filters, setFilters] = useState(null);
+  // REFS
   const search = useRef();
 
-  const [sentRequests, useSentRequests] = useState(SR);
-  const [receivedRequests, setReceivedRequests] = useState(RR);
+  const [filters, setFilters] = useState(null);
+
   const [searchFlag, setSearchFlag] = useState(false);
+
+  const receivedRequests = useGetReceivedRequests();
+
+  const sentRequests = useGetSentRequests();
 
   const searchResults = useGetResults(
     filters,
@@ -53,12 +58,12 @@ const Network = (props) => {
               </button>
             </div>
             <div className="sections">
-              {sentRequests && (
+              {receivedRequests && (
                 <section className="section">
                   <div className="sections-header-container">
                     <h1>Requests</h1>
                   </div>
-                  {sentRequests.map((request, i) => {
+                  {receivedRequests.map((request, i) => {
                     return (
                       <div
                         className="request-container"
@@ -67,7 +72,7 @@ const Network = (props) => {
                         <div className="img-wrapper">
                           <img
                             src={
-                              request?.image?.url ||
+                              request?.photoURL ||
                               "https://via.placeholder.com/150"
                             }
                             alt=""
@@ -80,7 +85,7 @@ const Network = (props) => {
                             <div className="img-wrapper">
                               <img
                                 src={
-                                  request.image?.url ||
+                                  request?.photoURL ||
                                   "https://via.placeholder.com/150"
                                 }
                                 alt=""
@@ -88,26 +93,38 @@ const Network = (props) => {
                             </div>
                             <div className="content-wrapper">
                               <div className="name">{request.name}</div>
-                              <div className="bio">{request.bio}</div>
+                              <div className="bio">
+                                {request.bio ? request.bio : "Hello There!"}
+                              </div>
                             </div>
                           </div>
                         </span>
 
                         <div className="options">
-                          <IoCheckmark className="icon icon-accept" />
-                          <IoClose className="icon icon-reject" />
+                          <IoCheckmark
+                            className="icon icon-accept"
+                            onClick={async () => {
+                              await handleAcceptRequest(request.email);
+                            }}
+                          />
+                          <IoClose
+                            className="icon icon-reject"
+                            onClick={async () => {
+                              await handleRejectRequest(request.email);
+                            }}
+                          />
                         </div>
                       </div>
                     );
                   })}
                 </section>
               )}
-              {receivedRequests ? (
+              {sentRequests ? (
                 <section className="section">
                   <div className="sections-header-container">
                     <h1>Pending</h1>
                   </div>
-                  {receivedRequests.map((request, i) => {
+                  {sentRequests.map((request, i) => {
                     return (
                       <div
                         className="request-container"
@@ -116,7 +133,7 @@ const Network = (props) => {
                         <div className="img-wrapper">
                           <img
                             src={
-                              request.image?.url ||
+                              request?.photoURL ||
                               "https://via.placeholder.com/150"
                             }
                             alt=""
@@ -124,11 +141,11 @@ const Network = (props) => {
                         </div>
 
                         <div className="middle">
-                          <div className="popup">
+                          <div className={`popup`}>
                             <div className="img-wrapper">
                               <img
                                 src={
-                                  request.image?.url ||
+                                  request?.photoURL ||
                                   "https://via.placeholder.com/150"
                                 }
                                 alt=""
@@ -136,7 +153,9 @@ const Network = (props) => {
                             </div>
                             <div className="content-wrapper">
                               <div className="name">{request.name}</div>
-                              <div className="bio">{request.bio}</div>
+                              <div className="bio">
+                                {request.bio ? request.bio : "Hello there!"}
+                              </div>
                             </div>
                           </div>
                           <span className="name">{request.name}</span>
@@ -144,7 +163,12 @@ const Network = (props) => {
                         </div>
 
                         <div className="options received">
-                          <IoClose className="icon icon-reject" />
+                          <IoClose
+                            className="icon icon-reject"
+                            onClick={async () => {
+                              await handleCancelRequest(request.email);
+                            }}
+                          />
                         </div>
                       </div>
                     );
