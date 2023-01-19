@@ -147,7 +147,7 @@ export function SinglePost({ article, id }) {
           <a>{comments.length} Comments</a>
         </li>
       </SocialCounts>
-      <SocialActions>
+      <SocialActions className="social">
         <button onClick={() => handleLike()}>
           <span>{hasLiked ? "Unlike" : "Like"}</span>
         </button>
@@ -165,7 +165,7 @@ export function SinglePost({ article, id }) {
       {comments.length > 0 && (
         <>
           <p style={{ textAlign: "left", marginLeft: "15px" }}>Comments:</p>
-          <div style={{ maxHeight: "300px", overflow: "scroll" }}>
+          <div style={{ maxHeight: "300px", overflowY: "scroll" }}>
             {comments.map((comment, i) => (
               <SingleComment
                 key={i}
