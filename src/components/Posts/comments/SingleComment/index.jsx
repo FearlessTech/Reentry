@@ -4,6 +4,7 @@ import { Button } from "@material-ui/core";
 import { CommentMenuButton } from "../CommentMenu/CommentMenuButton";
 import { splitString, isUrl } from "../../urlIdentifier";
 import Container from "./styledSingleComment";
+import { UserImage } from "../../../components/Image";
 
 export function SingleComment({
   comment,
@@ -51,14 +52,7 @@ export function SingleComment({
   return (
     <Container key={comment.timestamp}>
       <div className="picture-wrapper">
-        <img
-          src={
-            comment.commenterProfilePic
-              ? comment.commenterProfilePic
-              : "./images/user.svg"
-          }
-          alt="commenter profile picture"
-        />
+        <UserImage source={comment.commenterProfilePic} />
       </div>
       <div className="comment-content-container">
         {openCommentEditInput && comment.commenterUid === user.uid ? (
