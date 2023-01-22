@@ -8,7 +8,6 @@ async function login(email, password) {
   return auth
     .signInWithEmailAndPassword(email, password)
     .then((payload) => {
-      console.log(payload);
       setFbUser(payload.user);
     })
     .catch((e) => alert(e.message));

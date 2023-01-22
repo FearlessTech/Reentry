@@ -36,7 +36,6 @@ export async function setFbUser(userData) {
       userQuery.set(data);
     }
   });
-  console.log("userdata: ", userData);
 }
 
 export const setUser = (payload) => ({

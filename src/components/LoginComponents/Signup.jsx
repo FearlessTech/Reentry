@@ -2,6 +2,8 @@ import { useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { auth } from "../../firebase";
 
+import { setFbUser } from "../../actions";
+
 import StyledSignUp from "./LoginStyles/styledSignup";
 
 export default function SignUpForm({ children }) {
@@ -9,7 +11,6 @@ export default function SignUpForm({ children }) {
   const usernameRef = useRef();
   const passwordRef = useRef();
   const passwordConfirmRef = useRef();
-  // const { signup } = useAuth();
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
 
@@ -21,11 +22,18 @@ export default function SignUpForm({ children }) {
         user = auth.currentUser;
         user.sendEmailVerification();
         setTimeout(() => {}, 500);
+        alert(
+          "In order to proceed with the login, we sent a verification email."
+        );
       })
       .then(() => {
-        user.updateProfile({
-          displayName: username,
-        });
+        user
+          .updateProfile({
+            displayName: username,
+          })
+          .then((payload) => {
+            setFbUser(payload.user);
+          });
       })
       .catch((e) => {
         alert(e.message);
