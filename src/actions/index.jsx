@@ -1,11 +1,42 @@
 import { auth, provider, storage } from "../firebase";
 import db from "../firebase";
+
 import {
   SET_DARK_MODE,
   SET_USER,
   SET_LOADING_STATUS,
   GET_ARTICLES,
 } from "./actionType";
+
+export function generateKeyWords(name, email) {
+  const words = [];
+
+  name.split(" ").forEach((word) => words.push(word));
+  words.push(email.split("@")[0]);
+
+  return words;
+}
+
+export async function setFbUser(userData) {
+  const userQuery = db.collection("users").doc(userData.email);
+
+  const data = {
+    connections: [],
+    keywords: generateKeyWords(userData.displayName, userData.email),
+    name: userData.displayName,
+    email: userData.email,
+    photoURL: userData.photoURL,
+    received_requests: [],
+    sent_requests: [],
+    uid: userData.uid,
+  };
+
+  await userQuery.get().then(async (res) => {
+    if (!res.exists) {
+      userQuery.set(data);
+    }
+  });
+}
 
 export const setUser = (payload) => ({
   type: SET_USER,
@@ -28,6 +59,9 @@ export function signInAPI() {
       .signInWithPopup(provider)
       .then((payload) => {
         dispatch(setUser(payload.user));
+        (async () => {
+          await setFbUser(payload.user);
+        })();
       })
       .catch((error) => alert(error.message));
   };
@@ -55,6 +89,7 @@ export function signOutAPI() {
       });
   };
 }
+
 export const getArticles = (payload) => ({
   type: GET_ARTICLES,
   payload: payload,

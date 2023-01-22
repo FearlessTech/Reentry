@@ -15,6 +15,7 @@ import {
   Item,
   CommunityCard,
 } from "../styles/stylesLeftside.jsx";
+import { UserImage } from "./components/Image.jsx";
 
 const Leftside = (props) => {
   return (
@@ -24,11 +25,7 @@ const Leftside = (props) => {
           <CardBackground />
           <Link to="/profile" className="welcome">
             <Photo>
-              {props.user && props.user.photoURL ? (
-                <img src={props.user.photoURL} alt="" />
-              ) : (
-                <img src="/images/user.svg" alt="" />
-              )}
+              {props.user && <UserImage source={props.user.photoURL} />}
             </Photo>
             <h3>Welcome, {props.user ? props.user.displayName : "there"}!</h3>
           </Link>

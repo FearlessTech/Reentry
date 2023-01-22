@@ -1,5 +1,6 @@
 import ReactPlayer from "react-player";
 import { FaEllipsisH } from "react-icons/fa";
+import { UserImage } from "../components/Image";
 import {
   Article,
   SharedActor,
@@ -90,7 +91,7 @@ export function SinglePost({ article, id }) {
     <Article>
       <SharedActor>
         <a>
-          <img src={article.actor.image} alt="" />
+          <UserImage source={article.actor.image} />
           <div>
             <span>{article.actor.title}</span>
             <span>

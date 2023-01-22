@@ -21,9 +21,10 @@ const Welcome = (props) => {
     };
   }, []);
 
-  if (props.user) {
+  if (props.user && props.user.emailVerified) {
     return <Redirect to="/home" />;
   }
+
   return (
     <Container id="parallax">
       <Nav>
@@ -39,11 +40,7 @@ const Welcome = (props) => {
 
       <Section>
         <Hero>
-          <h1>
-            Prisoner Reentry Advocates
-            {/*<br />*/}
-            {/*<span></span>*/}
-          </h1>
+          <h1>Prisoner Reentry Advocates</h1>
           <div className="assets-container">
             <div className="chain" top="270" left="0" speed="3">
               <img src="/images/tests/chain.png" alt="" />

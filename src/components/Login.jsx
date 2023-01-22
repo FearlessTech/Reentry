@@ -68,7 +68,7 @@ const Login = (props) => {
 
   return (
     <Container>
-      {props.user && <Redirect to="/home" />}
+      {props.user && props.user.emailVerified && <Redirect to="/home" />}
       <Nav className={sideBar ? "open" : ""}>
         <img src="/images/PRAIcon.png" alt="" />
         <NavBTN
