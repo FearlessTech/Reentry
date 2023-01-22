@@ -12,6 +12,7 @@ import {
   Reply,
   ReplyText,
 } from "../stylesMessaging";
+
 const Channel = ({ user = null, db = null }) => {
   const [messages, setMessages] = useState([]);
   const [newMessage, setNewMessage] = useState("");
@@ -45,6 +46,7 @@ const Channel = ({ user = null, db = null }) => {
 
   const handleOnSubmit = (e) => {
     e.preventDefault();
+    // onclick="document.getElementById('myInput').value = ''"
 
     if (db) {
       db.collection("messages").add({
@@ -54,7 +56,9 @@ const Channel = ({ user = null, db = null }) => {
         displayName,
         photoURL,
       });
+      // onclick="document.getElementById('myInput').value = ''"
     }
+    // onclick="document.getElementById('myInput').value = ''"
   };
 
   return (
@@ -73,7 +77,7 @@ const Channel = ({ user = null, db = null }) => {
         </ActorsList>
       </Messengers>
       <Messages>
-        <MessagesHeader></MessagesHeader>
+        <MessagesHeader>Advocates Chat Room</MessagesHeader>
         <SelectedAct>
           <ul>
             {messages.map((message) => (
@@ -89,9 +93,15 @@ const Channel = ({ user = null, db = null }) => {
               type="text"
               value={newMessage}
               onChange={handleOnChange}
+              id="myInput"
+              // onfocus="this.value=''" This does not work either
               placeholder="Type you message here..."
             />
-            <button type="submit" disabled={!newMessage}>
+            <button
+              type="submit"
+              disabled={!newMessage}
+              // onclick="document.getElementById('myInput').value = ''"
+            >
               Send
             </button>
           </form>
