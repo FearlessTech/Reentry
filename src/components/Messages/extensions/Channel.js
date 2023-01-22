@@ -49,16 +49,20 @@ const Channel = ({ user = null, db = null }) => {
     // onclick="document.getElementById('myInput').value = ''"
 
     if (db) {
-      db.collection("messages").add({
-        text: newMessage,
-        createdAt: firebase.firestore.FieldValue.serverTimestamp(),
-        uid,
-        displayName,
-        photoURL,
-      });
-      // onclick="document.getElementById('myInput').value = ''"
+      db.collection("messages")
+        .add({
+          text: newMessage,
+          createdAt: firebase.firestore.FieldValue.serverTimestamp(),
+          uid,
+          displayName,
+          photoURL,
+        })
+        .then(() => {
+          setNewMessage(() => {
+            return "";
+          });
+        });
     }
-    // onclick="document.getElementById('myInput').value = ''"
   };
 
   return (
@@ -100,7 +104,7 @@ const Channel = ({ user = null, db = null }) => {
             <button
               type="submit"
               disabled={!newMessage}
-              // onclick="document.getElementById('myInput').value = ''"
+              onclick="document.getElementById('myInput').e.target.value= ''"
             >
               Send
             </button>
