@@ -91,9 +91,10 @@ const Reply = styled.div`
   form {
     display: flex;
     justify-content: space-between;
-    input {
-    }
+
     button {
+      width: 50%;
+      height: 25%;
     }
   }
 `;
