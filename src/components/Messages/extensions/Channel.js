@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import firebase from "firebase/app";
 import Message from "./Message";
 
@@ -16,8 +16,19 @@ import {
 const Channel = ({ user = null, db = null }) => {
   const [messages, setMessages] = useState([]);
   const [newMessage, setNewMessage] = useState("");
+  const scroller = useRef();
 
   const { uid, displayName, photoURL } = user;
+
+  useEffect(() => {
+    try {
+      if (!scroller.current) return;
+      const element = scroller.current;
+      element.scrollTop = element.scrollHeight;
+    } catch (e) {
+      console.log(e.message);
+    }
+  }, []);
 
   useEffect(() => {
     if (db) {
@@ -82,8 +93,8 @@ const Channel = ({ user = null, db = null }) => {
       </Messengers>
       <Messages>
         <MessagesHeader>Advocates Chat Room</MessagesHeader>
-        <SelectedAct>
-          <ul>
+        <SelectedAct ref={scroller}>
+          <ul className="messages-node">
             {messages.map((message) => (
               <li key={message.id}>
                 <Message {...message} />

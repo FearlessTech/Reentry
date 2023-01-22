@@ -7,6 +7,11 @@ const Container = styled.div`
   display: flex;
   background-color: #cdcdcd;
   min-height: 91vh;
+  &,
+  * {
+    font-family: Inter, sans-serif;
+    box-sizing: border-box;
+  }
 `;
 
 const Messengers = styled.div`
@@ -23,11 +28,17 @@ const MessengersHeader = styled.div`
   display: flex;
   width: 87%;
   height: 10%;
-  margin-top: 20px;
-  margin-left: 20px;
-  margin-right: 20px;
+  margin: 20px 20px 0 20px;
   background-color: #009999;
-  border-radius: 10px;
+  border-radius: 10px 10px 0 0;
+  display: flex;
+  align-items: center;
+  padding-left: 1rem;
+  h2 {
+    color: white;
+    font-size: 20px;
+    font-weight: 600;
+  }
 `;
 
 const ActorsList = styled.div`
@@ -75,6 +86,10 @@ const SelectedAct = styled.div`
   background-color: #cdcdcd;
   overflow-y: scroll;
   overflow-x: hidden;
+  .messages-node {
+    display: flex;
+    flex-direction: column;
+  }
 `;
 
 const Reply = styled.div`

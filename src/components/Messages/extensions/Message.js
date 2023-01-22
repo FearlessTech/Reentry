@@ -1,5 +1,16 @@
 import React from "react";
+import styled from "styled-components";
 import { formatRelative } from "date-fns";
+import { UserImage } from "../../components/Image";
+
+const StMessage = styled.div`
+  .image-wrapper {
+    width: 45px;
+    img {
+      width: 100%;
+    }
+  }
+`;
 
 const Message = ({
   createdAt = null,
@@ -8,10 +19,10 @@ const Message = ({
   photoURL = "",
 }) => {
   return (
-    <div>
-      {photoURL ? (
-        <img src={photoURL} alt="Avatar" width={45} height={45} />
-      ) : null}
+    <StMessage>
+      <div className="image-wrapper">
+        <UserImage source={photoURL} />
+      </div>
       {displayName ? <p>{displayName}</p> : null}
       {createdAt?.seconds ? (
         <span>
@@ -19,7 +30,7 @@ const Message = ({
         </span>
       ) : null}
       <p>{text}</p>
-    </div>
+    </StMessage>
   );
 };
 
