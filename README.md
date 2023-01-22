@@ -1,33 +1,15 @@
-<!--- Important information shared between us collaborators:
-Please add the date and your username before your comment so you can be reached if needed. Make sure your comment is 
-inside the arrows so it remains hidden from everyone but us programmers. 
 
-12/31 4-Leafs-Code: The color schema for this build are blues and grays with a touch of yellows. You do not have to use 
-these colors but your choices must look well with these colors. Here are the hex #'s for quick access:   
-Blues: #88bbd6 #99d3df   Grays: #cdcdcd  #e9e9e9   Yellows: #FFFDD0  #fcf4a3   Thank's for helping out!
-
-#886724
-
-
-
---->
 
 # Maine's Reentry Resources Networking Site  
 
 **Help Wanted**
-### 🌟 If you support my cause, please give this repo a star 🌟
----
-***1/6/2023: Notice- Repo Transfer **  
-Welcome to FearlessTech. You may have noticed this repo moved. If you are havign trouble connecting your editor, please run these in your terminal. 
+### 🌟 If you support our cause, please give this repo a star 🌟
 
-`git remote set-url origin  https://github.com/FearlessTech/Reentry.git`   
-`git push --set-upstream origin <branchname>`
-
----
 
 This site is being built for Maine Community of reentry advocates and/or anyone who concerns themselves with sucsesfull prisoner reintergration. [NAMI](https://www.namimaine.org/), [MPRN](https://re-entrymaine.org/) and [MPAC](https://www.maineprisoneradvocacy.org) are all non-profit orginizations that are fully involved in prisoner reentry. They have agreed to maintain this site after it is launched and spread the word as fast as possible to get every resource in the state signed up to this site. I'm estimating a 2000+ user base from day one.    
 
-I am a Tech student / Jr Full Stack Developer. I'm hoping to find some willing developers to donate some of there time and experiance to help me build this website for a worthy cause. This website will help thousands of Maine's Prisoners have a more successful reentry back into society. 
+
+Were hoping to find some willing developers to donate some of there time and experiance to help us build this website for a worthy cause. This website will help thousands of Maine's Prisoners have a more successful reentry back into society. 
 
 If you would like to contribute, just comment on an issue and I will assign it to you. If you see something you would like to fix, make an issue. If you have questions or run into a problem, post your questions to the issue or under the discussions. I will help however I can. Also, please read the Contribution Guideline in the link below. When you have compleated an issue, make sure you fork is up to date with mine, and submit a pull requst. Thank you to everyone helping to make this site.
 
