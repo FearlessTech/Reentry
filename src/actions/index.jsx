@@ -36,6 +36,7 @@ export async function setFbUser(userData) {
       userQuery.set(data);
     }
   });
+  console.log("userdata: ", userData);
 }
 
 export const setUser = (payload) => ({
@@ -89,6 +90,7 @@ export function signOutAPI() {
       });
   };
 }
+
 export const getArticles = (payload) => ({
   type: GET_ARTICLES,
   payload: payload,

@@ -2,15 +2,21 @@ import { useRef, useState } from "react";
 import StyledLogin from "./LoginStyles/styledLogin";
 // import { Link } from "react-router-dom";
 import { auth } from "../../firebase";
+import { setFbUser } from "../../actions";
 
-function login(email, password) {
-  return auth.signInWithEmailAndPassword(email, password);
+async function login(email, password) {
+  return auth
+    .signInWithEmailAndPassword(email, password)
+    .then((payload) => {
+      console.log(payload);
+      setFbUser(payload.user);
+    })
+    .catch((e) => alert(e.message));
 }
 
 export default function LoginForm({ children }) {
   const emailRef = useRef();
   const passwordRef = useRef();
-  // const userNameRef = useRef();
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
 
@@ -21,8 +27,8 @@ export default function LoginForm({ children }) {
       setError("");
       setLoading(true);
       await login(emailRef.current.value, passwordRef.current.value);
-    } catch {
-      setError("Failed to sign in");
+    } catch (e) {
+      setError(e.message);
     }
     setLoading(false);
   }
@@ -36,19 +42,16 @@ export default function LoginForm({ children }) {
         )}
         <div className="title">Login</div>
         <form onSubmit={handleSubmit}>
-          {/* <div className="input-container">
-          </div> */}
-
           <div className="input-container">
-            <label className="username-login-label" htmlFor="username">
+            <label className="username-login-label" htmlFor="email">
               <span>Email</span>
               <input
-                type="text"
+                type="email"
                 ref={emailRef}
-                id="username"
-                name="username"
+                id="email"
+                name="email"
                 placeholder="example@email.com"
-                autoComplete="username"
+                autoComplete="email"
                 required
               />
             </label>

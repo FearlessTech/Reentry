@@ -10,8 +10,7 @@ import { Container, Layout } from "../styles/stylesHome";
 const Home = (props) => {
   return (
     <Container>
-      {!props.user && <Redirect to="/" />}
-
+      {(!props.user || !props.user.emailVerified) && <Redirect to="/" />}
       <Layout>
         <Leftside />
         <Main />

@@ -6,15 +6,30 @@ import StyledSignUp from "./LoginStyles/styledSignup";
 
 export default function SignUpForm({ children }) {
   const emailRef = useRef();
+  const usernameRef = useRef();
   const passwordRef = useRef();
   const passwordConfirmRef = useRef();
   // const { signup } = useAuth();
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
-  // const history = useHistory();
 
-  function signup(email, password) {
-    return auth.createUserWithEmailAndPassword(email, password);
+  async function signup(username, email, password) {
+    let user = null;
+    return auth
+      .createUserWithEmailAndPassword(email, password)
+      .then(() => {
+        user = auth.currentUser;
+        user.sendEmailVerification();
+        setTimeout(() => {}, 500);
+      })
+      .then(() => {
+        user.updateProfile({
+          displayName: username,
+        });
+      })
+      .catch((e) => {
+        alert(e.message);
+      });
   }
 
   async function handleSubmit(e) {
@@ -27,13 +42,17 @@ export default function SignUpForm({ children }) {
     try {
       setError("");
       setLoading(true);
-      await signup(emailRef.current.value, passwordRef.current.value);
-      // navigate("/");
+      await signup(
+        usernameRef.current.value,
+        emailRef.current.value,
+        passwordRef.current.value
+      );
     } catch {
       setError("Failed to create an account");
     }
     setLoading(false);
   }
+
   return (
     <StyledSignUp>
       <div className="signin-container">
@@ -44,19 +63,28 @@ export default function SignUpForm({ children }) {
           </div>
         )}
         <form onSubmit={handleSubmit}>
-          {/* <div className="input-container">
-              
-          </div> */}
           <div className="input-container">
             <label className="username-signup-label" htmlFor="username">
               <span>username</span>
               <input
                 type="text"
                 id="username"
-                ref={emailRef}
+                ref={usernameRef}
                 name="username"
-                placeholder="example@email.com"
+                placeholder="name here"
                 autoComplete="username"
+                required
+              />
+            </label>
+            <label className="username-signup-label" htmlFor="email">
+              <span>email</span>
+              <input
+                type="email"
+                id="email"
+                ref={emailRef}
+                name="email"
+                placeholder="example@email.com"
+                autoComplete="email"
                 required
               />
             </label>
