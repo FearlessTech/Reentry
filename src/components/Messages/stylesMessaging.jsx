@@ -57,7 +57,8 @@ const MessagesHeader = styled.div`
   display: flex;
   width: 96%;
   height: 10%;
-  border-radius: 10px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
   margin-top: 20px;
   margin-left: 20px;
   margin-right: 20px;
@@ -66,7 +67,7 @@ const MessagesHeader = styled.div`
 
 const SelectedAct = styled.div`
   display: flex;
-  flex-direction: column;
+  flex-direction: column-reverse;
   margin-left: 20px;
   margin-right: 20px;
   width: 96%;
@@ -74,7 +75,6 @@ const SelectedAct = styled.div`
   background-color: #cdcdcd;
   overflow-y: scroll;
   overflow-x: hidden;
-  border-radius: 10px;
 `;
 
 const Reply = styled.div`
@@ -84,12 +84,15 @@ const Reply = styled.div`
   width: 96%;
   height: 25%;
   background-color: #009999;
-  border-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border-bottom-left-radius: 10px;
   display: flex;
 
   form {
     display: flex;
     justify-content: space-between;
+    input {
+    }
     button {
     }
   }
@@ -99,7 +102,6 @@ const ReplyText = styled.input`
   margin: 10px;
   width: 800px;
   height: 80%;
-
   background-color: #e9e9e9;
   border-radius: 10px;
 `;
