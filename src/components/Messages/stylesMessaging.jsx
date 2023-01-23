@@ -20,7 +20,7 @@ const Container = styled.div`
 
 const Messengers = styled.div`
   // //
-  flex: 1 1 250px;
+  flex: 0 1 350px;
   display: flex;
   flex-direction: column;
   background-color: #e9e9e9;
@@ -65,7 +65,7 @@ const ActorsList = styled.div`
 const Messages = styled.div`
   // //
   flex: 8 1 250px;
-  max-width: 750px;
+  width: 750px;
   display: flex;
   flex-direction: column;
   background-color: #e9e9e9;
