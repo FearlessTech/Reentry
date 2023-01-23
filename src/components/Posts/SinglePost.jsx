@@ -166,7 +166,7 @@ export function SinglePost({ article, id }) {
       {comments.length > 0 && (
         <>
           <p style={{ textAlign: "left", marginLeft: "15px" }}>Comments:</p>
-          <div style={{ maxHeight: "300px", overflowY: "scroll" }}>
+          <div style={{ maxHeight: "300px", overflowY: "scroll" display: "flex", flexDirection: "column-reverse"}}>
             {comments.map((comment, i) => (
               <SingleComment
                 key={i}
