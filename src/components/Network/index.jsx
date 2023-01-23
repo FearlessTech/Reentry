@@ -1,6 +1,7 @@
 import { useRef, useState } from "react";
 import Results, { Header } from "./networkComponents/Result";
 import { Container } from "./styled";
+import { UserImage } from "../components/Image";
 
 import { useGetSentRequests, useGetReceivedRequests } from "./api/requests";
 

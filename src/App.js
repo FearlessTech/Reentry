@@ -17,7 +17,7 @@ import Navbar from "./components/Navbar";
 const Home = lazy(() => import("./components/Home"));
 // const Resource = lazy(() => import("./extensions/Resource"));
 const Notifications = lazy(() => import("./components/Notifications"));
-const Network = lazy(() => import("./components/Network"));
+const Network = lazy(() => import("./components/Network/index.jsx"));
 const Messaging = lazy(() => import("./components/Messages"));
 const Profile = lazy(() => import("./components/Profile"));
 const Resources = lazy(() =>
@@ -31,9 +31,9 @@ function App(props) {
   }, []);
 
   return (
-    <div className="App">
-      <Suspense fallback={<Loading />}>
-        <Router>
+    <Suspense fallback={<Loading />}>
+      <Router>
+        <div className="App">
           <Switch>
             <Route exact path="/">
               <Login />
@@ -41,45 +41,42 @@ function App(props) {
             <Route exact path="/agreement">
               <AgreementLogin />
             </Route>
-            <Route path="/functionalities">
-              <Functionalities />
-            </Route>
-            <Route path="/home">
+            <Router>
               <Navbar />
-              <Home />
-            </Route>
-            <Route path="/resources">
-              <Navbar />
-              <Resources />
-            </Route>
-            <Route path="/notifications">
-              <Navbar />
-              <Notifications />
-            </Route>
-            <Route path="/network">
-              <Navbar />
-              <Network />
-            </Route>
-            <Route path="/messaging">
-              <Navbar />
-              <Messaging />
-            </Route>
-            <Route path="/profile">
-              <Navbar />
-              <Profile />
-            </Route>
-            <Route path="/aboutus">
-              <Navbar />
-              <AboutUs />
-            </Route>
+              <Switch>
+                <Route path="/functionalities">
+                  <Functionalities />
+                </Route>
+                <Route path="/home">
+                  <Home />
+                </Route>
+                <Route path="/resources">
+                  <Resources />
+                </Route>
+                <Route path="/notifications">
+                  <Notifications />
+                </Route>
+                <Route path="/network">
+                  <Network />
+                </Route>
+                <Route path="/messaging">
+                  <Messaging />
+                </Route>
+                <Route path="/profile">
+                  <Profile />
+                </Route>
+                <Route path="/aboutus">
+                  <AboutUs />
+                </Route>
+              </Switch>
+            </Router>
             <Route path="/*">
-              <Navbar />
               <NotFound />
             </Route>
           </Switch>
-        </Router>
-      </Suspense>
-    </div>
+        </div>
+      </Router>
+    </Suspense>
   );
 }
 
