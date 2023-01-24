@@ -1,0 +1,1 @@
+{"version":3,"file":"static/css/639.1c9dbdd0.chunk.css","mappings":"AAAA,0BACE,YAAa,CACb,yCAAmC,CAAnC,iCACF,CAEA,yBACE,SACF","sources":["components/Posts/Posts.module.css"],"sourcesContent":[".menu_button {\n  fill: #99d3df;\n  transform: rotate(90deg) scale(0.5);\n}\n\n.menu_items {\n  width: 80%;\n}\n"],"names":[],"sourceRoot":""}

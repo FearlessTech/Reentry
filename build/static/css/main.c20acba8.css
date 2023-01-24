@@ -1,0 +1,72 @@
+:root,
+body,
+html {
+  background-color: initial;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+div,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+html,
+i,
+img,
+label,
+li,
+nav,
+navbar,
+p,
+small,
+span,
+ul {
+  background: transparent;
+  border: 0;
+  font-size: 100%;
+  margin: 0;
+  outline: none;
+  padding: 0;
+  vertical-align: initial;
+}
+body {
+  font-family: Helvetica, Arial, sans-serif;
+  height: 100vh;
+}
+input,
+textarea {
+  color: #333;
+  font-family: sans-serif;
+}
+textarea {
+  padding: 0.5rem 0;
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@media (max-width: 768px) {
+  body {
+    overflow-y: scroll;
+  }
+}
+.welcome {
+  color: #00000090;
+  text-decoration: none;
+}
+/*# sourceMappingURL=main.c20acba8.css.map*/

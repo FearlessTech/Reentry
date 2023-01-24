@@ -43,10 +43,10 @@ const UserInfo = styled.div`
 `;
 
 const CardBackground = styled.div`
-  background: url("/images/card-bg.svg");
+  background: url("/images/UserCardHead.jpg");
   background-position: center;
   background-size: 462px;
-  height: 54px;
+  height: 70px;
   margin: -12px -12px 0;
 `;
 
@@ -190,6 +190,18 @@ const PFHeading = styled.div`
   align-items: center;
   padding-right: 20px;
   color: whitesmoke;
+  .border {
+    &::before {
+      content: "";
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background-color: #077a7a;
+      margin-top: .95rem;
+      left: 21rem;
+      transform: rotateY("45deg");
+      clip-path: polygon(56% 0, 55% 100%, 3% 51%, 4% 0);
+    }
 `;
 const PFIntro = styled.div``;
 
@@ -204,7 +216,7 @@ const PFResourcesPost = styled.div``;
 const Content = styled.div`
   min-height: 100px;
   background-color: whitesmoke;
-  margin-left: 40px;
+  margin-left: 11px;
 `;
 
 export {
