@@ -4,13 +4,18 @@ const Container = styled.div`
   max-width: 100%;
   display: flex;
   background-color: #cdcdcd;
-  min-height: 100%;
   overflow: hidden;
   flex-wrap: wrap-reverse;
   column-gap: 2rem;
-  margin-top: 2rem;
   row-gap: 2rem;
-  padding: 2rem 1rem 3rem;
+  padding-top: 52px;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  height: 100vh;
+  overflow: hidden;
+  @media (max-width: 768px) {
+    overflow: scroll;
+  }
   &,
   * {
     font-family: Inter, sans-serif;
@@ -26,6 +31,7 @@ const Messengers = styled.div`
   background-color: #e9e9e9;
   height: 85vh;
   border-radius: 10px;
+  margin-bottom: 20px;
 `;
 
 const MessengersHeader = styled.div`
@@ -54,6 +60,7 @@ const ActorsList = styled.div`
   background-color: #cdcdcd;
   overflow-x: hidden;
   border-radius: 0 0 0 10px;
+  margin-bottom: 20px;
   .actors {
     display: flex;
     flex-direction: column;
@@ -71,6 +78,7 @@ const Messages = styled.div`
   background-color: #e9e9e9;
   height: 85vh;
   border-radius: 10px;
+  margin-bottom: 20px;
 `;
 
 const MessagesHeader = styled.div`

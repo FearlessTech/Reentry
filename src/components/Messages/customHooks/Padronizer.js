@@ -50,8 +50,6 @@ export class Chat {
       .collection("chat")
       .get()
       .then((payload) => {
-        console.log(payload);
-        console.log(this.chatId);
         if (!payload.empty) {
           data.exists = true;
           data.payload = payload;

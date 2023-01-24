@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { UserImage } from "../../components/Image";
 import { formatRelative } from "date-fns";
 import { Link } from "react-router-dom";
+import { isUrl, splitString, getExt } from "../../Posts/urlIdentifier";
 
 const StMessage = styled.div`
   .top {
@@ -37,6 +38,12 @@ const StMessage = styled.div`
   .text {
     padding-left: 3.4rem;
     font-size: 15px;
+    .image-wrapper {
+      width: 150px;
+      img {
+        width: 100%;
+      }
+    }
   }
 `;
 
@@ -47,6 +54,18 @@ const Message = ({
   photoURL = "",
   uid = "",
 }) => {
+  const textList = [];
+
+  splitString(text).forEach((word) => {
+    if (isUrl(word)) {
+      if (getExt(word)) {
+        return textList.push({ image: true, text: word, url: true });
+      }
+      return textList.push({ image: false, text: word, url: true });
+    }
+    return textList.push({ image: false, text: word, url: false });
+  });
+
   return (
     <StMessage>
       <div className="top">
@@ -66,7 +85,37 @@ const Message = ({
           ) : null}
         </div>
       </div>
-      <p className="text">{text}</p>
+      <div>
+        <div className="text">
+          {textList.map((word, i) => (
+            <React.Fragment key={i}>
+              {word.image ? (
+                <>
+                  <a href={word.text} target="_blank">
+                    <div className="image-wrapper">
+                      <img
+                        src={word.text}
+                        alt=""
+                        onError={(e) => {
+                          e.target.remove();
+                        }}
+                      />
+                    </div>
+                  </a>{" "}
+                </>
+              ) : word.url ? (
+                <>
+                  <a href={word.text} target="_blank">
+                    {word.text}
+                  </a>{" "}
+                </>
+              ) : (
+                <>{word.text} </>
+              )}
+            </React.Fragment>
+          ))}
+        </div>
+      </div>
     </StMessage>
   );
 };
