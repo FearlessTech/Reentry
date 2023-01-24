@@ -17,7 +17,6 @@ import {
   ReplyText,
 } from "../stylesMessaging";
 
-import useGetMessages from "../customHooks/useGetMessages";
 import getCurrentUser from "../../Network/api/getCurrentUser";
 
 export default function PrivateChat({ db = null }) {
@@ -39,7 +38,6 @@ export default function PrivateChat({ db = null }) {
       }
       return chatId;
     })().then((chatId) => {
-      console.log("executing");
       unsubscribe = db
         .collection("chats")
         .doc(chatId)
@@ -52,8 +50,6 @@ export default function PrivateChat({ db = null }) {
             ...doc.data(),
             id: doc.id,
           }));
-          console.log("aaaaaa");
-          console.log(data);
           // update state
           setMessages(data);
         });

@@ -10,3 +10,7 @@ export function splitString(string) {
   const stringArr = corrected.split("<url*>");
   return stringArr;
 }
+
+export function getExt(string) {
+  return /\.(gif|jpe?g|tiff?|png|webp|bmp)$/i.test(string);
+}
