@@ -8,6 +8,7 @@ const Container = styled.div`
   align-items: flex-start;
   background-color: #cdcdcd;
   column-gap: 1rem;
+  padding: 1rem;
 
   flex-wrap: wrap;
   min-height: 100vh;
@@ -175,7 +176,7 @@ const CommunityCard = styled(ArtCard)`
 const ProfileMain = styled.div`
   display: flex;
   flex-direction: column;
-  margin: 70px;
+  margin-top: 60px;
   flex: 1 1 250px;
   main {
     min-height: 100%;
@@ -190,18 +191,18 @@ const PFHeading = styled.div`
   align-items: center;
   padding-right: 20px;
   color: whitesmoke;
-  .border {
-    &::before {
-      content: "";
-      position: absolute;
-      width: 20px;
-      height: 20px;
-      background-color: #077a7a;
-      margin-top: .95rem;
-      left: 21rem;
-      transform: rotateY("45deg");
-      clip-path: polygon(56% 0, 55% 100%, 3% 51%, 4% 0);
-    }
+  position: relative;
+  &::before {
+    content: "";
+    position: absolute;
+    width: 10px;
+    height: 8px;
+    background-color: #077a7a;
+    left: 0;
+    bottom: -8px;
+    transform: rotateY("45deg");
+    clip-path: polygon(0 0, 100% 0, 100% 100%);
+  }
 `;
 const PFIntro = styled.div``;
 
