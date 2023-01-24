@@ -121,6 +121,8 @@ const PostModal = (props) => {
       timestamp: firebase.firestore.Timestamp.now(),
     };
 
+    console.log(payload);
+
     props.postArticle(payload);
     reset(e);
   };

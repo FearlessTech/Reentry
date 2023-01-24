@@ -2,7 +2,13 @@ import React, { useState, useEffect, useRef } from "react";
 import Message from "./Message";
 import { useParams } from "react-router-dom";
 import firebase from "firebase";
-import db from "../../../firebase";
+
+import {
+  generateChatId,
+  Chat,
+  addReferenceTo,
+  getUserFromId,
+} from "../customHooks/Padronizer";
 
 import {
   MessagesHeader,
@@ -14,79 +20,96 @@ import {
 import useGetMessages from "../customHooks/useGetMessages";
 import getCurrentUser from "../../Network/api/getCurrentUser";
 
-export default function PrivateChat(props) {
+export default function PrivateChat({ db = null }) {
   const [newMessage, setNewMessage] = useState("");
   const scroller = useRef();
   const params = useParams();
   const [hasNew, setHasNew] = useState(null);
-  const messages = useGetMessages(params.uid, hasNew);
+  const [messages, setMessages] = useState(null);
+
+  let chatId = null;
+
+  useEffect(() => {
+    if (hasNew === false || !db) return;
+    let unsubscribe;
+    (async () => {
+      if (!chatId) {
+        const user = await getCurrentUser();
+        chatId = generateChatId(user.uid, params.uid);
+      }
+      return chatId;
+    })().then((chatId) => {
+      console.log("executing");
+      unsubscribe = db
+        .collection("chats")
+        .doc(chatId)
+        .collection("chat")
+        .orderBy("createdAt")
+        .limit(50)
+        .onSnapshot((querySnapshot) => {
+          // Get all documents from collection ~ with IDs
+          const data = querySnapshot.docs.map((doc) => ({
+            ...doc.data(),
+            id: doc.id,
+          }));
+          console.log("aaaaaa");
+          console.log(data);
+          // update state
+          setMessages(data);
+        });
+
+      // Detach listener
+      return unsubscribe;
+    });
+    setHasNew(false);
+  }, [db, hasNew]);
 
   function handleOnSubmit(e) {
     e.preventDefault();
     if (!newMessage) return;
+    //
+    let user;
+    let target;
+    let dUser;
 
-    let id;
-    let myId;
-    let newId;
-    let isNew = false;
+    async function verifyMessages() {
+      try {
+        user = await getCurrentUser();
+        target = await getUserFromId(params.uid);
+        dUser = await getUserFromId(params.uid);
+        const chatID = generateChatId(user.uid, params.uid);
+        const chat = new Chat(chatID);
 
-    async function createChat() {
-      const currentUser = await getCurrentUser();
+        const { exists, payload } = await chat.chatExists();
 
-      async function setChat(chats) {
-        const newChats = [...chats];
-
-        newChats.push(newId);
-        db.collection("users").doc(currentUser.email).update({
-          chats: newChats,
-        });
-
-        const query = db.collection("users").where("uid", "==", id);
-        query.get().then((payload) => {
-          console.log(payload.docs);
-          const data = payload.docs[0].data();
-          const newChats = [...data.chats];
-          newChats.push(newId);
-          payload.docs[0].ref.update({
-            chats: newChats,
+        if (exists) {
+          await chat.createChat({
+            text: newMessage,
+            createdAt: firebase.firestore.FieldValue.serverTimestamp(),
+            uid: user.uid,
+            displayName: user.displayName,
+            photoURL: user.photoURL,
           });
-        });
+        } else {
+          await chat.createChat({
+            text: newMessage,
+            createdAt: firebase.firestore.FieldValue.serverTimestamp(),
+            uid: user.uid,
+            displayName: user.displayName,
+            photoURL: user.photoURL,
+          });
+          await addReferenceTo(user.uid, target);
+          await addReferenceTo(params.uid, dUser);
+        }
+      } catch (e) {
+        console.log(e.message);
       }
-
-      myId = currentUser.uid;
-      id = params.uid;
-
-      db.collection("users")
-        .doc(currentUser.email)
-        .get()
-        .then(async (payload) => {
-          const data = payload.data();
-          if (data.chats.includes(id + myId)) newId = id + myId;
-          else if (data.chats.includes(myId + id)) newId = myId + id;
-          else {
-            newId = id + myId;
-            isNew = true;
-            await setChat(data.chats);
-          }
-        });
-
-      db.collection("chats")
-        .doc(newId)
-        .collection("chat")
-        .add({
-          text: newMessage,
-          createdAt: firebase.firestore.FieldValue.serverTimestamp(),
-          uid: id,
-          displayName: currentUser.displayName,
-          photoURL: currentUser.photoURL,
-        })
-        .then(() => {
-          setHasNew(() => null);
-          setNewMessage(() => "");
-        });
     }
-    createChat();
+    verifyMessages();
+    setHasNew(() => true);
+    setNewMessage(() => "");
   }
+
   function handleOnChange(e) {
     setNewMessage(e.target.value);
   }

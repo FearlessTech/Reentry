@@ -35,52 +35,52 @@ const Channel = ({ user = null, db = null }) => {
 
   const recent = [
     {
-      name: "Noelle Wells",
+      name: "c137",
       photoURL: "https://randomuser.me/api/portraits/women/8.jpg",
       lastMessage: "Lorem Ipsum Dolor",
-      uid: "ABCDEF0123465",
+      uid: "EjFZKh5rxTgAAdqpJXmH0DAiT7s2",
     },
     {
-      name: "Noelle Wells",
+      name: "c137",
       photoURL: "https://randomuser.me/api/portraits/women/8.jpg",
       lastMessage: "Lorem Ipsum Dolor",
-      uid: "ABCDEF0123465",
+      uid: "EjFZKh5rxTgAAdqpJXmH0DAiT7s2",
     },
     {
-      name: "Noelle Wells",
+      name: "c137",
       photoURL: "https://randomuser.me/api/portraits/women/8.jpg",
       lastMessage: "Lorem Ipsum Dolor",
-      uid: "ABCDEF0123465",
+      uid: "EjFZKh5rxTgAAdqpJXmH0DAiT7s2",
     },
     {
-      name: "Noelle Wells",
+      name: "c137",
       photoURL: "https://randomuser.me/api/portraits/women/8.jpg",
       lastMessage: "Lorem Ipsum Dolor",
-      uid: "ABCDEF0123465",
+      uid: "EjFZKh5rxTgAAdqpJXmH0DAiT7s2",
     },
     {
-      name: "Noelle Wells",
+      name: "c137",
       photoURL: "https://randomuser.me/api/portraits/women/8.jpg",
       lastMessage: "Lorem Ipsum Dolor",
-      uid: "ABCDEF0123465",
+      uid: "EjFZKh5rxTgAAdqpJXmH0DAiT7s2",
     },
     {
-      name: "Noelle Wells",
+      name: "c137",
       photoURL: "https://randomuser.me/api/portraits/women/8.jpg",
       lastMessage: "Lorem Ipsum Dolor",
-      uid: "ABCDEF0123465",
+      uid: "EjFZKh5rxTgAAdqpJXmH0DAiT7s2",
     },
     {
-      name: "Noelle Wells",
+      name: "c137",
       photoURL: "https://randomuser.me/api/portraits/women/8.jpg",
       lastMessage: "Lorem Ipsum Dolor",
-      uid: "ABCDEF0123465",
+      uid: "EjFZKh5rxTgAAdqpJXmH0DAiT7s2",
     },
     {
-      name: "Noelle Wells",
+      name: "c137",
       photoURL: "https://randomuser.me/api/portraits/women/8.jpg",
       lastMessage: "Lorem Ipsum Dolor",
-      uid: "ABCDEF0123465",
+      uid: "EjFZKh5rxTgAAdqpJXmH0DAiT7s2",
     },
   ];
 
@@ -184,7 +184,7 @@ const Channel = ({ user = null, db = null }) => {
             </Reply>
           </Route>
           <Route path="/messaging/:uid">
-            <PrivateChat />
+            <PrivateChat db={db} />
           </Route>
         </Routes>
       </Messages>
