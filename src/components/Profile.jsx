@@ -78,21 +78,33 @@ const Profile = (props) => {
       </ProfileLeft>
       <ProfileMain>
         <PFIntro>
-          <PFHeading>Introductions</PFHeading>
+          <PFHeading>
+            Introductions
+            <div className="border" />
+          </PFHeading>
           <Content></Content>
         </PFIntro>
         <PFCheckBoxes>
-          <PFHeading>Resources Check Boxes</PFHeading>
+          <PFHeading>
+            Resources Check Boxes
+            <div className="border" />
+          </PFHeading>
           <Content>
             <ResourceCheckBoxes />
           </Content>
         </PFCheckBoxes>
         <PFPost>
-          <PFHeading>Users Post</PFHeading>
+          <PFHeading>
+            Users Post
+            <div className="border" />
+          </PFHeading>
           <Content></Content>
         </PFPost>
         <PFResourcesPost>
-          <PFHeading>Users Posted Resources</PFHeading>
+          <PFHeading>
+            Users Posted Resources
+            <div className="border" />
+          </PFHeading>
           <Content></Content>
         </PFResourcesPost>
       </ProfileMain>
