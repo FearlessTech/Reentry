@@ -35,47 +35,18 @@ const Channel = ({ user = null, db = null }) => {
 
   const recent = [
     {
+      name: "Global chat",
+      photoURL:
+        "https://avatars.githubusercontent.com/u/122039071?s=400&u=71ad1243b64ff9fd68445f297c039a60ceaefd4a&v=4",
+      lastMessage: "Talk to everyone with the global chat",
+      uid: "",
+    },
+    {
       name: "Ronnie Brito",
       photoURL:
         "https://lh3.googleusercontent.com/a/AEdFTp7nsy4yhLo0hOm2zpDjNedfHB9MMWcKej_ki9Rf=s96-c",
       lastMessage: "It won't work",
       uid: "hyHKDNi5S6O6bJkfJfkPVNt1qRA2",
-    },
-    {
-      name: "c137",
-      photoURL: "https://randomuser.me/api/portraits/women/8.jpg",
-      lastMessage: "Not dynamic yet",
-      uid: "EjFZKh5rxTgAAdqpJXmH0DAiT7s2",
-    },
-    {
-      name: "c137",
-      photoURL: "https://randomuser.me/api/portraits/women/8.jpg",
-      lastMessage: "Not dynamic yet",
-      uid: "EjFZKh5rxTgAAdqpJXmH0DAiT7s2",
-    },
-    {
-      name: "c137",
-      photoURL: "https://randomuser.me/api/portraits/women/8.jpg",
-      lastMessage: "Not dynamic yet",
-      uid: "EjFZKh5rxTgAAdqpJXmH0DAiT7s2",
-    },
-    {
-      name: "c137",
-      photoURL: "https://randomuser.me/api/portraits/women/8.jpg",
-      lastMessage: "Not dynamic yet",
-      uid: "EjFZKh5rxTgAAdqpJXmH0DAiT7s2",
-    },
-    {
-      name: "c137",
-      photoURL: "https://randomuser.me/api/portraits/women/8.jpg",
-      lastMessage: "Not dynamic yet",
-      uid: "EjFZKh5rxTgAAdqpJXmH0DAiT7s2",
-    },
-    {
-      name: "c137",
-      photoURL: "https://randomuser.me/api/portraits/women/8.jpg",
-      lastMessage: "Not dynamic yet",
-      uid: "EjFZKh5rxTgAAdqpJXmH0DAiT7s2",
     },
     {
       name: "c137",
