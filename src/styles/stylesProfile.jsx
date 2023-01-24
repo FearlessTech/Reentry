@@ -7,7 +7,7 @@ const Container = styled.div`
   height: max-content;
   align-items: flex-start;
   background-color: #cdcdcd;
-  column-gap: 1rem;
+  column-gap: 2.5rem;
   padding: 1rem;
 
   flex-wrap: wrap;
