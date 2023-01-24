@@ -20,10 +20,10 @@ If you would like to contribute, just comment on an issue and I will assign it t
 
 
 <p align='center'>
-<img width='80%' src='mis/ShowCaseLogin.jpg'>
+<img width='80%' src='mis/WelcomeScreen.png'>
 </p>
 <p align='center'>
-<img width='80%' src='mis/ShowCaseHome.jpg'>
+<img width='80%' src='mis/HomeScreen.png'>
 </p>
 
 
