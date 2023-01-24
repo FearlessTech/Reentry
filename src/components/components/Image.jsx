@@ -1,5 +1,3 @@
-import { width } from "@mui/system";
-
 export function UserImage({ source }, props) {
   return (
     <img

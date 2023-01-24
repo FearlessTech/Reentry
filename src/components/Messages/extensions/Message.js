@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { UserImage } from "../../components/Image";
 import { formatRelative } from "date-fns";
+import { Link } from "react-router-dom";
 
 const StMessage = styled.div`
   .top {
@@ -26,6 +27,7 @@ const StMessage = styled.div`
       .name {
         font-weight: 600;
         color: #074453;
+        text-decoration: none;
       }
       .date {
         font-size: 12px;
@@ -43,6 +45,7 @@ const Message = ({
   text = "",
   displayName = "",
   photoURL = "",
+  uid = "",
 }) => {
   return (
     <StMessage>
@@ -51,7 +54,11 @@ const Message = ({
           <UserImage source={photoURL} />
         </div>
         <div className="meta">
-          {displayName ? <p className="name">{displayName}</p> : null}
+          {displayName ? (
+            <Link className="name" to={`/messaging/${uid}`}>
+              {displayName}
+            </Link>
+          ) : null}
           {createdAt?.seconds ? (
             <span className="date">
               {formatRelative(new Date(createdAt.seconds * 1000), new Date())}
