@@ -35,51 +35,52 @@ const Channel = ({ user = null, db = null }) => {
 
   const recent = [
     {
+      name: "Ronnie Brito",
+      photoURL:
+        "https://lh3.googleusercontent.com/a/AEdFTp7nsy4yhLo0hOm2zpDjNedfHB9MMWcKej_ki9Rf=s96-c",
+      lastMessage: "It won't work",
+      uid: "hyHKDNi5S6O6bJkfJfkPVNt1qRA2",
+    },
+    {
       name: "c137",
       photoURL: "https://randomuser.me/api/portraits/women/8.jpg",
-      lastMessage: "Lorem Ipsum Dolor",
+      lastMessage: "Not dynamic yet",
       uid: "EjFZKh5rxTgAAdqpJXmH0DAiT7s2",
     },
     {
       name: "c137",
       photoURL: "https://randomuser.me/api/portraits/women/8.jpg",
-      lastMessage: "Lorem Ipsum Dolor",
+      lastMessage: "Not dynamic yet",
       uid: "EjFZKh5rxTgAAdqpJXmH0DAiT7s2",
     },
     {
       name: "c137",
       photoURL: "https://randomuser.me/api/portraits/women/8.jpg",
-      lastMessage: "Lorem Ipsum Dolor",
+      lastMessage: "Not dynamic yet",
       uid: "EjFZKh5rxTgAAdqpJXmH0DAiT7s2",
     },
     {
       name: "c137",
       photoURL: "https://randomuser.me/api/portraits/women/8.jpg",
-      lastMessage: "Lorem Ipsum Dolor",
+      lastMessage: "Not dynamic yet",
       uid: "EjFZKh5rxTgAAdqpJXmH0DAiT7s2",
     },
     {
       name: "c137",
       photoURL: "https://randomuser.me/api/portraits/women/8.jpg",
-      lastMessage: "Lorem Ipsum Dolor",
+      lastMessage: "Not dynamic yet",
       uid: "EjFZKh5rxTgAAdqpJXmH0DAiT7s2",
     },
     {
       name: "c137",
       photoURL: "https://randomuser.me/api/portraits/women/8.jpg",
-      lastMessage: "Lorem Ipsum Dolor",
+      lastMessage: "Not dynamic yet",
       uid: "EjFZKh5rxTgAAdqpJXmH0DAiT7s2",
     },
     {
       name: "c137",
       photoURL: "https://randomuser.me/api/portraits/women/8.jpg",
-      lastMessage: "Lorem Ipsum Dolor",
-      uid: "EjFZKh5rxTgAAdqpJXmH0DAiT7s2",
-    },
-    {
-      name: "c137",
-      photoURL: "https://randomuser.me/api/portraits/women/8.jpg",
-      lastMessage: "Lorem Ipsum Dolor",
+      lastMessage: "Not dynamic yet",
       uid: "EjFZKh5rxTgAAdqpJXmH0DAiT7s2",
     },
   ];
