@@ -370,6 +370,7 @@ export const Container = styled.div`
               display: flex;
               padding: 0.4rem 1rem;
               column-gap: 1rem;
+              min-height: 100px;
               .pictute-wrapper {
                 flex: 1 0 1;
                 width: 100px;

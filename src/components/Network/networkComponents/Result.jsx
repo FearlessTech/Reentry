@@ -1,3 +1,5 @@
+import { UserImage } from "../../components/Image";
+
 const Results = ({ users }) => {
   return (
     <div className="results">
@@ -6,14 +8,7 @@ const Results = ({ users }) => {
           return (
             <div className="single-user" key={crypto.randomUUID()}>
               <div className="pictute-wrapper">
-                <picture>
-                  <source srcSet={user.photoURL && user.photoURL} />
-                  <source srcSet="./images/user.svg" />
-                  <img
-                    src={user.photoURL && user.photoURL}
-                    alt="user profile picture"
-                  />
-                </picture>
+                <UserImage source={user.photoURL} />
               </div>
 
               <div className="text-content">
