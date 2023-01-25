@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
 import { connect } from "react-redux";
-import { getArticlesAPI } from "../actions";
-import PostModal from "./Posts/PostModal";
+import { getArticlesAPI } from "../../actions";
+import PostModal from "../Posts/PostModal";
 
 import { IoMdSettings } from "react-icons/io";
 
-import { Container, Content, PostNav } from "../styles/stylesMain";
-import { SinglePost } from "./Posts/SinglePost";
+import { Container, Content, PostNav } from "./stylesMain";
+import { SinglePost } from "../Posts/SinglePost";
 const Main = (props) => {
   const [showModal, setShowModal] = useState("close");
   useEffect(() => {
@@ -54,7 +54,9 @@ const Main = (props) => {
             <SinglePost article={article} id={article.id} key={article.id} />
           ))}
       </Content>
-      {showModal === "open" && <PostModal showModal={showModal} handleClick={handleClick} />}
+      {showModal === "open" && (
+        <PostModal showModal={showModal} handleClick={handleClick} />
+      )}
     </Container>
   );
 };

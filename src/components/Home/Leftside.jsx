@@ -14,8 +14,8 @@ import {
   Widget,
   Item,
   CommunityCard,
-} from "../styles/stylesLeftside.jsx";
-import { UserImage } from "./components/Image.jsx";
+} from "./stylesLeftside.jsx";
+import { UserImage } from "../components/Image.jsx";
 
 const Leftside = (props) => {
   return (

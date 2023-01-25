@@ -5,7 +5,7 @@ import Leftside from "./Leftside";
 import Main from "./Main";
 import Rightside from "./Rightside";
 
-import { Container, Layout } from "../styles/stylesHome";
+import { Container, Layout } from "./stylesHome";
 
 const Home = (props) => {
   return (

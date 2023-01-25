@@ -1,10 +1,10 @@
 import { connect } from "react-redux";
-import { signInAPI } from "../actions";
+import { signInAPI } from "../../actions";
 import { Redirect } from "react-router-dom";
 import { useState, useEffect } from "react";
 
-import LoginForm from "./LoginComponents/Login";
-import SignUpForm from "./LoginComponents/Signup";
+import LoginForm from "./Login";
+import SignUpForm from "./Signup";
 import {
   ImFacebook2,
   ImGoogle2,
@@ -21,7 +21,7 @@ import {
   Form,
   Nav,
   NavBTN,
-} from "../styles/stylesLogin";
+} from "./stylesLoginPage";
 import { Link } from "react-router-dom";
 
 const Login = (props) => {
@@ -118,6 +118,8 @@ const Login = (props) => {
       <main className={sideBar ? "open" : ""}>
         <SectionB>
           <div>
+            <h3>Facebook, Twitter, and Microsoft logins are not active yet</h3>
+            <br />
             <h5>Be cautious on social networking sites.</h5>
             <br />
             <h5>

@@ -4,7 +4,7 @@ import {
   Title,
   FeedList,
   BannerCard,
-} from "../styles/stylesRightside.jsx";
+} from "./stylesRightside.jsx";
 
 const Rightside = () => {
   return (

@@ -1,6 +1,5 @@
 import { useRef, useState } from "react";
 import StyledLogin from "./LoginStyles/styledLogin";
-// import { Link } from "react-router-dom";
 import { auth } from "../../firebase";
 import { setFbUser } from "../../actions";
 
