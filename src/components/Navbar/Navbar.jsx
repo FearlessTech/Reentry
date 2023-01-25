@@ -1,7 +1,7 @@
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { signOutAPI } from "../actions";
+import { signOutAPI } from "../../actions";
 import { Redirect } from "react-router-dom";
 
 import { SiGooglemessages } from "react-icons/si";
@@ -29,8 +29,8 @@ import {
   User,
   More,
   Dropdown,
-} from "../styles/stylesNavbar";
-import { SearchResults } from "./Search/SearchResults";
+} from "./stylesNavbar";
+import { SearchResults } from "../Search/SearchResults";
 
 const Navbar = (props) => {
   const topics = [

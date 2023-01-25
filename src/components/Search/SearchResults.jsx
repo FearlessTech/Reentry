@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { IoMdSearch } from "react-icons/io";
 import { Link } from "react-router-dom";
 import db from "../../firebase";
-import { Search, SearchIcon } from "../../styles/stylesNavbar";
+import { Search, SearchIcon } from "../Navbar/stylesNavbar";
 
 export const SearchResults = () => {
   const initialSearchState = {
