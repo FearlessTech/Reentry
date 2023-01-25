@@ -30,18 +30,11 @@ const Image = styled.div`
 `;
 
 const Info = styled.div`
-  width: 75%;
+  width: 72%;
   margin: 5px;
   text-align: center;
   display: flex;
   flex-direction: column;
-  h1 {
-    font-size: 1.5rem;
-    margin: 5px;
-  }
-  p: {
-    font-size: 0.7rem;
-  }
 `;
 const AUHeading = styled.div`
   background-color: #077a7a;
@@ -51,5 +44,39 @@ const AUHeading = styled.div`
   align-items: center;
   padding-right: 20px;
   color: whitesmoke;
+  position: relative;
+  &::before {
+    content: "";
+    position: absolute;
+    width: 11px;
+    height: 8px;
+    background-color: #077a7a;
+    left: 0;
+    bottom: -7.5px;
+    transform: rotateY("45deg");
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 5%);
+    position: absolute;
+    width: 10px;
+    height: 8px;
+    background-color: #077a7a;
+    left: 0;
+    bottom: -8px;
+    transform: rotateY("45deg");
+    clip-path: polygon(0 0, 100% 0, 100% 100%);
+  }
+  h1 {
+    font-size: 1.5rem;
+    font-family: 'Sofia'
+    margin: 5px;
+  }
 `;
-export { Container, Content, Image, Info, AUHeading };
+
+const Description = styled.div`
+  background-color: whitesmoke;
+  margin-left: 0.6rem;
+  p: {
+    font-size: 0.7rem;
+    font-family: "Bad Script";
+  }
+`;
+export { Container, Content, Image, Info, AUHeading, Description };
