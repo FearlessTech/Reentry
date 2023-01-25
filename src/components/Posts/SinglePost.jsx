@@ -55,7 +55,7 @@ export function SinglePost({ article, id }) {
         setLikes([]);
       }
     })();
-  }, [showCommentBox, rerender]);
+  }, [showCommentBox, rerender, article.likedBy, id, user.uid]);
 
   const handleLike = async () => {
     try {
