@@ -110,7 +110,7 @@ const Message = ({
                   </a>{" "}
                 </>
               ) : (
-                <>{word.text} </>
+                <>{`${word.text}`}</>
               )}
             </React.Fragment>
           ))}

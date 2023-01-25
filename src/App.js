@@ -41,36 +41,40 @@ function App(props) {
             <Route exact path="/agreement">
               <AgreementLogin />
             </Route>
-            <Router>
+            <Route path="/functionalities">
               <Navbar />
-              <Switch>
-                <Route path="/functionalities">
-                  <Functionalities />
-                </Route>
-                <Route path="/home">
-                  <Home />
-                </Route>
-                <Route path="/resources">
-                  <Resources />
-                </Route>
-                <Route path="/notifications">
-                  <Notifications />
-                </Route>
-                <Route path="/network">
-                  <Network />
-                </Route>
-                <Route path="/messaging">
-                  <Messaging />
-                </Route>
-                <Route path="/profile">
-                  <Profile />
-                </Route>
-                <Route path="/aboutus">
-                  <AboutUs />
-                </Route>
-              </Switch>
-            </Router>
+              <Functionalities />
+            </Route>
+            <Route path="/home">
+              <Navbar />
+              <Home />
+            </Route>
+            <Route path="/resources">
+              <Navbar />
+              <Resources />
+            </Route>
+            <Route path="/notifications">
+              <Navbar />
+              <Notifications />
+            </Route>
+            <Route path="/network">
+              <Navbar />
+              <Network />
+            </Route>
+            <Route path="/messaging">
+              <Navbar />
+              <Messaging />
+            </Route>
+            <Route path="/profile">
+              <Navbar />
+              <Profile />
+            </Route>
+            <Route path="/aboutus">
+              <Navbar />
+              <AboutUs />
+            </Route>
             <Route path="/*">
+              <Navbar />
               <NotFound />
             </Route>
           </Switch>
