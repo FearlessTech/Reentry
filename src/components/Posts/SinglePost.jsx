@@ -1,5 +1,4 @@
 import ReactPlayer from "react-player";
-import { FaEllipsisH } from "react-icons/fa";
 import { UserImage } from "../components/Image";
 import {
   Article,
@@ -8,7 +7,7 @@ import {
   SharedImage,
   SocialCounts,
   SocialActions,
-} from "../../styles/stylesMain";
+} from "../Home/stylesMain";
 import { useEffect, useState } from "react";
 import { AddComment } from "./comments/AddComment";
 import db, { auth } from "../../firebase";

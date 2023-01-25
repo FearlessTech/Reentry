@@ -1,15 +1,9 @@
 import { connect } from "react-redux";
-import { signInAPI } from "../actions";
+import { signInAPI } from "../../actions";
 import { Redirect } from "react-router-dom";
 import { useEffect } from "react";
 
-import {
-  Container,
-  Nav,
-  LoginBtn1,
-  Section,
-  Hero,
-} from "../styles/stylesWelcome";
+import { Container, Nav, LoginBtn1, Section, Hero } from "./stylesWelcome";
 import { Link } from "react-router-dom";
 
 const Welcome = (props) => {

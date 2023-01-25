@@ -3,8 +3,8 @@ import { signInAPI } from "../../../../actions";
 import { Redirect } from "react-router-dom";
 import { useRef, useState, useEffect } from "react";
 
-import LoginForm from "../../../../components/LoginComponents/Login";
-import SignUpForm from "../../../../components/LoginComponents/Signup";
+import LoginForm from "../../../Login/Login";
+import SignUpForm from "../../../Login/Signup";
 
 import {
   Container,
