@@ -1,5 +1,5 @@
 import { useState } from "react";
-import db from "../firebase";
+import db from "../../../firebase";
 
 export function AddComment({ articleId, setshowCommentBox }) {
   const [commentText, setcommentText] = useState("");
