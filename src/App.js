@@ -12,20 +12,19 @@ import "./utilities.css";
 
 import Login from "./components/Login/Welcome";
 import AgreementLogin from "./components/Login/LoginPage";
-import Navbar from "./components/Navbar";
-// import Resources from "./extensions/Resources";
+import Navbar from "./components/Navbar/Navbar";
+
 const Home = lazy(() => import("./components/Home/Home"));
-// const Resource = lazy(() => import("./extensions/Resource"));
 const Notifications = lazy(() =>
   import("./components/Notifications/Notifications")
 );
 const Network = lazy(() => import("./components/Network/index.jsx"));
 const Messaging = lazy(() => import("./components/Messages"));
-const Profile = lazy(() => import("./components/Profile"));
+const Profile = lazy(() => import("./components//Profile/Profile"));
 const Resources = lazy(() =>
   import("./components/ResourcesComponents/Resources")
 );
-const AboutUs = lazy(() => import("./components/AboutUs"));
+const AboutUs = lazy(() => import("./components/AboutUs/AboutUs"));
 
 function App(props) {
   useEffect(() => {

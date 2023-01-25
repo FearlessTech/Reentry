@@ -1,10 +1,4 @@
-import {
-  Container,
-  Content,
-  Image,
-  Info,
-  AUHeading,
-} from "../styles/stylesAboutUs";
+import { Container, Content, Image, Info, AUHeading } from "./stylesAboutUs";
 
 const AboutUs = (props) => {
   return (
