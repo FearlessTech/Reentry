@@ -34,8 +34,9 @@ const Container = styled.div`
     row-gap: 1rem;
 
     &:not(.open) {
-      padding-left: 255px;
+      padding-left: 2rem;
     }
+
     &.open {
       padding-left: 2rem;
     }
@@ -68,6 +69,10 @@ const Nav = styled.nav`
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
   border: 1px solid #ffffff2d;
+
+  @media (min-width: 768px) and (orientation: landscape) {
+    position: static;
+  }
 
   top: 0;
   left: 0;
