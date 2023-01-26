@@ -49,7 +49,7 @@ const Navbar = (props) => {
 
   return (
     <Container className="navbar">
-      {(!props.user || !props.user.emailVerified) && <Redirect to="/" />}
+      {/* {(!props.user || !props.user.emailVerified) && <Redirect to="/" />} */}
       <Content>
         <Logo>
           <Link to="/home">

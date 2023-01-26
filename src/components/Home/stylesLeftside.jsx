@@ -25,7 +25,7 @@ const UserInfo = styled.div`
 `;
 
 const CardBackground = styled.div`
-  background: url("/images/card-bg.svg");
+  background: url("/images/UserCardHead.jpg");
   background-position: center;
   background-size: 462px;
   height: 54px;

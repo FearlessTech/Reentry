@@ -32,6 +32,35 @@ const Main = (props) => {
     }
   };
 
+  async function generateUrl(url, callback) {
+    const xhr = new XMLHttpRequest();
+    xhr.onload = () => {
+      var reader = new FileReader();
+      reader.onloadend = () => {
+        callback(reader.result);
+      };
+      reader.readAsDataURL(xhr.response);
+    };
+    xhr.open("GET", url);
+    xhr.responseType = "blob";
+    xhr.send();
+  }
+
+  function setArticleImages(article) {
+    const urlList = [];
+    // article.forEach((article) => {
+    //   if (article.sharedImg) {
+    //     (async () => {
+    //       const file = await generateUrl(article.sharedImg, () => {
+
+    //       });
+    //       console.log(file);
+    //     })();
+    //   }
+    // });
+    return true;
+  }
+
   return (
     <Container>
       <PostNav>
@@ -50,6 +79,7 @@ const Main = (props) => {
       <Content>
         {props.loading && <img src="public/images/spin-loading.gif" alt="" />}
         {props.articles.length != 0 &&
+          setArticleImages(props.articles) &&
           props.articles.map((article) => (
             <SinglePost article={article} id={article.id} key={article.id} />
           ))}
