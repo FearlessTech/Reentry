@@ -26,10 +26,10 @@ const Resources = lazy(() =>
 );
 const AboutUs = lazy(() => import("./components/AboutUs/AboutUs"));
 
-function App(props) {
+function App({ getUserAuth }) {
   useEffect(() => {
-    props.getUserAuth();
-  }, []);
+    getUserAuth();
+  }, [getUserAuth]);
 
   return (
     <Suspense fallback={<Loading />}>
