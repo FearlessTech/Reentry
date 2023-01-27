@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import { isUrl, splitString, getExt } from "../../Posts/urlIdentifier";
 
 const StMessage = styled.div`
+  flex-direction: row-reverse;
   .top {
     display: flex;
     column-gap: 0.6rem;
@@ -53,6 +54,7 @@ const Message = ({
   displayName = "",
   photoURL = "",
   uid = "",
+  current,
 }) => {
   const textList = [];
 

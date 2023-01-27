@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import { Link, Route, Switch as Routes, useParams } from "react-router-dom";
+import { Route, Switch as Routes, useParams } from "react-router-dom";
 import firebase from "firebase/app";
 import Message from "./Message";
 import ActorElement from "./ActorElement";
@@ -47,7 +47,7 @@ const Channel = ({ user = null, db = null }) => {
     (async () => {
       const user = await getCurrentUser();
       const data = await db
-        .collection("users")
+        .collection("users") // admin index
         .where("uid", "==", user.uid)
         .get()
         .then((payload) => {

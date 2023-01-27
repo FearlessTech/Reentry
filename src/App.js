@@ -1,6 +1,7 @@
 import { connect } from "react-redux";
 import { lazy, useEffect, Suspense } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import MessagesPupup from "./components/Messages/MessagesPopup";
 
 import { getUserAuth } from "./actions";
 import Loading from "./components/Fallbacks/Loading";
@@ -45,38 +46,47 @@ function App(props) {
             <Route path="/functionalities">
               <Navbar />
               <Functionalities />
+              <MessagesPupup />
             </Route>
             <Route path="/home">
               <Navbar />
               <Home />
+              <MessagesPupup />
             </Route>
             <Route path="/resources">
               <Navbar />
               <Resources />
+              <MessagesPupup />
             </Route>
             <Route path="/notifications">
               <Navbar />
               <Notifications />
+              <MessagesPupup />
             </Route>
             <Route path="/network">
               <Navbar />
               <Network />
+              <MessagesPupup />
             </Route>
             <Route path="/messaging">
               <Navbar />
               <Messaging />
+              <MessagesPupup />
             </Route>
             <Route path="/profile">
               <Navbar />
               <Profile />
+              <MessagesPupup />
             </Route>
             <Route path="/aboutus">
               <Navbar />
               <AboutUs />
+              <MessagesPupup />
             </Route>
             <Route path="/*">
               <Navbar />
               <NotFound />
+              <MessagesPupup />
             </Route>
           </Switch>
         </div>
