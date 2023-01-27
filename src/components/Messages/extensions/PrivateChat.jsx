@@ -50,8 +50,15 @@ export default function PrivateChat({ db = null }) {
             ...doc.data(),
             id: doc.id,
           }));
+
           // update state
-          setMessages(data);
+          (async () => {
+            const user = await getCurrentUser();
+            const newData = data.map((message) => {
+              return { ...message, current: message.uid === user.uid };
+            });
+            setMessages(newData);
+          })();
         });
 
       // Detach listener
@@ -130,7 +137,7 @@ export default function PrivateChat({ db = null }) {
           {messages &&
             messages.map((message) => (
               <li key={message.id}>
-                <Message {...message} />
+                <Message {...message} left={message.current} />
               </li>
             ))}
         </ul>

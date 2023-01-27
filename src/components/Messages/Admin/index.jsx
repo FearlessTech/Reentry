@@ -11,7 +11,8 @@ function App() {
         <Routes>
           <Route exact path="/" element={<SignIn />} />
           <Route path="/Signup" element={<SignUp />} />
-          <Route path="/chat-home/:receiverId" element={<ChatHome />} />
+          {/* <Route path="/chat-home/:receiverId" element={<ChatHome />} /> */}
+          <Route path="/chat-home/:receiverId" element={<div>test</div>} />
         </Routes>
       </BrowserRouter>
     </div>
