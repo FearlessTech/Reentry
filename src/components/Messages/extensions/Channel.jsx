@@ -46,13 +46,12 @@ const Channel = ({ user = null, db = null }) => {
   useEffect(() => {
     (async () => {
       const user = await getCurrentUser();
-      const data = await db
+      await db
         .collection("users") // admin index
         .where("uid", "==", user.uid)
         .get()
         .then((payload) => {
           const data = payload.docs[0].data();
-          console.log(data);
           setRecent(() => [globalCard, ...data.chats]);
         });
     })();
@@ -71,7 +70,14 @@ const Channel = ({ user = null, db = null }) => {
             id: doc.id,
           }));
           // update state
-          setMessages(data);
+
+          (async () => {
+            const user = await getCurrentUser();
+            const newData = data.map((message) => {
+              return { ...message, current: message.uid === user.uid };
+            });
+            setMessages(newData);
+          })();
         });
 
       // Detach listener
@@ -136,7 +142,7 @@ const Channel = ({ user = null, db = null }) => {
               <ul className="messages-node">
                 {messages.map((message) => (
                   <li key={message.id}>
-                    <Message {...message} />
+                    <Message {...message} current={message.current} />
                   </li>
                 ))}
               </ul>

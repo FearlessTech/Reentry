@@ -4,7 +4,6 @@ const Container = styled.div`
   max-width: 100%;
   display: flex;
   background-color: #cdcdcd;
-  overflow: hidden;
   flex-wrap: wrap-reverse;
   column-gap: 2rem;
   row-gap: 2rem;
@@ -12,9 +11,12 @@ const Container = styled.div`
   padding-left: 2rem;
   padding-right: 2rem;
   height: 100vh;
-  overflow: hidden;
+  overflow: auto;
+  &,
+  * {
+    box-sizing: border-box;
+  }
   @media (max-width: 768px) {
-    overflow: scroll;
   }
   &,
   * {
@@ -25,18 +27,19 @@ const Container = styled.div`
 
 const Messengers = styled.div`
   // //
-  flex: 0 1 350px;
+  flex: 1 1 350px;
   display: flex;
   flex-direction: column;
   background-color: #e9e9e9;
   height: 85vh;
+  max-width: 350px;
   border-radius: 10px;
+  margin: 0 auto;
   margin-bottom: 20px;
 `;
 
 const MessengersHeader = styled.div`
   display: flex;
-  width: 87%;
   height: 10%;
   margin: 20px 20px 0 20px;
   background-color: #009999;
@@ -55,7 +58,6 @@ const ActorsList = styled.div`
   display: flex;
   flex-direction: column;
   margin: 20px 20px 0 20px;
-  width: 87%;
   height: 90%;
   background-color: #cdcdcd;
   overflow-x: hidden;
@@ -72,7 +74,8 @@ const ActorsList = styled.div`
 const Messages = styled.div`
   // //
   flex: 8 1 250px;
-  width: 750px;
+  width: 50%;
+  padding-left: 1rem;
   display: flex;
   flex-direction: column;
   background-color: #e9e9e9;
@@ -109,13 +112,27 @@ const SelectedAct = styled.div`
   overflow-y: scroll;
   overflow-x: hidden;
   flex-wrap: wrap;
+  padding-left: 1rem;
+  background-image: url(https://via.placeholder.com/2000);
+  background-position: center;
+  background-size: cover;
+  ::-webkit-scrollbar {
+    width: 0px;
+  }
+
   .messages-node {
+    max-width: 100%;
     margin-left: 1rem;
     list-style-type: none;
     display: flex;
     flex-direction: column;
     row-gap: 1rem;
-    margin-bottom: 1rem;
+    margin-bottom: 3rem;
+    padding: 2rem 0;
+    align-items: center;
+    * {
+      max-width: 100%;
+    }
   }
 `;
 

@@ -27,10 +27,10 @@ const Resources = lazy(() =>
 );
 const AboutUs = lazy(() => import("./components/AboutUs/AboutUs"));
 
-function App(props) {
+function App({ getUserAuth }) {
   useEffect(() => {
-    props.getUserAuth();
-  }, []);
+    getUserAuth();
+  }, [getUserAuth]);
 
   return (
     <Suspense fallback={<Loading />}>
@@ -46,47 +46,47 @@ function App(props) {
             <Route path="/functionalities">
               <Navbar />
               <Functionalities />
-              <MessagesPupup />
+              {/* <MessagesPupup/> */}
             </Route>
             <Route path="/home">
               <Navbar />
               <Home />
-              <MessagesPupup />
+              {/* <MessagesPupup/> */}
             </Route>
             <Route path="/resources">
               <Navbar />
               <Resources />
-              <MessagesPupup />
+              {/* <MessagesPupup/> */}
             </Route>
             <Route path="/notifications">
               <Navbar />
               <Notifications />
-              <MessagesPupup />
+              {/* <MessagesPupup/> */}
             </Route>
             <Route path="/network">
               <Navbar />
               <Network />
-              <MessagesPupup />
+              {/* <MessagesPupup/> */}
             </Route>
             <Route path="/messaging">
               <Navbar />
               <Messaging />
-              <MessagesPupup />
+              {/* <MessagesPupup/> */}
             </Route>
             <Route path="/profile">
               <Navbar />
               <Profile />
-              <MessagesPupup />
+              {/* <MessagesPupup/> */}
             </Route>
             <Route path="/aboutus">
               <Navbar />
               <AboutUs />
-              <MessagesPupup />
+              {/* <MessagesPupup/> */}
             </Route>
             <Route path="/*">
               <Navbar />
               <NotFound />
-              <MessagesPupup />
+              {/* <MessagesPupup/> */}
             </Route>
           </Switch>
         </div>
