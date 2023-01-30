@@ -49,14 +49,6 @@ const Photo = styled.div`
   }
 `;
 
-const AddPhotoText = styled.div`
-  color: #0a66c2;
-  margin-top: 4px;
-  font-size: 12px;
-  line-height: 1.33;
-  font-weight: 400;
-`;
-
 const Widget = styled.div`
   border-bottom: 1px solid rgba(0, 0, 0, 0.15);
   padding-top: 12px;
@@ -113,43 +105,4 @@ const Item = styled.a`
   }
 `;
 
-const CommunityCard = styled(ArtCard)`
-  padding: 8px 0 0;
-  text-align: left;
-  display: flex;
-  flex-direction: column;
-  a {
-    color: #000000;
-    padding: 4px 12px;
-    font-size: 12px;
-    &:hover {
-      color: #0a66c2;
-    }
-    span {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-    &:last-child {
-      color: rgba(0, 0, 0, 0.6);
-      text-decoration: none;
-      border-top: 1px solid #d6cec2;
-      padding: 12px;
-      &:hover {
-        background-color: rgba(0, 0, 0, 0.08);
-      }
-    }
-  }
-`;
-
-export {
-  Container,
-  ArtCard,
-  UserInfo,
-  CardBackground,
-  Photo,
-  AddPhotoText,
-  Widget,
-  Item,
-  CommunityCard,
-};
+export { Container, ArtCard, UserInfo, CardBackground, Photo, Widget, Item };

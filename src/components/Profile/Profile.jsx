@@ -9,11 +9,9 @@ import {
   ArtCard,
   Widget,
   Item,
-  CommunityCard,
   CardBackground,
   UserInfo,
   Photo,
-  AddPhotoText,
   ProfileMain,
   ProfileLeft,
   PFIntro,
@@ -41,40 +39,33 @@ const Profile = (props) => {
               </Photo>
               <h3>Welcome, {props.user ? props.user.displayName : "there"}!</h3>
             </Link>
-            <a>
-              <AddPhotoText></AddPhotoText>
-            </a>
           </UserInfo>
 
           <Widget>
-            <a>
+            <nav>
               <div>
-                <span>Connections</span>
-                <span>Grow your network</span>
+                <Link to="/notifications">
+                  <span>Notifications</span>
+                </Link>
+                <Link to="/network">
+                  <span>Network</span>
+                </Link>
+                <Link to="/messaging">
+                  <span>Messages</span>
+                </Link>
               </div>
               <AiOutlineUserAdd />
-            </a>
+            </nav>
           </Widget>
-
           <Item>
-            <span>
-              <BsFillBookmarkFill />
-              My Items
-            </span>
+            <Link to="/resources">
+              <span>
+                <BsFillBookmarkFill />
+                My Resources
+              </span>
+            </Link>
           </Item>
         </ArtCard>
-
-        <CommunityCard>
-          <a>
-            <span>Groups</span>
-          </a>
-          <a>
-            <span>
-              Events
-              <AiOutlinePlus />
-            </span>
-          </a>
-        </CommunityCard>
       </ProfileLeft>
       <ProfileMain>
         <PFIntro>
