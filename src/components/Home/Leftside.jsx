@@ -1,7 +1,7 @@
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 
-import { AiOutlineUserAdd, AiOutlinePlus } from "react-icons/ai";
+import { AiOutlineUserAdd } from "react-icons/ai";
 import { BsFillBookmarkFill } from "react-icons/bs";
 
 import {
@@ -10,10 +10,8 @@ import {
   UserInfo,
   CardBackground,
   Photo,
-  AddPhotoText,
   Widget,
   Item,
-  CommunityCard,
 } from "./stylesLeftside.jsx";
 import { UserImage } from "../components/Image.jsx";
 
@@ -29,9 +27,6 @@ const Leftside = (props) => {
             </Photo>
             <h3>Welcome, {props.user ? props.user.displayName : "there"}!</h3>
           </Link>
-          <a>
-            <AddPhotoText></AddPhotoText>
-          </a>
         </UserInfo>
         <Widget>
           <nav>
@@ -42,38 +37,22 @@ const Leftside = (props) => {
               <Link to="/network">
                 <span>Network</span>
               </Link>
-              <Link to="/functionalities">
-                <span>Welcome</span>
+              <Link to="/messaging">
+                <span>Messages</span>
               </Link>
             </div>
             <AiOutlineUserAdd />
           </nav>
         </Widget>
         <Item>
-          <span>
-            <BsFillBookmarkFill />
-            My Items
-          </span>
+          <Link to="/resources">
+            <span>
+              <BsFillBookmarkFill />
+              My Resources
+            </span>
+          </Link>
         </Item>
       </ArtCard>
-
-      <CommunityCard>
-        <a>
-          <span>Groups</span>
-        </a>
-        <a>
-          <span>
-            Events
-            <AiOutlinePlus />
-          </span>
-        </a>
-        <a>
-          <span>Follow Hashtags</span>
-        </a>
-        <a>
-          <span>Discover more</span>
-        </a>
-      </CommunityCard>
     </Container>
   );
 };
