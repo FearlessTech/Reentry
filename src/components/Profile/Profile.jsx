@@ -1,7 +1,7 @@
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 
-import { AiOutlineUserAdd, AiOutlinePlus } from "react-icons/ai";
+import { AiOutlineUserAdd } from "react-icons/ai";
 import { BsFillBookmarkFill } from "react-icons/bs";
 import ResourceCheckBoxes from "../ResourceCheckBoxes";
 import {

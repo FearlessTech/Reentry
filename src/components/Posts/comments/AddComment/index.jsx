@@ -65,7 +65,7 @@ export function AddComment({ articleId, setshowCommentBox }) {
   return (
     <Container onKeyDown={handleMessageKeyDown} onKeyUp={handleMessageKeyUp}>
       <div className="picture-wrapper">
-        <img src={auth.currentUser.photoURL} alt="commenter profile picture" />
+        <img src={auth.currentUser.photoURL} alt="commenter profile pic" />
       </div>
       <div className="comment-container">
         <form

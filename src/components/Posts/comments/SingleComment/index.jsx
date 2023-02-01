@@ -69,7 +69,7 @@ export function SingleComment({
               {(() => {
                 const res = splitString(comment.text).map((str) =>
                   isUrl(str) ? (
-                    <a href={str} target="_blank">
+                    <a href={str} target="_blank" rel="noreferrer">
                       {str}
                     </a>
                   ) : (

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import styles from "./Resources.module.css";
 import ResourceOutput from "./ResourceOutput";
 import ResourceItem from "./ResourceItem";

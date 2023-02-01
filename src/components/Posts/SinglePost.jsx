@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import ReactPlayer from "react-player";
 import { UserImage } from "../components/Image";
 import {
@@ -115,7 +116,7 @@ export function SinglePost({ article, id }) {
         {(() => {
           const res = splitString(article.description).map((str) =>
             isUrl(str) ? (
-              <a href={str} target="_blank">
+              <a href={str} target="_blank" rel="noreferrer">
                 {str}
               </a>
             ) : (
