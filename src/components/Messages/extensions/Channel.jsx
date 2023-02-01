@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import { Route, Switch as Routes, useParams } from "react-router-dom";
+import { Route, Routes, useParams } from "react-router-dom";
 import firebase from "firebase/app";
 import Message from "./Message";
 import ActorElement from "./ActorElement";
@@ -134,38 +134,43 @@ const Channel = ({ user = null, db = null }) => {
 
       <Messages>
         <Routes>
-          <Route exact path="/messaging">
-            <MessagesHeader>
-              <h2>Advocates Chat Room</h2>
-            </MessagesHeader>
-            <SelectedAct ref={scroller}>
-              <ul className="messages-node">
-                {messages.map((message) => (
-                  <li key={message.id}>
-                    <Message {...message} current={message.current} />
-                  </li>
-                ))}
-              </ul>
-            </SelectedAct>
-            <Reply>
-              <form onSubmit={handleOnSubmit}>
-                <ReplyText
-                  type="text"
-                  value={newMessage}
-                  onChange={handleOnChange}
-                  id="myInput"
-                  placeholder="Type you message here..."
-                  autoComplete="off"
-                />
-                <button type="submit" disabled={!newMessage}>
-                  Send
-                </button>
-              </form>
-            </Reply>
-          </Route>
-          <Route path="/messaging/:uid">
-            <PrivateChat db={db} />
-          </Route>
+          {" "}
+          //
+          <Route
+            path="/"
+            element={
+              <>
+                <MessagesHeader>
+                  <h2>Advocates Chat Room</h2>
+                </MessagesHeader>
+                <SelectedAct ref={scroller}>
+                  <ul className="messages-node">
+                    {messages.map((message) => (
+                      <li key={message.id}>
+                        <Message {...message} current={message.current} />
+                      </li>
+                    ))}
+                  </ul>
+                </SelectedAct>
+                <Reply>
+                  <form onSubmit={handleOnSubmit}>
+                    <ReplyText
+                      type="text"
+                      value={newMessage}
+                      onChange={handleOnChange}
+                      id="myInput"
+                      placeholder="Type you message here..."
+                      autoComplete="off"
+                    />
+                    <button type="submit" disabled={!newMessage}>
+                      Send
+                    </button>
+                  </form>
+                </Reply>
+              </>
+            }
+          />
+          <Route path=":uid" element={<PrivateChat db={db} />} />
         </Routes>
       </Messages>
     </>
