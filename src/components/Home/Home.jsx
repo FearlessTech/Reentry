@@ -1,4 +1,4 @@
-import { Redirect } from "react-router-dom";
+import { Navigate } from "react-router-dom";
 import { connect } from "react-redux";
 
 import Leftside from "./Leftside";
@@ -10,7 +10,7 @@ import { Container, Layout } from "./stylesHome";
 const Home = (props) => {
   return (
     <Container>
-      {(!props.user || !props.user.emailVerified) && <Redirect to="/" />}
+      {(!props.user || !props.user.emailVerified) && <Navigate to="/" />}
       <Layout>
         <Leftside />
         <Main />

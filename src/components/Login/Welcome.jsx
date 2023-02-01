@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 import { signInAPI } from "../../actions";
-import { Redirect } from "react-router-dom";
+import { Navigate } from "react-router-dom";
 import { useEffect } from "react";
 
 import { Container, Nav, LoginBtn1, Section, Hero } from "./stylesWelcome";
@@ -16,7 +16,7 @@ const Welcome = (props) => {
   }, []);
 
   if (props.user && props.user.emailVerified) {
-    return <Redirect to="/home" />;
+    return <Navigate to="/home" />;
   }
 
   return (

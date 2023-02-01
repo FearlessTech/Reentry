@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 import { signInAPI } from "../../../../actions";
-import { Redirect } from "react-router-dom";
+import { Navigate } from "react-router-dom";
 import { useRef, useState, useEffect } from "react";
 
 import LoginForm from "../../../Login/Login";
@@ -62,7 +62,7 @@ const Login = (props) => {
 
   return (
     <Container id="parallax">
-      {props.user && <Redirect to="/home" />}
+      {props.user && <Navigate to="/home" />}
       <Nav>
         <a href="/" className="logo">
           <img src="/images/PRALgLogo.png" alt="" />
