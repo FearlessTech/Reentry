@@ -105,7 +105,7 @@ const PostModal = (props) => {
   useEffect(() => {
     const postText = props.postText || "";
     setEditorText(postText);
-  }, []);
+  }, [props.postText]);
 
   const postArticle = (e) => {
     e.preventDefault();
@@ -163,7 +163,7 @@ const PostModal = (props) => {
             <Header>
               <UserInfo>
                 {props.user.photoURL ? (
-                  <img src={props.user.photoURL} />
+                  <img src={props.user.photoURL} alt="" />
                 ) : (
                   <img src="/images/user.svg" alt="" />
                 )}

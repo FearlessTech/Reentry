@@ -1,4 +1,4 @@
-import { Button, IconButton, Menu, MenuItem } from "@material-ui/core";
+import { IconButton, Menu, MenuItem } from "@material-ui/core";
 import { useState } from "react";
 import { FaEllipsisH } from "react-icons/fa";
 import styles from "../../Posts.module.css";

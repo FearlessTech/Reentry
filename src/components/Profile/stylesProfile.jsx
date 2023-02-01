@@ -68,14 +68,6 @@ const Photo = styled.div`
   }
 `;
 
-const AddPhotoText = styled.div`
-  color: #0a66c2;
-  margin-top: 4px;
-  font-size: 12px;
-  line-height: 1.33;
-  font-weight: 400;
-`;
-
 const Widget = styled.div`
   border-bottom: 1px solid rgba(0, 0, 0, 0.15);
   padding-top: 12px;

@@ -141,7 +141,7 @@ const Message = ({
               <React.Fragment key={i}>
                 {word.image ? (
                   <>
-                    <a href={word.text} target="_blank">
+                    <a href={word.text} target="_blank" rel="noreferrer">
                       <div className="image-wrapper">
                         <img
                           src={word.text}
@@ -155,7 +155,7 @@ const Message = ({
                   </>
                 ) : word.url ? (
                   <>
-                    <a href={word.text} target="_blank">
+                    <a href={word.text} target="_blank" rel="noreferrer">
                       {min(word.text)}
                     </a>{" "}
                   </>

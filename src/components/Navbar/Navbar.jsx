@@ -1,9 +1,8 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { signOutAPI } from "../../actions";
-import { Redirect } from "react-router-dom";
-
 import { SiGooglemessages } from "react-icons/si";
 import { BsFillBriefcaseFill } from "react-icons/bs";
 import {
