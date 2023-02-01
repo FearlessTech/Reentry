@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 import { signInAPI } from "../../actions";
-import { Redirect } from "react-router-dom";
+import { Navigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 
 import LoginForm from "./Login";
@@ -68,7 +68,7 @@ const Login = (props) => {
 
   return (
     <Container>
-      {props.user && props.user.emailVerified && <Redirect to="/home" />}
+      {props.user && props.user.emailVerified && <Navigate to="/home" />}
       <Nav className={sideBar ? "open" : ""}>
         <img src="/images/PRAIcon.png" alt="" />
         <NavBTN

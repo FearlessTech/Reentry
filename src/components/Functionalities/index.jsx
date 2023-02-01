@@ -1,4 +1,4 @@
-import { Link, Route, Switch as Routes } from "react-router-dom";
+import { Link, Route, Routes } from "react-router-dom";
 import Parallax from "./pages/Parallax";
 import BirdsParallax from "./pages/BirdsParallax";
 import Network from "./pages/Network";

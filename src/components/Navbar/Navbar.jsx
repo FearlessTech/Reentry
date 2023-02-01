@@ -2,7 +2,7 @@ import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { signOutAPI } from "../../actions";
-import { Redirect } from "react-router-dom";
+import { Navigate } from "react-router-dom";
 
 import { SiGooglemessages } from "react-icons/si";
 import { BsFillBriefcaseFill } from "react-icons/bs";
@@ -49,7 +49,7 @@ const Navbar = (props) => {
 
   return (
     <Container className="navbar">
-      {/* {(!props.user || !props.user.emailVerified) && <Redirect to="/" />} */}
+      {/* {(!props.user || !props.user.emailVerified) && <Navigate to="/" />} */}
       <Content>
         <Logo>
           <Link to="/home">
