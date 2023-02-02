@@ -4,7 +4,7 @@ export const Container = styled.div`
   padding-top: calc(3rem - 5px);
   border: 1px solid green;
   background-color: #c1c1c1;
-  overflow: scroll;
+  overflow: auto;
   .navbar {
     * ::selection {
       background-color: #ebebeb;
