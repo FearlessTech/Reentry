@@ -21,6 +21,7 @@ export const Container = styled.div`
     background-color: #077a7a;
     color: #ffffff;
   }
+
   .wrapper {
     width: 100%;
     min-height: calc(100vh - 3rem + 3px);

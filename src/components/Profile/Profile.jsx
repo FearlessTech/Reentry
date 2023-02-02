@@ -14,6 +14,9 @@ import {
   Photo,
   ProfileMain,
   ProfileLeft,
+  PFContactInfo,
+  PFAchievments,
+  PFGoals,
   PFIntro,
   PFCheckBoxes,
   PFPost,
@@ -40,7 +43,6 @@ const Profile = (props) => {
               <h3>Welcome, {props.user ? props.user.displayName : "there"}!</h3>
             </Link>
           </UserInfo>
-
           <Widget>
             <nav>
               <div>
@@ -66,7 +68,20 @@ const Profile = (props) => {
             </Link>
           </Item>
         </ArtCard>
+        <PFContactInfo>
+          <PFHeading>Users Posted Resources</PFHeading>
+          <Content></Content>
+        </PFContactInfo>
+        <PFAchievments>
+          <PFHeading>Users Posted Resources</PFHeading>
+          <Content></Content>
+        </PFAchievments>
+        <PFGoals>
+          <PFHeading>Users Posted Resources</PFHeading>
+          <Content></Content>
+        </PFGoals>
       </ProfileLeft>
+
       <ProfileMain>
         <PFIntro>
           <PFHeading>Introductions</PFHeading>

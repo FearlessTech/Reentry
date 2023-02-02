@@ -24,6 +24,10 @@ const ProfileLeft = styled.div`
   height: max-content;
 `;
 
+const PFContactInfo = styled.div``;
+const PFAchievments = styled.div``;
+const PFGoals = styled.div``;
+
 const ArtCard = styled.div`
   text-align: center;
   overflow: hidden;
@@ -195,6 +199,9 @@ export {
   Widget,
   Item,
   ProfileLeft,
+  PFContactInfo,
+  PFAchievments,
+  PFGoals,
   ProfileMain,
   PFIntro,
   PFCheckBoxes,
