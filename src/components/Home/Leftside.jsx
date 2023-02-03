@@ -14,19 +14,67 @@ import {
   Item,
 } from "./stylesLeftside.jsx";
 import { UserImage } from "../components/Image.jsx";
+import db, { storage } from "../../firebase.js";
+import { useState } from "react";
+import { useEffect } from "react";
 
 const Leftside = (props) => {
+  const [file, setFile] = useState(null);
+  function handleClick(e) {
+    // (async () => {
+    //   const query = db.collection('users').where('uid', '==', props.user.uid);
+    //   await query.get().then((payload) => {
+    //     const data = payload.docs[0].data()
+    //   });
+    // })();
+  }
+
+  useEffect(() => {
+    function getFileExt(file) {
+      console.log(file);
+    }
+  }, [file]); // following you
+
+  // useEffect(() => {
+  //   if (!file) return;
+  //   async () => {
+  //     //
+  //     const fileExt = getFileExt(file);
+  //     const uid = crypto.randomUUID();
+  //     storage.ref(`/images/${uid}`);
+  //   };
+  // }, [file]);
+
   return (
     <Container>
       <ArtCard>
         <UserInfo>
           <CardBackground />
-          <Link to="/profile" className="welcome">
-            <Photo>
-              {props.user && <UserImage source={props.user.photoURL} />}
-            </Photo>
-            <h3>Welcome, {props.user ? props.user.displayName : "there"}!</h3>
-          </Link>
+          {props.redirect ? (
+            <Link to="/profile" className="welcome">
+              <Photo>
+                {props.user && <UserImage source={props.user.photoURL} />}
+              </Photo>
+              <h3>Welcome, {props.user ? props.user.displayName : "there"}!</h3>
+            </Link>
+          ) : (
+            <label className="welcome" htmlFor="image">
+              <input
+                type="file"
+                id="image"
+                name="image"
+                accept=".png, .jpg, .jpeg"
+                onChange={() => {
+                  setFile();
+                }}
+                style={{ display: "none" }}
+              />
+              <Photo>
+                {props.user && <UserImage source={props.user.photoURL} />}
+              </Photo>
+              <h3>Welcome, {props.user ? props.user.displayName : "there"}!</h3>
+            </label>
+          )}
         </UserInfo>
         <Widget>
           <nav>
@@ -53,6 +101,7 @@ const Leftside = (props) => {
           </Link>
         </Item>
       </ArtCard>
+      {props.children}
     </Container>
   );
 };

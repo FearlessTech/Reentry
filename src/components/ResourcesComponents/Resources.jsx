@@ -207,7 +207,7 @@ const Resources = (props) => {
           })}
         </div>
       </div>
-      {showModal === "open" && (
+      {showModal === "open" && ( // so what was wrong
         <ResourcePopup showModal={showModal} handleClick={handleClick} />
       )}
     </Container>

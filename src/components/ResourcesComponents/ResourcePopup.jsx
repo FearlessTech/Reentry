@@ -35,8 +35,8 @@ export const ResourcePopup = (props) => {
               <ResourceCheckBoxes />
             </Content>
           </ResourcesCheckBoxes>
-
-          <button>Done</button>
+          <button>Done</button> // for the profile intro stuff we worked on
+          before
         </Popup>
       )}
     </>
