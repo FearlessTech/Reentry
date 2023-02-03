@@ -1,0 +1,3 @@
+fix user card
+
+change post nav in main to match other headings on site

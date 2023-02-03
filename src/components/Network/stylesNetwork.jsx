@@ -39,7 +39,7 @@ const QueryOptions = styled.div`
   width: 87%;
   height: 90%;
   background-color: #cdcdcd;
-  overflow: scroll;
+  overflow: auto;
   border-radius: 10px;
 `;
 
@@ -71,7 +71,7 @@ const QueriedItems = styled.div`
   width: 96%;
   height: 90%;
   background-color: #cdcdcd;
-  overflow-y: scroll;
+  overflow-y: auto;
   overflow-x: hidden;
   border-radius: 10px;
 `;

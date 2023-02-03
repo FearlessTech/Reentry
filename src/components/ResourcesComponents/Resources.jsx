@@ -13,6 +13,7 @@ const Container = styled.div`
   padding: 2rem;
   flex-wrap: wrap;
   max-width: 100%;
+  outline: 1px solid red;
 
   &,
   * {
@@ -172,7 +173,7 @@ const Resources = (props) => {
   };
 
   return (
-    <Container>
+    <Container className="screen-size">
       <div className="search-box">
         <div className="search-container">
           <SearchResults />
@@ -206,7 +207,7 @@ const Resources = (props) => {
           })}
         </div>
       </div>
-      {showModal === "open" && (
+      {showModal === "open" && ( // so what was wrong
         <ResourcePopup showModal={showModal} handleClick={handleClick} />
       )}
     </Container>

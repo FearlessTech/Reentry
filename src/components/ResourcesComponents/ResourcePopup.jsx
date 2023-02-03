@@ -18,7 +18,7 @@ export const ResourcePopup = (props) => {
         <Popup>
           <Top>
             <p>Resource alerts</p>
-            <AiOutlineCloseCircle />
+            <AiOutlineCloseCircle onClick={(e) => props.handleClick(e)} />
           </Top>
           <OrgInfo>
             <RPUHeading></RPUHeading>
@@ -35,8 +35,8 @@ export const ResourcePopup = (props) => {
               <ResourceCheckBoxes />
             </Content>
           </ResourcesCheckBoxes>
-
-          <button>Done</button>
+          <button>Done</button> // for the profile intro stuff we worked on
+          before
         </Popup>
       )}
     </>

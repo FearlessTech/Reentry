@@ -34,9 +34,16 @@ ul {
   background: transparent;
 }
 
-body {
+body,
+html {
   font-family: Helvetica, Arial, sans-serif;
   height: 100vh;
+  box-sizing: border-box;
+}
+
+body:has(.screen-size) {
+  max-height: 100vh;
+  overflow: hidden;
 }
 
 input,

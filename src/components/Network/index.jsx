@@ -34,7 +34,7 @@ const Network = (props) => {
   );
 
   return (
-    <Container>
+    <Container className="container">
       <div className="wrapper">
         <div className="left-box">
           <div className="left-content">
