@@ -64,7 +64,7 @@ const AboutUs = (props) => {
       <Content className="nami">
         <Info className="info">
           <AUHeading className="nami">
-            <h1>National Alliance of Mental Health (NAMI)</h1>
+            <h1>National Alliance of Mental Illness (NAMI)</h1>
           </AUHeading>
           <Description>
             <p>
