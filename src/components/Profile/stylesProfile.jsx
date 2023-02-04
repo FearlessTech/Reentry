@@ -152,14 +152,6 @@ const PFHeading = styled.div`
   &::before {
     content: "";
     position: absolute;
-    width: 11px;
-    height: 8px;
-    background-color: #077a7a;
-    left: 0;
-    bottom: -7.5px;
-    transform: rotateY("45deg");
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 5%);
-    position: absolute;
     width: 10px;
     height: 8px;
     background-color: #077a7a;

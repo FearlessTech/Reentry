@@ -9,16 +9,13 @@ const CommonCard = styled.div`
   overflow: hidden;
   margin-bottom: 8px;
   background-color: #e9e9e9;
-  border-radius: 5px;
   position: relative;
   border: none;
-  border-radius: 0 0 0 1px rgb(0 0 0 / 15%), 0 0 0 rgb(0 0 0 / 20%);
 `;
 
 const Article = styled(CommonCard)`
   padding: 0;
   margin: 0 0 8px;
-  overflow: visible;
 `;
 
 const SharedActor = styled.div`
@@ -147,6 +144,7 @@ const Content = styled.div`
   text-align: center;
   overflow-y: scroll;
   height: 100vh;
+  padding: 0 0 0 0.6rem;
   ::-webkit-scrollbar {
     display: none;
   }
@@ -159,16 +157,19 @@ const PostNav = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  overflow: hidden;
-  margin-bottom: 8px;
-  border-radius: 5px;
+  margin-bottom: 0;
   position: relative;
   border: none;
-  border-radius: 0 0 0 1px rgb(0 0 0 / 15%), 0 0 0 rgb(0 0 0 / 20%);
-  &:hover {
+  &::before {
+    content: "";
+    position: absolute;
+    width: 10px;
+    height: 8px;
     background-color: #077a7a;
-    box-shadow: 0 0 10px #009999;
-    color: whitesmoke;
+    left: 0;
+    bottom: -8px;
+    transform: rotateY("45deg");
+    clip-path: polygon(0 0, 100% 0, 100% 100%);
   }
   button {
     display: inline-flex;
