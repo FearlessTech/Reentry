@@ -15,7 +15,7 @@
     "@testing-library/user-event": "^14.4.3",
     "bootstrap": "^5.2.3",
     "date-fns": "^2.29.3",
-    "firebase": "^8.6.1",
+    "firebase": "^9.17.1",
     "node-fetch": "^3.2.10",
     "nth-check": "^2.1.1",
     "react": "^17.0.2",
