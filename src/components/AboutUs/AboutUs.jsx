@@ -190,10 +190,9 @@ const AboutUs = (props) => {
               target="_blank" //Open in new tab
               rel="noreferrer"
             >
-              lition (MPAC)
+              Maine Prisoner Advocacy Coalition (MPAC)
             </a>
           </Description>
-          Maine Prisoner Advocacy Coa
         </Info>
         <Image className="image">
           <img src="/images/MPACaboutme.jpg" alt="" />
