@@ -22,9 +22,7 @@ const Notifications = lazy(() =>
 const Network = lazy(() => import("./components/Network/index.jsx"));
 const Messaging = lazy(() => import("./components/Messages"));
 const Profile = lazy(() => import("./components//Profile/Profile"));
-const Resources = lazy(() =>
-  import("./components/ResourcesComponents/Resources")
-);
+const Resources = lazy(() => import("./components/Resources/Resources"));
 const AboutUs = lazy(() => import("./components/AboutUs/AboutUs"));
 
 function App({ getUserAuth }) {
