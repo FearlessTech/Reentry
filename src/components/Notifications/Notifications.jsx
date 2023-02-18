@@ -12,10 +12,7 @@ import {
   Ads,
   RightImg,
 } from "./stylesNotifications";
-import {
-  RBottomBox,
-  RBLink,
-} from "../ResourcesComponents/styles/styledResource";
+import { RBottomBox, RBLink } from "../Resources/styles/styledResource";
 import { Link } from "react-router-dom";
 import NotificationsDropdown from "./NotificationsDropdown";
 
