@@ -18,7 +18,6 @@ export const SearchResults = () => {
 
   const handleSearch = async (e) => {
     const userSearchQuery = e.target.value;
-    console.log(e.keyCode);
     if (
       (e.keyCode >= 48 && e.keyCode <= 57) ||
       (e.keyCode >= 65 && e.keyCode <= 91)
@@ -30,7 +29,6 @@ export const SearchResults = () => {
       try {
         setisLoading(true);
         const response = await query.get();
-        console.log(response);
         const postResults = [];
         response.forEach((doc) => {
           const data = doc.data();

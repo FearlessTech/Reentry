@@ -43,7 +43,7 @@ const StyledResource = styled.div`
     .text {
       flex: 0 1 1;
       font-size: 14px;
-      padding: 0.4rem;
+      padding: 0 0.4rem;
     }
   }
 `;
