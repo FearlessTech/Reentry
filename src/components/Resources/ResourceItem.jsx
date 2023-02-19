@@ -41,7 +41,6 @@ const StyledResource = styled.div`
       }
     }
     .text {
-      background-color: #d9d9d9;
       flex: 0 1 1;
       font-size: 14px;
       padding: 0.4rem;
