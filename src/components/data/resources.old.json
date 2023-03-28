@@ -1,25 +1,21 @@
 {
   "Resources": [
-    {"id": "1", "name" : "Basic Needs"},
+    { "id": "1", "name": "Basic Needs" },
 
-    {"id": "2", "name" : "Domestic Violence"},
+    { "id": "2", "name": "Domestic Violence" },
 
-    {"id": "3", "name" : "Food"},
+    { "id": "3", "name": "Food" },
 
-    {"id": "4", "name" : "Education"},
+    { "id": "4", "name": "Education" },
 
-    {"id": "5", "name" : "Employment"},
+    { "id": "5", "name": "Employment" },
 
-    {"id": "6", "name" : "Housing"},
+    { "id": "6", "name": "Housing" },
 
-    {"id": "7", "name" : "Medical"},
+    { "id": "7", "name": "Medical" },
 
-    {"id": "8", "name" : "Mental Health"},
+    { "id": "8", "name": "Mental Health" },
 
-    {"id": "9", "name" : "Transportation"}
+    { "id": "9", "name": "Transportation" }
   ]
 }
-
-
-
-

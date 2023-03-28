@@ -1,16 +1,16 @@
-import { connect } from "react-redux";
-import { Link } from "react-router-dom";
-import ResourceTree from "./ResourceTree"
-import data from "../data/resources.json"
+import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
+import ResourceTree from './ResourceTree';
+import data from '../data/resources.json';
 
-import { AiOutlineUserAdd } from "react-icons/ai";
-import { BsFillBookmarkFill } from "react-icons/bs";
-import { IoMdSettings } from "react-icons/io";
+import { AiOutlineUserAdd } from 'react-icons/ai';
+import { BsFillBookmarkFill } from 'react-icons/bs';
+import { IoMdSettings } from 'react-icons/io';
 
-import { useState, useRef } from "react";
-import db from "../../firebase";
+import { useState, useRef } from 'react';
+import db from '../../firebase';
 
-import ResourceCheckBoxes from "../ResourceCheckBoxes";
+import ResourceCheckBoxes from '../ResourceCheckBoxes';
 
 import {
   Container,
@@ -25,8 +25,8 @@ import {
   PFResourcesPost,
   PFHeading,
   Content,
-} from "./stylesProfile.jsx";
-import Leftside from "../Home/Leftside";
+} from './stylesProfile.jsx';
+import Leftside from '../Home/Leftside';
 
 const Profile = (props) => {
   const [edition, setEdition] = useState(true);
@@ -56,22 +56,22 @@ const Profile = (props) => {
                 <label>
                   Enter your number:
                   <input
-                    type="text"
-                    name="phonenumber"
-                    value={inputs.phonenumber || ""}
+                    type='text'
+                    name='phonenumber'
+                    value={inputs.phonenumber || ''}
                     onChange={handleChange}
                   />
                 </label>
                 <label>
                   Enter your City:
                   <input
-                    type="text"
-                    name="city"
-                    value={inputs.city || ""}
+                    type='text'
+                    name='city'
+                    value={inputs.city || ''}
                     onChange={handleChange}
                   />
                 </label>
-                <input type="submit" />
+                <input type='submit' />
               </form>
             </Content>
           </PFContactInfo>
@@ -82,31 +82,31 @@ const Profile = (props) => {
                 <label>
                   Achievment 1:
                   <input
-                    type="text"
-                    name="achievment1"
-                    value={inputs.achievment1 || ""}
+                    type='text'
+                    name='achievment1'
+                    value={inputs.achievment1 || ''}
                     onChange={handleChange}
                   />
                 </label>
                 <label>
                   Achievment 2:
                   <input
-                    type="text"
-                    name="achievment2"
-                    value={inputs.achievment2 || ""}
+                    type='text'
+                    name='achievment2'
+                    value={inputs.achievment2 || ''}
                     onChange={handleChange}
                   />
                 </label>
                 <label>
                   Achievment 3:
                   <input
-                    type="text"
-                    name="achievment3"
-                    value={inputs.achievment3 || ""}
+                    type='text'
+                    name='achievment3'
+                    value={inputs.achievment3 || ''}
                     onChange={handleChange}
                   />
                 </label>
-                <input type="submit" />
+                <input type='submit' />
               </form>
             </Content>
           </PFAchievments>
@@ -117,31 +117,31 @@ const Profile = (props) => {
                 <label>
                   Goal 1:
                   <input
-                    type="text"
-                    name="goal1"
-                    value={inputs.goal1 || ""}
+                    type='text'
+                    name='goal1'
+                    value={inputs.goal1 || ''}
                     onChange={handleChange}
                   />
                 </label>
                 <label>
                   Goal 2:
                   <input
-                    type="text"
-                    name="goal2"
-                    value={inputs.goal2 || ""}
+                    type='text'
+                    name='goal2'
+                    value={inputs.goal2 || ''}
                     onChange={handleChange}
                   />
                 </label>
                 <label>
                   Goal 3:
                   <input
-                    type="text"
-                    name="goal3"
-                    value={inputs.goal3 || ""}
+                    type='text'
+                    name='goal3'
+                    value={inputs.goal3 || ''}
                     onChange={handleChange}
                   />
                 </label>
-                <input type="submit" />
+                <input type='submit' />
               </form>
             </Content>
           </PFGoals>
@@ -172,20 +172,20 @@ const Profile = (props) => {
               {edition && (
                 <>
                   <textarea
-                    id="intro"
-                    name="intro"
-                    rows="5"
-                    cols="110"
+                    id='intro'
+                    name='intro'
+                    rows='5'
+                    cols='110'
                     ref={intro}
                   />
-                  <input type="submit" value="Submit" />
+                  <input type='submit' value='Submit' />
                 </>
               )}
             </form>
             <IoMdSettings
               onClick={(e) => setEdition(!edition)}
               size={20}
-              style={{ margin: "8px", fill: "#009999" }}
+              style={{ margin: '8px', fill: '#009999' }}
             />
           </Content>
         </PFIntro>
@@ -193,13 +193,12 @@ const Profile = (props) => {
           <PFHeading>Resources Check Boxes</PFHeading>
           <Content>
             {/* <ResourceCheckBoxes /> */}
-            <ResourceTree data={data}/>
+            <ResourceTree data={data} />
           </Content>
         </PFCheckBoxes>
         <PFPost>
           <PFHeading>Users Post</PFHeading>
-          <Content>
-          </Content>
+          <Content></Content>
         </PFPost>
         <PFResourcesPost>
           <PFHeading>Users Posted Resources</PFHeading>

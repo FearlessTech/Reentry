@@ -12,7 +12,10 @@ function TreeNode({ node }) {
 
   return (
     <div style={{ marginLeft: '1rem' }}>
-      <div onClick={handleToggle} style={{ cursor: isLeafNode ? 'default' : 'pointer' }}>
+      <div
+        onClick={handleToggle}
+        style={{ cursor: isLeafNode ? 'default' : 'pointer' }}
+      >
         {isLeafNode ? node.value : node.name}
         {!isLeafNode && (expanded ? '-' : '+')}
       </div>
