@@ -1,25 +1,359 @@
 {
   "Resources": [
-    {"id": "1", "name" : "Basic Needs"},
-
-    {"id": "2", "name" : "Domestic Violence"},
-
-    {"id": "3", "name" : "Food"},
-
-    {"id": "4", "name" : "Education"},
-
-    {"id": "5", "name" : "Employment"},
-
-    {"id": "6", "name" : "Housing"},
-
-    {"id": "7", "name" : "Medical"},
-
-    {"id": "8", "name" : "Mental Health"},
-
-    {"id": "9", "name" : "Transportation"}
+    {
+      "id": 1,
+      "name": "Basic Needs",
+      "children": [
+        { "id": 1.1, "name": "Clothing", "children": [] },
+        { "id": 1.2, "name": "General Assistance", "children": [] },
+        { "id": 1.3, "name": "Hygiene", "children": [] },
+        { "id": 1.4, "name": "Warming/Cooling Center", "children": [] }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Domestic Violence",
+      "children": [
+        { "id": 2.1, "name": "Anger Management", "children": [] },
+        { "id": 2.2, "name": "DV Shelters", "children": [] },
+        { "id": 2.3, "name": "Hotlines", "children": [] },
+        { "id": 2.4, "name": "Safe Houses", "children": [] },
+        { "id": 2.5, "name": "Warmlines", "children": [] }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Food",
+      "children": [
+        { "id": 3.1, "name": "Community Gardens", "children": [] },
+        { "id": 3.2, "name": "Food Pantry", "children": [] },
+        { "id": 3.3, "name": "Food Stamps/SNAP", "children": [] },
+        { "id": 3.4, "name": "Hot Meals", "children": [] },
+        { "id": 3.5, "name": "Soup Kitchen", "children": [] },
+        { "id": 3.6, "name": "WIC", "children": [] }
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Education",
+      "children": [
+        {
+          "id": 4.1,
+          "name": "Adult Education",
+          "children": [
+            { "id": "4.1.1", "name": "HiSET", "children": [] },
+            { "id": "4.1.2", "name": "Literacy", "children": [] }
+          ]
+        },
+        {
+          "id": 4.2,
+          "name": "Childcare",
+          "children": [
+            { "id": "4.2.1", "name": "Childcare", "children": [] },
+            { "id": "4.2.2", "name": "Head Start", "children": [] },
+            { "id": "4.2.3", "name": "Pre-K", "children": [] }
+          ]
+        },
+        {
+          "id": 4.3,
+          "name": "College",
+          "children": [
+            { "id": "4.3.1", "name": "Grants", "children": [] },
+            { "id": "4.3.2", "name": "Scholarships", "children": [] },
+            { "id": "4.3.3", "name": "Work Study", "children": [] }
+          ]
+        },
+        {
+          "id": 4.4,
+          "name": "Schools",
+          "children": [
+            { "id": "4.4.1", "name": "Elementary", "children": [] },
+            { "id": "4.4.2", "name": "High School", "children": [] },
+            { "id": "4.4.3", "name": "Middle School", "children": [] }
+          ]
+        },
+        { "id": 4.5, "name": "Tutoring", "children": [] },
+        {
+          "id": 4.6,
+          "name": "Youth Programs",
+          "children": [
+            { "id": "4.6.1", "name": "After School", "children": [] },
+            { "id": "4.6.2", "name": "Summer Camp", "children": [] }
+          ]
+        },
+        {
+          "id": 4.7,
+          "name": "Tech/Vocational",
+          "children": [
+            { "id": "4.7.1", "name": "Computer Classes", "children": [] },
+            { "id": "4.7.2", "name": "Job Training", "children": [] },
+            { "id": "4.7.3", "name": "Vocational Training", "children": [] }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Employment",
+      "children": [
+        { "id": 5.1, "name": "Department of Labor", "children": [] },
+        { "id": 5.2, "name": "Unemployment Office", "children": [] },
+        { "id": 5.3, "name": "Career Centers", "children": [] },
+        { "id": 5.4, "name": "Temp Agent", "children": [] }
+      ]
+    },
+    {
+      "id": 6,
+      "name": "Housing",
+      "children": [
+        {
+          "id": "6.1",
+          "name": "Halfway House",
+          "children": [
+            {
+              "id": "6.1.1",
+              "name": "Gender Accepted",
+              "children": [
+                { "id": "6.1.1.1", "name": "Co-Ed", "children": [] },
+                { "id": "6.1.1.2", "name": "Men Only", "children": [] },
+                { "id": "6.1.1.3", "name": "Women Only", "children": [] }
+              ]
+            },
+            {
+              "id": "6.1.2",
+              "name": "Medication Accepted",
+              "children": [
+                {
+                  "id": "6.1.2.1",
+                  "name": "Controlled Substances",
+                  "children": []
+                },
+                { "id": "6.1.2.2", "name": "MAT", "children": [] },
+                { "id": "6.1.2.3", "name": "Marijuana", "children": [] },
+                {
+                  "id": "6.1.2.4",
+                  "name": "No Controlled Substances",
+                  "children": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "6.2",
+          "name": "Housing Assistance",
+          "children": [
+            { "id": "6.2.1", "name": "Accepts Felons", "children": [] },
+            { "id": "6.2.2", "name": "No Felons", "children": [] }
+          ]
+        },
+        {
+          "id": "6.3",
+          "name": "Rehabilitation Center",
+          "children": [
+            {
+              "id": "6.3.1",
+              "name": "Gender Accepted",
+              "chidlren": [
+                { "id": "6.3.1.1", "name": "Co-Ed", "children": [] },
+                { "id": "6.3.1.2", "name": "Men Only", "children": [] },
+                { "id": "6.3.1.3", "name": "Women Only", "children": [] }
+              ]
+            },
+            {
+              "id": "6.3.2",
+              "name": "Medication Accepted",
+              "children": [
+                {
+                  "id": "6.3.2.1",
+                  "name": "Controlled Substances",
+                  "children": []
+                },
+                { "id": "6.3.2.2", "name": "MAT", "children": [] },
+                { "id": "6.3.2.3", "name": "Marijuana", "children": [] },
+                {
+                  "id": "6.3.2.4",
+                  "name": "No Controlled Substances",
+                  "children": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "6.4",
+          "name": "Shelter",
+          "children": [
+            {
+              "id": "6.4.1",
+              "name": "Gender Accepted",
+              "chidlren": [
+                { "id": "6.4.1.1", "name": "Co-Ed", "children": [] },
+                { "id": "6.4.1.2", "name": "Men Only", "children": [] },
+                { "id": "6.4.1.3", "name": "Women Only", "children": [] }
+              ]
+            },
+            {
+              "id": "6.4.2",
+              "name": "Medication Accepted",
+              "children": [
+                {
+                  "id": "6.4.2.1",
+                  "name": "Controlled Substances",
+                  "children": []
+                },
+                { "id": "6.4.2.2", "name": "MAT", "children": [] },
+                { "id": "6.4.2.3", "name": "Marijuana", "children": [] },
+                {
+                  "id": "6.4.2.4",
+                  "name": "No Controlled Substances",
+                  "children": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "6.5",
+          "name": "Sober Housing",
+          "children": [
+            {
+              "id": "6.5.1",
+              "name": "Gender Accepted",
+              "chidlren": [
+                { "id": "6.5.1.1", "name": "Co-Ed", "children": [] },
+                { "id": "6.5.1.2", "name": "Men Only", "children": [] },
+                { "id": "6.5.1.3", "name": "Women Only", "children": [] }
+              ]
+            },
+            {
+              "id": "6.5.2",
+              "name": "Medication Accepted",
+              "children": [
+                {
+                  "id": "6.5.2.1",
+                  "name": "Controlled Substances",
+                  "children": []
+                },
+                { "id": "6.5.2.2", "name": "MAT", "children": [] },
+                { "id": "6.5.2.3", "name": "Marijuana", "children": [] },
+                {
+                  "id": "6.5.2.4",
+                  "name": "No Controlled Substances",
+                  "children": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "name": "Medical",
+      "children": [
+        { "id": "7.1", "name": "Chronic Pain Management", "children": [] },
+        { "id": "7.2", "name": "Dental", "children": [] },
+        { "id": "7.3", "name": "Medicaid/MaineCare", "children": [] },
+        { "id": "7.4", "name": "Primary Care", "children": [] },
+        { "id": "7.5", "name": "Vision/Hearing", "children": [] }
+      ]
+    },
+    {
+      "id": "8",
+      "name": "Mental Health",
+      "children": [
+        {
+          "id": "8.1",
+          "name": "Counseling",
+          "children": [
+            { "id": "8.1.1", "name": "Crisis Intervention", "children": [] },
+            { "id": "8.1.2", "name": "Family Counseling", "children": [] },
+            { "id": "8.1.3", "name": "Group Counseling", "children": [] },
+            { "id": "8.1.4", "name": "Individual Counseling", "children": [] },
+            { "id": "8.1.5", "name": "Marriage Counseling", "children": [] },
+            { "id": "8.1.6", "name": "Mental Health", "children": [] },
+            { "id": "8.1.7", "name": "Substance Abuse", "children": [] }
+          ]
+        },
+        { "id": "8.2", "name": "Case Management", "children": [] },
+        {
+          "id": "8.3",
+          "name": "Mental Health First Aid",
+          "children": [
+            { "id": "8.3.1", "name": "Crisis Intervention", "children": [] },
+            { "id": "8.3.2", "name": "Suicide Prevention", "children": [] }
+          ]
+        },
+        {
+          "id": "8.4",
+          "name": "Therapy",
+          "children": [
+            {
+              "id": "8.4.1",
+              "name": "Cognitive Behavioral Therapy",
+              "children": []
+            },
+            { "id": "8.4.2", "name": "Family Therapy", "children": [] },
+            { "id": "8.4.3", "name": "Group Therapy", "children": [] },
+            { "id": "8.4.4", "name": "Individual Therapy", "children": [] },
+            { "id": "8.4.5", "name": "Marriage Therapy", "children": [] },
+            { "id": "8.4.6", "name": "Psychodynamic Therapy", "children": [] },
+            { "id": "8.4.7", "name": "Substance Abuse", "children": [] },
+            { "id": "8.4.8", "name": "Trauma Therapy", "children": [] },
+            {
+              "id": "8.4.9",
+              "name": "Eating Disorder Therapy",
+              "children": []
+            },
+            { "id": "8.4.10", "name": "Grief and Loss", "children": [] }
+          ]
+        },
+        {
+          "id": "8.5",
+          "name": "Psychiatric Services",
+          "children": [
+            { "id": "8.5.1", "name": "Behavioral Health", "children": [] },
+            { "id": "8.5.2", "name": "Diagnosis", "children": [] },
+            {
+              "id": "8.5.3",
+              "name": "Medication Assisted Treatment",
+              "children": []
+            },
+            { "id": "8.5.4", "name": "Medication Management", "children": [] },
+            {
+              "id": "8.5.5",
+              "name": "Substance Abuse Treatment",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "8.6",
+          "name": "Peer Support",
+          "children": [
+            { "id": "8.6.1", "name": "AA", "children": [] },
+            { "id": "8.6.2", "name": "NA", "children": [] },
+            { "id": "8.6.3", "name": "Recovery Coaching", "children": [] },
+            { "id": "8.6.4", "name": "Support Groups", "children": [] }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "9",
+      "name": "Transportation",
+      "children": [
+        {
+          "id": "9.1",
+          "name": "Affordable Maine Transportation",
+          "children": []
+        },
+        { "id": "9.2", "name": "Medical Transportation", "children": [] },
+        { "id": "9.3", "name": "MaineDOT", "children": [] },
+        { "id": "9.4", "name": "Maine Lift", "children": [] },
+        { "id": "9.5", "name": "Recovery Center Lift", "children": [] }
+      ]
+    }
   ]
 }
-
-
-
-

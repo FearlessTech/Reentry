@@ -1,5 +1,7 @@
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
+import ResourceTree from "./ResourceTree"
+import data from "../data/resources.json"
 
 import { AiOutlineUserAdd } from "react-icons/ai";
 import { BsFillBookmarkFill } from "react-icons/bs";
@@ -190,12 +192,14 @@ const Profile = (props) => {
         <PFCheckBoxes>
           <PFHeading>Resources Check Boxes</PFHeading>
           <Content>
-            <ResourceCheckBoxes />
+            {/* <ResourceCheckBoxes /> */}
+            <ResourceTree data={data}/>
           </Content>
         </PFCheckBoxes>
         <PFPost>
           <PFHeading>Users Post</PFHeading>
-          <Content></Content>
+          <Content>
+          </Content>
         </PFPost>
         <PFResourcesPost>
           <PFHeading>Users Posted Resources</PFHeading>
