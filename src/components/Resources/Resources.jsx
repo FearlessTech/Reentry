@@ -22,14 +22,12 @@ const Container = styled.div`
   }
 
   .search-box {
-    flex: 0 1 300px;
+    flex: 0 1 250px;
+    width: 400px;
     display: flex;
     flex-direction: column;
-    padding: 1rem;
     padding-top: 3rem;
     background-color: #d9d9d9;
-    margin: 1rem auto;
-    max-width: 100%;
 
     .search-container {
       .resource-search {
@@ -57,6 +55,8 @@ const Container = styled.div`
           top: 35px;
         }
       }
+    }
+    .left-results {
     }
   }
   .items {
@@ -186,8 +186,8 @@ const Resources = (props) => {
         >
           Post a Resource
         </button>
-        <div className={styles.resourcesOutputBox}>
-          <ResourceOutput />
+        <div className="resource-outputs">
+          <ResourceOutput className="resource-output" />
           <ResourceOutput />
           <ResourceOutput />
           <ResourceOutput />
@@ -207,7 +207,7 @@ const Resources = (props) => {
           })}
         </div>
       </div>
-      {showModal === "open" && ( // so what was wrong
+      {showModal === "open" && (
         <ResourcePopup showModal={showModal} handleClick={handleClick} />
       )}
     </Container>
