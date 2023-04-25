@@ -1,10 +1,10 @@
-import { connect } from 'react-redux';
-import { signInAPI } from '../../services/actions';
-import { Navigate } from 'react-router-dom';
-import { useState, useEffect } from 'react';
+import { connect } from "react-redux";
+import { signInAPI } from "../../services/actions";
+import { Navigate } from "react-router-dom";
+import { useState, useEffect } from "react";
 
-import LoginForm from './partials/Login';
-import SignUpForm from './partials/SignUp';
+import LoginForm from "./partials/Login";
+import SignUpForm from "./partials/SignUp";
 import {
   ImFacebook2,
   ImGoogle2,
@@ -12,35 +12,36 @@ import {
   ImMail3,
   ImPen,
   ImWindows8,
-} from 'react-icons/im';
+} from "react-icons/im";
 
 import {
   Container,
   SectionA,
   SectionB,
   Form,
-  Nav,
-  NavBTN,
-} from './styles';
-import { Link } from 'react-router-dom';
+  SideBar,
+  LoginOption,
+} from "./styles";
+import { Link } from "react-router-dom";
 
 const Login = (props) => {
   const [login, setLogin] = useState(true);
   const [show, setShow] = useState(true);
   const [sideBar, setSideBar] = useState(true);
+
   const Modal = () => {
     return (
       <Form>
         {login ? (
           <LoginForm>
-            <span className='sign-up'>
-              Doesn't have an account?{' '}
+            <span className="sign-up">
+              Doesn't have an account?{" "}
               <Link
                 onClick={(e) => {
                   e.preventDefault();
                   setLogin(false);
                 }}
-                to='#'
+                to="#"
               >
                 Sign up
               </Link>
@@ -48,14 +49,14 @@ const Login = (props) => {
           </LoginForm>
         ) : (
           <SignUpForm>
-            <span className='log-in'>
-              Already have an acccount?{' '}
+            <span className="log-in">
+              Already have an acccount?{" "}
               <Link
                 onClick={(e) => {
                   e.preventDefault();
                   setLogin(true);
                 }}
-                to='#'
+                to="#"
               >
                 Log In
               </Link>
@@ -68,54 +69,54 @@ const Login = (props) => {
 
   return (
     <Container>
-      {props.user && props.user.emailVerified && <Navigate to='/home' />}
-      <Nav className={sideBar ? 'open' : ''}>
-        <img src='/images/PRAIcon.png' alt='' />
-        <NavBTN
-          className='button'
+      {props.user && props.user.emailVerified && <Navigate to="/home" />}
+      <SideBar className={sideBar ? "open" : ""}>
+        <img src="/images/PRAIcon.png" alt="" />
+        <LoginOption
+          className="button"
           onClick={() => {
             setLogin(false);
           }}
         >
           <ImPen />
           Join Now
-        </NavBTN>
-        <NavBTN
-          className='button'
+        </LoginOption>
+        <LoginOption
+          className="button"
           onClick={() => {
             setLogin(true);
           }}
         >
           <ImMail3 />
           Email Login
-        </NavBTN>
-        <NavBTN onClick={() => props.signIn()}>
-          <div className='icon'>
+        </LoginOption>
+        <LoginOption onClick={() => props.signIn()}>
+          <div className="icon">
             <ImGoogle2 />
           </div>
           <span>Google Login</span>
-        </NavBTN>
-        <NavBTN onClick={() => props.signIn()}>
-          <div className='icon'>
+        </LoginOption>
+        <LoginOption onClick={() => props.signIn()}>
+          <div className="icon">
             <ImFacebook2 />
           </div>
           <span>Facebook Login</span>
-        </NavBTN>
-        <NavBTN onClick={() => props.signIn()}>
-          <div className='icon'>
+        </LoginOption>
+        <LoginOption onClick={() => props.signIn()}>
+          <div className="icon">
             <ImTwitter />
           </div>
           <span>Twitter Login</span>
-        </NavBTN>
-        <NavBTN onClick={() => props.signIn()}>
-          <div className='icon'>
+        </LoginOption>
+        <LoginOption onClick={() => props.signIn()}>
+          <div className="icon">
             <ImWindows8 />
           </div>
           <span>Microsoft Login</span>
-        </NavBTN>
-        <div className='dragger' onClick={(e) => setSideBar(!sideBar)}></div>
-      </Nav>
-      <main className={sideBar ? 'open' : ''}>
+        </LoginOption>
+        <div className="dragger" onClick={(e) => setSideBar(!sideBar)}></div>
+      </SideBar>
+      <main className={sideBar ? "open" : ""}>
         <SectionB>
           <div>
             <h3>Facebook, Twitter, and Microsoft logins are not active yet</h3>
