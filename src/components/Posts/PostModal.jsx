@@ -1,11 +1,12 @@
 import { useState, useEffect } from "react";
 import { connect } from "react-redux";
 import firebase from "firebase";
-import { postArticleAPI } from "../../actions";
+import { postArticleAPI } from "../../services/actions";
 import React from "react";
 import { FaRegFileVideo, FaRegImage } from "react-icons/fa";
 import { AiOutlineCloseCircle } from "react-icons/ai";
 import db from "../../firebase";
+
 import {
   Container,
   Content,

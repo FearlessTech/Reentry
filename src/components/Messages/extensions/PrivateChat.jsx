@@ -1,26 +1,26 @@
-import React, { useState, useEffect, useRef } from "react";
-import Message from "./Message";
-import { useParams } from "react-router-dom";
-import firebase from "firebase";
+import React, { useState, useEffect, useRef } from 'react';
+import Message from './Message';
+import { useParams } from 'react-router-dom';
+import firebase from 'firebase';
 
 import {
   generateChatId,
   Chat,
   addReferenceTo,
   getUserFromId,
-} from "../customHooks/Padronizer";
+} from '../customHooks/Padronizer';
 
 import {
   MessagesHeader,
   SelectedAct,
   Reply,
   ReplyText,
-} from "../stylesMessaging";
+} from '../stylesMessaging';
 
-import getCurrentUser from "../../Network/api/getCurrentUser";
+import getCurrentUser from '../../../helpers/getCurrentUser';
 
 export default function PrivateChat({ db = null }) {
-  const [newMessage, setNewMessage] = useState("");
+  const [newMessage, setNewMessage] = useState('');
   const scroller = useRef();
   const params = useParams();
   const [hasNew, setHasNew] = useState(null);
@@ -39,10 +39,10 @@ export default function PrivateChat({ db = null }) {
       return chatId;
     })().then((chatId) => {
       unsubscribe = db
-        .collection("chats")
+        .collection('chats')
         .doc(chatId)
-        .collection("chat")
-        .orderBy("createdAt")
+        .collection('chat')
+        .orderBy('createdAt')
         .limit(50)
         .onSnapshot((querySnapshot) => {
           // Get all documents from collection ~ with IDs
@@ -110,7 +110,7 @@ export default function PrivateChat({ db = null }) {
     }
     verifyMessages();
     setHasNew(() => true);
-    setNewMessage(() => "");
+    setNewMessage(() => '');
   }
 
   function handleOnChange(e) {
@@ -133,7 +133,7 @@ export default function PrivateChat({ db = null }) {
         <h2>Advocates Chat Room</h2>
       </MessagesHeader>
       <SelectedAct ref={scroller}>
-        <ul className="messages-node">
+        <ul className='messages-node'>
           {messages &&
             messages.map((message) => (
               <li key={message.id}>
@@ -145,14 +145,14 @@ export default function PrivateChat({ db = null }) {
       <Reply>
         <form onSubmit={handleOnSubmit}>
           <ReplyText
-            type="text"
+            type='text'
             value={newMessage}
             onChange={handleOnChange}
-            id="myInput"
-            placeholder="Type you message here..."
-            autoComplete="off"
+            id='myInput'
+            placeholder='Type you message here...'
+            autoComplete='off'
           />
-          <button type="submit" disabled={!newMessage}>
+          <button type='submit' disabled={!newMessage}>
             Send
           </button>
         </form>

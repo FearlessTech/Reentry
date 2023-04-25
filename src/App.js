@@ -1,29 +1,27 @@
 import { connect } from "react-redux";
 import { lazy, useEffect, Suspense } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import MessagesPupup from "./components/Messages/MessagesPopup";
 
-import { getUserAuth } from "./actions";
+import { getUserAuth } from "./services/actions";
+
 import Loading from "./components/Fallbacks/Loading";
 import NotFound from "./components/Fallbacks/NotFound";
 
 import Functionalities from "./components/Functionalities";
+
 import "./App.css";
 import "./utilities.css";
 
-import Login from "./components/Login/Welcome";
-import AgreementLogin from "./components/Login/LoginPage";
-import Navbar from "./components/Navbar/Navbar";
-
-const Home = lazy(() => import("./components/Home/Home"));
-const Notifications = lazy(() =>
-  import("./components/Notifications/Notifications")
-);
-const Network = lazy(() => import("./components/Network/index.jsx"));
+const AgreementLogin = lazy(() => import("./pages/Login"));
+const Navbar = lazy(() => import("./components/Navbar/Navbar"));
+const Login = lazy(() => import("./pages/Login/partials/Welcome"));
+const Home = lazy(() => import("./pages/Home"));
+const Notifications = lazy(() => import("./pages/Notifications"));
+const Network = lazy(() => import("./pages/Network/index.jsx"));
 const Messaging = lazy(() => import("./components/Messages"));
-const Profile = lazy(() => import("./components//Profile/Profile"));
-const Resources = lazy(() => import("./components/Resources/Resources"));
-const AboutUs = lazy(() => import("./components/AboutUs/AboutUs"));
+const Profile = lazy(() => import("./pages/Profile"));
+const Resources = lazy(() => import("./pages/Resources/Resources"));
+const AboutUs = lazy(() => import("./pages/About"));
 
 function App({ getUserAuth }) {
   useEffect(() => {

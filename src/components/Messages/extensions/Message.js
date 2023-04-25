@@ -1,9 +1,9 @@
-import React from "react";
-import styled from "styled-components";
-import { UserImage } from "../../components/Image";
-import { formatRelative } from "date-fns";
-import { Link } from "react-router-dom";
-import { isUrl, splitString, getExt } from "../../Posts/urlIdentifier";
+import React from 'react';
+import styled from 'styled-components';
+import { UserImage } from '../../Image/Image';
+import { formatRelative } from 'date-fns';
+import { Link } from 'react-router-dom';
+import { isUrl, splitString, getExt } from '../../Posts/urlIdentifier';
 
 const StMessage = styled.div`
   box-sizing: border-box;
@@ -93,10 +93,10 @@ const StMessage = styled.div`
 
 const Message = ({
   createdAt = null,
-  text = "",
-  displayName = "",
-  photoURL = "",
-  uid = "",
+  text = '',
+  displayName = '',
+  photoURL = '',
+  uid = '',
   current,
 }) => {
   const textList = [];
@@ -112,52 +112,52 @@ const Message = ({
   });
 
   const min = (text) => {
-    return text.slice(0, 22) + "...";
+    return text.slice(0, 22) + '...';
   };
 
   return (
-    <StMessage className={current ? "left" : ""}>
-      <div className="top">
-        <div className="image-wrapper">
+    <StMessage className={current ? 'left' : ''}>
+      <div className='top'>
+        <div className='image-wrapper'>
           <UserImage source={photoURL} />
         </div>
       </div>
       <div>
-        <div className="text">
-          <div className="meta">
+        <div className='text'>
+          <div className='meta'>
             {displayName ? (
-              <Link className="name" to={`/messaging/${uid}`}>
+              <Link className='name' to={`/messaging/${uid}`}>
                 {displayName}
               </Link>
             ) : null}
             {createdAt?.seconds ? (
-              <span className="date">
+              <span className='date'>
                 {formatRelative(new Date(createdAt.seconds * 1000), new Date())}
               </span>
             ) : null}
           </div>
-          <div className="message">
+          <div className='message'>
             {textList.map((word, i) => (
               <React.Fragment key={i}>
                 {word.image ? (
                   <>
-                    <a href={word.text} target="_blank" rel="noreferrer">
-                      <div className="image-wrapper">
+                    <a href={word.text} target='_blank' rel='noreferrer'>
+                      <div className='image-wrapper'>
                         <img
                           src={word.text}
-                          alt=""
+                          alt=''
                           onError={(e) => {
                             e.target.remove();
                           }}
                         />
                       </div>
-                    </a>{" "}
+                    </a>{' '}
                   </>
                 ) : word.url ? (
                   <>
-                    <a href={word.text} target="_blank" rel="noreferrer">
+                    <a href={word.text} target='_blank' rel='noreferrer'>
                       {min(word.text)}
-                    </a>{" "}
+                    </a>{' '}
                   </>
                 ) : (
                   <>{`${word.text}`}</>
