@@ -119,6 +119,7 @@ const LoginOption = styled.button`
   padding: 0 1rem;
   column-gap: 1rem;
   margin-top: 1rem;
+  transition: cubic-bezier(0.075, 0.82, 0.165, 1) 100ms;
   .icon {
     img {
       width: 100%;
@@ -129,7 +130,7 @@ const LoginOption = styled.button`
     transform: scale(1.01);
     cursor: pointer;
     background-color: #009999;
-    box-shadow: 3px 3px 3px #009999;
+    box-shadow: 0.5px 0.5px 1px #08313195 inset;
   }
 `;
 
@@ -166,6 +167,7 @@ const SectionB = styled.section`
   }
   > * {
     max-width: 85vw;
+    font-weight: 500;
   }
 
   @media (max-width: 650px) {

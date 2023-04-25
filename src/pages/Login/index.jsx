@@ -69,10 +69,11 @@ const Login = (props) => {
 
   return (
     <Container>
-      {props.user && props.user.emailVerified && <Navigate to="/home" />}
+      {props.user && props.user?.emailVerified && <Navigate to="/home" />}
       <SideBar className={sideBar ? "open" : ""}>
         <img src="/images/PRAIcon.png" alt="" />
         <LoginOption
+          aria-label="sign up button"
           className="button"
           onClick={() => {
             setLogin(false);
@@ -82,6 +83,7 @@ const Login = (props) => {
           Join Now
         </LoginOption>
         <LoginOption
+          aria-label="login with email account"
           className="button"
           onClick={() => {
             setLogin(true);
@@ -90,58 +92,75 @@ const Login = (props) => {
           <ImMail3 />
           Email Login
         </LoginOption>
-        <LoginOption onClick={() => props.signIn()}>
+        <LoginOption
+          aria-label="login with google account"
+          onClick={() => props.signIn()}
+        >
           <div className="icon">
             <ImGoogle2 />
           </div>
           <span>Google Login</span>
         </LoginOption>
-        <LoginOption onClick={() => props.signIn()}>
+        <LoginOption
+          aria-label="login with facebook account"
+          onClick={() => props.signIn()}
+        >
           <div className="icon">
             <ImFacebook2 />
           </div>
           <span>Facebook Login</span>
         </LoginOption>
-        <LoginOption onClick={() => props.signIn()}>
+        <LoginOption
+          aria-label="login with twitter account"
+          onClick={() => props.signIn()}
+        >
           <div className="icon">
             <ImTwitter />
           </div>
           <span>Twitter Login</span>
         </LoginOption>
-        <LoginOption onClick={() => props.signIn()}>
+        <LoginOption
+          aria-label="login with microsoft account"
+          onClick={() => props.signIn()}
+        >
           <div className="icon">
             <ImWindows8 />
           </div>
           <span>Microsoft Login</span>
         </LoginOption>
-        <div className="dragger" onClick={(e) => setSideBar(!sideBar)}></div>
+        <div
+          className="dragger"
+          onClick={(e) => setSideBar(!sideBar)}
+          role="button"
+          aria-details="should be clicked to open login options sidebar in case it's not open"
+        ></div>
       </SideBar>
       <main className={sideBar ? "open" : ""}>
-        <SectionB>
+        <SectionB title="Important Information">
           <div>
-            <h3>Facebook, Twitter, and Microsoft logins are not active yet</h3>
+            <h2>Facebook, Twitter, and Microsoft logins are not active yet</h2>
             <br />
-            <h5>Be cautious on social networking sites.</h5>
+            <h3>Be cautious on social networking sites.</h3>
             <br />
-            <h5>
+            <p>
               Keep personal info personal. Be careful how much personal info you
               provide on social networking sites. The more information you post,
               the easier it may be for someone to use that information to steal
               your identity, access your data, or commit other crimes such as
               stalking.
-            </h5>
+            </p>
             <br />
-            <h5>
+            <p>
               Protect your computer. Security start with protecting your
               computer. Install Antivirus software. Keep your operating system,
               web browser, and other software current.
-            </h5>
+            </p>
             <br />
-            <h5>
+            <p>
               Use strong passwords. Make sure that your password is at least
               eight characters long and consists of some combination of letters,
               numbers, and special characters (for example, +, @, #, or $).
-            </h5>
+            </p>
           </div>
         </SectionB>
         <SectionA>

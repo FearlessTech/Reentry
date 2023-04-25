@@ -19,8 +19,9 @@ const StyledSignUp = styled.div`
       .input-container {
         label {
           display: flex;
-          column-gap: 1rem;
           align-items: center;
+          gap: 1rem;
+          flex-wrap: wrap;
           span {
             color: #939393;
           }
