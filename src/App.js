@@ -1,29 +1,27 @@
-import { connect } from "react-redux";
-import { lazy, useEffect, Suspense } from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import MessagesPupup from "./components/Messages/MessagesPopup";
+import { connect } from 'react-redux';
+import { lazy, useEffect, Suspense } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
-import { getUserAuth } from "./actions";
-import Loading from "./components/Fallbacks/Loading";
-import NotFound from "./components/Fallbacks/NotFound";
+import { getUserAuth } from './services/actions';
 
-import Functionalities from "./components/Functionalities";
-import "./App.css";
-import "./utilities.css";
+import Loading from './components/Fallbacks/Loading';
+import NotFound from './components/Fallbacks/NotFound';
 
-import Login from "./components/Login/Welcome";
-import AgreementLogin from "./components/Login/LoginPage";
-import Navbar from "./components/Navbar/Navbar";
+import Functionalities from './components/Functionalities';
 
-const Home = lazy(() => import("./components/Home/Home"));
-const Notifications = lazy(() =>
-  import("./components/Notifications/Notifications")
-);
-const Network = lazy(() => import("./components/Network/index.jsx"));
-const Messaging = lazy(() => import("./components/Messages"));
-const Profile = lazy(() => import("./components//Profile/Profile"));
-const Resources = lazy(() => import("./components/Resources/Resources"));
-const AboutUs = lazy(() => import("./components/AboutUs/AboutUs"));
+import './App.css';
+import './utilities.css';
+
+const AgreementLogin = lazy(() => import('./pages/Login'));
+const Navbar = lazy(() => import('./components/Navbar/Navbar'));
+const Login = lazy(() => import('./pages/Login/partials/Welcome'));
+const Home = lazy(() => import('./pages/Home'));
+const Notifications = lazy(() => import('./pages/Notifications'));
+const Network = lazy(() => import('./pages/Network/index.jsx'));
+const Messaging = lazy(() => import('./components/Messages'));
+const Profile = lazy(() => import('./pages/Profile'));
+const Resources = lazy(() => import('./pages/Resources/Resources'));
+const AboutUs = lazy(() => import('./pages/About'));
 
 function App({ getUserAuth }) {
   useEffect(() => {
@@ -32,13 +30,13 @@ function App({ getUserAuth }) {
 
   return (
     <Suspense fallback={<Loading />}>
-      <div className="App">
+      <div className='App'>
         <Router>
           <Routes>
-            <Route exact path="/" element={<Login />} />
-            <Route exact path="/agreement" element={<AgreementLogin />} />
+            <Route exact path='/' element={<Login />} />
+            <Route exact path='/agreement' element={<AgreementLogin />} />
             <Route
-              path="/functionalities"
+              path='/functionalities'
               element={
                 <>
                   <Navbar />
@@ -47,7 +45,7 @@ function App({ getUserAuth }) {
               }
             />
             <Route
-              path="/home"
+              path='/home'
               element={
                 <>
                   <Navbar />
@@ -56,7 +54,7 @@ function App({ getUserAuth }) {
               }
             />
             <Route
-              path="/resources"
+              path='/resources'
               element={
                 <>
                   <Navbar />
@@ -65,7 +63,7 @@ function App({ getUserAuth }) {
               }
             />
             <Route
-              path="/notifications"
+              path='/notifications'
               element={
                 <>
                   <Navbar />
@@ -74,7 +72,7 @@ function App({ getUserAuth }) {
               }
             />
             <Route
-              path="/network"
+              path='/network'
               element={
                 <>
                   <Navbar />
@@ -83,7 +81,7 @@ function App({ getUserAuth }) {
               }
             />
             <Route
-              path="/messaging/*"
+              path='/messaging/*'
               element={
                 <>
                   <Navbar />
@@ -92,7 +90,7 @@ function App({ getUserAuth }) {
               }
             />
             <Route
-              path="/profile"
+              path='/profile'
               element={
                 <>
                   <Navbar />
@@ -101,7 +99,7 @@ function App({ getUserAuth }) {
               }
             />
             <Route
-              path="/aboutus"
+              path='/aboutus'
               element={
                 <>
                   <Navbar />
@@ -110,7 +108,7 @@ function App({ getUserAuth }) {
               }
             />
             <Route
-              path="/*"
+              path='/*'
               element={
                 <>
                   <Navbar />
