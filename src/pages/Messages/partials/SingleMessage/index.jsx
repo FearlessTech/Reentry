@@ -3,11 +3,7 @@ import styled from "styled-components";
 import { UserImage } from "../../../../components/Image";
 import { formatRelative } from "date-fns";
 import { Link } from "react-router-dom";
-import {
-  isUrl,
-  splitString,
-  getExt,
-} from "../../../../components/Posts/urlIdentifier";
+import { isUrl, splitString, getExt } from "../../../../helpers/urlIdentifier";
 
 const StMessage = styled.div`
   box-sizing: border-box;

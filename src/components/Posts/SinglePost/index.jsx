@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import ReactPlayer from "react-player";
-import { UserImage } from "../Image";
+import { UserImage } from "../../Image";
 import {
   Article,
   SharedActor,
@@ -8,14 +8,14 @@ import {
   SharedImage,
   SocialCounts,
   SocialActions,
-} from "../../pages/Home/partials/Main/styles";
+} from "../../../pages/Home/partials/Main/styles";
 import { useEffect, useState } from "react";
-import { AddComment } from "./comments/AddComment";
-import db, { auth } from "../../services/firebase/firebase";
-import { SingleComment } from "./comments/SingleComment";
+import { AddComment } from "../partials/AddComment";
+import db, { auth } from "../../../services/firebase/firebase";
+import { SingleComment } from "../partials/SingleComment";
 import firebase from "firebase";
-import { isUrl, splitString } from "./urlIdentifier";
-import { ArticleMenuButton } from "./ArticleMenuButton";
+import { isUrl, splitString } from "../../../helpers/urlIdentifier";
+import { ArticleMenuButton } from "../ArticleMenuButton";
 
 export function SinglePost({ article, id }) {
   const user = auth.currentUser;

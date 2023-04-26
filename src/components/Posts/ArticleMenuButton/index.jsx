@@ -1,9 +1,8 @@
 import { IconButton, Menu, MenuItem } from "@material-ui/core";
 import { useState } from "react";
 import { FaEllipsisH } from "react-icons/fa";
-import { db, storage } from "../../services/firebase/firebase";
-import PostModal from "./PostModal";
-import styles from "./Posts.module.css";
+import { db, storage } from "../../../services/firebase/firebase";
+import PostModal from "../PostModal";
 
 export function ArticleMenuButton({ articleText, articleId, fileType }) {
   const [anchorEl, setAnchorEl] = useState(null);
@@ -62,7 +61,7 @@ export function ArticleMenuButton({ articleText, articleId, fileType }) {
   return (
     <div>
       <IconButton
-        className={styles.menu_button}
+        className="menu_button"
         aria-controls="simple-menu"
         aria-haspopup="true"
         onClick={handleClick}
@@ -78,7 +77,7 @@ export function ArticleMenuButton({ articleText, articleId, fileType }) {
             fontSize: "10px",
           },
         }}
-        className={styles.menu_items}
+        className="menu_items"
         anchorEl={anchorEl}
         open={open}
         onClose={handleClose}

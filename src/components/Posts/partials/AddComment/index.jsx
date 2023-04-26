@@ -1,4 +1,4 @@
-import Container from "./styledComments";
+import Container from "./styles";
 import { Button, ButtonGroup } from "@material-ui/core";
 import { useRef, useState } from "react";
 import db, { auth } from "../../../../services/firebase/firebase";

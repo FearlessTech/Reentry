@@ -1,11 +1,11 @@
 import { useState, useEffect } from "react";
 import { connect } from "react-redux";
 import firebase from "firebase";
-import { postArticleAPI } from "../../services/actions";
+import { postArticleAPI } from "../../../services/actions";
 import React from "react";
 import { FaRegFileVideo, FaRegImage } from "react-icons/fa";
 import { AiOutlineCloseCircle } from "react-icons/ai";
-import db from "../../services/firebase/firebase";
+import db from "../../../services/firebase/firebase";
 
 import {
   Container,
@@ -18,7 +18,7 @@ import {
   AttachAssets,
   PostButton,
   Editor,
-} from "./stylesPostModal.jsx";
+} from "../styles.jsx";
 import ReactPlayer from "react-player";
 import { useRef } from "react";
 

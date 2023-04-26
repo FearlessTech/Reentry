@@ -2,8 +2,8 @@ import { useState } from "react";
 import db, { auth } from "../../../../services/firebase/firebase";
 import { Button } from "@material-ui/core";
 import { CommentMenuButton } from "../CommentMenu/CommentMenuButton";
-import { splitString, isUrl } from "../../urlIdentifier";
-import Container from "./styledSingleComment";
+import { splitString, isUrl } from "../../../../helpers/urlIdentifier";
+import Container from "./styles";
 import { UserImage } from "../../../Image";
 
 export function SingleComment({

@@ -1,7 +1,6 @@
 import { IconButton, Menu, MenuItem } from "@material-ui/core";
 import { useState } from "react";
 import { FaEllipsisH } from "react-icons/fa";
-import styles from "../../Posts.module.css";
 export function CommentMenuButton({
   initateCommentEdit,
   commentText,
@@ -23,7 +22,7 @@ export function CommentMenuButton({
   return (
     <div>
       <IconButton
-        className={styles.menu_button}
+        className="menu_button"
         aria-controls="simple-menu"
         aria-haspopup="true"
         onClick={handleClick}
@@ -39,7 +38,7 @@ export function CommentMenuButton({
             fontSize: "10px",
           },
         }}
-        className={styles.menu_items}
+        className="menu_items"
         anchorEl={anchorEl}
         keepMounted
         open={Boolean(anchorEl)}
