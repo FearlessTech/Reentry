@@ -14,7 +14,7 @@ import {
   Item,
 } from "./styles.jsx";
 import { UserImage } from "../../../../components/Image/index.jsx";
-import db, { storage } from "../../../../firebase.js";
+import db, { storage } from "../../../../services/firebase/firebase.js";
 import { useState } from "react";
 import { useEffect } from "react";
 

@@ -1,7 +1,7 @@
 import { IconButton, Menu, MenuItem } from "@material-ui/core";
 import { useState } from "react";
 import { FaEllipsisH } from "react-icons/fa";
-import { db, storage } from "../../firebase";
+import { db, storage } from "../../services/firebase/firebase";
 import PostModal from "./PostModal";
 import styles from "./Posts.module.css";
 

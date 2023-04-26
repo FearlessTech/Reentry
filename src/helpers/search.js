@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { db, provider, auth } from "../firebase";
+import { db, provider, auth } from "../services/firebase/firebase";
 
 export function getUsers(user) {
   try {

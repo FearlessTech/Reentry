@@ -11,7 +11,7 @@ import {
 } from "../../pages/Home/partials/Main/styles";
 import { useEffect, useState } from "react";
 import { AddComment } from "./comments/AddComment";
-import db, { auth } from "../../firebase";
+import db, { auth } from "../../services/firebase/firebase";
 import { SingleComment } from "./comments/SingleComment";
 import firebase from "firebase";
 import { isUrl, splitString } from "./urlIdentifier";

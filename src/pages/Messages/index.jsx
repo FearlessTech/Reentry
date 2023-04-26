@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
 
-import { Container } from "./styles";
+import Container from "./styles";
 
-import Channel from "./extensions/Channel";
+import Channel from "./partials/Channel";
 
-import { auth, db } from "../../firebase";
+import { auth, db } from "../../services/firebase/firebase";
 
 function Messaging() {
   const [user, setUser] = useState(() => auth.currentUser);

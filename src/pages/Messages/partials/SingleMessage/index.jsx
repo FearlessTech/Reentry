@@ -1,13 +1,13 @@
 import React from "react";
 import styled from "styled-components";
-import { UserImage } from "../../../components/Image";
+import { UserImage } from "../../../../components/Image";
 import { formatRelative } from "date-fns";
 import { Link } from "react-router-dom";
 import {
   isUrl,
   splitString,
   getExt,
-} from "../../../components/Posts/urlIdentifier";
+} from "../../../../components/Posts/urlIdentifier";
 
 const StMessage = styled.div`
   box-sizing: border-box;

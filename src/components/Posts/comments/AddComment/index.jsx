@@ -1,7 +1,7 @@
 import Container from "./styledComments";
 import { Button, ButtonGroup } from "@material-ui/core";
 import { useRef, useState } from "react";
-import db, { auth } from "../../../../firebase";
+import db, { auth } from "../../../../services/firebase/firebase";
 import { commentValidador } from "../../../../services/validators/commentValidations";
 
 export function AddComment({ articleId, setshowCommentBox }) {

@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import Message from "./Message";
+import Message from "../SingleMessage";
 import { useParams } from "react-router-dom";
 import firebase from "firebase";
 
@@ -8,11 +8,16 @@ import {
   Chat,
   addReferenceTo,
   getUserFromId,
-} from "../customHooks/Padronizer";
+} from "../Hooks/Padronizer";
 
-import { MessagesHeader, SelectedAct, Reply, ReplyText } from "../styles";
+import {
+  MessagesHeader,
+  SelectedAct,
+  Reply,
+  ReplyText,
+} from "../Channel/styles";
 
-import getCurrentUser from "../../../helpers/getCurrentUser";
+import getCurrentUser from "../../../../helpers/getCurrentUser";
 
 export default function PrivateChat({ db = null }) {
   const [newMessage, setNewMessage] = useState("");

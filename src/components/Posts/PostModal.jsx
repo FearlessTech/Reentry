@@ -5,7 +5,7 @@ import { postArticleAPI } from "../../services/actions";
 import React from "react";
 import { FaRegFileVideo, FaRegImage } from "react-icons/fa";
 import { AiOutlineCloseCircle } from "react-icons/ai";
-import db from "../../firebase";
+import db from "../../services/firebase/firebase";
 
 import {
   Container,

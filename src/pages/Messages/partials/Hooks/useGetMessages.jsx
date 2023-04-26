@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useEffect } from "react";
-import db from "../../../firebase";
+import db from "../../../../firebase";
 import getCurrentUser from "../../Network/api/getCurrentUser";
 import firebase from "firebase";
 

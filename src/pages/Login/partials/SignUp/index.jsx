@@ -1,16 +1,16 @@
-import { useRef, useState } from 'react';
-import { auth } from '../../../../firebase';
+import { useRef, useState } from "react";
+import { auth } from "../../../../services/firebase/firebase";
 
-import { setFbUser } from '../../../../services/actions';
+import { setFbUser } from "../../../../services/actions";
 
-import StyledSignUp from './styles';
+import StyledSignUp from "./styles";
 
 export default function SignUpForm({ children }) {
   const emailRef = useRef();
   const usernameRef = useRef();
   const passwordRef = useRef();
   const passwordConfirmRef = useRef();
-  const [error, setError] = useState('');
+  const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
 
   async function signup(username, email, password) {
@@ -22,7 +22,7 @@ export default function SignUpForm({ children }) {
         user.sendEmailVerification();
         setTimeout(() => {}, 500);
         alert(
-          'In order to proceed with the login, we sent a verification email.'
+          "In order to proceed with the login, we sent a verification email."
         );
       })
       .then(() => {
@@ -43,11 +43,11 @@ export default function SignUpForm({ children }) {
     e.preventDefault();
 
     if (passwordRef.current.value !== passwordConfirmRef.current.value) {
-      return setError('Passwords do not match');
+      return setError("Passwords do not match");
     }
 
     try {
-      setError('');
+      setError("");
       setLoading(true);
       await signup(
         usernameRef.current.value,
@@ -55,79 +55,79 @@ export default function SignUpForm({ children }) {
         passwordRef.current.value
       );
     } catch {
-      setError('Failed to create an account');
+      setError("Failed to create an account");
     }
     setLoading(false);
   }
 
   return (
     <StyledSignUp>
-      <div className='signin-container'>
-        <div className='title'>Sign Up</div>
+      <div className="signin-container">
+        <div className="title">Sign Up</div>
         {error && (
-          <div className='signUp-alert' style={{ color: 'red' }}>
+          <div className="signUp-alert" style={{ color: "red" }}>
             {error}
           </div>
         )}
         <form onSubmit={handleSubmit}>
-          <div className='input-container'>
-            <label className='username-signup-label' htmlFor='username'>
+          <div className="input-container">
+            <label className="username-signup-label" htmlFor="username">
               <span>username</span>
               <input
-                type='text'
-                id='username'
+                type="text"
+                id="username"
                 ref={usernameRef}
-                name='username'
-                placeholder='name here'
-                autoComplete='username'
+                name="username"
+                placeholder="name here"
+                autoComplete="username"
                 required
               />
             </label>
-            <label className='username-signup-label' htmlFor='email'>
+            <label className="username-signup-label" htmlFor="email">
               <span>email</span>
               <input
-                type='email'
-                id='email'
+                type="email"
+                id="email"
                 ref={emailRef}
-                name='email'
-                placeholder='example@email.com'
-                autoComplete='email'
+                name="email"
+                placeholder="example@email.com"
+                autoComplete="email"
                 required
               />
             </label>
-            <label className='password-signup-label' htmlFor='password'>
+            <label className="password-signup-label" htmlFor="password">
               <span>password</span>
               <input
-                type='password'
-                id='password'
+                type="password"
+                id="password"
                 ref={passwordRef}
-                name='password'
-                placeholder='password'
-                autoComplete='password'
+                name="password"
+                placeholder="password"
+                autoComplete="password"
                 required
               />
             </label>
             <label
-              className='password-confirm-signup-label'
-              htmlFor='passwordConfirm'
+              className="password-confirm-signup-label"
+              htmlFor="passwordConfirm"
             >
               <span>Confirm password</span>
               <input
-                type='password'
-                id='password'
+                type="password"
+                id="password"
                 ref={passwordConfirmRef}
-                name='password'
-                placeholder='password'
-                autoComplete='password'
+                name="password"
+                placeholder="password"
+                autoComplete="password"
                 required
               />
             </label>
           </div>
-          <button className='send-form' disabled={loading} type='submit'>
+          <button className="send-form" disabled={loading} type="submit">
             Sign Up
           </button>
         </form>
-        <span className='or'>or</span>
+        <span className="or">or</span>
         {children}
       </div>
     </StyledSignUp>

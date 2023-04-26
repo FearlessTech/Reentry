@@ -1,4 +1,4 @@
-import db from "../firebase";
+import db from "../services/firebase/firebase";
 import getCurrentUser from "./getCurrentUser";
 
 class DbHandler {
