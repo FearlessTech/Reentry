@@ -1,8 +1,8 @@
-import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { connect } from "react-redux";
+import { Link } from "react-router-dom";
 
-import { AiOutlineUserAdd } from 'react-icons/ai';
-import { BsFillBookmarkFill } from 'react-icons/bs';
+import { AiOutlineUserAdd } from "react-icons/ai";
+import { BsFillBookmarkFill } from "react-icons/bs";
 
 import {
   Container,
@@ -12,11 +12,11 @@ import {
   Photo,
   Widget,
   Item,
-} from './styles.jsx';
-import { UserImage } from '../../../../components/Image/Image.jsx';
-import db, { storage } from '../../../../firebase.js';
-import { useState } from 'react';
-import { useEffect } from 'react';
+} from "./styles.jsx";
+import { UserImage } from "../../../../components/Image/index.jsx";
+import db, { storage } from "../../../../firebase.js";
+import { useState } from "react";
+import { useEffect } from "react";
 
 const Leftside = (props) => {
   const [file, setFile] = useState(null);
@@ -51,41 +51,41 @@ const Leftside = (props) => {
         <UserInfo>
           <CardBackground />
           {props.redirect ? (
-            <Link to='/profile' className='welcome'>
+            <Link to="/profile" className="welcome">
               <Photo>
                 {props.user && <UserImage source={props.user.photoURL} />}
               </Photo>
-              <h3>Welcome, {props.user ? props.user.displayName : 'there'}!</h3>
+              <h3>Welcome, {props.user ? props.user.displayName : "there"}!</h3>
             </Link>
           ) : (
-            <label className='welcome' htmlFor='image'>
+            <label className="welcome" htmlFor="image">
               <input
-                type='file'
-                id='image'
-                name='image'
-                accept='.png, .jpg, .jpeg'
+                type="file"
+                id="image"
+                name="image"
+                accept=".png, .jpg, .jpeg"
                 onChange={() => {
                   setFile();
                 }}
-                style={{ display: 'none' }}
+                style={{ display: "none" }}
               />
               <Photo>
                 {props.user && <UserImage source={props.user.photoURL} />}
               </Photo>
-              <h3>Welcome, {props.user ? props.user.displayName : 'there'}!</h3>
+              <h3>Welcome, {props.user ? props.user.displayName : "there"}!</h3>
             </label>
           )}
         </UserInfo>
         <Widget>
           <nav>
             <div>
-              <Link to='/notifications'>
+              <Link to="/notifications">
                 <span>Notifications</span>
               </Link>
-              <Link to='/network'>
+              <Link to="/network">
                 <span>Network</span>
               </Link>
-              <Link to='/messaging'>
+              <Link to="/messaging">
                 <span>Messages</span>
               </Link>
             </div>
@@ -93,7 +93,7 @@ const Leftside = (props) => {
           </nav>
         </Widget>
         <Item>
-          <Link to='/resources'>
+          <Link to="/resources">
             <span>
               <BsFillBookmarkFill />
               My Resources

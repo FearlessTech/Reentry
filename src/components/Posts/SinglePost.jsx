@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import ReactPlayer from 'react-player';
-import { UserImage } from '../Image/Image';
+import ReactPlayer from "react-player";
+import { UserImage } from "../Image";
 import {
   Article,
   SharedActor,
@@ -8,14 +8,14 @@ import {
   SharedImage,
   SocialCounts,
   SocialActions,
-} from '../../pages/Home/partials/Main/styles';
-import { useEffect, useState } from 'react';
-import { AddComment } from './comments/AddComment';
-import db, { auth } from '../../firebase';
-import { SingleComment } from './comments/SingleComment';
-import firebase from 'firebase';
-import { isUrl, splitString } from './urlIdentifier';
-import { ArticleMenuButton } from './ArticleMenuButton';
+} from "../../pages/Home/partials/Main/styles";
+import { useEffect, useState } from "react";
+import { AddComment } from "./comments/AddComment";
+import db, { auth } from "../../firebase";
+import { SingleComment } from "./comments/SingleComment";
+import firebase from "firebase";
+import { isUrl, splitString } from "./urlIdentifier";
+import { ArticleMenuButton } from "./ArticleMenuButton";
 
 export function SinglePost({ article, id }) {
   const user = auth.currentUser;
@@ -25,20 +25,20 @@ export function SinglePost({ article, id }) {
   const [hasLiked, setHasLiked] = useState(false);
   const [rerender, triggerPostRerender] = useState(1);
   const dateOptions = {
-    weekday: 'long',
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric',
-    hour: 'numeric',
-    minute: 'numeric',
+    weekday: "long",
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+    hour: "numeric",
+    minute: "numeric",
   };
 
   useEffect(() => {
     (async function getComments() {
-      const articleRef = db.collection('articles').doc(id);
+      const articleRef = db.collection("articles").doc(id);
       const commentsRef = articleRef
-        .collection('comments')
-        .orderBy('timestamp', 'asc');
+        .collection("comments")
+        .orderBy("timestamp", "asc");
       const snapshot = await commentsRef.get();
       const allComments = snapshot.docs.map((doc) => {
         const commentObject = { ...doc.data(), id: doc.id };
@@ -66,14 +66,14 @@ export function SinglePost({ article, id }) {
         const index = updatedLikes.indexOf(user.id);
         updatedLikes.splice(index, 1);
         setLikes(updatedLikes);
-        const articleRef = db.collection('articles').doc(id);
+        const articleRef = db.collection("articles").doc(id);
         await articleRef.update({
           likedBy: firebase.firestore.FieldValue.arrayRemove(user.uid),
         });
       } else {
         setHasLiked(true);
         setLikes((likes) => [...likes, user.uid]);
-        const articleRef = db.collection('articles').doc(id);
+        const articleRef = db.collection("articles").doc(id);
         await articleRef.update({
           likedBy: firebase.firestore.FieldValue.arrayUnion(user.uid),
         });
@@ -116,7 +116,7 @@ export function SinglePost({ article, id }) {
         {(() => {
           const res = splitString(article.description).map((str) =>
             isUrl(str) ? (
-              <a href={str} target='_blank' rel='noreferrer'>
+              <a href={str} target="_blank" rel="noreferrer">
                 {str}
               </a>
             ) : (
@@ -130,13 +130,13 @@ export function SinglePost({ article, id }) {
         <a>
           {!article.sharedImg && article.video ? (
             <ReactPlayer
-              width={'100%'}
-              height='100%'
+              width={"100%"}
+              height="100%"
               url={article.video}
               controls
             />
           ) : (
-            article.sharedImg && <img src={article.sharedImg} alt='' />
+            article.sharedImg && <img src={article.sharedImg} alt="" />
           )}
         </a>
       </SharedImage>
@@ -148,9 +148,9 @@ export function SinglePost({ article, id }) {
           <a>{comments.length} Comments</a>
         </li>
       </SocialCounts>
-      <SocialActions className='social'>
+      <SocialActions className="social">
         <button onClick={() => handleLike()}>
-          <span>{hasLiked ? 'Unlike' : 'Like'}</span>
+          <span>{hasLiked ? "Unlike" : "Like"}</span>
         </button>
         <button onClick={() => setshowCommentBox(true)}>
           <span>Comment</span>
@@ -165,13 +165,13 @@ export function SinglePost({ article, id }) {
       )}
       {comments.length > 0 && (
         <>
-          <p style={{ textAlign: 'left', marginLeft: '15px' }}>Comments:</p>
+          <p style={{ textAlign: "left", marginLeft: "15px" }}>Comments:</p>
           <div
             style={{
-              maxHeight: '300px',
-              overflowY: 'scroll',
-              display: 'flex',
-              flexDirection: 'column-reverse',
+              maxHeight: "300px",
+              overflowY: "scroll",
+              display: "flex",
+              flexDirection: "column-reverse",
             }}
           >
             {comments.map((comment, i) => (

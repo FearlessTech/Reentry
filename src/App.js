@@ -18,7 +18,7 @@ const Login = lazy(() => import("./pages/Welcome"));
 const Home = lazy(() => import("./pages/Home"));
 const Notifications = lazy(() => import("./pages/Notifications"));
 const Network = lazy(() => import("./pages/Network/index.jsx"));
-const Messaging = lazy(() => import("./components/Messages"));
+const Messaging = lazy(() => import("./pages/Messages"));
 const Profile = lazy(() => import("./pages/Profile"));
 const Resources = lazy(() => import("./pages/Resources/Resources"));
 const AboutUs = lazy(() => import("./pages/About"));

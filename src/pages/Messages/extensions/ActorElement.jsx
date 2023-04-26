@@ -1,7 +1,7 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import styled from 'styled-components';
-import { UserImage } from '../../Image/Image';
+import React from "react";
+import { Link } from "react-router-dom";
+import styled from "styled-components";
+import { UserImage } from "../../../components/Image";
 
 const StActorElement = styled.div`
   a {
@@ -45,12 +45,12 @@ export default function ActorElement({ name, photoURL, lastMessage, uid }) {
   return (
     <StActorElement>
       <Link to={`/messaging/${uid}`}>
-        <div className='image-wrapper'>
+        <div className="image-wrapper">
           <UserImage source={photoURL} />
         </div>
-        <div className='right'>
-          <span className='name'>{name}</span>
-          <div className='last'>
+        <div className="right">
+          <span className="name">{name}</span>
+          <div className="last">
             <span>{lastMessage}</span>
           </div>
         </div>
