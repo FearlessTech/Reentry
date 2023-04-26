@@ -9,8 +9,8 @@ import NotFound from "./components/Fallbacks/NotFound";
 
 import Functionalities from "./components/Functionalities";
 
-import "./App.css";
-import "./utilities.css";
+import "./styles/App.css";
+import "./styles/utilities.css";
 
 const AgreementLogin = lazy(() => import("./pages/Login"));
 const Navbar = lazy(() => import("./components/Navbar/Navbar"));
