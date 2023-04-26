@@ -42,7 +42,7 @@ function getPage(page_name) {
     case "profile":
       return Profile;
 
-    case "about":
+    case "aboutus":
       return AboutUs;
 
     case "functionalities":

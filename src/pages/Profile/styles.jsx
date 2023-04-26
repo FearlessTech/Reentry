@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 const Container = styled.div`
   padding-top: 10px;
@@ -48,7 +48,7 @@ const UserInfo = styled.div`
 `;
 
 const CardBackground = styled.div`
-  background: url('/images/UserCardHead.jpg');
+  background: url("/images/UserCardHead.jpg");
   background-position: center;
   background-size: 462px;
   height: 70px;
@@ -150,14 +150,14 @@ const PFHeading = styled.div`
   color: whitesmoke;
   position: relative;
   &::before {
-    content: '';
+    content: "";
     position: absolute;
     width: 10px;
     height: 8px;
     background-color: #077a7a;
     left: 0;
     bottom: -8px;
-    transform: rotateY('45deg');
+    transform: rotateY("45deg");
     clip-path: polygon(0 0, 100% 0, 100% 100%);
   }
 `;
@@ -175,6 +175,7 @@ const Content = styled.div`
   min-height: 100px;
   background-color: whitesmoke;
   margin-left: 11px;
+  padding: 1rem;
 `;
 
 export {
