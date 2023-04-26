@@ -1,6 +1,6 @@
 / today
 
-login page sidebar not responsible in desktop mode
-
 create page folders ' in progress
 
+* Criar pasta de styles local
+* Criar Componente de Routes para limpar o App
