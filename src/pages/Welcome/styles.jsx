@@ -174,11 +174,6 @@ const Hero = styled.div`
     font-weight: 700;
     letter-spacing: 8px;
     line-height: 60px;
-    //span {
-    //  font-size: 32px;
-    //  font-weight: 300;
-    //  letter-spacing: 10px;
-    //}
   }
   .assets-container {
     display: flex;
@@ -268,6 +263,9 @@ const Hero = styled.div`
           left: 619px;
         }
       }
+    }
+    @media (max-width: 768px) {
+      display: none;
     }
   }
 `;

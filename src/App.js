@@ -14,7 +14,7 @@ import "./utilities.css";
 
 const AgreementLogin = lazy(() => import("./pages/Login"));
 const Navbar = lazy(() => import("./components/Navbar/Navbar"));
-const Login = lazy(() => import("./pages/Login/partials/Welcome"));
+const Login = lazy(() => import("./pages/Welcome"));
 const Home = lazy(() => import("./pages/Home"));
 const Notifications = lazy(() => import("./pages/Notifications"));
 const Network = lazy(() => import("./pages/Network/index.jsx"));
