@@ -1,21 +1,21 @@
-import { Navigate } from 'react-router-dom';
-import { connect } from 'react-redux';
+import { Navigate } from "react-router-dom";
+import { connect } from "react-redux";
 
-import Leftside from './partials/LeftSide';
-import Main from './partials/Main';
-import Rightside from './partials/RightSide';
+import HomeSidebar from "./partials/Sidebar";
+import Main from "./partials/Main";
+import Rightside from "./partials/RightSide";
 
-import EventCalendar from '../../components/EventCalendar';
-import { Container, Layout } from './styles';
+import EventCalendar from "../../components/EventCalendar";
+import { Container, Layout } from "./styles";
 
 const Home = (props) => {
   return (
     <Container>
-      {(!props.user || !props.user.emailVerified) && <Navigate to='/' />}
+      {(!props.user || !props.user.emailVerified) && <Navigate to="/" />}
       <Layout>
-        <Leftside redirect='true'>
+        <HomeSidebar redirect="true">
           <EventCalendar />
-        </Leftside>
+        </HomeSidebar>
         <Main />
         <Rightside />
       </Layout>

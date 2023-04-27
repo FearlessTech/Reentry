@@ -1,0 +1,94 @@
+:root,
+body,
+html {
+  background-color: transparent;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+div,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+navbar,
+html,
+i,
+img,
+label,
+li,
+nav,
+p,
+small,
+span,
+ul {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: none;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+}
+
+body,
+html {
+  font-family: Helvetica, Arial, sans-serif;
+  height: 100vh;
+  box-sizing: border-box;
+}
+
+body:has(.screen-size) {
+  max-height: 100vh;
+  overflow: hidden;
+}
+
+input,
+textarea {
+  font-family: sans-serif;
+  color: #333;
+}
+textarea {
+  padding: 0.5rem 0;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+/*// Mobile (Smartphone) max-width: 480px*/
+/*// Low Resolution Tablets and ipads max-width: 767px*/
+/*// Tablets Ipads portrait mode max-width:1024px*/
+/*// Desktops max-width:1280px*/
+/*// Huge size (Larger screen) max-width: 1281px and greater *!*/
+
+@media (max-width: 768px) {
+  body {
+    overflow-y: scroll;
+  }
+}

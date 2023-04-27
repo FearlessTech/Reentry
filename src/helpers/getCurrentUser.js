@@ -1,4 +1,4 @@
-import { auth } from "../firebase";
+import { auth } from "../services/firebase/firebase";
 
 export default async function getCurrentUser() {
   const getUser = new Promise((resolve, reject) => {

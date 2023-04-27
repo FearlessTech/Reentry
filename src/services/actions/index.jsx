@@ -1,4 +1,4 @@
-import db, { auth, provider, storage } from "../../firebase";
+import db, { auth, provider, storage } from "../firebase/firebase";
 
 import {
   SET_DARK_MODE,

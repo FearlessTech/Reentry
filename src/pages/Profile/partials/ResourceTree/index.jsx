@@ -1,8 +1,20 @@
-import React from 'react';
+import { React, useState, useContext, createContext } from "react";
+import Switch from "../Switch";
+import data from "../../../../data/resources.json";
+import useGetResources from "../../connection/useGetResources";
+
+import Form from "./styles";
+import Button from "../ProfileSaveButton";
+
+const resourcesContext = createContext(null);
 
 function TreeNode({ node }) {
-  const [expanded, setExpanded] = React.useState(false);
+  const activeResources = useContext(resourcesContext);
+
+  const [expanded, setExpanded] = useState(false);
   const isLeafNode = !node.children || node.children.length === 0;
+
+  const [active, setActive] = useState(activeResources.includes(node.id));
 
   const handleToggle = () => {
     if (!isLeafNode) {
@@ -11,17 +23,39 @@ function TreeNode({ node }) {
   };
 
   return (
-    <div style={{ marginLeft: '1rem' }}>
+    <div style={{ marginLeft: "1rem" }}>
       <div
         onClick={handleToggle}
-        style={{ cursor: isLeafNode ? 'default' : 'pointer' }}
+        style={{
+          cursor: isLeafNode ? "default" : "pointer",
+          display: "flex",
+          gap: "1rem",
+          marginBottom: "1rem",
+          width: "max-content",
+        }}
       >
-        {node.name}
-        {!isLeafNode && (expanded ? '-' : '+')}
+        <Switch
+          id={node.id}
+          text={node.name}
+          active={active}
+          callback={() => {
+            setActive(!active);
+            activeResources.includes(node.id)
+              ? activeResources.splice(activeResources.indexOf(node.id), 1)
+              : activeResources.push(node.id);
+          }}
+        />
+        <span
+          style={{
+            borderBottom: isLeafNode ? "" : "3px solid #137b7b",
+          }}
+        >
+          {node.name}
+        </span>
       </div>
       {node.children && expanded && (
         <div>
-          {node.children.map(child => (
+          {node.children.map((child) => (
             <TreeNode key={child.id} node={child} />
           ))}
         </div>
@@ -30,12 +64,17 @@ function TreeNode({ node }) {
   );
 }
 
-export default function Tree({ data }) {
+export default function Tree() {
+  const activeResources = useGetResources();
+
   return (
-    <div>
-      {data.map(node => (
-        <TreeNode key={node.id} node={node} />
-      ))}
-    </div>
+    <resourcesContext.Provider value={activeResources}>
+      <Form>
+        {data.Resources.map((node) => (
+          <TreeNode key={node.id} node={node} />
+        ))}
+        <Button>Save</Button>
+      </Form>
+    </resourcesContext.Provider>
   );
 }

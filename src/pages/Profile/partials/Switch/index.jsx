@@ -1,5 +1,5 @@
-import { useState } from 'react';
-import styled from 'styled-components';
+import { useState } from "react";
+import styled from "styled-components";
 
 const Container = styled.label`
   &,
@@ -21,13 +21,13 @@ const Container = styled.label`
     padding: 0 3px;
     &.active {
       justify-content: flex-end;
-      background-color: black;
+      background-color: #077a7a;
       .dot {
         background-color: #ffffff;
       }
     }
     .dot {
-      background-color: black;
+      background-color: #077a7a;
       height: 80%;
       aspect-ratio: 1 / 1;
       border-radius: 100vmax;
@@ -35,23 +35,20 @@ const Container = styled.label`
   }
 `;
 
-const inputSt = {
-  display: 'none',
-};
-
-const Switch = ({ name, id, text }) => {
-  const [active, setActive] = useState(false);
+const Switch = ({ callback, id, text, active: isActive = false }) => {
+  const [active, setActive] = useState(isActive);
   return (
     <Container
-      className='active'
+      className="active"
       htmlFor={id}
       onPointerDown={(e) => {
         setActive((state) => !state);
+        callback(e);
       }}
     >
       {text && !text.after && <span>{text.message}</span>}
-      <div className={`out ${active && 'active'}`}>
-        <div className='dot'></div>
+      <div className={`out ${active && "active"}`}>
+        <div className="dot"></div>
       </div>
       {text && text.after && <span>{text.message}</span>}
     </Container>

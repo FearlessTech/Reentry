@@ -52,15 +52,16 @@ const Container = styled.div`
     }
   }
 `;
-const Nav = styled.nav`
-  height: 95%;
-  width: 250px;
+
+const SideBar = styled.nav`
+  min-width: 250px;
   position: fixed;
+  height: 100%;
   overflow-x: hidden;
-  padding-top: 20px;
-  padding-bottom: 20px;
+  padding-top: 15px;
+  padding-bottom: 15px;
   display: flex;
-  justify-content: space-between;
+  justify-content: start;
   flex-direction: column;
   align-items: center;
   transition: ease-in-out 180ms;
@@ -69,13 +70,12 @@ const Nav = styled.nav`
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
   border: 1px solid #ffffff2d;
-
-  @media (min-width: 768px) and (orientation: landscape) {
-    position: static;
-  }
-
   top: 0;
   left: 0;
+
+  @media (max-width: 650px) {
+    gap: 0rem;
+  }
 
   &.open {
     z-index: 1;
@@ -106,7 +106,7 @@ const Nav = styled.nav`
   }
 `;
 
-const NavBTN = styled.button`
+const LoginOption = styled.button`
   background-color: #077a7a;
   color: white;
   border-radius: 100vmax;
@@ -118,6 +118,8 @@ const NavBTN = styled.button`
   justify-content: start;
   padding: 0 1rem;
   column-gap: 1rem;
+  margin-top: 1rem;
+  transition: cubic-bezier(0.075, 0.82, 0.165, 1) 100ms;
   .icon {
     img {
       width: 100%;
@@ -128,7 +130,7 @@ const NavBTN = styled.button`
     transform: scale(1.01);
     cursor: pointer;
     background-color: #009999;
-    box-shadow: 3px 3px 3px #009999;
+    box-shadow: 0.5px 0.5px 1px #08313195 inset;
   }
 `;
 
@@ -145,7 +147,6 @@ const SectionA = styled.section`
   @media (max-width: 650px) {
     max-width: initial;
     width: 100%;
-    //max-width: 85vw;
     margin: 1rem auto;
     height: min-content;
     & > * {
@@ -166,6 +167,7 @@ const SectionB = styled.section`
   }
   > * {
     max-width: 85vw;
+    font-weight: 500;
   }
 
   @media (max-width: 650px) {
@@ -208,4 +210,4 @@ const Close = styled.button`
   }
 `;
 
-export { Container, SectionA, SectionB, Form, Nav, Close, NavBTN };
+export { Container, SectionA, SectionB, Form, SideBar, Close, LoginOption };

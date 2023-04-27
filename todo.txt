@@ -1,12 +1,6 @@
-fix user card
-
-change post nav in main to match other headings on site
-
-correct NAMI's name in header on About Us
-
-
 / today
 
-login page sidebar not responsible in desktop mode
+create page folders ' in progress
 
-create page folders 
+* Criar pasta de styles local
+* Criar Componente de Routes para limpar o App

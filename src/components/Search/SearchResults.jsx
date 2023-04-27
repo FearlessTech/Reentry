@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { IoMdSearch } from "react-icons/io";
 import { Link } from "react-router-dom";
-import db from "../../firebase";
+import db from "../../services/firebase/firebase";
 import { Search, SearchIcon } from "../Navbar/stylesNavbar";
 
 export const SearchResults = () => {

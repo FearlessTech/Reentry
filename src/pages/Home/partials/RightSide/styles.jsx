@@ -3,6 +3,10 @@ import styled from "styled-components";
 const Container = styled.div`
   grid-area: rightside;
   margin-right: 20px;
+
+  @media (max-width: 768px) {
+    margin: 0 1.5rem 3rem;
+  }
 `;
 
 const FollowCard = styled.div`

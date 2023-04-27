@@ -4,9 +4,7 @@ const StyledLogin = styled.div`
   background-color: white;
   display: flex;
   flex-direction: column;
-  /* justify-content: space-between; */
   align-items: center;
-  // row-gap: 1rem;
   @media (prefers-color-scheme: dark) {
     background-color: transparent;
   }
@@ -37,7 +35,8 @@ const StyledLogin = styled.div`
       .input-container {
         label {
           display: flex;
-          column-gap: 1rem;
+          gap: 1rem;
+          flex-wrap: wrap;
           align-items: center;
           span {
             color: #414141aa;
