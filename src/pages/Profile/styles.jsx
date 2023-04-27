@@ -12,6 +12,9 @@ const Container = styled.div`
 
   flex-wrap: wrap;
   min-height: 100vh;
+  @media (max-width: 768px) {
+    padding: 2px;
+  }
 `;
 
 const ProfileLeft = styled.div`
@@ -22,6 +25,9 @@ const ProfileLeft = styled.div`
   width: 100%;
   margin: 0 auto;
   height: max-content;
+  @media (max-width: 768px) {
+    flex: 0 1 100%;
+  }
 `;
 
 const PFContactInfo = styled.div``;
@@ -130,7 +136,7 @@ const Item = styled.a`
   }
 `;
 
-const ProfileMain = styled.div`
+const ProfileMain = styled.section`
   display: flex;
   flex-direction: column;
   margin-top: 60px;

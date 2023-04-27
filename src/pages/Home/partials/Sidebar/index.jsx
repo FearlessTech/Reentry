@@ -14,37 +14,8 @@ import {
   Item,
 } from "./styles.jsx";
 import { UserImage } from "../../../../components/Image/index.jsx";
-import db, { storage } from "../../../../services/firebase/firebase.js";
-import { useState } from "react";
-import { useEffect } from "react";
 
-const Leftside = (props) => {
-  const [file, setFile] = useState(null);
-  function handleClick(e) {
-    // (async () => {
-    //   const query = db.collection('users').where('uid', '==', props.user.uid);
-    //   await query.get().then((payload) => {
-    //     const data = payload.docs[0].data()
-    //   });
-    // })();
-  }
-
-  useEffect(() => {
-    function getFileExt(file) {
-      console.log(file);
-    }
-  }, [file]);
-
-  // useEffect(() => {
-  //   if (!file) return;
-  //   async () => {
-  //     //
-  //     const fileExt = getFileExt(file);
-  //     const uid = crypto.randomUUID();
-  //     storage.ref(`/images/${uid}`);
-  //   };
-  // }, [file]);
-
+const HomeSidebar = (props) => {
   return (
     <Container>
       <ArtCard>
@@ -64,9 +35,6 @@ const Leftside = (props) => {
                 id="image"
                 name="image"
                 accept=".png, .jpg, .jpeg"
-                onChange={() => {
-                  setFile();
-                }}
                 style={{ display: "none" }}
               />
               <Photo>
@@ -101,7 +69,7 @@ const Leftside = (props) => {
           </Link>
         </Item>
       </ArtCard>
-      {props.children}
+      <div className="other">{props.children}</div>
     </Container>
   );
 };
@@ -111,4 +79,4 @@ const mapStateToProps = (state) => {
     user: state.userState.user,
   };
 };
-export default connect(mapStateToProps)(Leftside);
+export default connect(mapStateToProps)(HomeSidebar);

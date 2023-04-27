@@ -1,12 +1,20 @@
-import { useState } from "react";
+import { React, useState, useContext, createContext } from "react";
 import Switch from "../Switch";
-import { BiDownArrowCircle } from "react-icons/bi";
+import data from "../../../../data/resources.json";
+import useGetResources from "../../connection/useGetResources";
+
+import Form from "./styles";
+import Button from "../ProfileSaveButton";
+
+const resourcesContext = createContext(null);
 
 function TreeNode({ node }) {
+  const activeResources = useContext(resourcesContext);
+
   const [expanded, setExpanded] = useState(false);
   const isLeafNode = !node.children || node.children.length === 0;
 
-  const [active, setActive] = useState(false);
+  const [active, setActive] = useState(activeResources.includes(node.id));
 
   const handleToggle = () => {
     if (!isLeafNode) {
@@ -26,7 +34,17 @@ function TreeNode({ node }) {
           width: "max-content",
         }}
       >
-        <Switch id={node.id} text={node.name} toggle={setActive} />
+        <Switch
+          id={node.id}
+          text={node.name}
+          active={active}
+          callback={() => {
+            setActive(!active);
+            activeResources.includes(node.id)
+              ? activeResources.splice(activeResources.indexOf(node.id), 1)
+              : activeResources.push(node.id);
+          }}
+        />
         <span
           style={{
             borderBottom: isLeafNode ? "" : "3px solid #137b7b",
@@ -46,12 +64,17 @@ function TreeNode({ node }) {
   );
 }
 
-export default function Tree({ data }) {
+export default function Tree() {
+  const activeResources = useGetResources();
+
   return (
-    <div>
-      {data.map((node) => (
-        <TreeNode key={node.id} node={node} />
-      ))}
-    </div>
+    <resourcesContext.Provider value={activeResources}>
+      <Form>
+        {data.Resources.map((node) => (
+          <TreeNode key={node.id} node={node} />
+        ))}
+        <Button>Save</Button>
+      </Form>
+    </resourcesContext.Provider>
   );
 }

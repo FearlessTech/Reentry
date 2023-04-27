@@ -3,18 +3,28 @@ import styled from "styled-components";
 const Container = styled.div`
   grid-area: leftside;
   margin-left: 20px;
+  @media (max-width: 768px) {
+    margin-left: 0px;
+    .other {
+      margin-top: 2rem;
+    }
+  }
 `;
 
 const ArtCard = styled.div`
   text-align: center;
   overflow: hidden;
-  margin-bottom: 8px;
   background-color: #ffffff;
   border-radius: 5px;
   transition: box-shadow 83ms;
   position: relative;
   border: none;
   box-shadow: 0 0 0 1px rgb(0 0 0 / 15%), 0 0 0 rgb(0 0 0 / 20%);
+  margin-bottom: 8px;
+  @media (max-width: 768px) {
+    margin: 0 auto;
+    max-width: 300px;
+  }
 `;
 
 const UserInfo = styled.div`

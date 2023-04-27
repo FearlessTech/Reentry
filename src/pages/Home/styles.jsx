@@ -16,9 +16,8 @@ const Content = styled.div`
 const Layout = styled.div`
   display: grid;
   grid-template-areas: "leftside main rightside";
-  grid-template-columns: minmax(0, 6fr) minmax(0, 10fr) minmax(300px, 8fr);
-  column-gap: 25px;
-  row-gap: 25px;
+  grid-template-columns: minmax(220px, 6fr) minmax(0, 10fr) minmax(250px, 8fr);
+  grid-gap: 1.2rem;
   margin: 25px 0;
   @media (max-width: 768px) {
     display: flex;

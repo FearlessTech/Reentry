@@ -35,15 +35,15 @@ const Container = styled.label`
   }
 `;
 
-const Switch = ({ toggle, id, text }) => {
-  const [active, setActive] = useState(false);
+const Switch = ({ callback, id, text, active: isActive = false }) => {
+  const [active, setActive] = useState(isActive);
   return (
     <Container
       className="active"
       htmlFor={id}
       onPointerDown={(e) => {
         setActive((state) => !state);
-        toggle((state) => !state);
+        callback(e);
       }}
     >
       {text && !text.after && <span>{text.message}</span>}

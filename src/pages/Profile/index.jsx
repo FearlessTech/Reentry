@@ -1,13 +1,7 @@
 import { connect } from "react-redux";
-
+import HomeSidebar from "../Home/partials/Sidebar";
+import Introduction from "./partials/Introduction";
 import ResourceTree from "./partials/ResourceTree";
-import data from "../../data/resources.json";
-
-import { IoMdSettings } from "react-icons/io";
-
-import { useState, useRef } from "react";
-
-import db from "../../services/firebase/firebase";
 
 import {
   Container,
@@ -23,30 +17,12 @@ import {
   PFHeading,
   Content,
 } from "./styles.jsx";
-import Leftside from "../Home/partials/LeftSide";
-import Introduction from "./partials/Introduction";
 
 const Profile = (props) => {
-  const [edition, setEdition] = useState(true);
-  const intro = useRef();
-
-  const [inputs, setInputs] = useState({});
-
-  const handleChange = (event) => {
-    const name = event.target.name;
-    const value = event.target.value;
-    setInputs((values) => ({ ...values, [name]: value }));
-  };
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    console.log(inputs);
-  };
-
   return (
     <Container>
       <ProfileLeft>
-        <Leftside>
+        <HomeSidebar>
           <PFContactInfo>
             <PFHeading>Contact Info</PFHeading>
             <Content>{/* form here */}</Content>
@@ -59,7 +35,7 @@ const Profile = (props) => {
             <PFHeading>Goals</PFHeading>
             <Content>{/* form here */}</Content>
           </PFGoals>
-        </Leftside>
+        </HomeSidebar>
       </ProfileLeft>
 
       <ProfileMain>
@@ -74,7 +50,7 @@ const Profile = (props) => {
           <PFHeading>Resources Check Boxes</PFHeading>
 
           <Content>
-            <ResourceTree data={data.Resources} />
+            <ResourceTree />
           </Content>
         </PFCheckBoxes>
         <PFPost>
