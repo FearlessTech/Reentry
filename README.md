@@ -6,7 +6,7 @@
 ### 🌟 If you support our cause, please give this repo a star 🌟
 
 
-This site is being built for Maine Community of reentry advocates and/or anyone who concerns themselves with sucsesfull prisoner reintergration. [NAMI](https://www.namimaine.org/), [MPRN](https://re-entrymaine.org/) and [MPAC](https://www.maineprisoneradvocacy.org) are all non-profit orginizations that are fully involved in prisoner reentry. They have agreed to maintain this site after it is launched and spread the word as fast as possible to get every resource in the state signed up to this site. I'm estimating a 2000+ user base from day one.    
+This site is being built for Maine Community of reentry advocates and/or anyone who concerns themselves with succesfull prisoner reintergration. [NAMI](https://www.namimaine.org/), [MPRN](https://re-entrymaine.org/) and [MPAC](https://www.maineprisoneradvocacy.org) are all non-profit orginizations that are fully involved in prisoner reentry. They have agreed to maintain this site after it is launched and spread the word as fast as possible to get every resource in the state signed up to this site. I'm estimating a 2000+ user base from day one.    
 
 
 Were hoping to find some willing developers to donate some of there time and experiance to help us build this website for a worthy cause. This website will help thousands of Maine's Prisoners have a more successful reentry back into society. 
