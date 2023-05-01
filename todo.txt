@@ -1,6 +1,5 @@
-/ today
-
 create page folders ' in progress
 
-* Criar pasta de styles local
-* Criar Componente de Routes para limpar o App
+navbar dropdown should be a real dropdown
+
+fix accessible switch toggle 
