@@ -3,3 +3,5 @@ create page folders ' in progress
 navbar dropdown should be a real dropdown
 
 fix accessible switch toggle 
+
+- rebuild navbar
