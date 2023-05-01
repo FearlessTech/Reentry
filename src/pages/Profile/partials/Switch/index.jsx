@@ -35,22 +35,34 @@ const Container = styled.label`
   }
 `;
 
-const Switch = ({ callback, id, text, active: isActive = false }) => {
+const Switch = ({ callback, id, text, active: isActive = false, ...props }) => {
   const [active, setActive] = useState(isActive);
+
+  const handleToggle = (e) => {
+    setActive((state) => !state);
+    callback(e);
+  };
+
+  const handleKeyDown = (e) => {
+    if (e.key === "Enter" || e.key === " ") {
+      handleToggle(e);
+    }
+  };
+
   return (
-    <Container
-      className="active"
-      htmlFor={id}
-      onPointerDown={(e) => {
-        setActive((state) => !state);
-        callback(e);
-      }}
-    >
-      {text && !text.after && <span>{text.message}</span>}
-      <div className={`out ${active && "active"}`}>
-        <div className="dot"></div>
-      </div>
-      {text && text.after && <span>{text.message}</span>}
+    <Container className="active" props={props}>
+      <button
+        type="button"
+        id={id}
+        aria-checked={active}
+        onClick={handleToggle}
+        onKeyDown={handleKeyDown}
+      >
+        <span className="visually-hidden">{text.message}</span>
+        <div className={`out ${active && "active"}`}>
+          <div className="dot"></div>
+        </div>
+      </button>
     </Container>
   );
 };
