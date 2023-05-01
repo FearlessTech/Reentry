@@ -6,12 +6,11 @@
 ### 🌟 If you support our cause, please give this repo a star 🌟
 
 
-This site is being built for Maine Community of reentry advocates and/or anyone who concerns themselves with succesful prisoner reintergration. [NAMI](https://www.namimaine.org/), [MPRN](https://re-entrymaine.org/) and [MPAC](https://www.maineprisoneradvocacy.org) are all non-profit orginizations that are fully involved in prisoner reentry. They have agreed to maintain this site after it is launched and spread the word as fast as possible to get every resource in the state signed up to this site. I'm estimating a 2000+ user base from day one.    
+This site is being built for Maine Community of reentry advocates and/or anyone who concerns themselves with succesful prisoner reintergration. [NAMI](https://www.namimaine.org/), [MPRN](https://re-entrymaine.org/) and [MPAC](https://www.maineprisoneradvocacy.org) are all non-profit organizations that are fully involved in prisoner reentry. They have agreed to maintain this site after it is launched and spread the word as fast as possible to get every resource in the state signed up to this site. I'm estimating a 2000+ user base from day one.
 
+Were hoping to find some willing developers to donate some of their time and experience to help us build this website for a worthy cause. This website will help thousands of Maine's Prisoners have a more successful reentry back into society. 
 
-Were hoping to find some willing developers to donate some of there time and experiance to help us build this website for a worthy cause. This website will help thousands of Maine's Prisoners have a more successful reentry back into society. 
-
-If you would like to contribute, just comment on an issue and I will assign it to you. If you see something you would like to fix, make an issue. If you have questions or run into a problem, post your questions to the issue or under the discussions. I will help however I can. Also, please read the Contribution Guideline in the link below. When you have compleated an issue, make sure you fork is up to date with mine, and submit a pull requst. Thank you to everyone helping to make this site.
+If you would like to contribute, just comment on an issue and It will be asigned to you. If you see something you would like to fix, make an issue. If you have questions or run into a problem, post your questions to the issue or under the discussions. I will help however I can. Also, please read the Contribution Guideline in the link below. When you have compleated an issue, make sure you fork is up to date with this Repository, and submit a pull request. Thank you to everyone helping to make this site.
 
 [Click Here to Read the Contribution Guideline](https://github.com/4-Leafs-Code/Reentry/blob/main/contributing.md) 
 
