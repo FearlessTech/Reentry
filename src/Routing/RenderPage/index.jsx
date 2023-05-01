@@ -6,14 +6,14 @@ import Functionalities from "../../components/Functionalities";
 
 const Navbar = lazy(() => import("../../components/Navbar/Navbar"));
 
-const Login = lazy(() => import("../../pages/Login")); // old agreement
-const Welcome = lazy(() => import("../../pages/Welcome")); // old Login
+const Login = lazy(() => import("../../pages/Login"));
+const Welcome = lazy(() => import("../../pages/Welcome"));
 const Home = lazy(() => import("../../pages/Home"));
 const Notifications = lazy(() => import("../../pages/Notifications"));
 const Network = lazy(() => import("../../pages/Network/index.jsx"));
 const Messaging = lazy(() => import("../../pages/Messages"));
 const Profile = lazy(() => import("../../pages/Profile"));
-const Resources = lazy(() => import("../../pages/Resources/Resources"));
+const Resources = lazy(() => import("../../pages/Resources/new"));
 const AboutUs = lazy(() => import("../../pages/About"));
 
 function getPage(page_name) {

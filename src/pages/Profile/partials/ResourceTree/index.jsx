@@ -27,7 +27,7 @@ function TreeNode({ node }) {
       <div
         onClick={handleToggle}
         style={{
-          cursor: isLeafNode ? "default" : "pointer",
+          cursor: !isLeafNode && "pointer",
           display: "flex",
           gap: "1rem",
           marginBottom: "1rem",
@@ -44,10 +44,11 @@ function TreeNode({ node }) {
               ? activeResources.splice(activeResources.indexOf(node.id), 1)
               : activeResources.push(node.id);
           }}
+          aria-details="select this resource"
         />
         <span
           style={{
-            borderBottom: isLeafNode ? "" : "3px solid #137b7b",
+            borderBottom: !isLeafNode && "3px solid #137b7b",
           }}
         >
           {node.name}
