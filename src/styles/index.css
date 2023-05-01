@@ -57,8 +57,18 @@ textarea {
   font-family: sans-serif;
   color: #333;
 }
+
+input:focus-within {
+  outline: none;
+}
+
 textarea {
   padding: 0.5rem 0;
+}
+
+button {
+  background-color: transparent;
+  border: none;
 }
 
 @keyframes fadeIn {
