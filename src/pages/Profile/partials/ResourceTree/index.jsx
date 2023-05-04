@@ -1,20 +1,15 @@
 import { React, useState, useContext, createContext } from "react";
 import Switch from "../Switch";
 import data from "../../../../data/resources.json";
-import useGetResources from "../../connection/useGetResources";
 
 import Form from "./styles";
 import Button from "../ProfileSaveButton";
 
-const resourcesContext = createContext(null);
-
-function TreeNode({ node }) {
-  const activeResources = useContext(resourcesContext);
-
+function TreeNode({ node, activeResources }) {
   const [expanded, setExpanded] = useState(false);
-  const isLeafNode = !node.children || node.children.length === 0;
-
   const [active, setActive] = useState(activeResources.includes(node.id));
+
+  const isLeafNode = !node.children || node.children.length === 0;
 
   const handleToggle = () => {
     if (!isLeafNode) {
@@ -57,7 +52,11 @@ function TreeNode({ node }) {
       {node.children && expanded && (
         <div>
           {node.children.map((child) => (
-            <TreeNode key={child.id} node={child} />
+            <TreeNode
+              key={child.id}
+              node={child}
+              activeResources={activeResources}
+            />
           ))}
         </div>
       )}
@@ -65,17 +64,20 @@ function TreeNode({ node }) {
   );
 }
 
-export default function Tree() {
-  const activeResources = useGetResources();
+export default function ResourceTree({ activeResources, handler = () => {} }) {
+  const active = [...activeResources]; // simple Array
 
   return (
-    <resourcesContext.Provider value={activeResources}>
-      <Form>
-        {data.Resources.map((node) => (
-          <TreeNode key={node.id} node={node} />
-        ))}
-        <Button>Save</Button>
-      </Form>
-    </resourcesContext.Provider>
+    <Form
+      onSubmit={(e) => {
+        e.preventDefault();
+        handler(active);
+      }}
+    >
+      {data.Resources.map((node) => (
+        <TreeNode key={node.id} node={node} activeResources={active} />
+      ))}
+      <Button>Save</Button>
+    </Form>
   );
 }
