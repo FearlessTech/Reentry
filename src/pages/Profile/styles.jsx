@@ -30,9 +30,7 @@ const ProfileLeft = styled.div`
   }
 `;
 
-const PFContactInfo = styled.div``;
-const PFAchievments = styled.div``;
-const PFGoals = styled.div``;
+const SidebarSection = styled.div``;
 
 const ArtCard = styled.div`
   text-align: center;
@@ -167,16 +165,6 @@ const PFHeading = styled.div`
     clip-path: polygon(0 0, 100% 0, 100% 100%);
   }
 `;
-const PFIntro = styled.div``;
-
-const PFCheckBoxes = styled.div`
-  height: max-content;
-`;
-
-const PFPost = styled.div``;
-
-const PFResourcesPost = styled.div``;
-
 const Content = styled.div`
   min-height: 100px;
   background-color: whitesmoke;
@@ -193,14 +181,8 @@ export {
   Widget,
   Item,
   ProfileLeft,
-  PFContactInfo,
-  PFAchievments,
-  PFGoals,
+  SidebarSection,
   ProfileMain,
-  PFIntro,
-  PFCheckBoxes,
-  PFPost,
-  PFResourcesPost,
   PFHeading,
   Content,
 };

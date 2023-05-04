@@ -51,8 +51,10 @@ const Main = (props) => {
       <Content>
         {props.loading && <img src="public/images/spin-loading.gif" alt="" />}
         {props.articles.length != 0 &&
-          props.articles.map((article) => (
-            <SinglePost article={article} id={article.id} key={article.id} />
+          props.articles.map((article, i) => (
+            <div key={i}>
+              <SinglePost article={article} id={article.id} key={article.id} />
+            </div>
           ))}
       </Content>
       {showModal === "open" && (

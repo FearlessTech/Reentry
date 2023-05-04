@@ -5,6 +5,7 @@ import {
   SET_USER,
   SET_LOADING_STATUS,
   GET_ARTICLES,
+  UPDATE_INTRODUCTION,
 } from "./actionType";
 
 export function generateKeyWords(name, email) {
@@ -213,3 +214,8 @@ export function getArticlesAPI() {
       });
   };
 }
+
+export const updateIntroduction = (payload) => ({
+  type: UPDATE_INTRODUCTION,
+  user: payload,
+});
