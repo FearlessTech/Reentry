@@ -96,7 +96,7 @@ const Widget = styled.div`
   }
 `;
 
-const Item = styled.a`
+const Item = styled.div`
   border-color: rgba(0, 0, 0, 0.8);
   text-align: left;
   padding: 12px;
